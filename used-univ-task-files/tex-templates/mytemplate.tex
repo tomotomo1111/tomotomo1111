@@ -1,0 +1,159 @@
+\documentclass[a4j]{jarticle}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{listings,jvlisting, jlisting}
+
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+\begin{document}
+
+\vfill
+\begin{screen}
+  \begin{center}
+    \huge\bf 実験　第1回レポート\\
+    \vspace{5mm}
+    \large\bf
+    学籍番号　2022311042 \quad 名前 神野友哉\\
+    \today
+  \end{center}
+\end{screen}
+\thispagestyle{empty}
+
+
+\section{実験1-1}
+実験1-1について画像フォーマットと画像データの格納方法の関係について詳しく考察せよ.
+\subsection{考察}
+
+
+\newpage
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=70mm]{image01.png}
+  \end{center}
+  \caption{image01.pgm}
+  \label{fig:01}
+\end{figure}
+\begin{figure}[htbp]
+  \begin{minipage}{0.5\hsize}
+    \begin{center}
+      \includegraphics[width=70mm]{image02.png}
+    \end{center}
+    \caption{image02.pbm}
+    \label{fig:02}
+  \end{minipage}
+  \begin{minipage}{0.5\hsize}
+    \begin{center}
+      \includegraphics[width=70mm]{image03.png}
+    \end{center}
+    \caption{image03.jpg}
+    \label{fig:03}
+  \end{minipage}
+\end{figure}
+
+\newpage
+\section{実験1-2}
+実験1-2についてp=0.3とp=0.7の出力画像を示し、p-タイル法の特徴を詳しく考察せよ.
+\subsection{考察}
+
+
+
+\newpage
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=70mm]{image1-2-1.png}
+  \end{center}
+  \caption{image1-2-1.pgm}
+  \label{fig:121}
+\end{figure}
+\begin{figure}[htbp]
+  \begin{minipage}{0.5\hsize}
+    \begin{center}
+      \includegraphics[width=70mm]{image1-2-1-30out.png}
+    \end{center}
+    \caption{黒 0.3}
+    \label{fig:12130}
+  \end{minipage}
+  \begin{minipage}{0.5\hsize}
+    \begin{center}
+      \includegraphics[width=70mm]{image1-2-1-70out.png}
+    \end{center}
+    \caption{黒 0.7}
+    \label{fig:12170}
+  \end{minipage}
+\end{figure}
+
+\newpage
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=70mm]{image1-2-2.png}
+  \end{center}
+  \caption{image1-2-2.pgm}
+  \label{fig:122}
+\end{figure}
+\begin{figure}[htbp]
+  \begin{minipage}{0.5\hsize}
+    \begin{center}
+      \includegraphics[width=70mm]{image1-2-2-30out.png}
+    \end{center}
+    \caption{黒 0.3}
+    \label{fig:12230}
+  \end{minipage}
+  \begin{minipage}{0.5\hsize}
+    \begin{center}
+      \includegraphics[width=70mm]{image1-2-2-70out.png}
+    \end{center}
+    \caption{黒 0.7}
+    \label{fig:12270}
+  \end{minipage}
+\end{figure}
+
+\newpage
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=70mm]{image1-2-3.png}
+  \end{center}
+  \caption{image1-2-3.pgm}
+  \label{fig:123}
+\end{figure}
+\begin{figure}[htbp]
+  \begin{minipage}{0.5\hsize}
+    \begin{center}
+      \includegraphics[width=70mm]{image1-2-3-30out.png}
+    \end{center}
+    \caption{黒 0.3}
+    \label{fig:12330}
+  \end{minipage}
+  \begin{minipage}{0.5\hsize}
+    \begin{center}
+      \includegraphics[width=70mm]{image1-2-3-70out.png}
+    \end{center}
+    \caption{黒 0.7}
+    \label{fig:12370}
+  \end{minipage}
+\end{figure}
+
+
+\newpage
+\begin{lstlisting}[caption= 実験1-2,label=c-1-2]
+
+\end{lstlisting}
+\lstinputlisting[language={Tex}]{question4next}
+
+\end{document}

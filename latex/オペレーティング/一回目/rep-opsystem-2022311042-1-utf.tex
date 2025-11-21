@@ -1,0 +1,253 @@
+\documentclass[10pt]{jarticle}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\renewcommand{\lstlistingname}{source}
+\lstset{language=sh,%
+        basicstyle=\footnotesize,%
+	commentstyle=\textit,%
+	classoffset=1,%
+	keywordstyle=\bfseries,%
+	frame=shadowbox,framesep=4pt,%
+	showstringspaces=false%,
+	numbers=left,stepnumber=1,numberstyle=\footnotesize,%
+	numbersep=1zw,%
+	lineskip=-0.5ex,%
+	xleftmargin=2zw%
+	}%
+
+\newdimen\paperwidth \newdimen\paperheight
+\def\A4size{\paperwidth=210mm \paperheight=297mm}
+\def\centered{%
+  \oddsidemargin=\paperwidth
+  \advance\oddsidemargin-\textwidth
+  \oddsidemargin=0.5\oddsidemargin
+  \advance\oddsidemargin-1in
+  \evensidemargin-\oddsidemargin}
+%
+\textwidth 160mm
+\textheight 230mm
+\topmargin 0mm
+\headheight 0mm
+\footskip 0mm
+\A4size\centered
+
+\title{\framebox{\hspace{4zw}オペレーティングシステム論 レポート1%
+                 \hspace{4zw}}}
+\author{情報　開発 \\
+        2022311042  \\
+        愛知県立大学 情報科学部 情報科学科 \\ 神野友哉}
+\date{2023年11月26日}
+
+
+\begin{document}
+
+\maketitle
+
+\section{はじめに} \label{sec:hajime}
+
+セマフォ構造体による排他制御の効果を確認する。方法として、セマフォ構造体を実装しているプログラムと、
+そうでないプログラムの両方に対して、処理の実施回数及び処理を適宜変更し、比較観察を行うこととする。
+プログラムのデフォルトの処理は、一つの共有変数\ itmp\ の値を\ 1\ 増やす処理と、\ 1\ 減らす処理を
+それぞれ独立して行うスレッドを立て、\ itmp\ の最終的な値を表示する。その実行の際、\ PowerShell\ のコマンド\
+Measure-Command\ にパイプ Out-Default でプログラムの出力と、その実行時間を同時に表示させる。
+
+\section{実験結果} \label{sec:kekka}
+同じ状況で、\ 10\ 回計測する。両プログラムにある変数\ IMAX\ とは、上記処理の実行回数であり、デフォルトの値\ 10000\ 
+でのプログラム実行結果が表\ref{table:10000}、\ 1000000\ にしたものが表\ref{table:1000000}である。
+さらに、上記処理を元のプログラムよりも短く、同様の処理が行えるように変更し、\ IMAX\  を\ 1000000\ にして
+実行してみた結果が、表\ref{table:re1000000}である。
+表\ref{table:defosemaari}と
+表\ref{table:defosemanasi}は\ itmp\ の値が\ 0\ となっている。しかし、表\ref{table:millionsemaari}と
+表\ref{table:millionsemanasi}、表\ref{table:remillionsemaari}と
+表\ref{table:remillionsemanasi}は\ itmp\ の値が大きく異なっている。
+また、表\ref{table:10000}～表\ref{table:re1000000}も処理時間の観点からみると、セマフォ構造体有りの場合、
+それが無い場合と比較して、長いことが見て取れる。
+
+
+
+\newpage
+\begin{table}
+	\caption{IMAX : 10000(デフォルト)}
+	\label{table:10000}
+	\begin{minipage}{.45\textwidth}
+		\centering
+		\subcaption{セマフォ有り}
+		\label{table:defosemaari}
+		\begin{tabular}{|c|c|}
+			\hline
+			itmpの値 & 処理時間\verb|(ms)|\\
+			\hline
+			0 & 69\\
+			0 & 67\\
+			0 & 72\\
+			0 & 77\\
+			0 & 70\\
+			0 & 78\\
+			0 & 79\\
+			0 & 81\\
+			0 & 102\\
+			0 & 88\\
+			\hline
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}{.45\textwidth}
+		\centering
+		\subcaption{セマフォ無し}
+		\label{table:defosemanasi}
+		\begin{tabular}{|c|c|}
+			\hline
+			itmpの値 & 処理時間\verb|(ms)|\\
+			\hline
+			0 & 30 \\
+			0 & 8 \\
+			0 & 8 \\
+			0 & 7 \\
+			0 & 8 \\
+			0 & 8 \\
+			0 & 8 \\
+			0 & 8 \\
+			0 & 9 \\
+			0 & 9 \\
+			\hline
+		\end{tabular}
+	\end{minipage}
+\end{table}
+
+\begin{table}
+	\caption{IMAX : 1000000}
+	\label{table:1000000}
+	\begin{minipage}{.45\textwidth}
+		\centering
+		\subcaption{セマフォ有り}
+		\label{table:millionsemaari}
+		\begin{tabular}{|c|c|}
+			\hline
+			itmpの値 & 処理時間\verb|(ms)|\\
+			\hline
+			0 & 7844\\
+			0 & 7707\\
+			0 & 7850\\
+			0 & 7873\\
+			0 & 7931\\
+			0 & 7866\\
+			0 & 5840\\
+			0 & 7804\\
+			0 & 7896\\
+			0 & 7828\\
+			\hline
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}{.45\textwidth}
+		\centering
+		\subcaption{セマフォ無し}
+		\label{table:millionsemanasi}
+		\begin{tabular}{|c|c|}
+			\hline
+			itmpの値 & 処理時間\verb|(ms)|\\
+			\hline
+			-281733 & 34 \\
+			292051 & 18 \\
+			-27806 & 18 \\
+			247095 & 16 \\
+			-541874 & 17 \\
+			239091 & 17 \\
+			-249970 & 17 \\
+			-141585 & 17 \\
+			-472884 & 17 \\
+			318353 & 17 \\
+			\hline
+		\end{tabular}
+	\end{minipage}
+\end{table}
+
+\newpage
+\begin{table}
+	\caption{プログラム変更した IMAX : 1000000}
+	\label{table:re1000000}
+	\begin{minipage}{.45\textwidth}
+		\centering
+		\subcaption{セマフォ有り}
+		\label{table:remillionsemaari}
+		\begin{tabular}{|c|c|}
+			\hline
+			itmpの値 & 処理時間\verb|(ms)|\\
+			\hline
+			0 & 7959\\
+			0 & 8125\\
+			0 & 8023\\
+			0 & 7900\\
+			0 & 7877\\
+			0 & 7838\\
+			0 & 7818\\
+			0 & 7859\\
+			0 & 7880\\
+			0 & 7802\\
+			\hline
+		\end{tabular}
+	\end{minipage}
+	\begin{minipage}{.45\textwidth}
+		\centering
+		\subcaption{セマフォ無し}
+		\label{table:remillionsemanasi}
+		\begin{tabular}{|c|c|}
+			\hline
+			itmpの値 & 処理時間\verb|(ms)|\\
+			\hline
+			-240390 & 28 \\
+			-362848 & 12 \\
+			310392 & 13 \\
+			-144753 & 12 \\
+			-62665 & 13 \\
+			411264 & 12 \\
+			194195 & 13 \\
+			11211 & 12 \\
+			177960 & 19 \\
+			663981 & 12 \\
+			\hline
+		\end{tabular}
+	\end{minipage}
+\end{table}
+\clearpage
+
+\subsection{作成したプログラムについて}
+
+\lstinputlisting[caption=セマフォ有り表\ref{table:10000}のプログラム]{./thread-semaphore.c}
+\newpage
+\lstinputlisting[caption=セマフォ無し表\ref{table:10000}のプログラム]{./thread-without-semaphore.c}
+\newpage
+\lstinputlisting[caption=セマフォ有り表\ref{table:re1000000}のプログラム]{./rethread-semaphore.c}
+\newpage
+\lstinputlisting[caption=セマフォ無し表\ref{table:re1000000}のプログラム]{./rethread-without-semaphore.c}
+
+\newpage
+\section{考察}
+ITを分かりやすく解説というブログを運営している、まつ\verb|(2022)|によると、
+セマフォ構造体は、排他制御\verb|(データの整合性を保つ方法)|の一種であり、また、排他制御とは、
+共有資源に対して同時にアクセスしてもプログラムが問題なく動作できる仕組みのことだと
+いう\cite{semaphore}。それと\ \ref{sec:kekka}\ 実験結果\ を踏まえて考察する。これらのプログラムが想定している、
+最終的な\ itmp\ の値は\ 0\ であるので、セマフォ無しの表\ref{table:millionsemanasi}と表\ref{table:remillionsemanasi}は、
+データの整合性が保たれていないことが解かった。
+一方、セマフォ有りの表\ref{table:defosemaari}と表\ref{table:millionsemaari}、表\ref{table:remillionsemaari}は、
+両方とも\ itmp\ の値は\ 0\ であった。そのため、セマフォ構造体の実装により排他制御が可能と
+考えられる。このレポートの\ \ref{sec:hajime}\ はじめに\ に
+記載したが、この実験の目的は、セマフォ構造体の排他制御の効果を
+確認することであるため、適切な方法で実験を実施できたと考えられるのではないか。
+
+\section{感想}
+
+プログラムの処理時間を計算するコマンドから、プログラム本来の実行による標準出力を表示させるオプションを
+探すのに少し手間取った。セマフォ構造体有りの処理回数\ IMAX\ を試しに\ 100000000\ として、実行したところ、
+実行したまま\ Powershell\ を\ 30\ 分程度放置していても終了していなかったため、とても驚いた。
+
+\newpage
+\begin{thebibliography}{1}
+  \bibitem{semaphore}
+    まつ. "セマフォとは". ITを分かりやすく解説. 2022. \\
+    \url{https://medium-company.com/%E3%82%BB%E3%83%9E%E3%83%95%E3%82%A9/}, (参照 2023-11-226).
+\end{thebibliography}
+\end{document}

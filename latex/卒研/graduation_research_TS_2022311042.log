@@ -1,0 +1,220 @@
+This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.5.19)  13 NOV 2025 20:22
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**graduation_research_TS_2022311042.tex
+(./graduation_research_TS_2022311042.tex
+pLaTeX2e <2023-02-14>+1 (based on LaTeX2e <2022-11-01> patch level 1)
+L3 programming layer <2023-05-15>
+(c:/texlive/2023/texmf-dist/tex/platex/base/pl209.def
+Entering pLaTeX 2.09 compatibility mode.
+(c:/texlive/2023/texmf-dist/tex/latex/base/latex209.def
+File: latex209.def 2020/11/26 v0.55 Standard LaTeX file
+
+
+          Entering LaTeX 2.09 COMPATIBILITY MODE
+ *************************************************************
+    !!WARNING!!    !!WARNING!!    !!WARNING!!    !!WARNING!!   
+ 
+ This mode attempts to provide an emulation of the LaTeX 2.09
+ author environment so that OLD documents can be successfully
+ processed. It should NOT be used for NEW documents!
+ 
+ New documents should use Standard LaTeX conventions and start
+ with the \documentclass command.
+ 
+ Compatibility mode is UNLIKELY TO WORK with LaTeX 2.09 style
+ files that change any internal macros, especially not with
+ those that change the FONT SELECTION or OUTPUT ROUTINES.
+ 
+ Therefore such style files MUST BE UPDATED to use
+          Current Standard LaTeX: LaTeX2e.
+ If you suspect that you may be using such a style file, which
+ is probably very, very old by now, then you should attempt to
+ get it updated by sending a copy of this error message to the
+ author of that file.
+ *************************************************************
+
+\footheight=\dimen156
+\@maxsep=\dimen157
+\@dblmaxsep=\dimen158
+\@cla=\count184
+\@clb=\count185
+\mscount=\count186
+(c:/texlive/2023/texmf-dist/tex/latex/base/tracefnt.sty
+Package: tracefnt 2020/12/22 v3.0n Standard LaTeX package (font tracing)
+\tracingfonts=\count187
+LaTeX Info: Redefining \selectfont on input line 107.
+Applying: [2021/06/01] Add hook to \selectfont  on input line 142.
+Already applied: [0000/00/00] Add hook to \selectfont  on input line 145.
+)
+\symbold=\mathgroup4
+\symsans=\mathgroup5
+\symtypewriter=\mathgroup6
+\symitalic=\mathgroup7
+\symsmallcaps=\mathgroup8
+\symslanted=\mathgroup9
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 275.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 276.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 277.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 283.
+LaTeX Info: Redefining \em on input line 293.
+
+(c:/texlive/2023/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup10
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+)
+LaTeX Font Info:    Redeclaring math delimiter \lgroup on input line 339.
+LaTeX Font Info:    Redeclaring math delimiter \rgroup on input line 341.
+LaTeX Font Info:    Redeclaring math delimiter \bracevert on input line 343.
+)
+(c:/texlive/2023/texmf-dist/tex/platex/base/ptrace.sty
+Package: ptrace 2021/06/27 v1.7n Standard pLaTeX package (font tracing)
+Applying: [2020/04/12] Check \KanjiEncodingPair  on input line 21.
+LaTeX Info: Redefining \selectfont on input line 84.
+Already applied: [0000/00/00] ASCII Corporation original on input line 187.
+Applying: [2017/04/08] Construct \ystrutbox  on input line 245.
+Already applied: [0000/00/00] ASCII Corporation original on input line 280.
+Applying: [2019/10/01] Make robust on input line 315.
+LaTeX Info: Redefining \adjustbaseline on input line 316.
+Already applied: [2017/07/29] Change zenkaku reference on input line 339.
+Already applied: [0000/00/00] ASCII Corporation original on input line 364.
+)
+\symmincho=\mathgroup11
+\symgothic=\mathgroup12
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY1/mc/m/n --> JY1/gt/m/n on input line 35.
+LaTeX Info: Redefining \bf on input line 49.
+LaTeX Info: Redefining \rm on input line 56.
+LaTeX Info: Redefining \sf on input line 57.
+LaTeX Info: Redefining \sl on input line 58.
+LaTeX Info: Redefining \sc on input line 59.
+LaTeX Info: Redefining \it on input line 60.
+LaTeX Info: Redefining \tt on input line 61.
+LaTeX Info: Redefining \em on input line 62.
+)
+(c:/texlive/2023/texmf-dist/tex/platex/base/jarticle.cls
+Document Class: jarticle 2020/09/30 v1.8f Standard pLaTeX class
+\c@@paper=\count188
+(c:/texlive/2023/texmf-dist/tex/platex/base/jsize12.clo
+File: jsize12.clo 2020/09/30 v1.8f Standard pLaTeX file (size option)
+)
+\c@part=\count189
+\c@section=\count190
+\c@subsection=\count191
+\c@subsubsection=\count192
+\c@paragraph=\count193
+\c@subparagraph=\count194
+\c@figure=\count195
+\c@table=\count196
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+Compatibility mode: definition of \mc ignored.
+Compatibility mode: definition of \gt ignored.
+Compatibility mode: definition of \rm ignored.
+Compatibility mode: definition of \sf ignored.
+Compatibility mode: definition of \tt ignored.
+Compatibility mode: definition of \bf ignored.
+Compatibility mode: definition of \it ignored.
+Compatibility mode: definition of \sl ignored.
+Compatibility mode: definition of \sc ignored.
+LaTeX Info: Redefining \cal on input line 644.
+LaTeX Info: Redefining \mit on input line 645.
+\toclineskip=\dimen159
+\@lnumwidth=\dimen160
+\bibindent=\dimen161
+\heisei=\count197
+)
+(c:/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
+File: l3backend-dvips.def 2023-04-19 L3 backend support: dvips
+\l__pdf_internal_box=\box68
+\g__pdf_backend_object_int=\count198
+\l__pdf_backend_content_box=\box69
+\l__pdf_backend_model_box=\box70
+\g__pdf_backend_annotation_int=\count199
+\g__pdf_backend_link_int=\count266
+\g__pdf_backend_link_sf_int=\count267
+)
+(./graduation_research_TS_2022311042.aux)
+\openout1 = `graduation_research_TS_2022311042.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 2.
+LaTeX Font Info:    ... okay on input line 2.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <20.74> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 8.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <20.74> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 8.
+ [1
+
+] [2]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <17.28> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 28.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <17.28> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 28.
+ [1]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 51.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 51.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 52.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 52.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 52.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 52
+.
+
+(c:/texlive/2023/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+) [2]
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 80.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 80.
+ [3] [4] [5] [6]
+Underfull \hbox (badness 7326) in paragraph at lines 160--163
+[]\JY1/mc/m/n/12 中山 達喜\OT1/cmr/m/n/12 , \JY1/mc/m/n/12 吉田 真一  ： 音楽分
+類における特徴量の検討 ，
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--163
+\OT1/cmr/m/n/12 https://www.jstage.jst.go.jp/article/fss/26/0/26[]0[]290/[]arti
+cle/-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--179
+\JY1/mc/m/n/12 違い ・ 活用事例 ・
+ []
+
+[7] (./graduation_research_TS_2022311042.aux) ) 
+Here is how much of TeX's memory you used:
+ 789 strings out of 476760
+ 14142 string characters out of 5809571
+ 1848672 words of memory out of 5000000
+ 21211 multiletter control sequences out of 15000+600000
+ 531012 words of font info for 104 fonts, out of 8000000 for 9000
+ 929 hyphenation exceptions out of 8191
+ 43i,5n,40p,224b,216s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on graduation_research_TS_2022311042.dvi (9 pages, 8788 bytes).

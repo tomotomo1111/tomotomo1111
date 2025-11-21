@@ -1,0 +1,179 @@
+\documentstyle[12pt]{jarticle}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\huge 2~0~2~6 年度~~卒~~業~~論~~文}
+\vspace*{3.5cm}
+
+{\LARGE\bf 個人の聴感特性に基づいて音楽を画像に変換する手法の研究} % ← 自分の研究テーマに置き換える
+\vspace*{3cm}
+
+{\large 2025年11月14日}  % ← 提出日
+\vspace*{3cm}
+
+{\large 情報科学科}
+
+{\large （学籍番号：2022311042）}% ← 自分の学籍番号
+\vspace*{5mm}
+
+{\Large 神~野~~友~哉}  % ← 自分の名前
+\vspace*{6cm}
+
+{\large 愛知県立大学情報科学部}
+\end{center}
+\newpage 
+
+\setcounter{page}{1}
+
+\section*{概要}
+% 研究論文の内容について、500 - 600 字程度でまとめる。
+% この概要を読めば、大体どういうことを研究したのかがわかるように書く。
+% 具体的には、どういう問題について、どのような研究を行って、その結果どのような
+% 結論が得られたか、というポイントについて簡潔にまとめる。
+
+本研究は、音楽をもとに視覚的イメージを自動生成する手法の開発を目的とする。
+音楽が聴覚的情報であるのに対し、視覚的表現との対応関係は明確に定義されていない。
+そこで本研究では、音楽から得られる音響特徴量を中間表現として用い、これをテキスト情報に変換し、
+最終的に画像を生成するシステムを構築した。具体的には、まず楽曲からテンポ、スペクトル重心、
+エネルギー量などの音響特徴量を抽出し、それらを入力としてニューラルネットワーク（NN）により
+複数の単語ラベルを自動生成するモデルを構築した。このモデルにより、音楽の雰囲気や感情的印象を言語的に表現できるようにした。
+次に、生成された単語群をChatGPTに入力し、得られたテキストプロンプトを用いて画像生成AIにより視覚的イメージを生成した。
+% 最後に、生成された画像と元の音楽を被験者に提示し、主観評価実験を通して両者の対応の自然さを検証した。
+% その結果、多くの被験者が音楽と画像の印象に一定の整合性を感じたと回答し、
+% 本手法が音楽と視覚表現の橋渡しとして有効である可能性が示された。
+
+\newpage
+
+\section*{目次}
+
+%\begin{center}
+\begin{description}
+\item[]\mbox{}\hfill 頁
+\item[]第１章 はじめに\hfill $\cdots\cdots$~~3
+  \begin{description}
+  \item[]1.1 研究の背景\hfill $\cdots\cdots$~~3
+  \item[]1.2 研究の目的\hfill $\cdots\cdots$~~4
+  \item[]1.3 本論文の構成\hfill $\cdots\cdots$~~5
+  \end{description}
+\item[]第２章 準備\hfill $\cdots\cdots$~~6
+\item[]第３章 本論\hfill $\cdots\cdots$~~11
+  \begin{description}
+  \item[]3.1 問題提起\hfill $\cdots\cdots$~~11
+  \item[]3.2 研究の説明\hfill $\cdots\cdots$~~13
+  \end{description}
+\item[]第４章 考察\hfill $\cdots\cdots$~~18
+\item[]第５章 結論\hfill $\cdots\cdots$~~20
+\item[]参考文献 \hfill $\cdots\cdots$~~21
+\item[]付録 \hfill $\cdots\cdots$~~22
+\end{description}
+%\end{center}
+\newpage 
+
+% 以下、章の名前は各自適当に変えてもよい
+
+\section{はじめに}
+% 研究の背景・動機・目的などを述べる。
+音楽を示す情報が”音”と”名前”に限られているため、
+記憶の音だけを頼りにすると音楽を探し辛かった経験がある。
+そのため、”視覚”情報を追加できると印象を深められると考えた。
+
+\subsection{研究の背景}
+音楽をジャンルとして分類する研究は盛んに行われてきたが\cite{Xiaoli}\cite{Tzanetakis}\cite{Meyers}、
+音楽を中間材料としての単語に対応させてから、画像生成を試みるという研究は確認する限り全く無いものであった。
+
+\subsection{研究の目的}
+% 研究の動機・目的については、上述した背景の下で、
+% 自分がどのような問題意識の下で本研究を行おうとするのか、
+% 研究の目的は何かといったことを記述する。
+本研究では、音楽の持つ情報を機械的に画像に対応させる
+方法を検討し、人間的な感性を伴った対応が実現可能かどうか
+確かめる意味を持つ。つまるところ、機械やプログラムに人間の耳を
+与えるようにしたい。
+
+\subsection{本論文の構成}
+
+% (書き方の例)
+
+% 本論文では、人工知能のアルゴリズムについて研究を行う。
+% 本論文の以下の構成は次のようになっている。
+% 第２章では、本論文で使用する諸概念について述べる。
+% 第３章では、人工知能の探索問題に対して、α-β-γ 法のアルゴリズムを提案し、
+% 第４章では、提案されたアルゴリズムの評価を行う。
+% 最後に、第５章で本論文の結論を述べる。
+% なお、付録として α-β-γ アルゴリズムのプログラムと実行結果を加えた。
+本論文では、音楽から人間にとって適切だと思えるような画像を生成する方法について研究を行う。
+本論文の以下の構成は次のようになっている。
+第２章では、準備として本論文で使用する諸概念について述べる。
+第３章では、音楽から中間表現としてのテキスト情報の対応及び外部の画像生成サイトを用いて生成する方法を提案し、
+第４章では、提案されたアルゴリズムの評価を行う。
+最後に、第５章で本論文の結論を述べる。
+なお、付録として 実行環境Google Colabolatoryでのpythonプログラムと学習データcsvファイル, 学習モデルを加えた。
+
+\newpage 
+\section{準備}  
+
+% この論文で使う概念や用語の定義を説明する。
+\begin{description}
+  \item[特徴量 : ]データの特徴を数値化して、機械学習などの分析で扱えるようにしたもの
+  \item[ニューラルネットワーク(以降NNと称する) : ]人間の脳の神経細胞の働きを模したコンピューターの数理モデル
+  \item[教師有り学習 : ]正解ラベル付きのデータセット（入力featureと出力labelの対応がある）を用いてAIモデルを学習させる機械学習の手法
+  \item[半教師有り学習 : ]少量のラベル付きデータと、大量のラベルなしデータの両方を使用して機械学習モデルを訓練する手法
+\end{description}
+
+\section{本論}
+\subsection{問題提起} 
+
+% 本研究で対象とする問題は何かを説明する。
+
+\subsection{研究の説明} 
+
+% 上記問題に対して、本研究ではどのような手法により、
+% どう問題を解いたのかを説明する。
+
+\section{考察} 
+
+% 本研究について、客観的な評価・考察を行う。
+
+\newpage 
+\section{結論}
+
+% 本研究で何を明らかにしたのか、また、
+% 今後の課題としてどのような問題があるのか、
+% といったことをまとめる。
+
+\newpage 
+\section*{付録}
+
+% プログラムや実行結果など、
+% 本論を補足する上で必要と思われるものがあれば付録としてつける
+% （なければつけなくてよい）。
+
+\newpage 
+%% 参考文献
+
+\begin{thebibliography}{}
+
+\bibitem{中山} 中山 達喜, 吉田 真一 ：音楽分類における特徴量の検討，
+https://www.jstage.jst.go.jp/article/fss/26/0/26\_0\_290/\_article/-char/ja/
+ (2010). 
+
+\bibitem{Xiaoli} Xiaoli Chu : Feature Extraction and Intelligent Text Generation of Digital Music,
+https://pubmed.ncbi.nlm.nih.gov/35845909/
+ (2020).
+
+\bibitem{Tzanetakis} G. Tzanetakis; P. Cook : Musical genre classification of audio signals,
+https://ieeexplore.ieee.org/abstract/document/1021072
+ (2002).
+
+\bibitem{Meyers} Meyers, Owen Craigie : A mood-based music classification and exploration system,
+https://dspace.mit.edu/handle/1721.1/39337
+ (2007).
+
+\bibitem{Ledge} Ledge.ai 編集部 ：教師なし学習とは | 教師あり学習や強化学習との違い・活用事例・代表的なアルゴリズムを紹介，
+https://ledge.ai/articles/unsupervised
+ (2020).
+
+\end{thebibliography}
+
+
+\end{document}

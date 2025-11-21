@@ -1,0 +1,11 @@
+abstract class House{
+	int breadth;
+	int floors;
+	int budget;
+	public House(int num, int num2, int num3) {
+		breadth = num;
+		floors = num2;
+		budget = num3;
+	}
+	abstract String Construction();
+}

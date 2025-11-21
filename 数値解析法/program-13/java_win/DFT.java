@@ -1,0 +1,54 @@
+//
+// 【DFTクラス】
+//
+// 同一ディレクトリ内の Java プログラムからは，オブジェクトを生成することで
+// 利用できます．クラス内メソッドの仕様については，コメントを参照して下さい．
+//
+public class DFT {
+	
+	//
+	// DFT計算メソッド
+	//
+	// 【入力】
+	//   f = サンプリング値
+	//
+	// 【返却値】
+	//   2次元配列（DFT結果を格納．c[j][0]に実部，c[j][1]に虚部を格納）
+	//
+	double[][] calc(double[] f){
+		int j, k, N = f.length;
+		
+		// DFT結果格納配列
+		double[][] c = new double[N][2];
+		
+		// 回転因子角度 2 pi/N
+		double theta = 2 * Math.PI / N;
+		
+		// [演習] DFTメソッドを完成させてください．
+		
+		return(c);
+	}
+	
+	//
+	// IDFT計算メソッド
+	//
+	// 【入力】
+	//   c = DFT格納配列（N行2列配列）
+	//
+	// 【返却値】
+	//   サンプリング値（2次元配列：f[j][0]に実部，f[j][1]に虚部を格納）
+	//
+	double[][] icalc(double[][] c){
+		int j, k, N = c.length;
+		
+		// IDFT結果格納配列
+		double[][] f = new double[N][2];
+		
+		// 回転因子角度 2 pi / N
+		double theta = 2 * Math.PI / N;
+		
+		// [演習] IDFTメソッドを完成させてください．
+		
+		return(f);
+	}
+}

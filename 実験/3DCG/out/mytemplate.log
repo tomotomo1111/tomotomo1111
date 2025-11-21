@@ -1,0 +1,244 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=latex 2023.5.19)  6 NOV 2023 21:24
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**c:/Users/tomotomo/Desktop/c言語/実験/3DCG/mytemplate.tex
+(c:/Users/tomotomo/Desktop/c言語/実験/3DCG/mytemplate.tex
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-05-15> (c:/texlive/2023/texmf-dist/tex/platex/base/jarticle.cls
+
+! LaTeX Error: This file needs format `pLaTeX2e'
+               but this is `LaTeX2e'.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 \NeedsTeXFormat{pLaTeX2e}
+                              
+The current input file will not be processed further,
+because it was written for some other flavor of TeX.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+) (c:/texlive/2023/texmf-dist/tex/latex/ascmac/ascmac.sty
+Package: ascmac 2020/01/15 v2.1 ascmac wrapper (community edition) 
+(c:/texlive/2023/texmf-dist/tex/latex/ascmac/tascmac.sty
+Package: tascmac 2020/01/15 v2.1 ascmac package (community edition) 
+Package tascmac Info: Assuming pdfLaTeX, XeLaTeX or LuaLaTeX on input line 44.
+\scb@x=\box51
+\scscb@x=\box52
+\@bw=\dimen140
+\@nbox=\box53
+\@nbody=\box54
+\@scw=\dimen141
+\ascmac@hoboxa=\box55
+\ascmac@hoboxb=\box56
+\@itemh=\dimen142
+\@iboxpos=\toks16
+\@iboxstr=\box57
+\@bwsp=\box58
+\@@bwsp=\box59
+\@bcal=\count185
+\shaderule=\dimen143
+)) (c:/texlive/2023/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+Excluding comment 'comment') (c:/texlive/2023/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+) (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (c:/texlive/2023/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+(c:/texlive/2023/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (c:/texlive/2023/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: dvipdfmx.def on input line 107.
+(c:/texlive/2023/texmf-dist/tex/latex/graphics-def/dvipdfmx.def
+File: dvipdfmx.def 2022/09/22 v5.0m Graphics/color driver for dvipdfmx
+))
+\Gin@req@height=\dimen144
+\Gin@req@width=\dimen145
+) (c:/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count186
+\lst@gtempboxa=\box60
+\lst@token=\toks18
+\lst@length=\count187
+\lst@currlwidth=\dimen146
+\lst@column=\count188
+\lst@pos=\count189
+\lst@lostspace=\dimen147
+\lst@width=\dimen148
+\lst@newlines=\count190
+\lst@lineno=\count191
+\abovecaptionskip=\skip48
+\belowcaptionskip=\skip49
+\lst@maxwidth=\dimen149
+(c:/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count192
+\lst@skipnumbers=\count193
+\lst@framebox=\box61
+) (c:/texlive/2023/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+(c:/texlive/2023/texmf-dist/tex/latex/jvlisting/jvlisting.sty
+Package: jvlisting 2011/11/17 v0.7 Formatted Program Listings
+\jvl@idt=\count194
+\jvl@tmphyphenchar=\count195
+\jvl@fileinput=\read2
+\listingskipamount=\skip50
+\listingindent=\dimen150
+\prelistingpenalty=\count196
+\listingpenalty=\count197
+\postlistingpenalty=\count198
+) (./jlisting.sty
+Package: jlisting 2006/02/20 0.2 (Thor)
+\lst@nextchar=\count199
+\lst@inputfile=\read3
+! Illegal parameter number in definition of \lstlistingname.
+<to be read again> 
+                   1
+l.158 \def\email#1
+                  {\gdef\@email{\texttt{#1}}}
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \lstlistingname.
+<to be read again> 
+                   1
+l.158 \def\email#1{\gdef\@email{\texttt{#1
+                                          }}}
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \lstlistingname.
+<to be read again> 
+                   1
+l.159 \def\homepage#1
+                     {\gdef\@homepage{\texttt{#1}}}
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \lstlistingname.
+<to be read again> 
+                   1
+l.159 \def\homepage#1{\gdef\@homepage{\texttt{#1
+                                                }}}
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \lstlistingname.
+<to be read again> 
+                   1
+l.160 \def\mac#1
+                {\textsf{#1}}
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \lstlistingname.
+<to be read again> 
+                   1
+l.160 \def\mac#1{\textsf{#1
+                           }}
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \lstlistingname.
+<to be read again> 
+                   1
+l.161 \def\URL#1
+                {\texttt{#1}}
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \lstlistingname.
+<to be read again> 
+                   1
+l.161 \def\URL#1{\texttt{#1
+                           }}
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \lstlistingname.
+<to be read again> 
+                   1
+l.162 \def\src#1
+                {\texttt{#1}}
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \lstlistingname.
+<to be read again> 
+                   1
+l.162 \def\src#1{\texttt{#1
+                           }}
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+! Illegal parameter number in definition of \lstlistingname.
+<to be read again> 
+                   ^^[
+l.193 ^^[$BE>:\$7$^$7$?!#^^[
+                            (B
+You meant to type ## instead of #, right?
+Or maybe a } was forgotten somewhere earlier, and things
+are all screwed up? I'm going to assume that you meant ##.
+
+)
+Runaway definition?
+->^^[$B\def \lstlistlistingname {^^[$B\endinput \documentclass [paper\ETC.
+! File ended while scanning definition of \lstlistingname.
+<inserted text> 
+                }
+l.7 
+    
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+)
+Runaway definition?
+->^^[$B\def \lstlistlistingname {^^[$B\endinput \documentclass [paper\ETC.
+! File ended while scanning definition of \lstlistingname.
+<inserted text> 
+                }
+<*> .../Desktop/c言語/実験/3DCG/mytemplate.tex
+                                                  
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
+! Emergency stop.
+<*> .../Desktop/c言語/実験/3DCG/mytemplate.tex
+                                                  
+*** (job aborted, no legal \end found)
+
+ 
+Here is how much of TeX's memory you used:
+ 2077 strings out of 476098
+ 32865 string characters out of 5795161
+ 1850842 words of memory out of 5000000
+ 22495 multiletter control sequences out of 15000+600000
+ 512383 words of font info for 33 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,0n,62p,321b,263s stack positions out of 10000i,1000n,20000p,200000b,200000s
+No pages of output.

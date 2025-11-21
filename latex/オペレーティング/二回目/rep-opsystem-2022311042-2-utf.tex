@@ -1,0 +1,100 @@
+\documentclass[10pt]{jarticle}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\renewcommand{\lstlistingname}{source}
+\lstset{language=sh,%
+  basicstyle=\footnotesize,%
+	commentstyle=\textit,%
+	classoffset=1,%
+	keywordstyle=\bfseries,%
+	frame=shadowbox,framesep=4pt,%
+	showstringspaces=false%,
+	numbers=left,stepnumber=1,numberstyle=\footnotesize,%
+	numbersep=1zw,%
+	lineskip=-0.5ex,%
+	xleftmargin=2zw,%
+  breaklines=true%
+}%
+
+\newdimen\paperwidth \newdimen\paperheight
+\def\A4size{\paperwidth=210mm \paperheight=297mm}
+\def\centered{%
+  \oddsidemargin=\paperwidth
+  \advance\oddsidemargin-\textwidth
+  \oddsidemargin=0.5\oddsidemargin
+  \advance\oddsidemargin-1in
+  \evensidemargin-\oddsidemargin}
+%
+\textwidth 160mm
+\textheight 230mm
+\topmargin 0mm
+\headheight 0mm
+\footskip 0mm
+\A4size\centered
+
+\title{\framebox{\hspace{4zw}オペレーティングシステム論 レポート2%
+                 \hspace{4zw}}}
+\author{神野　友哉 \\
+        2022311042  \\
+        愛知県立大学 情報科学部 情報科学科}
+\date{2024年1月9日}
+
+
+\begin{document}
+
+\maketitle
+
+\section{はじめに} \label{sec:hajime}
+%
+本レポートでは、食事をする哲学者問題の解法の一つである、Chandy\ /\ Misra\ 法のプログラムを作成し、各哲学者の初期状態を
+様々に変化させて実験する。
+%
+
+\section{作成したプログラムについて} \label{sec:pro}
+%
+プログラム\ref{cms}を作成した。松尾啓志の「オペレーティングシステム(第2版) (情報工学レクチャーシリーズ) 」P\ 62\ の疑似コードを参考にした\cite{ope}。
+また、疑似コードを実際の\ c\ 言語に書き起こす際に、Oracle Help Center のウェブサイトを参考にした\cite{csema}。
+\ 13\ 行目の\ int state[N]={};\ に宣言時代入することで、初期状態を調整した。
+\lstinputlisting[caption=chandy / misra Algorithm, label=cms]{./chandy-misra-sema.c}
+%
+
+\section{実験結果} \label{sec:kekka}
+%
+全員の初期状態を思考中(THINKING)にした場合で実行したところ、
+半日という長時間の試行でも、デッドロックせずに全哲学者が食事をしていた。
+しかし、動作の規則性等を確認したところ、多少の癖が見られた。
+隣り合う哲学者同士が交互に食事をする長期間と、定期的に規則性なく異なった哲学者が食事をする短期間が確認され、
+前者の隙間に後者が存在しているようであった。例として、哲学者\ 3\ 、\ 4\ が交互に食事をし合った後に、哲学者\ 3, 1, 4, 0, 2, 4, 1, 0, 3, 1...\ 
+のように食事をした後、また哲学者\ 0\ 、\ 3\ が交互に食事をするといった様子である。
+また、全員の初期状態を食事中(EATING)にした場合や、空腹中(HUNGRY)、哲学者\ 2\ のみ食事中(EATING)でそれ以外は空腹中(HUNGRY)とした場合も、
+それぞれ\ 10分\ 試行したが同様にデッドロックしなかった。念のためそれぞれのシチュエーションで複数回試行している。
+
+%
+
+\section{考察} \label{sec:kosatu}
+%
+長時間放置しても、すべての哲学者が食事を得られていることや、各初期状態でその目的が達成されていたことを考慮すると、Chandy\ /\ Misra\ 法のプログラムとして、
+作成できたと考えられる。また、この解法において、特定の二人の哲学者が交互に食事中宣言をする原因として、
+隣り合わない哲学者の二人が同時に食事をし合うか、隣り合う哲学者の二人がフォークを渡しあって交互に食事をしていると考えられる。
+また、プログラム自体は簡素であり、かつ、哲学者の人数等の拡張性や新しい状態を追加する余地も備えているため、コードとしてよいプログラムであると考えられる。
+%
+
+\section{感想} \label{sec:kanso}
+%
+正直なところ、初期状態が動作に与える影響を見つけようと、血眼になって\ PowerShell\ を観察したが、いまいち違いが判らなかったため、とても残念だった。
+集計プログラムを作ってみたが、やはりよく判らなかった為、敢えて書かない判断とした。
+%
+
+\begin{thebibliography}{1}
+  \bibitem{ope}
+  松尾啓志. 『オペレーティングシステム(第2版) (情報工学レクチャーシリーズ)』. 第二版. ページ 62. (参照 2024-1-15).
+  \bibitem{csema}
+  Oracle Help Center. "セマフォ (マルチスレッドのプログラミング)". Oracle Help Center. 2010. \\
+    \url{https://docs.oracle.com/cd/E19455-01/806-2732/6jbu8v6os/index.html}, (参照 2024-1-15).
+\end{thebibliography}
+\end{document}

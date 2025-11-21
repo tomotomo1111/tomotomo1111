@@ -1,0 +1,314 @@
+\documentclass{jarticle}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{listings}
+
+\renewcommand{\lstlistingname}{プログラムリスト}
+\lstset{language=C,%
+        basicstyle=\footnotesize,%
+        commentstyle=\textit,%
+        classoffset=1,%
+        keywordstyle=\bfseries,%
+        frame=shadowbox,framesep=4pt,%
+        showstringspaces=false,%
+        numbers=left,stepnumber=1,numberstyle=\footnotesize%
+        }%
+
+\makeatletter
+\long\def\@makecaption#1#2{
+ \vskip 10pt 
+ \belowcaptionskip 1mm
+ \setbox\@tempboxa\hbox{{#1}\ { #2}}
+ \ifdim \wd\@tempboxa >\hsize \unhbox\@tempboxa\par \else \hbox
+to\hsize{\hfil\box\@tempboxa\hfil} 
+ \fi
+ \vskip\belowcaptionskip}
+%
+\def\ps@linehead{%
+  \let\@mkboth=\@gobbletwo
+  \def\@oddfoot{}\def\@evenfoot{}%
+  \def\@oddhead{%
+    \underline{\makebox[\textwidth]{\rightmark \hfill\ \thepage}}}%
+  \def\@evenhead{%
+    \underline{\makebox[\textwidth]{\thepage \hfill\ \leftmark}}}}
+%
+\makeatother
+
+\pagestyle{myheadings}
+\newdimen\paperwidth \newdimen\paperheight
+\def\A4size{\paperwidth=210mm \paperheight=297mm}
+\def\centered{%
+  \oddsidemargin=\paperwidth
+  \advance\oddsidemargin-\textwidth
+  \oddsidemargin=0.5\oddsidemargin
+  \advance\oddsidemargin-1in
+  \evensidemargin-\oddsidemargin}
+
+\textwidth 160mm
+\textheight 240mm
+\topmargin -5mm
+\headheight 0mm
+\headsep 15mm
+
+
+\A4size\centered
+
+\begin{document}
+
+\vfill
+\begin{screen}
+\begin{center}
+\huge\bf シミュレーション科学に関する演習課題\\
+\vspace{5mm}
+\large\bf
+学籍番号　2022311042 \quad 名前 神野友哉\\
+\today
+\end{center}
+\end{screen}
+\thispagestyle{empty}
+
+%
+\section{課題「常微分方程式の数値解法」}
+\subsection{課題内容}
+次の常微分方程式をEuler法及び改良Euler法で解き，計算結果と解析解との誤差を表としてまとめること．
+ただし，刻み幅を$h=0.1$とし，$x=0.3$まで計算すること．
+$$
+\left\{ \begin{array}{ccl}\displaystyle
+                \frac{dy}{dx} & = & -y \\
+                y(0)& = & 1 ~~~~~~~(x(0)=0)
+        \end{array}
+\right.
+$$
+
+\begin{screen}
+\underline{\bf Euler法のアルゴリズム}
+$$
+\begin{array}{l}
+\mbox{\tt while}~~(~ x \mbox{\tt <=} x_n ~) \{ \\
+~~~~x_{i+1} = x_{i} + h \\
+~~~~y_{i+1} = y_{i} + h f(x_i,y_i) \\
+   \}
+\end{array}
+$$
+\end{screen}
+
+\begin{screen}
+\underline{\bf 改良Euler法のアルゴリズム}
+$$
+\begin{array}{l}
+\mbox{\tt while}~~(~ x \mbox{\tt <=} x_n ~) \{ \\
+~~~~x_{i+1} = x_{i} + h \\
+~~~~k_1 = h f(x_i,y_i) \\
+~~~~k_2 = h f(x_i+h,y_i+k_1) \\
+~~~~y_{i+1} = y_{i} + (k_1 + k_2) / 2\\
+   \}
+\end{array}
+$$
+\end{screen}
+
+\newpage
+\subsection{結果}
+\subsubsection{Euler法の場合}
+\begin{tabular}{|c|l|l|}
+\hline
+$x$ &  \multicolumn{1}{|c|}{$y$} & \multicolumn{1}{c|}{error} \\ \hline
+$x_1=0.1$ & $y_1 = 1.0  - 0.1\times 1.0  = 0.9   $ & $0.0048374135117848$ \\ \hline
+$x_2=0.2$ & $y_2 = 0.9  - 0.1\times 0.9  = 0.81  $ & $0.0087307448906851$ \\ \hline
+$x_3=0.3$ & $y_3 = 0.81 - 0.1\times 0.81 = 0.729 $ & $0.0118182095694323$ \\ \hline
+\end{tabular}
+
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth,clip]{screenShoot1.png}
+  \end{center}
+  \caption[short]{ScreenShoot 1}
+\end{figure}
+
+\newpage
+\subsubsection{改良Euler法の場合}
+\begin{tabular}{|c|l|l|}
+\hline
+$x$ &  \multicolumn{1}{|c|}{$y$} & \multicolumn{1}{c|}{error} \\ \hline
+$x_1=0.1$ & $y_1 = 1.0  + ((-0.1) + (-0.09))/2  = 0.905   $ & $-0.0001625864882152$ \\ \hline
+$x_2=0.2$ & $y_2 = 0.905  + ((-0.0905) + (-0.08045))/2 = 0.819525  $ & $-0.0007942551093149$ \\ \hline
+$x_3=0.3$ & $y_3 = 0.819525  + ((-0.0819525) + (-0.07365725))/2 = 0.741720125$ & $-0.0009019154305677$ \\ \hline
+\end{tabular}
+
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth,clip]{screenShoot2.png}
+  \end{center}
+  \caption[short]{ScreenShoot 2}
+\end{figure}
+
+\newpage
+\subsection{感想・コメント}
+javaにてEuler法と改良Euler法に基づくプラグラムを組み、
+解析の結果を求めました。左の式は手作業です。
+errorの部分は、h=0.0000001とした解析の結果から、
+左の式yを引いた値です。xに微小の正の値を足すたびに、
+丸め込み誤差が蓄積していたのか分かりませんが、
+厳密には0.1, 0.2, 0.3とは異なってしまいました。
+また、改良Euler方を用いた場合は、誤差の値の絶対値が小さくなった代わりに、負の値になってしまいました。
+
+\newpage
+\section{選択課題「Lotka-Volterraの常微分方程式」}
+\subsection{課題内容}
+捕食者(predator)の数を$x$，被食者(prey)の数を$y$とする．捕食者は被食者を食べて生きている．仮に被食者が
+全くいなくなったら，捕食者は一定の割合で死滅していくと考えられる．
+$$
+\frac{dx}{dt}=-a_1x
+$$
+次に，仮に捕食者が全くいなかった場合，被食者は一定の割合で増殖すると考えられる．
+$$
+\frac{dy}{dt}=a_2y
+$$
+実際には両者は共存する．捕食者は被食者を食べるが，完全には食べつくさないので，
+捕食者自身も死滅することはない．被食者が$y$だけいるとき，捕食者の変化率の式は
+次のようになると考えられる．
+$$
+\frac{dx}{dt}=-(a_1 - b_1y)x
+$$
+被食者が$y$だけいると，捕食者の死滅の割合が$a_1$から$a_1-b_1y$に減り，
+ゆっくりと捕食者が死滅していくことになる．$y$が十分大きいと，むしろ捕食者は増殖する．
+同様に捕食者の存在が被食者に与える影響を考えると，被食者の変化率は次のようになる．
+$$
+\frac{dy}{dt}=(a_2-b_2x)y
+$$
+
+
+\begin{enumerate}
+\def\labelenumi{\theenumi)}
+\def\theenumi{\arabic{enumi}}
+\item Lotka-Volterraの微分方程式をEuler法，改良Euler法で解くMatlabスクリプト(ltkvolterra.m)を実行する．
+Euler法で精度良く計算させるためには，刻み幅をどのように設定すれば良いか．
+% LaTeXファイルと同じディレクトリに ltkvolterra.m がある場合のスクリプト挿入
+%\lstinputlisting[caption=ltkvolterra.m]{./ltkvolterra.m}
+%
+\item Lotka-Volterraの微分方程式をMatlabのODEを使って解くMatlabスクリプト(lotkavolterraode.m)を実行する．
+MatlabではどのようなODE解法が標準で用意されているかを調べよ．
+%\lstinputlisting[caption=lotkavolterraode.m]{./lotkavolterraode.m}
+\end{enumerate}
+
+\subsection{結果}
+
+% epsファイルの指定
+% \begin{figure}[hbt]
+%  \begin{center}
+%   \includegraphics[width=0.8\textwidth,clip]{volterraeuler.eps}
+%  \end{center}
+%  \end{figure}
+
+\subsection{感想・コメント}
+\newpage
+\section{選択課題「噂の拡散モデルのシミュレーション」}
+\subsection{課題内容}
+集団の総人口を$N$，時刻$t$の時にその噂を耳にした人の数を$y(t)$，
+まだ噂を耳にしていない人の数を$x(t)$とすると，次が成り立つ．
+$$
+x(t)+y(t)=N
+$$
+ここで，噂の拡がり具合（拡散率）は
+「噂を耳にした人が耳にしていない人との接触回数に比例する」
+と仮定する．この接触回数を
+$$
+kx(t)y(t) \mbox{~~} (0<k<1)
+$$
+とおく．すると，噂の拡散率を表す微分方程式が得られる．
+$$
+\frac{dy(t)}{dt}=kx(t)y(t)=k(N-y(t))y(t)
+$$
+総人口を$1000$人，$y$の初期値を$1, 500, 800$としてMatlabを使ってシミュレーションを行い，
+初期値によって噂がどのように拡散していくかを調べ，結果を考察せよ．
+また，パラメータを変化させた
+場合のシミュレーションを行い，結果を分析・考察せよ．
+
+\newpage
+\subsection{結果}
+
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth,clip]{Figure_1.png}
+  \end{center}
+  \caption[short]{図1 初期値1 拡散率0.01}
+\end{figure}
+
+\newpage
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth,clip]{Figure_2.png}
+  \end{center}
+  \caption[short]{図2 初期値500 拡散率0.01}
+\end{figure}
+
+\newpage
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth,clip]{Figure_3.png}
+  \end{center}
+  \caption[short]{図3 初期値800 拡散率0.01}
+\end{figure}
+
+\newpage
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth,clip]{Figure_4.png}
+  \end{center}
+  \caption[short]{図4 初期値10 拡散率0.20}
+\end{figure}
+
+\newpage
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.8\textwidth,clip]{Figure_5.png}
+  \end{center}
+  \caption[short]{図5 初期値500 拡散率0.003}
+\end{figure}
+
+\newpage
+\subsection{感想・コメント}
+シミュレーションした結果、噂の拡大の要因として、
+"最初に噂を知っている人の数"と"知っている人から知らない人へ噂を伝達する機会を得られる確率"
+の両方が高いほうが好ましいと解かった。(今後前者を初期値、後者を拡散率と呼称する)しかし図4では、
+図2に比べて50分の1という極端に低い初期値でありながら、
+図2の20倍の拡散率によって、図2よりも極端に増加している。更に、図2と図5との比較においても、
+両方とも同じ初期値であるので、拡散率が多少の差に見えても、グラフの傾きに無視できない
+影響を与えることが見て取れる。よって、初期値と拡散率では、
+拡散率の方がグラフの増加に与える影響が大きいと考えられる。
+
+\newpage
+\section{選択課題「噂の拡散モデルのシミュレーション」}
+\subsection{課題内容}
+Izhikevich(2003)は，単一ニューロンの挙動を数学的に解析し，
+次の微分方程式で記述される神経細胞モデルを提案している．
+このモデルはニューロンの多彩な挙動を再現できる点が特徴である．
+%     
+\begin{eqnarray}
+\frac{dv}{dt} &=& 0.04 v^2 +5v + 140 -u + I \nonumber \\
+\frac{du}{dt} &=& a(bv-u) \nonumber \\
+&& \mbox{if~} v\geq 30\mbox{mV, then} 
+  \left\{ 
+	\begin{array}{rcl}
+	v & \leftarrow  & c \\
+	u & \leftarrow & u+d 
+	\end{array}  \nonumber
+   \right.
+\end{eqnarray}
+%
+ここで$v$は膜電位，$u$は膜電位の回復変数，$I$は外部からの刺激電流である．
+このモデルのシミュレーションをMatlab上で行え．
+次の4種類のパラメータセットを使った場合のモデルの振る舞いを解析せよ．
+刺激電流$I$は$10[nA]$を基準に複数の種類を試すこと．
+\begin{enumerate}
+  \item $[a, b, c, d ] = [0.02, 0.2, -65.0, 8.0]$
+  \item $[a, b, c, d ] = [0.02, 0.2, -55.0, 4.0]$
+  \item $[a, b, c, d ] = [0.02, 0.2, -50.0, 2.0]$
+  \item $[a, b, c, d ] = [0.10, 0.2, -65.0, 2.0]$
+\end{enumerate}　
+%使用したスクリプトファイルの指定
+%\lstinputlisting[caption=Izhikevich2003.m]{./Izhikevich2003.m}
+
+\subsection{結果}
+
+\subsection{感想・コメント}
+\end{document}

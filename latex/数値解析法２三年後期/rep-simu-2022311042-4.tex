@@ -1,0 +1,574 @@
+\documentclass[10pt]{jarticle}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{comment}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\renewcommand{\lstlistingname}{source}
+\lstset{
+	language=sh,%
+  basicstyle=\footnotesize,%
+	commentstyle=\textit,%
+	classoffset=1,%
+	keywordstyle=\bfseries,%
+	frame=shadowbox,framesep=4pt,%
+	showstringspaces=false%,
+	numbers=left,stepnumber=1,numberstyle=\footnotesize,%
+	numbersep=1zw,%
+	lineskip=-0.5ex,%
+	xleftmargin=2zw%
+}%
+
+\newdimen\paperwidth \newdimen\paperheight
+\def\A4size{\paperwidth=210mm \paperheight=297mm}
+\def\centered{%
+  \oddsidemargin=\paperwidth
+  \advance\oddsidemargin-\textwidth
+  \oddsidemargin=0.5\oddsidemargin
+  \advance\oddsidemargin-1in
+  \evensidemargin-\oddsidemargin}
+%
+\textwidth 160mm
+\textheight 230mm
+\topmargin 0mm
+\headheight 0mm
+\footskip 0mm
+\A4size\centered
+
+\title{\framebox{\hspace{4zw}シミュレーション レポート4%
+                 \hspace{4zw}}}
+\author{神野 友哉 \\
+        2022311042  \\
+        愛知県立大学 情報科学部 情報科学科 \\}
+\date{2024年5月15日}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+\section{実験項目 1 }
+各変数\ (m、h、n)\ の初期値は、 $ V = -65[mV] $とした際の定常状態の値を設定する。時刻$ 100[ms] $までシミュレーションして初期値を求めよ、
+得られた初期値をそれぞれの Integrator の初期条件に入力する。
+
+\subsection{概要}
+%
+目的通りに、シミュレーションによって定常状態の出力値を求められたため、
+それを\ Integrator\ に初期状態として与えることが可能となった。また、常微分方程式の
+解法より、シミュレーションを用いない方法で、定常状態の値を桁切り捨て込みで、
+ある程度の精度($ 誤差 O(e^{-4}) $)で求める方法を確認できた。
+余談だが、ブロック線図の構築や式の理解を深めることが十分できたと考えられ、この実験のペースは堅調であった。
+%
+
+\subsection{目的}
+%
+定常状態の値を初期状態に与えれば、経過の余分な推移を避けられると考えられるため。
+%
+
+\subsection{方法}
+%
+\begin{itemize}[left=0pt]
+	\setlength{\leftskip}{1.5cm}
+	\item[手順1 ] \ step\ を置き、\ -65\ を入れる。縦並びに\ 40、\ 65、\ 65、\ 35、\ 55、\ 65\ と入力した\ constant\ を配置し、その出力を入力としてとるように各々\ add\ 
+		に繋ぐ。それらの\ add\ もう一方の入力は、先ほどの\ step\ の出力を分岐させて接続する。
+	\item[手順2 ] 一番上、\ 40\ の\ add\ の出力に、\ -0.1\ の\ gain\ を繋ぎ、その出力を分岐させる。一方を\ exp\ へ繋ぎ、
+		\ sum\ と\ constant\ を用いて\ 1\ を引く。
+		もう一方を\ divide\ の$ \times $に繋ぎ、\ exp\ 側に分岐した線の最後尾を$ \div $に繋ぐ。
+	\item[手順3 ] 手順\ 2\ の\ divide\ の先に図\ref{fig:kkadai112}を作成する。この時、手順\ 2\ の出力は、
+		図\ref{fig:kkadai112}の上側の入力とする。また、\ Integrator\ には\ 0\ と入れる。
+	\item[手順4 ] 縦並び\ constant \ の上から\ 2\ 番目\ 65\ の\ add\ の先に\ divide\ を置き、\ divide\ は$ \times $に繋ぎ、
+		\ -18\ を入れた\ constant\ の出力は$ \div $に繋ぐ。その出力を\ exp\ に繋ぎ、さらに\ 4\ の\ gain\ に繋ぎ、
+		手順\ 3\ の図\ref{fig:kkadai112}の下側の入力とする。
+	\item[手順5 ] 手順\ 4\ と同様に、上から\ 3\ 番目\ 65\ の\ add\ の先を作成する。異なるのは、途中の\ constant\ が\ -20\ であることと、\ gain\ 
+		が\ 0.07\ であることである。また、手順\ 3\ と同様に、その出力の先に図\ref{fig:kkadai112}を作成し、それを上側の入力に接続する。
+	\item[手順6 ] 上から\ 4\ 番目\ 35\ の\ add\ の先に\ -0.1\ の\ gain\ を置き、接続した上で、\ exp\ の入力に繋ぐ。
+		その出力を\ sum\ と\ constant\ を用いて\ 1\ を足し、$ \times $に\ 1\ が入る\ divide\ の$ \div $に繋ぎ逆数にする。
+		その出力を、手順\ 5\ の図\ref{fig:kkadai112}の下側の入力とする。
+	\item[手順7 ] 上から\ 5\ 番目\ 55\ の\ add\ の先を作成する。手順\ 2\ と同様であるが、もう一方～の\ divide\ の$ \times $
+		入力に接続する線の間に、\ 0.1\ の\ gain\ を置く点で異なる。その\ divide\ の出力は手順\ 3\ と同様に図\ref{fig:kkadai112}を作成する。
+		そして、上側の入力に接続する。
+	\item[手順8 ] 一番下、上から\ 6\ 番目\ 65\ の\ add\ の先を作成する。手順\ 4\ と同様であるが、\ constant\ に\ -80\ 、\ gain\ 
+		に\ 0.125\ を入れ、\ gain\ の出力を手順\ 7\ の図\ref{fig:kkadai112}の下側の入力とする。
+	\item[手順9 ] \ display\ を\ 3\ つ置き、\ Integrator\ の出力にそれぞれ対応させる。図の\ scope\ 、\ display\ が上から、\ m、\ h、\ n\ に対応している。
+		また、\ scope\ も\ 3\ つ、それぞれの\ Integrator\ の線を分岐させて接続する。
+		そして、終了時間を\ 100\ に設定し、実行する。
+\end{itemize}
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{kkadai11(2).png}
+	\end{center}
+	\caption{積分器部分}
+	\label{fig:kkadai112}
+\end{figure}
+以下の図\ref{fig:kkadai111}のような、ブロック線図が作成されるはずである。
+\clearpage
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{kkadai11(1).png}
+	\end{center}
+	\caption{作成したブロック線図}
+	\label{fig:kkadai111}
+\end{figure}
+さらに、下図\ref{fig:kkadai116}はHodgkin-Huxleyモデル全体のブロック線図である。求めた初期値をこれらの\ Integrator\
+に入れる。この図\ref{fig:kkadai116}の通りに改造する。詳しくは実験項目\ 2\ の方法部分で作成過程を書いている。
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{kkadai11(6).png}
+	\end{center}
+	\caption{モデル全体ブロック線図}
+	\label{fig:kkadai116}
+\end{figure}
+%
+
+\subsection{結果}
+%
+図\ref{fig:kkadai111}を実際に実行した結果、\ display\ から、\ m、\ h、\ n\ が
+それぞれ、\ 0.0529、\ 0.5961、\ 0.3177\ となったと判った。
+また、図\ref{fig:kkadai113}、図\ref{fig:kkadai114}、図\ref{fig:kkadai115}は、\ m、\ h、\ n\ が上記値に収束していることを示している。
+\clearpage
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[height=0.33\textheight]{kkadai11(3u).png}
+	\end{center}
+	\caption{ m の収束過程}
+	\label{fig:kkadai113}
+\end{figure}
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[height=0.33\textheight]{kkadai11(4c).png}
+	\end{center}
+	\caption{ h の収束過程}
+	\label{fig:kkadai114}
+\end{figure}
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[height=0.33\textheight]{kkadai11(5d).png}
+	\end{center}
+	\caption{ n の収束過程}
+	\label{fig:kkadai115}
+\end{figure}
+また、図\ref{fig:kkadai116}の\ Integrator\ に\ m、\ h、\ n\ の各値を入れた。
+%
+
+\clearpage
+\subsection{考察}
+%
+図\ref{fig:kkadai113}、図\ref{fig:kkadai114}、図\ref{fig:kkadai115}から、このブロック線図によるシミュレーションが
+特定の値に収束させていることは自明であり、ブロック線図自体が数学的な式の組み合わせによってのみ成り立っている。そのため、
+図\ref{fig:kkadai112}の積分器\ Integrator\ ループ部分の値が常微分方程式の解を求めるには、$ t $について積分し、$ m $
+等について解くと求まると考えられる。具体的には、
+\begin{eqnarray}
+	\frac{dm}{dt} &=& \alpha_{m} (1 - m) - \beta_{m} m \\
+	\frac{dm}{dt} &=& \alpha_{m} - (\alpha_{m} + \beta_{m}) m \\
+	m &=& \{\alpha_{m} - (\alpha_{m} + \beta_{m}) m \} t \\ 
+	(1 + (\alpha_{m} + \beta_{m}) t ) m &=& \alpha_{m} t \\
+	m &=& \frac{\alpha_{m} t}{1 + (\alpha_{m} + \beta_{m}) t } \\ 
+	ここで、V = -65 を \alpha_{m}、\beta_{m} の式に代入すると、\\
+	\alpha_{m} &=& \frac{-0.1 (-65 + 40)}{e^{\frac{- (-65 + 40)}{10}} - 1} \\
+	&=& \frac{2.5}{e^{2.5} - 1} \simeq 0.223563 \\
+	\beta_{m} &=& 4 e^{- \frac{-65 + 65}{20}} \simeq 4 \\
+	よって、 m &=& \frac{0.223563t}{1 + 4.223563t} \\
+	t = 100(終了時間)とすると、m &=& \frac{22.3563}{1 + 422.3563} \simeq 0.052807 \\
+	t = 1000(終了時間)とすると、m &=& \frac{223.563}{1 + 4223.563} \simeq 0.052919
+\end{eqnarray}
+$ t = 100 $の際の$ m $の誤差が$ e^-4 $の桁で存在していることから、計算上の切り下げや機械的な丸め誤差で数値解析的な解とシミュレーションに
+違いが生じていると考えられる。しかし、十分な精度ではあるとも考えられるのではないか。また、この方法で同様に\ h、\ n\ も求められる。
+\begin{itemize}
+	\setlength{\leftskip}{5.5cm}
+	\item[● 初期値を理論的に求める方法] 求めたいパラメータ(便宜上$ \lambda $とする)の常微分方程式を\ t\ について積分し、$ \lambda $に
+		ついて解く。また、\ V\ を$ \alpha_{\lambda}、\beta_{\lambda} $に代入した値を可能な限り正確に出す。
+		それを先ほどの式に代入し、終了時間として与える\ t\ も代入した値を極力正確に出す。そうして、$ \lambda $の正確な値が求まる。
+\end{itemize}
+%
+
+\subsection{感想}
+%
+ブロック線図を作成するために掛けた時間は、確認込みで\ 40\ 分程度で、資料のブロック線図を\ step\ の部分を除いて見ずに作成したため、
+今までの実験を通して\ matlab\ の\ simulink\ の理解度が高まっていると感じた。
+%
+
+\section{実験項目 2 }
+入力刺激電流$ I_{ext} $が時刻$ 2[ms] $において、$ 0[\mu A / cm^2] $から$ 5[\mu A / cm^2] $に$ 2[ms] $間、パルス状に変化した場合の
+膜電位変化、各イオン電流、各コンダクタンス変化を観測、プロットせよ。なお、入力刺激用のパルスはステップ関数を\ 2\ つ組み合わせて生成し、意図した形状に
+なっていることを確認せよ。
+
+\subsection{概要}
+%
+実験項目\ 1\ の図\ref{fig:kkadai116}を用いて実験した。資料に載っていたグラフと概ね同様な結果となったため、シミュレーションとして
+正当性のあるブロック線図が構築できたと結論付けた。また、入力刺激用のパルス信号は意図したものとなっていたことも確認できた。
+%
+
+\subsection{目的}
+%
+モデル全体で各イオン電流や各コンダクタンスが全体の膜電位変化に対し、どのように変化するのか観察し考察する。
+%
+
+\subsection{方法}
+%
+\begin{itemize}
+	\setlength{\leftskip}{1.5cm}
+	\item[手順1 ] 図\ref{fig:kkadai111}の\ step\ を消す。
+	\item[手順2 ] \ m\ に対応する\ Integrator\ の線を分岐し、\ pow\ の\ u\ に接続、一方\ v\ には
+		\ 3\ の\ constant\ の出力を入力する。入力\ 4\ の\ product\ を配置し、その入力に\ m\ の\ pow\ の出力、
+		\ h\ 、\ 120\ の\ constant\ の出力、\ 50\ の\ constant\ を入力に取った\ add\ の出力を繋ぐ。手順\ 1\ と手順\ 2\ の
+		\ add\ の片方入力はいづれ\ V\ を繋ぐために保留している。この\ V\ に繋ぐ側にはマイナスを設定する。
+	\item[手順3 ] 手順\ 2\ と同様に\ n\ の先を作る。この際に、入力\ 3\ の\ product\ で
+		\ pow\ の\ v\ には\ 4\ の\ constant\ 、\ 36\ の\ constant\ 、
+		\ add\ の入力には\ -77\ の\ constant\ である点で異なっている。
+	\item[手順4 ] \ -54.4\ の\ constant\ を入力に取った\ add\ を置き、手順\ 2\ 、手順\ 3\ 同様、もう一方の入力にマイナス
+		を設定し\ V\ を繋げるよう保留する。その\ add\ の出力に\ 0.3\ の\ gain\ を繋ぎ、手順\ 2\ 、手順\ 3\ 、手順\ 4\ の出力を
+		入力\ 3\ の\ add\ に繋ぐ。
+	\item[手順5 ] \ step\ を手順\ 4\ の近くに\ 2\ つ置き、プラスマイナス入力の\ sum\ も置く。
+		両方の\ step\ で初期値\ 0\ 、最終地\ 5\ とし、\ sum\ プラス側のステップ時間を\ 2\ マイナス側を\ 4\ とする。
+		\ sum\ の線を分岐し\ scope\ に繋ぐ。
+	\item[手順6 ] 手順\ 5\ の\ sum\ の出力の先にプラスマイナスの\ add\ を置き、プラスに繋ぐ。手順\ 4\ の出力はマイナスに繋ぐ。
+		その\ add\ の出力を\ Integrator\ に繋ぎ、初期状態に\ -65\ を入れる。この出力の線を全ての保留した入力に分岐させて繋ぐ。
+	\item[手順7 ] 手順\ 2\ 、手順\ 3\	の\ product\ の出力を分岐させて入力\ 2\ の\ Mux\ に繋ぎ、その出力を\ scope\ に繋ぐ。
+	\item[手順8 ] 手順\ 2\ 、手順\ 3\	の保留させた入力に繋いだ線以外を分岐させそれぞれ入力\ 3\ 、\ 2\ の\ product\ の入力として
+		繋ぎ、それらの\ product\ の出力を入力\ 2\ の\ Mux\ に繋ぎ、その出力を\ scope\ に繋ぐ。
+	\item[手順9 ]	\ V\ の\ Integrator\ の線を分岐し\ scope\ に繋ぐ。そして終了時間を\ 30\ として実行する。
+\end{itemize}
+完成したブロック線図が\ref{fig:kkadai116}である。
+%
+
+\subsection{結果}
+%
+実行した結果、\ step\ による時刻\ t\ に対する入力刺激用のパルス信号の図\ref{fig:kkadai124}、
+時膜電位変化が図\ref{fig:kkadai122}、各イオン電流変化が図\ref{fig:kkadai121}、
+各コンダクタンス変化が図\ref{fig:kkadai123}となった。黄色がナトリウム、青がカリウムのそれである。
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{kkadai12(4).png}
+	\end{center}
+	\caption{入力刺激用のパルス}
+	\label{fig:kkadai124}
+\end{figure}
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{kkadai12(2).png}
+	\end{center}
+	\caption{膜電位変化}
+	\label{fig:kkadai122}
+\end{figure}
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{kkadai12(1).png}
+	\end{center}
+	\caption{イオン電流変化}
+	\label{fig:kkadai121}
+\end{figure}
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{kkadai12(3).png}
+	\end{center}
+	\caption{コンダクタンス変化}
+	\label{fig:kkadai123}
+\end{figure}
+%
+
+\clearpage
+\subsection{考察}
+%
+図\ref{fig:kkadai124}のステップに対し、少し遅れて図\ref{fig:kkadai122}のように膜電位変化が起きていることが判る。
+それは、\ Integrator\ の性質から、\ t\ に対する\ I\ の曲線と微小な積分区間、\ t\ 軸で囲まれた領域の面積が積分結果として
+出て微小区間が動くことで領域が推移すること。これが直ちに反応するわけではない理由と考えられるのではないか。
+余談だが、その面積の求める方法も数値解析的な近似であり、オイラー法に比べて精度が高いルンゲクッタ法の一種である。
+%
+
+\subsection{感想}
+%
+神経細胞が電荷をもつイオンの領域当たりの数によって信号を伝えていること自体は、トリカブト毒やふぐ毒の薬理作用からある程度理解していた
+つもりではあるが、やはり猛毒なんだなと感じた。また、サリン等の神経毒は、この神経細胞間の化学的な信号伝達部分に作用する
+ことで、神経を麻痺させるという。神経毒を受けた人間の神経系のパルス信号がどのようなのか気になった。
+%
+
+\section{実験項目 3 }
+最大コンダクタンスの値$ ( \overline{g_{Na}}, \overline{g_{K}} ) $を$ \pm 20 \% $の範囲内で種々変化させた場合、パルス状の刺激に対する応答にどのような変化が
+現れるかを観測せよ。応答の違いがわかるように、シミュレーション結果を重ね描きすること。
+
+\subsection{概要}
+%
+実験項目\ 2\ で作成したブロック線図を用いて、様々に$ ( \overline{g_{Na}}, \overline{g_{K}} ) $を変化させたシミュレーションを行い、重ね描きした
+図から、$ ( \overline{g_{Na}}, \overline{g_{K}} ) $の関係性及び、それに伴うシミュレーション結果への影響を考察することが出来た。
+%
+
+\subsection{目的}
+%
+$ ( \overline{g_{Na}}, \overline{g_{K}} ) $とシミュレーションの結果の関係性を考察するための材料を得る。
+%
+
+\subsection{方法}
+%
+図\ref{fig:kkadai116}の\ 120\ 、\ 36\ と入れた\ constant\ を前者\ 96、\ 120、\ 144\ 、後者\ 28.8、\ 36、\ 43.2\ 
+のいづれかを取り、計\ 9\ 通りのシミュレーションを行う。この際に、\ V\ の線を分岐し、\ simout\ でデータを出力し、\ matlab\ 
+プログラムで重ね描き\ plot\ する。
+各々実行後に、\ matlab\ プログラムのコード\ref{source1}を実行し、\ dat\ ファイルを作成する。
+全て終わり次第、コード\ref{source2}を実行し、重ね描き\ plot\ された\ pdf\ を作成する。
+\clearpage
+\lstinputlisting[caption=datファイル化コード,label=source1]{./MATLAB/outputer3.m}
+\lstinputlisting[caption=重ね描きpdf作成コード,label=source2]{./MATLAB/outputer6.m}
+%
+
+\subsection{結果}
+%
+結果は図\ref{fig:kkadai139}となった。判りづらいので、$ ( \overline{g_{Na}}, \overline{g_{K}} ) $を固定し\ 3\ 通りのシミュレーション結果を
+重ね書きした図を作成した。図\ref{fig:kkadai13gna}は$ \overline{g_{Na}} $、図\ref{fig:kkadai13gk}は$ \overline{g_{K}} $について、
+それぞれ先述の値に固定した図である。
+\clearpage
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=\textwidth]{kkadai13(9).pdf}
+	\end{center}
+	\caption{ 9 通りのシミュレーション結果の重ね描き}
+	\label{fig:kkadai139}
+\end{figure}
+
+\begin{figure}[htbp]
+	\begin{minipage}{0.33\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{kkadai13(2).pdf}
+		\end{center}
+		\caption{$ g_{Na} = 96$}
+		\label{fig:kkadai132}
+	\end{minipage}
+	\begin{minipage}{0.33\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{kkadai13(3).pdf}
+		\end{center}
+		\caption{$ g_{Na} = 120$}
+		\label{fig:kkadai133}
+	\end{minipage}
+	\begin{minipage}{0.33\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{kkadai13(4).pdf}
+		\end{center}
+		\caption{$ g_{Na} = 144$}
+		\label{fig:kkadai134}
+	\end{minipage}
+	\caption{$ g_{Na}に注目した図$}
+	\label{fig:kkadai13gna}
+\end{figure}
+\begin{figure}[htbp]
+	\begin{minipage}{0.33\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{kkadai13(5).pdf}
+		\end{center}
+		\caption{$ g_{K} = 28.8$}
+		\label{fig:kkadai135}
+	\end{minipage}
+	\begin{minipage}{0.33\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{kkadai13(6).pdf}
+		\end{center}
+		\caption{$ g_{K} = 36$}
+		\label{fig:kkadai136}
+	\end{minipage}
+	\begin{minipage}{0.33\textwidth}
+		\begin{center}
+			\includegraphics[width=\textwidth]{kkadai13(7).pdf}
+		\end{center}
+		\caption{$ g_{K} = 43.2$}
+		\label{fig:kkadai137}
+	\end{minipage}
+	\caption{$ g_{K}に注目した図$}
+	\label{fig:kkadai13gk}
+\end{figure}
+%
+
+\newpage
+\subsection{考察}
+%
+$ \overline{g_{Na}} $、$ \overline{g_{K}} $は立ち上がりと電位の頂点\ V\ の高さに関連するパラメータであるようだ。
+図\ref{fig:kkadai13gna}と図\ref{fig:kkadai13gk}から、$ \overline{g_{Na}} $が高いほど\ V\ の立ち上がりが急勾配であり最高の\ V\ の値が高く、
+立ち下がりは特に変化している様子はないが、結果的にオーバーシュートのタイミングが早くなる。
+一方、$ \overline{g_{K}} $が高いほど、立ち下がり以外の先の文の全てが逆となるからである。
+余談だが、図\ref{fig:kkadai132}、図\ref{fig:kkadai133}、図\ref{fig:kkadai134}を
+比較すると、ある$ \overline{g_{Na}} $に対してオーバーシュート可能な$ \overline{g_{K}} $の閾値が存在すると考えられる。
+色々確かめたが、$ \overline{g_{K}} = 36 $に対して、オーバーシュート($ V \geq 0 $)となるような$ \overline{g_{Na}} $の値の閾値は
+約\ $ 101.0890 \leq \overline{g_{Na}} \leq 101.0897 $のどこかの値であった。その検証の際に、その範囲で
+電位が段々と変化するような様子はなかったため、詳細に求められなかった閾値の前後で、電位の形状が大きく変化していると考えられる。
+%
+
+\subsection{感想}
+%
+\ dat\ ファイルの名前付けを間違えて、再度データ作りを実行したが、その際に入力していた値を間違っていたことに気付いたため、
+結果的に良かった。
+%
+
+\section{実験項目 4 }
+次の条件で入力刺激電流$ I_{ext} $を加えた際のスパイク応答を観測、記録せよ。
+\begin{table}[htbp]
+	\centering
+	\caption{}
+	\label{}
+	\begin{tabular}{|l|l|}
+		\hline
+		シミュレーション終了時刻 & $ 500[ms] $ \\
+		\hline
+		刺激開始時刻 & $ 50[ms] $ \\
+		\hline
+		刺激終了時刻 & $ 450[ms] $ \\
+		\hline
+		刺激形状 & ステップ \\
+		\hline
+		刺激強度 & \begin{tabular}{l}
+			$ 0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 6.1, 6.2, 6.25, 6.3, 6.4, 6.5, 8.0, $ \\
+			$ 9.0, 10.0 [\mu A / cm^2] $\\
+			(その他、実験者が必要と判断した任意の刺激強度)
+		\end{tabular} \\
+		\hline
+	\end{tabular}
+\end{table}
+実験結果から、スパイクの発火頻度を求めよ、発火頻度は\ 1\ 秒間あたりのスパイク数であり、単位は$ [Hz] $である。横軸を刺激強度、縦軸を発火頻度としたグラフを作成せよ。
+
+\subsection{概要}
+%
+刺激強度とスパイクの発火頻度の関係性について、データを収集し、それらを纏めた\ dat\ ファイル、\ pdf\ 資料を作成した。
+その\ pdf\ と\ dat\ のデータに基づいて考察することができた。
+%
+
+\subsection{目的}
+%
+刺激強度に対するスパイクの発火頻度の関係性を検証する。
+%
+
+\subsection{方法}
+%
+図\ref{fig:kkadai116}の\ 2\ つの\ step\ の最終値を変更しシミュレーションを行う。\ sum\ プラス側のステップ値に\ 50\ を、マイナス側のそれには\ 450\ 
+を入れる。この際に、\ V\ の線を分岐し、\ simout\ でデータを出力し、\ matlab\ プログラムのコード\ref{source3}を用いて重ね描き\ plot\ する。
+\lstinputlisting[label=source3,caption=datから折れ線グラフを生成するコード]{./MATLAB/outputer7.m}
+%
+
+\subsection{結果}
+%
+表\ref{table:kkadai141}を見れば解かるが、手作業で\ dat\ ファイルを作成し、コード\ref{source3}を用いて、図\ref{fig:kkadai141}を作成した。
+\clearpage
+\begin{table}[htbp]
+	\centering
+	\caption{刺激強度と発火頻度を纏めた表}
+	\label{table:kkadai141}
+	\begin{tabular}{|l|l|}
+		刺激強度 $ [\mu A / cm^2] $ & 発火頻度 $ [Hz] $\\
+		0.0000000e+00 & 0.0000000e+00 \\
+		1.0000000e+00 & 0.0000000e+00 \\
+		2.0000000e+00 & 0.0000000e+00 \\
+		2.1000000e+00 & 0.0000000e+00 \\
+		2.2500000e+00 & 2.0000000e+00 \\
+		2.5000000e+00 & 2.0000000e+00 \\
+		3.0000000e+00 & 2.0000000e+00 \\
+		4.0000000e+00 & 2.0000000e+00 \\
+		5.0000000e+00 & 2.0000000e+00 \\
+		5.5000000e+00 & 2.0000000e+00 \\
+		5.7500000e+00 & 2.0000000e+00 \\
+		5.8750000e+00 & 2.0000000e+00 \\
+		6.0000000e+00 & 4.0000000e+00 \\
+		6.1000000e+00 & 4.0000000e+00 \\
+		6.2000000e+00 & 6.0000000e+00 \\
+		6.2250000e+00 & 8.0000000e+00 \\
+		6.2500000e+00 & 1.0000000e+01 \\
+		6.2600000e+00 & 1.4000000e+01 \\
+		6.2620000e+00 & 1.6000000e+01 \\
+		6.2640000e+00 & 1.8000000e+01 \\
+		6.2680000e+00 & 2.8000000e+01 \\
+		6.2700000e+00 & 4.2000000e+01 \\
+		6.3000000e+00 & 4.2000000e+01 \\
+		6.4000000e+00 & 4.4000000e+01 \\
+		6.5000000e+00 & 4.4000000e+01 \\
+		6.7500000e+00 & 4.6000000e+01 \\
+		7.0000000e+00 & 4.8000000e+01 \\
+		7.5000000e+00 & 5.0000000e+01 \\
+		8.0000000e+00 & 5.0000000e+01 \\
+		8.5000000e+00 & 5.2000000e+01 \\
+		9.0000000e+00 & 5.4000000e+01 \\
+		9.5000000e+00 & 5.4000000e+01 \\
+		1.0000000e+01 & 5.6000000e+01 \\
+		1.0500000e+01 & 5.6000000e+01 \\
+		1.1000000e+01 & 5.8000000e+01 \\
+		1.1500000e+01 & 5.8000000e+01 \\
+		1.2000000e+01 & 6.0000000e+01
+	\end{tabular}
+\end{table}
+\clearpage
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{kkadai14(1).pdf}
+	\end{center}
+	\caption{刺激強度と発火頻度のグラフ}
+	\label{fig:kkadai141}
+\end{figure}
+%
+
+\subsection{考察}
+%
+図\ref{fig:kkadai141}と表\ref{table:kkadai141}から、刺激強度が\ 6.26\ 近辺で発火頻度が急激に増加していることが判る。
+刺激強度$ ( 0.0 \leq 刺激強度 \leq2.1 ) $の区間では、発火頻度が\ 0\ である。これは、
+弱い刺激では神経が電位による情報伝達を行わないことで、例として、人間の皮膚に羽が触れた程度の刺激を伝達し、脳が過大に
+評価しない為など、微小な電位変化による誤動作を抑制する仕組みなのではないか。
+加えて、刺激強度$ ( 2.0 \leq 刺激強度 \leq5.875 ) $の区間で、発火頻度が\ 2.0\ であるが、
+シミュレーションの終了時刻が$ 500[ms] $であるため実際の立ち上がり回数\ 1\ 回に対する発火は\ 1\ 回となり、
+ある特定の神経細胞が他の無数の神経細胞に対し信号を伝達する際に、
+\ 1\ 対\ 1\ で信号の\ input/output\ が行われ、脳に届く信号回数が指数関数的(介した神経細胞数乗)にならない区間であると考えられるのではないか。
+さらに、刺激強度が強いほど、発火する回数が多く、上記の指数関数的に増大する発火(信号)回数により、ある程度長い時間、脳に伝達される仕組み
+になっていると考えられる。また、認知神経科学研究者の\ 北城 圭一\ 氏がウェブサイト\ Wikipedia\ に記載されている内容
+によると、神経筋が複雑な情報を伝達するためには複数の神経筋やそれらの発火頻度による確率分布を用いるという\cite{kkadai14}。
+そのため、神経自体が一本の導線という訳ではなく、複数の筋の纏まりと考えられるのではないか。
+\begin{itemize}
+	\setlength{\leftskip}{7.5cm}
+	\item[● ニューロンモデルの情報の符号化について] 刺激の信号時間や、
+		神経を構成する神経細胞の筋の内どれだけの数が発火したか、といった情報を脳が処理しているのではないか。
+	\item[● 数値積分法や積分の刻み幅の影響について] 今回使用した積分法が\ ode45\ であり、\ Matlab\ によると、
+		この積分法はノンスティッフ向けであることが判る\cite{kkadai141}。\ Wikipedia\ によると
+		固い(スティッフ)常微分方程式の数値積分法は、積分の刻み幅を可能な限り小さくしないと
+		数値的不安定になるという\cite{kkadai142}。
+		実際に、\ Simulink\ で最大ステップサイズ(刻み幅)を\ 0.001\ ～\ 5.0\ で変動させたり、\ ode45\ 以外のノンスティッフな積分法\ ode23、\ 
+		\ ode113\ や、スティッフな積分法\ ode23s、\ ode15s、\ ode23t、\ ode23tb\ を試したところ、電位のグラフの形状に目だった変化は見られなかったため、
+		この実験の常微分方程式はスティッフであると考えられるのではないか。
+		ここで、\ ode●□\ の●や□には用いるルンゲクッタ法の次数が入る。さくらのレンタルサーバというウェブサイトの\ SIKINO\ 氏によると、
+		ルンゲクッタ法は次数が高いほど精度が高まり、計算コストもそれと同様の次数オーダー$ O $
+		かそれ以上(次数\ 5\ 以降)に増大するという\cite{kkadai144}。
+		再度\ Matlab\ から、\ ode113\ は\ 1\ 次から\ 13\ 次項までを用いるといい、許容誤差が厳しい場合に\ ode45\ よりも好ましい場合があるという\cite{kkadai143}。
+		先ほどの引用はこの理由付けであり、加えて\ Matlab\ から、\ ode23\ は計算コストは\ ode45\ と比較して計算コストも精度も低いことの理由でもある\cite{kkadai141}。
+		また、\ ode●□\ の仕組みも考慮する。\ Qiita\ で\ \verb|taka_horibe|\ 氏が解説されている内容によると、
+		\ ode45\ は陽的\ 4\ 次ルンゲクッタ法と陽的\ 5\ 次ルンゲクッタ法を利用して、
+		より具体的には、前者と実際の積分値との誤差が最小となるように、後者の計算過程で無視される\ (後者\ +\ 1\ )次の項を最小にする様にステップ幅を定めているという\cite{kkadai145}。
+		これまでの内容から、今回の実験では行わなかったが、最大ステップサイズではなく最小ステップサイズを\ auto\ ではない
+		なんらかの値に調整すれば、ソルバーの結果に差が得られた可能性も否定できないのではないか。また、終了時間が\ 500\ であったことも結果の差が見られなかった原因
+		の可能性も十分考えられる。
+
+\end{itemize}
+%
+
+\subsection{感想}
+%
+刺激強度が高まるにつれて、オーバーシュートした電位の山を数えるのが大変になった。
+%
+
+
+\begin{thebibliography}{5}
+  \bibitem{kkadai14}
+		北城 圭一: "神経符号化", Wikipedia. 2021, \\
+    \url{https://bsd.neuroinf.jp/wiki/%E7%A5%9E%E7%B5%8C%E7%AC%A6%E5%8F%B7%E5%8C%96#%E7%AC%A6%E5%8F%B7%E5%8C%96}, (参照 2024-5-16).
+	\bibitem{kkadai141}
+		Matlab: "ODE ソルバーの選択 - MATLAB \& Simulink", Matlab. 2024, \\
+    \url{https://jp.mathworks.com/help/matlab/math/choose-an-ode-solver.html}, (参照 2024-5-21).
+	\bibitem{kkadai142}
+		Wikipedia: "硬い方程式", Wikipedia. 2023, \\
+    \url{https://ja.wikipedia.org/wiki/%E7%A1%AC%E3%81%84%E6%96%B9%E7%A8%8B%E5%BC%8F}, (参照 2024-5-21).
+	\bibitem{kkadai143}
+		Matlab: "MATLAB ode113 - ノンスティッフ微分方程式の求解", Matlab. 2024, \\
+    \url{https://jp.mathworks.com/help/matlab/ref/ode113.html}, (参照 2024-5-21).
+	\bibitem{kkadai144}
+		SIKINO: "ルンゲ=クッタ法の説明と刻み幅制御 | （更新停止）", さくらのレンタルサーバ. 2015, \\
+    \url{https://slpr.sakura.ne.jp/qp/runge-kutta-ex/#rk4reason}, (参照 2024-5-21).
+	\bibitem{kkadai145}
+		\verb|taka_horibe|: "微分方程式を数値計算するときの話（ode45の中身） #MATLAB", Qiita. 2022, \\
+    \url{https://qiita.com/taka_horibe/items/8838b08f88f1a55fb9a7}, (参照 2024-5-21).
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,6 @@
+
+***** ode78
+経過時間は 0.056301 秒です。
+Num. of division = 15713
+Max error (disp) = 1.215733285235832e-04
+Max error (velo) = 1.376816956932814e-04

@@ -1,0 +1,6 @@
+
+***** ode89
+経過時間は 0.082481 秒です。
+Num. of division = 20313
+Max error (disp) = 6.896033865533280e-05
+Max error (velo) = 8.500906498354333e-05

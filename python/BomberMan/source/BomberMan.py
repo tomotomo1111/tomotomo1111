@@ -4,11 +4,17 @@ import random
 import math
 import copy
 from enum import Enum, auto
+import json
 
 #################### 初期設定 ####################
 # 初期化
 pygame.init()
-WIDTH, HEIGHT = 480, 352
+with open("../settings/settings.json", "r", encoding="utf-8") as f1:
+    settings = json.load(f1)
+with open("../settings/map.json", "r", encoding="utf-8") as f2:
+    map = json.load(f2)
+
+WIDTH, HEIGHT = settings["WIDTH"], settings["HEIGHT"]
 # フレームサイズ
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 # 上の名前
@@ -155,12 +161,14 @@ class Item:
             return
 
         r = random.random()
-        if r < 0.48:
+        if r < settings["PROBBOMBCOUNTUP"]:
             type = ItemType.BombCountUp
-        elif r < 0.95:
+        elif r < settings["PROBBOMBCOUNTUP"] + settings["PROBEXPLOSIONRANGEUP"]:
             type = ItemType.ExplosionRangeUp
-        else:
+        elif r < settings["PROBBOMBCOUNTUP"] + settings["PROBEXPLOSIONRANGEUP"] + settings["PROBMAXEXPLOSIONRANGEUP"]:
             type = ItemType.MaxExplosionRangeUp
+        else:
+            pass
         
         items.append(Item(tx, ty, type))
 items = []
@@ -168,19 +176,7 @@ items = []
 
 ####################### バトルフィールド ####################
 # ボンバーマン戦場、0壁、1壊せる壁、2無し、
-map = [
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 0],
-    [0, 2, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 2, 0],
-    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-    [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
-    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-    [0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
-    [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
-    [0, 2, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 2, 0],
-    [0, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-]
+map = map["map"]
 # マップの実際処理する用コピー
 map_copy = copy.deepcopy(map)
 # マップサイズ
@@ -289,7 +285,7 @@ class Bomber:
         self.chara_anim = load_character_anim(chara_anim_index)
         self.chara_name = chara_name_list[chara_anim_index]
         # キャラアニメ管理
-        self.chara_anim_cycle_time = 300
+        self.chara_anim_cycle_time = settings["CHARAANIMCYCLETIME"]
         self.chara_anim_change_time = self.chara_anim_cycle_time // 3
         self.direction = Directions.Down
         # タイル→画面座標へ
@@ -301,23 +297,23 @@ class Bomber:
         self.enableOperate = enableOperate 
         # ボム起き済か
         # 設置可能ボムの最大数
-        self.max_bombs = 1
+        self.max_bombs = settings["FIRSTMAXBOMBS"]
         # 爆発距離
-        self.bomb_power = 1
+        self.bomb_power = settings["FIRSTBOMBPOWER"]
         # 設置済みボムリスト
         self.bombs = []
-        self.bomb_explosion_to_time = 2000
+        self.bomb_explosion_to_time = settings["BOMBEXPLOSIONTOTIME"]
         # 無敵かどうか
         self.invincible = False
         self.invincible_time = pygame.time.get_ticks()
-        self.invincible_expire_time = 500
+        self.invincible_expire_time = settings["INVINCIBLEEXPIRETIME"]
         # AI移動管理
         self.enableMove = True
         self.enableMove_time = pygame.time.get_ticks()
-        self.enableMove_to_time = 250
+        self.enableMove_to_time = settings["ENABLEMOVETOTIME"]
         self.target = self
         # 残りHP
-        self.life = 3
+        self.life = settings["FIRSTLIFE"]
         self.isDeath = False
         self.radius = 12
     
@@ -617,7 +613,7 @@ class Bomber:
                 # 爆発描画
                 bomb.explosion(screen)
                 # 爆風は短時間だけ表示（ここでは200ms）
-                if now > bomb.explosion_time + 200:
+                if now > bomb.explosion_time + settings["BOMBEXPLOSIONDURATION"]:
                     self.bombs.remove(bomb)
 
         # ダメージタイマー管理

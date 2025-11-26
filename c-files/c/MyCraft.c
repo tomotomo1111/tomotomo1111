@@ -37,35 +37,30 @@ int keyFlags[256] = {0};
 
 // 回転行列を適用して点を回転させる
 Vec3 rotate(Vec3 point, Camera camera) {
-    Vec3 rotated;
-    Vec3 rotation = camera.rotation;
-    Vec3 position = camera.position;
-    point.x -= position.x;
-    point.y -= position.y;
-    point.z -= position.z;
 
-    // x軸周りの回転
-    rotated.y = point.y * cos(rotation.x) - point.z * sin(rotation.x);
-    rotated.z = point.y * sin(rotation.x) + point.z * cos(rotation.x);
-    rotated.x = point.x;
+    // カメラ位置 → ワールドからカメラ基準へ
+    point.x -= camera.position.x;
+    point.y -= camera.position.y;
+    point.z -= camera.position.z;
 
-    // y軸周りの回転
-    point = rotated;
-    rotated.x = point.x * cos(rotation.y) + point.z * sin(rotation.y);
-    rotated.z = -point.x * sin(rotation.y) + point.z * cos(rotation.y);
-    rotated.y = point.y;
+    Vec3 r = point;
 
-    // z軸周りの回転
-    point = rotated;
-    rotated.x = point.x * cos(rotation.z) - point.y * sin(rotation.z);
-    rotated.y = point.x * sin(rotation.z) + point.y * cos(rotation.z);
-    rotated.z = point.z;
+    // カメラ回転の逆を適用（Y → X → Z の順）
+    // yaw（左右）
+    float cy = cos(-camera.rotation.y);
+    float sy = sin(-camera.rotation.y);
+    float x = r.x * cy + r.z * sy;
+    float z = -r.x * sy + r.z * cy;
+    r.x = x; r.z = z;
 
-    rotated.x += position.x;
-    rotated.y += position.y;
-    rotated.z += position.z;
+    // pitch（上下）
+    float cx = cos(-camera.rotation.x);
+    float sx = sin(-camera.rotation.x);
+    float y = r.y * cx - r.z * sx;
+    z = r.y * sx + r.z * cx;
+    r.y = y; r.z = z;
 
-    return rotated;
+    return r;
 }
 
 // プレイヤーの移動を更新する
@@ -115,29 +110,15 @@ void updateCameraRotation(Camera* camera) {
 
 // カメラ視点からの投影（パースペクティブ投影）
 Vec3 project(Vec3 point, Camera camera) {
-    // カメラの回転を適用
-    Vec3 rotatedPoint = rotate(point, camera);
+    // カメラ座標へ変換（位置 + 回転）
+    Vec3 p = rotate(point, camera);
 
-    // カメラ位置を考慮し、視点からの座標に変換
-    rotatedPoint.x -= camera.position.x;
-    rotatedPoint.y -= camera.position.y;
-    rotatedPoint.z -= camera.position.z;
+    if (p.z <= 0) return (Vec3){0,0,-1};
 
-    // 視野角によるパースペクティブ投影
-    Vec3 projected;
-
-    // カメラの手前にある点は描画しない
-    if (rotatedPoint.z <= 0) {
-        return (Vec3){0, 0, -1};  // z <= 0 の場合は描画しない
-    }
-
-    float scale = tan(camera.fov * 0.5 * M_PI / 180) * rotatedPoint.z;
-
-    projected.x = (rotatedPoint.x / scale) * 100;  // スケール適用
-    projected.y = (rotatedPoint.y / scale) * 100;
-
-    return projected;
+    float scale = tan(camera.fov * 0.5 * M_PI / 180.0f) * p.z;
+    return (Vec3){(p.x / scale) * 100, (p.y / scale) * 100, p.z};
 }
+
 
 // ウィンドウプロシージャ: ウィンドウ内のイベント処理
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
@@ -175,12 +156,9 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
                                         cubeVertices[i].z * BLOCK_SIZE + z
                                     };
 
-                                    // プレイヤー位置を考慮
-                                    vertex.x += camera.position.x;
-                                    vertex.y += camera.position.y;
-                                    vertex.z += camera.position.z;
-
+                                    // ❌ camera.position を足さない！！ 更新20251126
                                     Vec3 projected = project(vertex, camera);
+
 
                                     // zが-1のときは描画しない
                                     if (projected.z == -1) {

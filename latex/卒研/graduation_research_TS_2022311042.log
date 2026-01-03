@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.5.19)  13 NOV 2025 20:22
+This is e-pTeX, Version 3.141592653-p4.1.0-230214-2.6 (utf8.sjis) (TeX Live 2023) (preloaded format=platex 2023.5.19)  4 JAN 2026 02:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -190,24 +190,29 @@ LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JT1/gt/m/n' tried instead on input line 80.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
 (Font)              Font shape `JY1/gt/m/n' tried instead on input line 80.
- [3] [4] [5] [6]
-Underfull \hbox (badness 7326) in paragraph at lines 160--163
+ [3]
+Overfull \hbox (0.68541pt too wide) in paragraph at lines 118--119
+[]\JY1/mc/m/n/12 人間の脳の神経細胞 \OT1/cmr/m/n/12 (\JY1/mc/m/n/12 ニ
+ []
+
+[4] [5] [6] [7]
+Underfull \hbox (badness 7326) in paragraph at lines 167--170
 []\JY1/mc/m/n/12 中山 達喜\OT1/cmr/m/n/12 , \JY1/mc/m/n/12 吉田 真一  ： 音楽分
 類における特徴量の検討 ，
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 160--163
+Underfull \hbox (badness 10000) in paragraph at lines 167--170
 \OT1/cmr/m/n/12 https://www.jstage.jst.go.jp/article/fss/26/0/26[]0[]290/[]arti
 cle/-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 176--179
+Underfull \hbox (badness 10000) in paragraph at lines 183--186
 \JY1/mc/m/n/12 違い ・ 活用事例 ・
  []
 
-[7] (./graduation_research_TS_2022311042.aux) ) 
+[8] (./graduation_research_TS_2022311042.aux) ) 
 Here is how much of TeX's memory you used:
  789 strings out of 476760
  14142 string characters out of 5809571
@@ -217,4 +222,5 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  43i,5n,40p,224b,216s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on graduation_research_TS_2022311042.dvi (9 pages, 8788 bytes).
+Output written on graduation_research_TS_2022311042.dvi (10 pages, 11872 bytes)
+.

@@ -1,0 +1,49 @@
+%% 論文，抄録執筆に必要な図，数式関連パッケージ
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{ascmac}
+\usepackage{graphicx}
+\usepackage{float}
+
+%% レイアウト設定関連パッケージ
+\usepackage{fancyhdr}
+\usepackage{nidanfloat}
+\usepackage[top=2cm,bottom=2.5cm,left=2cm,right=2cm]{geometry}
+%% ↑geometry パッケージで余白を設定
+
+% ヘッダーの定義
+\renewcommand{\headrulewidth}{.0pt}
+\lhead[]{}
+\cfoot{}
+
+%% title, author name
+\newcommand{\mktitleb}[3]{%
+\rhead[]{\underline{%
+    \footnotesize 愛知県立大学情報科学部~令和 $7$ 年度~卒業論文要旨}}
+\twocolumn[%
+\centering
+  {\Large\bf #1}\\
+   \vspace{.5em}
+   {\large #2\hspace{3em}指導教員：#3}\\
+   \vspace{1.5em}
+]%
+\vspace*{-2em}
+}
+\newcommand{\mktitlem}[3]{%
+\rhead[]{\underline{%
+    \footnotesize 愛知県立大学大学院情報科学研究科~%
+    令和 $7$ 年度~修士論文要旨}}
+\twocolumn[%
+\centering
+    {\Large\bf #1}\\
+    \vspace{.5em}
+    {\large #2\hspace{3em}指導教員：#3}\\
+      \vspace{1.5em}
+]%
+\vspace{-2em}
+}
+%% 左右段の間隔を設定
+\setlength{\columnsep}{10pt}
+
+%% ページ上部にヘッダーを表示
+\pagestyle{fancy}

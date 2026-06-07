@@ -79,7 +79,7 @@ class Cube:
         for i, f in enumerate(self.faces):
             c = self.vertices[f].mean(axis = 0)
             dist = np.linalg.norm(c - light)
-            self.face_brightness[i]=min(0.8, (dist * dist) / (450 * 450))
+            self.face_brightness[i]=min(0.95, (dist * dist) / (450 * 450))
 
 class Sphere:
     def __init__(self, x, y, z, r, segments = 20):
@@ -168,67 +168,6 @@ def draw_textured_quad(surface, tex, pts):
 
 def draw_triangle_zbuffer(screen, zbuffer, pts, color):
 
-    xs = [p[0] for p in pts]
-    ys = [p[1] for p in pts]
-    zs = [p[2] for p in pts]
-
-    minx = max(0, int(min(xs)))
-    maxx = min(WIDTH - 1, int(max(xs)))
-
-    miny = max(0, int(min(ys)))
-    maxy = min(HEIGHT - 1, int(max(ys)))
-
-    x1, y1 = xs[0], ys[0]
-    x2, y2 = xs[1], ys[1]
-    x3, y3 = xs[2], ys[2]
-
-    area = (
-        (x2 - x1) * (y3 - y1)
-        -
-        (y2 - y1) * (x3 - x1)
-    )
-
-    if abs(area) < 1e-6:
-        return
-
-    for y in range(miny, maxy + 1):
-        for x in range(minx, maxx + 1):
-
-            w0 = (
-                (x2 - x1) * (y - y1)
-                -
-                (y2 - y1) * (x - x1)
-            ) / area
-
-            w1 = (
-                (x3 - x2) * (y - y2)
-                -
-                (y3 - y2) * (x - x2)
-            ) / area
-
-            w2 = (
-                (x1 - x3) * (y - y3)
-                -
-                (y1 - y3) * (x - x3)
-            ) / area
-
-            if w0 >= 0 and w1 >= 0 and w2 >= 0:
-
-                z = (
-                    w0 * zs[2]
-                    +
-                    w1 * zs[0]
-                    +
-                    w2 * zs[1]
-                )
-
-                if z < zbuffer[y, x]:
-
-                    zbuffer[y, x] = z
-                    screen.set_at((x, y), color)
-
-def draw_triangle_zbuffer(screen, zbuffer, pts, color):
-
     p0, p1, p2 = pts
 
     x0, y0, z0 = p0
@@ -282,15 +221,15 @@ def draw_triangle_zbuffer(screen, zbuffer, pts, color):
                 screen.set_at((x, y), color)
 
 cubes = [
-    Cube(   0,-200,   0,  50,  50,  50, True),
-    Cube(   0,   0,   0, 100, 400, 100),
-    Cube( 400,   0,   0, 100, 400, 100),
-    Cube(-400,   0, 100, 100, 400, 100),
-    Cube(   0,   0, 400, 100, 400, 100),
-    Cube(   0,   0,-400, 100, 400, 100)
+    Cube( -25,-200, -25,  50,  50,  50, True),
+    Cube( -50,   0, -50, 100, 400, 100),
+    Cube( 350,   0, -50, 100, 400, 100),
+    Cube(-450,   0, -50, 100, 400, 100),
+    Cube( -50,   0, 350, 100, 400, 100),
+    Cube( -50,   0,-450, 100, 400, 100)
 ]
 
-sphere = Sphere(   0, -300,  50, 100)
+sphere = Sphere( -50, -300, -50, 100)
 
 running = True
 font = pygame.font.SysFont(None,20)
@@ -326,8 +265,8 @@ while running:
 
     t = pygame.time.get_ticks() * 0.002
     light_cube = cubes[0]
-    light_cube.x = np.cos(t) * 200
-    light_cube.z = np.sin(t) * 200
+    light_cube.x = np.cos(t) * 200 -25
+    light_cube.z = np.sin(t) * 200 -25
     light_cube.setup()
 
     light = np.array([light_cube.x, light_cube.y, light_cube.z])
@@ -360,6 +299,9 @@ while running:
                 -
                 (b[1]-a[1])*(c2[0]-a[0])
             )
+
+            if cross < 0:
+                continue
 
             z = sum(p[2] for p in pts) / 4
             queue.append(("cube", z, pts, c, fi))

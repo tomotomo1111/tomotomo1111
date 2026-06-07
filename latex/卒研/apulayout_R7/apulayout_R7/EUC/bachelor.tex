@@ -1,0 +1,131 @@
+\documentclass[a4j,9pt,twocolumn,dvipdfmx]{jsarticle}
+\usepackage{apulayout}
+
+\begin{document}
+\mktitleb{卒業論文タイトル}
+{県大 太郎}{情報 花子}
+
+\section{はじめに}
+この文書では，愛知県立大学~情報科学部の卒業論文の要旨
+（以降，要旨）の共通レイアウトの利用について説明しています．この文書にあ
+る説明を参考にして要旨を作成して下さい．
+
+\section{ドキュメントクラスの指定}
+要旨は日本語で作成するので \LaTeX のドキュメントクラスは
+\texttt{jsarticle} を使用します．オプションには，用紙サイズ \texttt{a4j}，
+フォントサイズは$9$，または$10\ {\rm pt}$を指定して下さい．
+また，要旨は二段組で作成するので \texttt{twocolumn} も指定して下さい．
+要旨はPDFファイルで提出するため，\texttt{pdfdvimx}を使うことになると思われますので，
+ドキュメントクラスのオプションとして指定しておきます．
+\begin{screen}
+ \begin{small}
+  \verb#\documentclass[a4j,9pt,twocolumn,dvipdfmx]{jsarticle}#%
+ \end{small}
+\end{screen}
+
+\section{レイアウト設定用ファイルの読み込み}
+この文書と一緒に配布されている \texttt{apulayout.sty} をドキュメントクラ
+スの指定直後に \verb#\usepackage# コマンドで読み込んで下さい．
+\begin{screen}
+ \begin{small}
+  \verb#\documentclass[a4j,9pt,twocolumn,dvipdfmx]{jsarticle}#\\[-0.5em]
+  \verb#\usepackage{apulayout}#
+ \end{small}
+\end{screen}
+
+\texttt{apulayout.sty} には，要旨のレイアウトに必要な設定，コマンドが記
+述されているので変更しないように注意して下さい．
+
+設定用ファイル中で要旨の作成に必要な基本的なパッケージの読み込みは行っ
+ています．読み込み済みのパッケージは \texttt{amsmath}，\texttt{amssymb}，
+\texttt{ascmac}，\texttt{graphicx} です．また，レイアウト用に
+\texttt{fancyhdr}，\texttt{nidanfloat}，\texttt{geometry} パッケージの読
+み込みも行っています．
+このほかのパッケージが必要な場合には，\texttt{apulayout.sty} を読み込ん
+だ後に，各自で読み込みを行って下さい．
+
+\section{要旨タイトル部分}
+要旨のタイトル部分は \verb#\mktitleb# コマンドを使用します．
+
+\verb#\mktitleb# コマンドには $3$ つの引数があります．それぞれ，卒業論文
+タイトル，学生氏名，指導教員氏名を指定します．
+\begin{screen}
+ \begin{small}
+  \verb#\begin{document}#\\[-0.5em]
+  \verb#\mktitleb{卒業論文タイトル}{学生氏名}{教員氏名}#
+ \end{small}
+\end{screen}
+
+このコマンドは，
+\texttt{document} 環境の開始直後に指定して下さい．
+
+\section{二段組時の特殊な図，表の配置}
+要旨は二段組で作成するため，横に長い図や表を \texttt{figure} や
+\texttt{table} 環境を使用して配置すると A4 用紙一枚に収まらなくなります．
+その場合には \texttt{figure*} や \texttt{table*} 環境を使用して下さい．
+\figurename\ref{fig:exp} や \tablename\ref{tab:exp} のように要旨の下部に
+一段組で配置されます．\\[-0.5em]
+
+\begin{itembox}[l]{\texttt{figure*} 環境の記述例}
+ \begin{small}
+  \verb#\begin{figure*}#\\[-0.5em]
+  \verb# \begin{center}#\\[-0.5em]
+  \verb#  \includegraphics{fig.eps}#\\[-0.5em]
+  \verb# \end{center}#\\[-0.5em]
+  \verb#\end{figure*}#
+ \end{small}
+\end{itembox}
+
+\begin{figure*}
+ \begin{center}
+  \includegraphics[width=0.8\textwidth]{figsample.eps}
+  \vspace{-1em}
+  \caption{二段抜きの例（\texttt{figure*}環境）}
+  \label{fig:exp}
+ \end{center}
+\end{figure*}
+
+\begin{table*}
+ \caption{二段抜きの例（\texttt{table*} 環境）}
+ \label{tab:exp}
+ \vspace{-1em}
+ \begin{center}
+  \begin{tabular}{|c|c|}
+   \hline
+   要素 $1$&要素 $2$\\
+   \hline
+   二段組では表現がし難い横に長い表も&\texttt{table*} 環境を使えば二段抜きにすることができま
+   す．\\
+   \hline
+  \end{tabular}
+ \end{center}
+\end{table*}
+
+\section{文章サンプル}
+After a seven-year journey, a NASA space capsule returned safely to
+Earth on Sunday with the first dust ever fetched from a comet, a cosmic
+bounty that scientists hope will yield clues to how the solar system
+formed.
+
+The capsule's blazing plunge through the atmosphere lit up parts of the
+western sky as it capped a mission in which the Stardust spacecraft
+swooped past a comet known as Wild 2.
+%\centerline{$\vdots$}\\[-0.5em]
+\hfill{\cite{web2} より転載}
+\section{おわりに}
+この要旨作成用のレイアウト設定ファイルの動作確認は，Vine Linux 3.2 上の
+\texttt{tetex-2.0.2-0vl14} がインストールされている環境で行いました．
+
+この文書は \LaTeX を使用して要旨を作成するときに共通のレイアウトの利用に
+ついてのみ説明しています．\LaTeX の基本的な操作やコマンド，環境について
+は演習室で閲覧することのできる \cite{美} や \cite{典} を参照して下さい．
+また，インターネットを利用して検索することも効果的です．
+
+\begin{thebibliography}{9}
+ \bibitem{美} 奥村晴彦 『\verb#[#改訂版\verb#]# \LaTeX2e 美文書作成入門』 技術
+       評論社，2003
+ \bibitem{典} 生田誠三 『\LaTeX2e 文典』 朝倉書店，2001
+ \bibitem{web} \texttt{http://pcg-xr1g.hp.infoseek.co.jp/cat\_latex.shtml}
+ \bibitem{web2} \texttt{http://www.chinadaily.com.cn/english/doc/\\2006-01/16/content\_512520.htm}
+\end{thebibliography}
+\end{document}

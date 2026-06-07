@@ -1,0 +1,11 @@
+package ST;
+
+import javax.swing.JPanel;
+
+class moneyMakingPanel{
+	
+	moneyMakingPanel(){
+		
+		JTextField myText_1 = new JTextField(); 
+	}
+}

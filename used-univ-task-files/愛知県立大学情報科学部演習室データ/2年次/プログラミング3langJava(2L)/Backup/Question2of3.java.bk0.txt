@@ -1,0 +1,21 @@
+public class Quesetion2of3 {
+	
+	public static void main(String[] args) {
+		int a = 221;
+		int b = 169;
+		
+		System.out.println(euc(a,b));
+	}
+	
+	public static int euc(int x, int y) {
+		
+		int newX = y;
+		int newY = x % y;
+		
+		if(newY == 1 || newY == 0) {
+			return y;
+		}else{
+			euc(newX,newY);
+		}
+	}
+}

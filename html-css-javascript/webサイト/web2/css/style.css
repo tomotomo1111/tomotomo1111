@@ -1,0 +1,236 @@
+html {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.pop {
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 1120px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ヘッダー */
+header {
+    padding: 27px 0;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+
+.logo > span {
+    color: #80BA4A;
+}
+
+.header_menu > li {
+    margin-left: 40px;
+    transition: 0.4s;
+}
+
+.header_menu > li > a {
+    transition: 0.4s;
+}
+
+.header_menu > li > a:hover {
+    color: #80BA4A;
+}
+
+/* メイン */
+#hero {
+    background-image: url(../images/hero.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 540px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 90px;
+    overflow: hidden;
+}
+
+#hero::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.2;
+    z-index: 1;
+}
+
+.hero_inner {
+    z-index: 2;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+}
+
+.hero_inner > p {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.hero_inner > h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* コンセプト */
+#concept {
+    margin-bottom: 120px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #80BA4A;
+    margin-bottom: 60px
+}
+
+#concept > h3 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 60px;
+}
+
+.column-2 {
+    width: 48%;
+}
+
+.text {
+    line-height: 2;
+}
+
+.concept-img {
+    background-image: url(../images/concept.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 340px;
+    border-radius: 20px;
+}
+
+.heading {
+    font-family: 'Dancing Script', sans-serif;
+    font-size: 200px;
+    font-weight: 700;
+    color: #80BA4A;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-30%);
+    z-index: -1;
+}
+
+/* サービス */
+#service {
+    margin-bottom: 120px;
+}
+
+.service-inner {
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.column-40 {
+    width: 40%;
+}
+
+.column-55 {
+    width: 55%;
+}
+
+#service img {
+    border-radius: 20px;
+}
+
+#service > .service-inner > .column-55 > h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+/* カンパニー */
+#company {
+    margin-bottom: 120px;
+}
+
+#company > dl {
+    max-width: 900px;
+    margin-left: auto;
+}
+
+#company > dl > dt {
+    width: 30%;
+    padding: 40px 0;
+    font-weight: 500;
+    border-bottom: solid 1px #D2ECBA;
+}
+
+#company > dl > dd {
+    width: 70%;
+    padding: 40px 0;
+}
+
+/* ボトム */
+.column-a {
+    background-image: url(../images/bottom1.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 24%;
+    height: 270px;
+    border-radius: 20px;
+}
+
+.column-b {
+    background-image: url(../images/bottom2.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 18%;
+    height: 270px;
+    border-radius: 20px;
+}
+.column-c {
+    background-image: url(../images/bottom3.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 24%;
+    height: 270px;
+    border-radius: 20px;
+}
+.column-d {
+    background-image: url(../images/bottom4.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 28%;
+    height: 270px;
+    border-radius: 20px;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    margin: 90px 0;
+}
+
+.copyright {
+    font-size: 12px;
+    margin-top: 40px;
+}

@@ -1,0 +1,54 @@
+public class ClassInheritance5{
+	public static void main(String[] args) {
+		AllSubject student1 = new AllSubject(50,70,90,80,65);
+		System.out.println("学生1の成績データ");
+		System.out.println("五教科の平均点=" + student1.AllScoreAve());
+		System.out.println("最高点=" + );
+	}
+}
+
+class AllSubject extends ScienceSubject{
+	public int lite;
+	public int eng;
+	public int soci;
+	public AllSubject(int score1, int score2, int score3, int score4, int score5) {
+		super(score1, score2);
+		lite = score3;
+		eng = score4;
+		soci = score5;
+	}
+	
+	public double AllScoreAve() {
+		return (eng+math+scie+lite+soci)/5.0;
+	}
+	
+	public int MaxScoreAll() {
+		int[] data = new int[5];
+		int max = data[0];
+		for(int i=0; i<data.length; i++) {
+			if(max < data[i]) {
+				max = data[i];
+			}
+		}
+		return max;
+	}
+}
+
+class ScienceSubject{
+	public int math;
+	public int scie;
+	public ScienceSubject(int score1, int score2) {
+		math = score1;
+		scie = score2;
+	}
+	public double ScienceScoreAve() {
+		return (math+scie)/2.0;
+	}
+	public int MaxScore() {
+		if(math > scie) {
+			return math;
+		}else{
+			return scie;
+		}
+	}
+}

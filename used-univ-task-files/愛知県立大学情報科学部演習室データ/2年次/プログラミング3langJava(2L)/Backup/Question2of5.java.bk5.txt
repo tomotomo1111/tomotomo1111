@@ -1,0 +1,29 @@
+public class Question2of5{
+	
+	public static void main(String[] args) {
+		
+		int[] a = {6,7,8,9,10};
+		
+		System.out.println(distanceMax(a));
+		
+	}
+	
+	public static int distanceMax(int[] x) {
+		
+		int MAXtmp = a[0];
+		int MINtmp = a[0];
+		
+		for(int i = 0; i < x.length-1; i++) {
+			
+			if(i == 0 {
+				MINtmp = Math.min(x[i],x[i+1]);
+				MAXtmp = Math.max(x[i],x[i+1]);
+			} else {
+				MINtmp = Math.min(MINtmp,x[i+1]);
+				MAXtmp = Math.max(MAXtmp,x[i+1]);
+			}
+		}
+		
+		return MAXtmp - MINtmp;
+	}
+}

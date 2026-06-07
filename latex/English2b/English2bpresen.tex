@@ -1,0 +1,76 @@
+\documentclass[10pt]{jarticle}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{listings}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\renewcommand{\lstlistingname}{source}
+\lstset{language=sh,%
+        basicstyle=\footnotesize,%
+	commentstyle=\textit,%
+	classoffset=1,%
+	keywordstyle=\bfseries,%
+	frame=shadowbox,framesep=4pt,%
+	showstringspaces=false%,
+	numbers=left,stepnumber=1,numberstyle=\footnotesize,%
+	numbersep=1zw,%
+	lineskip=-0.5ex,%
+	xleftmargin=2zw%
+	}%
+
+\newdimen\paperwidth \newdimen\paperheight
+\def\A4size{\paperwidth=210mm \paperheight=297mm}
+\def\centered{%
+  \oddsidemargin=\paperwidth
+  \advance\oddsidemargin-\textwidth
+  \oddsidemargin=0.5\oddsidemargin
+  \advance\oddsidemargin-1in
+  \evensidemargin-\oddsidemargin}
+%
+\textwidth 160mm
+\textheight 230mm
+\topmargin 0mm
+\headheight 0mm
+\footskip 0mm
+\A4size\centered
+
+\title{\framebox{\hspace{4zw}English 2B Presentation Manuscript%
+                 \hspace{4zw}}}
+\author{Tomoya Shinno \\
+        2022311042  \\
+        Aichi Prefectural University Faculty of Information Science\\}
+\date{12/24/2023}
+
+
+\begin{document}
+\maketitle
+
+\section{About The Previous Study Manuscript}
+\subsection{Page 3}
+%
+I will talk about the means and methods of previous research. 
+In that study, the subjects were classified in descending order of 
+the degree of contact with foreigners as "no contact," "contact 
+opportunities only," "greeting contact only," "passive contact only," 
+and "active contact," 
+\subsection{Page 4}
+and asked whether they agreed or disagreed with 
+the increase in foreigners in society.
+\subsection{Page 5}
+The result is shown in the pie chart on the left.
+\subsection{Page 6}
+It was found that the majority of respondents were more opposed 
+than in favor; those with "active contact" were more likely to be in favor; 
+those with "greeting contact only" and "passive contact only" were slightly 
+more likely to be in favor; while those with "contact opportunities only" 
+and "no contact" were very likely to be opposed.
+\subsection{Page 7}
+At the time the data for this previous study was obtained in 2003, 
+opposition to the idea greatly outweighed approval, 
+probably due to the fact that society as a whole did not 
+have sufficient opportunities to come into contact with foreigners.
+%
+
+\end{document}

@@ -1,0 +1,3 @@
+\beamer@sectionintoc {2}{はじめに}{3}{0}{1}
+\beamer@subsectionintoc {2}{1}{数式の例}{3}{0}{1}
+\beamer@subsectionintoc {2}{2}{ページアニメーションの例}{4}{0}{1}

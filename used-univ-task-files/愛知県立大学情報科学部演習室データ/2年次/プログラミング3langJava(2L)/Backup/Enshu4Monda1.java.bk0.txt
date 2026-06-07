@@ -1,0 +1,27 @@
+public class Enshu4Monda1{
+	public static void main(String[] args) {
+		System.out.println("ID1さんは試験を受け，英語特論50点でした．");
+		System.out.println("ID1さんのデータを保存してください．");
+		ScoreConfirmation id1 = new ScoreConfirmation(50);
+		System.out.println("ID1さんのデータを表示してください．");
+		System.out.println("英語特論の点数は"+id1.ReturnEngScore());
+		System.out.println("ID1さんは追試験を受け，英語特論70点となりました．");
+		System.out.println("ID1さんのデータを変更してください．");
+		id1.ChangeEngScore(70);
+		System.out.println("ID1さんのデータを表示してください．");
+		System.out.println("英語特論の点数は"+id1.ReturnEngScore());
+	}
+}
+
+class ScoreConfirmation{
+	private double Eng;
+	public ScoreConfirmation(double score1){
+		Eng = score1;
+	}
+	public double ReturnEngScore(){
+		return Eng;
+	}
+	public void ChangeEngScore(int score){
+		Eng = score;
+	}
+}

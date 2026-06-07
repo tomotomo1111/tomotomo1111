@@ -1,0 +1,26 @@
+public class ClassB7{
+	public static void main(String[] args) {
+		ScoreData7 id1 = new ScoreData7(80,70,90);
+		System.out.println("英語特論の成績点数は"+id1.Eng);
+		System.out.println("統計解析学の成績点数は"+id1.Math);
+		System.out.println("古典文学の成績点数は"+id1.Lite);
+		System.out.println("最高成績点数は"+id1.ScoreMax());
+	}
+}
+
+class ScoreData7{
+	double Eng, Math, Lite;
+	private static final double rate = 0.9;
+	public ScoreData7(double score1, double score2, double score3) {
+		Eng = score1 * rate;
+		Math = score2 * rate;
+		Lite = score3 * rate;
+	}
+	
+	public double ScoreMax() {
+		double max;
+		max = (Eng - Math) ? Eng : Math;
+		max = (max - Lite) ? max : Lite;
+		return max;
+	}
+}

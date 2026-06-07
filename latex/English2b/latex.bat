@@ -1,0 +1,3 @@
+platex English2bpresen.tex
+platex English2bpresen.tex
+dvipdfmx English2bpresen.dvi

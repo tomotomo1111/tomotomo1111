@@ -1,0 +1,12 @@
+public class Question2of1 {
+	public static void main(String[] args) {
+	int x = 7;
+	int y = 30;
+	
+	System.out.println(minerOfTwo(x,y));
+	}
+	
+	public static int minerOfTwo(int a, int b) {
+		return Math.min(a,b);
+	}
+}

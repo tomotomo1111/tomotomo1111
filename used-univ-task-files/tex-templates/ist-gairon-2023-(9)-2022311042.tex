@@ -1,0 +1,73 @@
+\documentclass[a4j]{jarticle}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+
+\begin{document}
+
+\vfill
+\begin{screen}
+\begin{center}
+\huge\bf 情報科学概論　第九回レポート課題\\
+\vspace{5mm}
+\large\bf
+学籍番号　2022311042 \quad 名前 神野友哉\\
+\today
+\end{center}
+\end{screen}
+\thispagestyle{empty}
+
+\section{AIによる人間の姿勢検出演習　問1}
+OpenPoseについて調査しその概要をまとめてください。
+\subsection{結果}
+OpenPoseはアメリカ合衆国カーネギーメロン大学が開発した、人の姿勢推定を行うためのモデルであり、
+深層学習によって作成された。このモデルは、人間の体の関節点を見つけ出した上で、
+その点同士がどう隣接するかを、人間の体の部位の向かう方向の推測から検出し、複数人数を同時に処理することを
+可能にした。また、画像処理だけでなくリアルタイム処理も可能である。
+
+
+\newpage
+\section{AIによる人間の姿勢検出演習　問2}
+演習で実施した自分で撮影した画像による実験結果を報告してください。
+\subsection{結果}
+
+体が半分隠れているが、骨格を検出することができた。
+
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{myphoto.pdf}
+  \end{center}
+  \caption[short]{自画像}
+  \label{fig:a}
+\end{figure}
+
+\newpage
+\section{AIによる人間の姿勢検出演習　問3}
+演習で実施した誤判定する例の結果を報告してください。その上で、どのような場合に誤判定が発生するのか考察してください。
+\subsection{結果}
+
+図\ref{fig:e} では、私は肩を10°程下げて布団を持ち、布団は画像手前方向に沿っていた。
+しかし、写真では真横少し左上から少し右下に腕が伸びていると検出した。恐らく、布団の傾きによる端部分の曲線を腕だと
+検出したのではないかと考察される。また、図\ref{fig:f} では、左の友人Sは骨格検知できた一方、右の自分は顔が半分画像から
+はみ出てしまっていたことが主な要因と考えられ、私の骨格が検出されることはなかった。以上から上記不具合の原因は、
+ OpenPose は"主に"人間の両目や両肩、両足等の位置から姿勢検出を行っていて、それらを包括的に体が隠された場合、
+ 人間として見做されなくなる可能性があると考察される。 
+
+
+\begin{figure}[htbp]
+  \begin{minipage}{0.5\hsize}
+   \begin{center}
+    \includegraphics[width=70mm]{doutai.pdf}
+   \end{center}
+   \caption{胴体を隠した自画像}
+   \label{fig:e}
+  \end{minipage}
+  \begin{minipage}{0.5\hsize}
+   \begin{center}
+    \includegraphics[width=70mm]{halfface.pdf}
+   \end{center}
+   \caption{友人Sさんと自画像}
+   \label{fig:f}
+  \end{minipage}
+ \end{figure}
+
+\end{document}

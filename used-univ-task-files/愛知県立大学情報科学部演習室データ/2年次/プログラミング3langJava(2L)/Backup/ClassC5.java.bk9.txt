@@ -1,0 +1,50 @@
+import java.util.Random;
+public class ClassC5 {
+	public static void main(Sring[] args) {
+		int[] studentArray = new Seiseki5[3];
+		for(int i = 0; i<studentArray.length; i++) {
+			studentArray[i] = new Seiseki5(iRandomScore(), RandomScore());
+		}
+		int [] EngMaxData = ClassCalculate2.SelctScoreMax("英語特論", studentArray);
+		System.out.println("英語特論の最高数はID"+EngMaxScore[1]+"さんの"+EngMaxData[0]+"点です.");
+		int[] MathMaxData = ClassCalculate2.SelctScoreMax("統計解析学", studentArray);
+		System.out.println("統計解析学の最高数はID"+EngMaxScore[1]+"さんの"+EngMaxData[0]+"点です.");
+	}
+	
+	public static int RandomScore() {
+		Random rand = new Random();
+		return 30+rand.nextInt(70);
+	}
+}
+
+Class Seiseki5{
+	int Eng, Math;
+	public Seiseki5(int score1, int score2) {
+		Eng = score1;
+		Math = score2;
+	}
+}
+
+class ClassCalculate2{
+	public static int[] SelctScoreMax(String select, int[] array) {
+		int[] data = new int[2];
+		if(select.equals("英語特論")){
+			data[0] = array[0].Eng;
+			for(int i=0; i<array.length; i++) {
+				if(data[0] <= array[i].Eng) {
+					data[0] = array[i].Eng;
+					data[1] = i+1;
+				}
+			}
+		}else{
+			data[0] = array[0].Math;
+			for(int i=0; i<array.length; i++) {
+				if(data[0] <= array[i].Math) {
+					data[0] = array[i].Math;
+					data[1] = i+1;
+				}
+			}
+		}
+		return data[0];
+	}
+}

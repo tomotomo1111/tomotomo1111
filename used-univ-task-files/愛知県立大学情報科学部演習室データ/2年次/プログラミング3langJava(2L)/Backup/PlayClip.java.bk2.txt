@@ -1,0 +1,35 @@
+// https://fomsan.sakura.ne.jp/memo/java/javaSound.html
+
+// package fomsan.ne.jp.example.sound;
+
+package com.zetcode;
+ 
+import java.io.File;
+ 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+ 
+public class PlayClip {
+    public static void main(final String[] args) {
+        try {
+            System.out.println("Sound Start");
+            final AudioInputStream ais =
+                AudioSystem.getAudioInputStream(new File(args[0]));
+            ais.getFormat();
+            final Clip line = AudioSystem.getClip();
+            line.open(ais);
+
+            line.start();
+            System.out.println("Playing...");
+            Thread.sleep(1);
+            line.drain();
+            line.stop();
+
+            line.close();
+            System.out.println("Sound End");
+        } catch (final Exception e) {
+            System.out.println(e);
+        }
+    }
+}

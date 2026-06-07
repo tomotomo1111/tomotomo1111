@@ -1,0 +1,5 @@
+\documentclass[a4j,aspectration=169,12pt,dvipdfmx]{beamer}
+\usepackage{bxdpx-beamer}
+\usepackage{pxjahyper}
+\setbeamertemplate{caption}[numbered]
+\ttle

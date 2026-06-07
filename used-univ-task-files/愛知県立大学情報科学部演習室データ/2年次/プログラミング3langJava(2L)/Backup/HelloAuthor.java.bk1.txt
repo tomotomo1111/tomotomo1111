@@ -1,0 +1,6 @@
+public class HelloAuthor{
+	public static void main(String[] args) {
+		System.out.print("‚±‚ñ‚É‚¿‚Í.");
+		System.out.print("’˜ŽÒ‚Å‚·.");
+	}
+}

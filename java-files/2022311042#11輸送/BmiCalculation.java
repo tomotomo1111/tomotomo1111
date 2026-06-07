@@ -1,0 +1,92 @@
+package PackageBmi;
+
+class BmiCalculation{
+	private String name;
+	private double height;
+	private double weight;
+	private String male;
+	private double age;
+	
+	public BmiCalculation(String name, double height, double weight, String male, double age) {
+		this.name = name;
+		this.height = height;
+		this.weight = weight;
+		this.male = male;
+		this.age = age;
+	}
+	
+	public void DataDisplay() {
+		System.out.println("あなたの身体データは下記になります．");
+		System.out.println(name + "さんの身体データを表示します．");
+		System.out.println("身長：" + height);
+		System.out.println("体重：" + weight);
+		System.out.println("性別：" + male);
+		System.out.println("年齢：" + age);
+	}
+	
+	private double BMIcalculation() {
+		return weight / (height / 100 * height / 100);
+	}
+	
+	private String AdultsBodyFatness() {
+		double bmi = BMIcalculation();
+		String answer = "低体重";
+		
+		if(bmi < 18.5) answer = "低体重";
+		if(18.5 <= bmi && bmi < 25) answer = "普通体重";
+		if(25 <= bmi && bmi < 30) answer = "肥満(1度)";
+		if(30 <= bmi && bmi < 35) answer = "肥満(2度)";
+		if(35 <= bmi && bmi < 40) answer = "肥満(3度)";
+		if(40 <= bmi) answer = "肥満(4度)";
+		
+		return answer;
+	}
+	
+	private double LaurelCalculation() {
+		return weight / (height * height * height) * 10000000;
+	}
+	
+	private String ChildrenBodyFatness() {
+		double laurel = LaurelCalculation();
+		String answer  = "やせ";
+		
+		if(laurel < 100) answer = "やせ";
+		if(100 <= laurel && laurel < 115) answer = "やせぎみ";
+		if(115 <= laurel && laurel < 145) answer = "正常";
+		if(145 <= laurel && laurel < 160) answer = "肥満ぎみ";
+		if(160 <= laurel) answer = "肥満";
+		
+		return answer;
+	}
+	
+	private double KaupCalculation() {
+		return weight / (height * height) * 10000;
+	}
+	
+	private String InfantsBodyFatness() {
+		double kaup = KaupCalculation();
+		String answer = "やせ";
+		
+		if(kaup < 13) answer = "やせ";
+		if(13 <= kaup && kaup < 15) answer = "やせぎみ";
+		if(15 <= kaup && kaup < 18) answer = "正常";
+		if(18 <= kaup && kaup < 20) answer = "肥満ぎみ";
+		if(20 <= kaup) answer = "肥満";
+		
+		return answer;
+	}
+	
+	public String BodyFatness() {
+		String answer;
+		if(1 <= age && age < 6) {
+			answer = InfantsBodyFatness();
+		} else if(6 <= age && age <16) {
+			answer = ChildrenBodyFatness();
+		} else if(16 <= age) {
+			answer = AdultsBodyFatness();
+		} else {
+			answer = "不適切な年齢が入力されました";
+		}
+		return answer;
+	}
+}

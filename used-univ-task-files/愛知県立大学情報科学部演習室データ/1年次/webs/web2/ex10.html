@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>15 puzzle</title>
+
+<script type="text/javascript">
+<!--
+let n, nTile;			// 縦横のマスの数、(空き以外の)タイルの数
+let board;				// 各マスのタイル番号を保持。
+						// タイル番号は0, 1, ..., nTile-1である。
+						// 位置(x,y)はboard[x+y*n]に対応。
+const blank= -1;		// 「空き」タイルの番号
+let blankX, blankY;		// 空きマスの位置
+let tileWidth, tileHeight;	// 画像としてのタイルの寸法
+
+let canvasObj, context;	// 描画キャンバス用オブジェクト
+let img = new Image();	// 画像
+let backPattern; 		// 空きマスの塗りつぶしパターン
+
+window.addEventListener( "load", (event)=> {
+	// キャンバスの準備
+	if( !window.HTMLCanvasElement ) return;
+	canvasObj = document.getElementById("mycanvas");
+	context = canvasObj.getContext( "2d" );
+	if( !context ) return;
+	let bgimg = new Image();
+	bgimg.onload = function(){ backPattern = context.createPattern( bgimg, "repeat" ); };
+	bgimg.src= "back.png";
+	newImage( document.getElementById( "image" ).value );
+} );
+
+// urlで指定した画像の読み込み。
+function newImage( url )
+{
+	const newimg = new Image();
+	
+	for( const elem of document.getElementById( "panel" ).getElementsByClassName( "control" ) ){
+		elem.disabled = true;
+	}
+	// 画像が読み込めたら、キャンバスの大きさを画像に合わせて、ゲーム開始ボタンをクリックできるようにする。
+	newimg.onload = function(){
+		img = newimg;
+		canvasObj.width = img.width;
+		canvasObj.height = img.height;
+		context.drawImage( img, 0, 0 );
+		for( const elem of document.getElementById( "panel" ).getElementsByClassName( "control" ) ){
+			elem.disabled = false;
+		}
+	};
+	// 画像の読み込みに失敗したら、画像を更新しないで、ゲーム開始ボタンをクリックできるようにする。
+	newimg.onerror = function(){
+		alert( "Image not found" );
+		for( const elem of document.getElementById( "panel" ).getElementsByClassName( "control" ) ){
+			elem.disabled = false;
+		}
+	}
+	newimg.src=url;
+}
+
+// 新規ゲーム
+function newGame( n0 )
+{
+let i, j, tmp, flip;
+
+	// 縦横のマスの数を設定
+	if( n0>0 ){
+		n = n0;
+		nTile = n * n - 1;
+		board = [];
+
+		// タイルの横と縦の幅を設定
+		tileWidth = Math.floor( img.width / n );
+		tileHeight = Math.floor( img.height / n );
+		// キャンバス全体の縦横の大きさを設定
+		canvasObj.width = tileWidth * n - 1;
+		canvasObj.height = tileHeight * n - 1;
+	}
+	// まず、正しい場所にタイルを置く。
+	for( i=0; i<nTile; i++ ){
+		board[i] = i;
+	}
+
+	// タイルを入れ替える。flipは入れ替えの回数
+	flip = 0;
+	while( flip<1 ){
+		for( i=0; i<nTile - 1; i++ ){
+			// i番目のタイルをj番目のタイルと入れ替える
+			j = i + Math.floor( Math.random() * (nTile-i) );
+			// iとjが異なれば、入れ替えを実行する
+			if( i !== j ){
+				tmp = board[i];
+				board[i] = board[j];
+				board[j] = tmp;
+				flip ++;
+			}
+		}
+	}
+	// 空きマスを入れ替える。
+	j = Math.floor( Math.random() * (nTile+1) );
+	board[nTile] = board[j];
+	board[j] = blank;
+	// 空きマスの場所を (blankX, blankY)に格納する。
+	blankX = j % n;
+	blankY = (j - blankX) / n;
+	if( j !== nTile ) flip++;
+	// 入れ替え回数と空きマスの座標の和が奇数の場合、もう1回入れ替える
+	if( ( flip + blankX + blankY ) % 2 === 1 ){
+		// 入れ替えるのは、空きマスの隣とその隣
+		i = ( j + 1 ) % (nTile+1);
+		j = ( i + 1 ) % (nTile+1);
+		tmp = board[i];
+		board[i] = board[j];
+		board[j] = tmp;
+	}
+	// すべてのタイルを表示
+	for( i=0; i<n; i++ ){
+		for( j=0; j<n; j++ ){
+			showTile( i, j );
+		}
+	}
+	// メッセージを消去
+	document.getElementById( "status" ).innerHTML="";
+}
+
+// マス (x, y) にあるタイルを表示
+function showTile( x, y )
+{
+let k, kx, ky;
+
+	// マス(x, y)を消す（灰色で塗りつぶす）
+	context.fillStyle= "#cccccc";
+	context.fillRect( tileWidth * x, tileHeight * y, tileWidth, tileHeight );
+
+	// マス(x, y)のタイル番号を取得
+	k = board[ x + y * n ];
+
+	// もし空きセルならば空きマスを描いて帰る
+	if( k === blank ){
+		context.fillStyle = backPattern;
+		context.fillRect( tileWidth * x, tileHeight * y, tileWidth-1, tileHeight-1 );
+		return;
+	}
+
+	// タイル番号に対応する画像の部分を求めて
+	kx = k % n;
+	ky = (k-kx) / n;
+	
+	// キャンバスにその部分を描く。
+	context.drawImage( img, 
+		tileWidth * kx, tileHeight * ky, tileWidth - 1, tileHeight - 1, // 画像の切り出すべき部分
+		tileWidth * x, tileHeight * y, tileWidth - 1, tileHeight - 1 ); // 画像を描く場所
+}
+
+// マス (x, y) にあるタイルを空きマスへ移動
+function moveTile( x, y )
+{
+	// 空きマスの内容を(x, y)の内容に書き換える。
+	board[blankX + blankY * n] = board[x + y * n];
+	// (x, y)の内容を空きマスに書き換える。
+	board[x + y * n] = blank;
+	// (x, y), (blankX, blankY)の内容を表示する。
+	showTile( x, y );
+	showTile( blankX, blankY );
+	// 空きマスの位置を(x, y)とする。
+	blankX = x;
+	blankY = y;
+}
+
+// タイルをクリックしたときに呼び出されるイベント処理
+function clicked( e ){
+let i, mouseX, mouseY, x, y;
+// mouseX, mouseYにマウスのポインタの位置をセット(決まり文句)
+	mouseX = e.offsetX || (e.pageX - e.target.offsetLeft);
+	mouseY = e.offsetY || (e.pageY - e.target.offsetTop);
+// mouseX, mouseYをタイルのサイズで割り、タイルの位置(x,y)を得る。
+	x = Math.floor( mouseX / tileWidth );
+	y = Math.floor( mouseY / tileHeight );
+
+	// (x,y)が空きマスの位置(blankX, blankY)と隣接していれば、
+	if( false ) {
+		// タイルを移動させる。
+		moveTile( x, y );
+		// すべてのタイルが正しい位置にあるか？
+		for( i=0; i<nTile; i++ ){
+			// 正しい位置になければ、処理を終了
+			if( board[i] !== i ) return;
+		}
+		// ここまできていれば完成！
+		// 右下のタイルを元の画像にして、表示
+		board[nTile] = nTile;
+		showTile( n-1, n-1 );
+		// 終了メッセージを表示
+		document.getElementById( "status" ).innerHTML="Congratulations!";
+	}
+}
+//-->
+</script>
+
+</head>
+<body>
+  <h1>15パズル</h1>
+  <div>
+  <canvas id="mycanvas" onMouseUp="clicked( event );" >
+      No canvas available
+  </canvas>
+  </div>
+  <div id="panel">
+  画像を選んで、3x3, 4x4, 5x5のどれかのボタンをクリックするとゲームが始まります。
+  <form action="#">
+  <button class="control" onClick="newGame( 3 ); return false;">3x3</button>　
+  <button class="control" onClick="newGame( 4 ); return false;">4x4</button>　
+  <button class="control" onClick="newGame( 5 ); return false;">5x5</button>　
+  画像：<select class="control" id="image" onChange="newImage(this.value)">
+    <option value="4x4.png">数字</option>
+    <option value="kyoto.jpg">京都</option>
+    <option value="cat.jpg">猫</option>
+    <option value="bangkok.jpg">バンコク</option>
+    <option value="greece.jpg">エーゲ海</option>
+    <option value="vancouver.jpg">トーテムポール</option>
+  </select>
+  </form>
+  </div>
+  <div id="status" style="font-size: 2em">
+  </div>
+</body>
+</html>

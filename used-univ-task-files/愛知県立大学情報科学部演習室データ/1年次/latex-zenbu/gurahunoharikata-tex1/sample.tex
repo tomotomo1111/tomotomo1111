@@ -1,0 +1,39 @@
+\documentclass[a4j]{jsarticle}
+\usepackage[top=20truemm,bottom=20truemm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+
+\begin{document}
+\title{\LaTeX{}その２}
+\author{20yy31000  愛知　太郎}
+\maketitle
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=3truecm]{./figs/right-hand.eps}
+  \caption{フレミング右手の法則}
+  \label{fig:fleming-rh}
+\end{figure}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=3truecm]{./figs/left-hand.eps}
+  \caption{フレミングの左手の法則}
+  \label{fig:fleming-lh}
+\end{figure}
+図~\ref{fig:fleming-rh}はフレミングの右手の法則,
+図~\ref{fig:fleming-lh}はフレミングの左手の法則%
+~\cite{kishimoto_elec+mag06}を表す．
+
+\begin{thebibliography}{9}
+\bibitem{kishimoto_elec+mag06}
+  岸本忠史，電磁気学入門，培風館，2006．
+\bibitem{okumua_latex20}
+  奥村晴彦，黒木裕介，LaTeX2e美文書作成入門，改訂第８版，技術評論社，2020．
+\end{thebibliography}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.8\linewidth]{./figs/latex-flow.eps}
+  \caption{\LaTeX　の処理手順書}
+  \label{fig:latex-flow}
+\end{figure}
+
+\end{document}

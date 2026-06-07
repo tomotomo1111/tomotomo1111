@@ -1,0 +1,6 @@
+
+***** ode45
+経過時間は 0.028660 秒です。
+Num. of division = 13889
+Max error (disp) = 7.793293957325531e-05
+Max error (velo) = 9.395740953577203e-05

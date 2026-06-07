@@ -1,0 +1,74 @@
+import java.util.Scanner;
+
+public class ClassA11 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("A君(ID番号01)の各教科の点数を入力してください.");
+		
+		System.out.print("英語特論:");
+		String input1 = scan.next();
+		int x1 = Integer.valueOf(input1);
+		
+		System.out.print("統計解析学:");
+		String input2 = scan.next();
+		int x2 = Integer.valueOf(input2);
+		
+		System.out.print("古典文学:");
+		String input3 = scan.next();
+		int x3 = Integer.valueOf(input3);
+		
+		System.out.print("経営戦略学:");
+		String input4 = scan.next();
+		int x4 = Integer.valueOf(input4);
+		
+		System.out.print("制御理論学:");
+		String input5 = scan.next();
+		int x5 = Integer.valueOf(input5);
+		
+		Grades11 id1 = new Grades11(input1, input2, input3, input4, input5);
+		
+		System.out.println("合計点="+id1.SumScore());
+		System.out.println("平均点="+id1.AveScore());
+		System.out.println("最低点="+id1.MinScore());
+		System.out.println("最高点="+id1.MaxScore());
+	}
+}
+
+class Grades11 {
+	int Eng, Math, Lite, Tac, Cont;
+	
+	public Grades11(int x1, int x2, int x3, int x4, int x5) {
+		Eng = x1;
+		Math = x2;
+		Lite = x3;
+		Tac = x4;
+		Cont = x5;
+	}
+	
+	public int SumScore() {
+		return Eng + Math + Lite + Tac + Cont;
+	}
+	
+	public double AveScore() {
+		return (Eng + Math + Lite + Tac + Cont) / (double) 5;
+	}
+	
+	public int MinScore() {
+		int miner;
+		miner = (Eng - Math) > 0 ? Math : Eng; 
+		miner = (miner - Lite) > 0 ? Lite : miner;
+		miner = (miner - Tac) > 0 ? Tac : miner;
+		miner = (miner - Cont) > 0 ? Cont : miner;
+		return miner;
+	}
+	
+	public int MaxScore() {
+		int maxer;
+		maxer = (Eng - Math) > 0 ? Eng : Math;
+		maxer = (maxer - Lite) > 0 ? maxer : Lite;
+		maxer = (maxer - Tac) > 0 ? maxer : Tac;
+		maxer = (maxer - Cont) > 0 ? maxer : Cont;
+		return maxer; 
+	}
+	
+}

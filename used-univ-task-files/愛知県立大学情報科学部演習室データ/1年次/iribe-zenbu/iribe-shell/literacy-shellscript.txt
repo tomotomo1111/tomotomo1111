@@ -1,0 +1,156 @@
+学籍番号 2022311042|氏    名 神野 友哉
+
+■■課題1■■
+ユーザ postfix が実行したコマンド名とそのプロセスID番号を調べたい．
+調べるためのコマンドを一行で表せ．また，調べた実行コマンド名とそのプロセスID番号も回答せよ．
+
+//実行したすべてのコマンド(ユーザ名は問わない)を確かめる。以下のようにコマンドを打つ
+[is221042@if089 ~]$ ps -ef | grep postfix
+root      3185     1  0 11:56 ?        00:00:00 /usr/libexec/postfix/master -w
+postfix   3186  3185  0 11:56 ?        00:00:00 pickup -l -t unix -u
+postfix   3187  3185  0 11:56 ?        00:00:00 qmgr -l -t unix -u
+is221042  5192  5095  0 11:58 pts/0    00:00:00 grep --color=auto postfix
+
+
+//途中でユーザー名が postfix であるコマンドが以下の様に表示された
+postfix   3186  3185  0 11:56 ?        00:00:00 pickup -l -t unix -u
+postfix   3187  3185  0 11:56 ?        00:00:00 qmgr -l -t unix -u
+
+//プロセスIDが 3186 であるコマンドは pickup -l -t unix -u
+//プロセスIDが 3187 であるコマンドは qmgr -l -t unix -u
+
+■■課題2■■
+vimとは何かを調べよ．その後，同じ端末で emacs, vim の順にバックグラウンド実行せよ．
+その後，vim をフォアグランド実行に切り替え，一時停止せよ．
+
+// vim とは vi コマンドの近縁テキストエディタである。 vi のコマンドと似通っている。
+// vi と同様に vim コマンドでの端末からのファイル内容編集が可能なテキストエディタである。(wikiより)
+
+// vim をダウンロードするコマンドを入力する
+
+shinno@shinno-HP-ProBook-430-G2:~$ sudo apt install vim
+
+// emacs をバックグラウンド実行する
+
+shinno@shinno-HP-ProBook-430-G2:~$ emacs &
+[1] 7683
+
+// literacy.txt という存在不明のファイルをバックグラウンド実行で編集する
+
+shinno@shinno-HP-ProBook-430-G2:~$ vim literacy.txt &
+[1] 7692
+
+//バックグラウンド実行されているコマンドを表示する
+
+shinno@shinno-HP-ProBook-430-G2:~$ jobs
+[1]-  実行中               emacs &
+[2]+  停止                  vim literacy.txt
+
+// + と表示されているので fg コマンドでフォアグラウンド実行に切り替える
+
+shinno@shinno-HP-ProBook-430-G2:~$ fg
+
+// ctrl と z 同時に押すことで実行中のコマンドを一時停止する。それを jobs で確認する
+
+shinno@shinno-HP-ProBook-430-G2:~$ jobs
+[1]-  実行中               emacs &
+[2]+  停止                  vim
+
+■■課題3■■ 
+適当なリモートログイン先で emacs をバックグラウンド実行し，そのプロセスを kill コマンドによって終了せよ．
+//演習室pc ie100 に接続を試みる
+
+shinno@shinno-HP-ProBook-430-G2:~$ ssh is221042@ie100.cis.aichi-pu.ac.jp
+
+//隠れて見えないがパスワードを入力する
+
+is221042@ie100.cis.aichi-pu.ac.jp's password:
+
+// pwd を打つ
+
+[is221042@ie100 ~]$ pwd
+/cis/home/is221042
+
+// emacs をバックグラウンド実行する
+
+[is221042@ie100 ~]$ emacs &
+[1] 17607
+
+//実行したコマンドをジョブ番号で強制停止する
+
+[is221042@ie100 ~]$ kill -9 %1
+[1]+  停止                  emacs
+
+// kill の動作確認
+
+[is221042@ie100 ~]$ jobs
+[1]+  強制終了            emacs
+
+■■課題4■■
+現在あなたがログインしているコンピュータに対して，他にログインしているユーザ名とユーザ数を画面に表示するコマンド操作を1 行で示せ．
+
+//実行したコマンドは
+
+[is221042@ie100 ~]$ who
+
+//結果は
+
+is221042 pts/0        2022-05-29 20:36 (172.31.242.209)
+
+■■課題5■■
+1から100を足し算し結果を画面上に表示するプログラムを作成せよ．
+作成したシェルスクリプト，実行コマンド，実行結果を記載すること．
+
+//作成したシェルスクリプト sigma.sh は
+
+#!/bin/sh
+echo "最大は?"
+read max
+echo "最小は?"
+read min
+sigma=0;for n in `seq $min $max`;
+       do sigma=$(($sigma+$n));
+       done;echo "合計は$sigma"
+
+//実行コマンドは
+
+shinno@shinno-HP-ProBook-430-G2:~$ sh sigma.sh
+
+//出力結果は以下の通り。ただし100と1は標準入力であり、任意の数を代入できる。
+
+最大は?
+100 
+最小は?
+1
+合計は5050
+
+■■課題6■■
+if 文を用い，条件 x ≧ y を満たすなら「OK」，満たさないなら｢NG」と表示するシェルスクリプトを作成し，実行せよ．
+ただし，変数 x, y は第1引数，第2引数によって各値を与えるようにすること．
+作成したシェルスクリプト，実行コマンド，実行結果を記載すること．
+
+//作成したシェルスクリプトは if.sh という名前で内容は以下の通りである
+
+#!/bin/sh
+
+echo "第一因数は"
+read x
+echo "第二因数は"
+read y
+if [ $x -lt $y ];then
+    echo "NG"
+else echo "OK"
+     fi
+
+//実行コマンドは
+
+shinno@shinno-HP-ProBook-430-G2:~$ sh if.sh
+
+//実行結果は、途中で第一因数に5、第二因数に5を代入し
+
+第一因数は
+5
+第二因数は
+5
+OK
+

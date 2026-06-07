@@ -1,0 +1,328 @@
+﻿学籍番号 2022311042 | 氏    名 神野友哉 
+
+■■■復習問題■■■
+
+【１】確認問題 
+(1) ひとつ上のディレクトリを表す記号はどれか．正解を残すこと．
+    解答のみを残すこと．
+
+
+  c) ..
+ 
+
+(2) 現在「~/Documents/ToDo」ディレクトリにいるとき，ホームディレクトリ
+    に移動するコマンドとして正しくないものはどれか．
+    解答のみを残すこと．
+
+  b) cd ~/~
+
+  d) cd ./../..
+
+(3) ホームディレクトリの中で拡張子が「.txt」のファイルの一覧を
+    表示するコマンドはどれか．
+    解答のみを残すこと．
+ 
+  b) ls ~/*.txt
+
+
+(4) カレントディレクトリの下の拡張子を除いたファイル名が６文字で，
+    拡張子が３文字のファイルの一覧を表示するコマンドをどれか．
+    解答のみを残すこと．
+
+
+  c) ls ??????.???
+
+
+(5) 「file-01.txt」を「file-02.txt」にコピーするコマンドとして
+    正しく機能するものはどれか．
+    解答のみを残すこと．
+  a) cp file-01.txt file-02.txt
+
+
+
+(6) カレントディレクトリに「Homework」「Business」という２つのディレクトリ
+    を作成するコマンドとして正しくないものはどれか．
+    解答のみを残すこと．
+
+
+  c) mkdir Homework/Business
+
+
+(7) カレントディレクトリから拡張子が「.mp3」のファイルだけを「MP3」
+    ディレクトリに移動するコマンドはどれか．
+    解答のみを残すこと．
+  a) mv *.mp3 MP3/
+
+
+
+
+■
+■ 【２】【３】【４】の問題については，指示された操作を行うためのコマンド入力を
+■ 記すこと．
+■
+
+【２】次の操作を実行せよ．
+(1) 現在日時を内容とするファイル a11 を新規作成する.
+    コマンド入力: [is221042@ie001 ~]$ date > a11
+                 [is221042@ie001 ~]$ ls a11
+    出力結果: a11
+
+(2) a11 を a12 というファイルにコピーする．
+    コマンド入力; [is221042@ie001 ~]$ cp a11 a12
+                 [is221042@ie001 ~]$ ls a11 a12
+    出力結果: a11  a12
+
+(3) a12 の内容を画面に表示する．
+    コマンド入力: [is221042@ie001 ~]$ cat a12
+    出力結果: 2022年  5月 13日 金曜日 12:46:48 JST
+
+(4) a11 と a12 では作成日時と名前以外の情報が同じであることを確認する．
+//ここから貸出pcで作業を行う。前の作業で同じ結果が得られる。[]がないのは仕様である。
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ ls -al a11 a12
+    出力結果: -rw-rw-r-- 1 shinno shinno 43  5月 16 00:43 a11
+              -rw-rw-r-- 1 shinno shinno 43  5月 16 00:44 a12
+
+(5) a11 と a12 を削除する．
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ rm a11 a12
+    　　　　　    shinno@shinno-HP-ProBook-430-G2:~$ find a11 a12
+    出力結果: find: ‘a11’: そのようなファイルやディレクトリはありません
+              find: ‘a12’: そのようなファイルやディレクトリはありません
+　　　　
+【３】次の操作を実行せよ．
+(1) ディレクトリ d2 をつくる．   
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ mkdir d2
+                  shinno@shinno-HP-ProBook-430-G2:~$ find d2
+    出力結果;d2
+
+(2) d2 の中に，任意の方法でファイル a21 をつくる．
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ touch d2/a21
+                  shinno@shinno-HP-ProBook-430-G2:~$ find d2/a*
+    出力結果: d2/a21
+
+(3) a21 を d2 の中に a22 という名前でコピーする．
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ cp d2/a21 d2/a22
+                  shinno@shinno-HP-ProBook-430-G2:~$ ls d2/
+    出力結果: a21  a22
+
+(4) d2 の中にディレクトリ d21 をつくる．
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ mkdir d2/d21
+                  shinno@shinno-HP-ProBook-430-G2:~$ ls d2/
+    出力結果: a21  a22  d21
+
+(5) a22 を d21 に移動する．
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ mv d2/a22 d2/d21
+                  shinno@shinno-HP-ProBook-430-G2:~$ ls d2/d21
+    出力結果: a22
+    
+(6) d21 を d2 の中に d22 という名前で丸ごとコピーする．
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ cp -r d2/d21 d2/d22
+                  shinno@shinno-HP-ProBook-430-G2:~$ ls d2
+    出力結果: a21  d21  d22
+
+(7) d2 を丸ごと削除する．
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ rm -r d2
+                  shinno@shinno-HP-ProBook-430-G2:~$ find d2
+    出力結果: find: ‘d2’: そのようなファイルやディレクトリはありません
+
+【４】最初はホームディレクトリにいると仮定し，次の操作を実行せよ．
+(1) /etcにある hosts ファイルの内容を表示する．
+    コマンド操作: [is221042@if001 ~]$ cat /etc/hosts
+    出力結果: 以下の通りになりました
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+(2) /dev ディレクトリの中にあるファイル一覧を表示する．
+    コマンド操作: [is221042@if001 ~]$ ls /dev/
+    出力結果:以下の通りに表示されました
+acpi_thermal_rel  log                 rfkill    tty25  tty55    vcsa1
+autofs            loop-control        rtc       tty26  tty56    vcsa2
+block             lp0                 rtc0      tty27  tty57    vcsa3
+bsg               lp1                 sda       tty28  tty58    vcsa4
+btrfs-control     lp2                 sda1      tty29  tty59    vcsa5
+bus               lp3                 sg0       tty3   tty6     vcsa6
+char              mapper              shm       tty30  tty60    vcsu
+console           mei0                snapshot  tty31  tty61    vcsu1
+core              mem                 snd       tty32  tty62    vcsu2
+cpu               memory_bandwidth    stderr    tty33  tty63    vcsu3
+cpu_dma_latency   mpt2ctl             stdin     tty34  tty7     vcsu4
+cuse              mpt3ctl             stdout    tty35  tty8     vcsu5
+disk              mqueue              tpm0      tty36  tty9     vcsu6
+dri               net                 tpmrm0    tty37  ttyS0    vfio
+drm_dp_aux0       network_latency     tty       tty38  ttyS1    vga_arbiter
+drm_dp_aux1       network_throughput  tty0      tty39  ttyS2    vhci
+drm_dp_aux2       nfs                 tty1      tty4   ttyS3    vhost-net
+fb0               null                tty10     tty40  uhid     vhost-vsock
+fd                nvme0               tty11     tty41  uinput   video0
+freefall          nvme0n1             tty12     tty42  urandom  video1
+full              nvme0n1p1           tty13     tty43  usb      vmci
+fuse              nvme0n1p2           tty14     tty44  usbmon0  vmmon
+gpiochip0         nvme0n1p3           tty15     tty45  usbmon1  vmnet0
+hidraw0           nvme0n1p4           tty16     tty46  usbmon2  vmnet1
+hidraw1           nvme0n1p5           tty17     tty47  v4l      vmnet8
+hidraw2           nvram               tty18     tty48  vcs      vsock
+hpet              port                tty19     tty49  vcs1     watchdog
+hugepages         ppp                 tty2      tty5   vcs2     watchdog0
+hwrng             ptmx                tty20     tty50  vcs3     zero
+initctl           ptp0                tty21     tty51  vcs4
+input             pts                 tty22     tty52  vcs5
+kmsg              random              tty23     tty53  vcs6
+kvm               raw                 tty24     tty54  vcsa
+
+    
+(3) ホームディレクトリに任意の方法でファイル aaa を作成する．
+    コマンド操作: [is221042@if001 ~]$ cd ~
+    		[is221042@if001 ~]$ touch aaa
+                [is221042@if001 ~]$ find aaa
+    出力結果: aaa
+
+(4) ホームディレクトリにあるファイル aaa を /tmp ディレクトリに移動する．
+    コマンド操作: [is221042@if001 ~]$ mv ~/aaa /tmp/
+                [is221042@if001 ~]$ find /tmp/aaa
+    出力結果: /tmp/aaa
+
+(5) /tmp の中に移動したファイル aaa を削除する．
+    コマンド操作: [is221042@if001 ~]$ rm /tmp/aaa
+                [is221042@if001 ~]$ find /tmp/aaa
+    出力結果: find: ‘/tmp/aaa’: そのようなファイルやディレクトリはありません
+
+(6) ホームディレクトリの中にディレクトリ d31 をつくる．
+    コマンド操作: [is221042@if001 ~]$ mkdir d31
+                [is221042@if001 ~]$ find ~/d31
+    出力結果: /cis/home/is221042/d31
+
+(7) ディレクトリ d31 に移動する．
+    コマンド操作: [is221042@if001 ~]$ cd ~/d31
+                [is221042@if001 d31]$ pwd
+    出力結果: /cis/home/is221042/d31
+
+(8) ルートディレクトリに移動する．
+    コマンド操作: [is221042@if001 ~]$ cd /
+                [is221042@if001 /]$ pwd
+    出力結果: /  
+ 
+(9) ホームディレクトリに移動する．
+    コマンド操作: [is221042@if001 /]$ cd
+                [is221042@if001 ~]$ pwd
+    出力結果: /cis/home/is221042
+
+(10)ディレクトリ d31 を削除する．
+    コマンド操作: [is221042@if001 ~]$ rmdir d31
+                [is221042@if001 ~]$ find d31
+    出力結果: find: ‘d31’: そのようなファイルやディレクトリはありません
+
+■■■パーミッションの問題■■■
+
+【５】確認問題
+(1) ファイルを全てのユーザが読み書きできるようにするためのパーミッショ
+    ンはどれか．
+    解答のみを残すこと．
+
+  b) rw-rw-rw-
+
+
+
+(2) 「tmp.txt」のパーミッションをグループとその他のユーザにすべて許可
+    しないように設定するコマンド操作はどれか．
+    解答のみを残すこと．
+
+
+
+  d) chmod go-rwx tmp.txt 
+
+(3) 「Documents」の下の拡張子「*.txt」のテキストファイルのパーミッショ
+     ンを全てのユーザに対して読み書き可に設定するコマンド操作はどれか．
+     解答のみを残すこと．
+
+
+  c) chmod 666 Documents/*.txt
+
+
+■
+■ 【６】【７】の問題については，指示された操作を行うためのコマンド入力を
+■ 記すこと．ファイル許可の変更は文字による変更と数字による変更の両方の書き方を記載すること．　
+■
+
+【６】次の操作を実行せよ．
+　   万が一，うまく操作できない場合はどうすれば良いかを記せ．
+(1) ホームディレクトリに任意の方法でファイル a41 をつくる．
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ touch ~/a41
+                  shinno@shinno-HP-ProBook-430-G2:~$ ls ~/a41
+    出力結果: /home/shinno/a41
+
+(2) a41 の保護モードを次のように変更する．
+//初期状態が-rw-rw-r-- 1 shinno shinno 0  5月 16 01:34 a41で問題が連続しているとする
+    所有者は読むだけ
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ chmod u-w a41
+                  shinno@shinno-HP-ProBook-430-G2:~$ chmod 464 a41
+    出力結果: -r--rw-r-- 1 shinno shinno 0  5月 16 01:34 a41
+
+    グループは何もできない
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ chmod g-rwx a41
+                  shinno@shinno-HP-ProBook-430-G2:~$ chmod 404 a41
+    出力結果: -r-----r-- 1 shinno shinno 0  5月 16 01:34 a41
+
+    他のユーザは何もできない
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ chmod o-r a41
+                  shinno@shinno-HP-ProBook-430-G2:~$ chmod 400 a41
+    出力結果: -r-------- 1 shinno shinno 0  5月 16 01:34 a41
+
+(3) a41 の中身を編集する．
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ vi a41
+    出力結果: viエディタが出現した。esc→:qw!で編集を終えた。
+    
+(4) a41 を削除する．
+    コマンド入力: shinno@shinno-HP-ProBook-430-G2:~$ rm a41
+                  shinno@shinno-HP-ProBook-430-G2:~$ find ~/a41
+    出力結果: find: ‘/home/shinno/a41’: そのようなファイルやディレクトリはありません
+
+【７】次の操作を実行せよ．
+     万が一，うまく操作できない場合はどうすれば良いかを記せ．
+(1) ホームディレクトリに任意の方法でディレクトリ d51 をつくる．
+    コマンド操作: [is221042@if001 ~]$ mkdir d51
+                [is221042@if001 ~]$ find d51
+    出力結果: d51
+
+(2) d51 の保護モードを次のように変更する．
+//以下学内の演習室のPCを用いる。また問題が連続しているとする。ファイルd51の初期状態は
+drwxr-xr-x 2 is221042 student 4096  5月 17 16:28 d51
+
+    所有者は読むだけ
+    コマンド操作: [is221042@if001 ~]$ chmod u-wx d51
+                [is221042@if001 ~]$ chmod 455 d51
+                [is221042@if001 ~]$ ls -dl d51
+    出力結果: dr--r-xr-x 2 is221042 student 4096  5月 17 16:28 d51
+
+    グループは何もできない
+    コマンド操作: [is221042@if001 ~]$ chmod g-rx d51
+                [is221042@if001 ~]$ chmod 405 d51
+                [is221042@if001 ~]$ ls -dl d51 
+    出力結果: dr-----r-x 2 is221042 student 4096  5月 17 16:28 d51
+
+    他のユーザは何もできない
+    コマンド操作: [is221042@if001 ~]$ chmod o-rx d51
+                [is221042@if001 ~]$ chmod 400 d51
+                [is221042@if001 ~]$ ls -dl d51
+    出力結果: dr-------- 2 is221042 student 4096  5月 17 16:28 d51
+
+(3) d51 の中にファイル a51 をつくる．
+//ファイル操作の権限を獲得するために、そのためのコマンド操作を行う。
+
+    コマンド操作: [is221042@if001 ~]$ chmod 700 d51　
+　　　　　　　　　　　　　//700を u+rwx としてもよし
+                [is221042@if001 ~]$ touch d51/a51
+                [is221042@if001 ~]$ ls d51/
+    出力結果: a51
+
+(4) d51 の中に移動する．
+//(3)の操作中に読み書き実行の権限を付与したため、問題なくこのタスクを行動に移せる。
+
+    コマンド操作:[is221042@if001 ~]$ cd d51
+               [is221042@if001 d51]$ pwd
+    出力結果: /cis/home/is221042/d51
+
+(5) d51 を削除する．
+    コマンド操作: [is221042@if001 ~]$ rm -r d51
+                [is221042@if001 ~]$ find d51
+    出力結果: find: ‘d51’: そのようなファイルやディレクトリはありません
+
+    

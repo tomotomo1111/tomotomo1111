@@ -1,0 +1,6 @@
+public interface IntSet2{
+	void add(int value, String name;
+	boolean findName(String name);
+	int size();
+	String getName(int index);
+}

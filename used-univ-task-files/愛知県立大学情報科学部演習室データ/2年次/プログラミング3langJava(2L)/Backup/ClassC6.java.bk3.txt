@@ -1,0 +1,64 @@
+import java.util.Random;
+public class ClassC6 {
+	public static void main(String[] args) {
+		Seiseki6[] studentArray = new Seiseki6[3];
+		for(int i=0; i<studentArray.length; i++) {
+			studentArray[i] = new Seiseki6(RandomScore(), RandomScore(), RandomScore());
+		}
+		System.out.println("ID1さんの成績は下記になります.");
+		System.out.println("英語特論の点数は"+studentArray[0].Eng);
+		System.out.println("統計解析学の点数は"+studentArray[0].Math);
+		System.out.println("古典文学の点数は"+studentArray[0].Lite);
+		System.out.println("平均点数は"+studentArray[0].AveScore());
+		System.out.println("*************************");
+		System.out.println("ID2さんの成績は下記になります.");
+		System.out.println("英語特論の点数は"+studentArray[1].Eng);
+		System.out.println("統計解析学の点数は"+studentArray[1].Math);
+		System.out.println("古典文学の点数は"+studentArray[1].Lite);
+		System.out.println("平均点数は"+studentArray[1].AveScore());
+		System.out.println("*************************");
+		System.out.println("ID3さんの成績は下記になります.");
+		System.out.println("英語特論の点数は"+studentArray[2].Eng);
+		System.out.println("統計解析学の点数は"+studentArray[2].Math);
+		System.out.println("古典文学の点数は"+studentArray[2].Lite);
+		System.out.println("平均点数は"+studentArray[2].AveScore());
+		System.out.println("*************************");
+		
+		System.out.println("最高平均点数はID"+ClassCalculate3.MaxAveScore(studentArray)[1]+"さんの"+ClassCalculate3.MaxAveScore(studentArray)[0]+"です.");
+	}
+	public static int RandomScore() {
+		Random rand = new Random();
+		return 30 + rand.nextInt(70);
+	}
+}
+
+class Seiseki6{
+	int Eng, Math, Lite;
+	public Seiseki6(int score1, int score2, int score3) {
+		Eng = score1;
+		Math = score2;
+		Lite = score3;
+	}
+	
+	public double AveScore() {
+		return (Eng + Math + Lite) / 3;
+	}
+}
+class ClassCalculate3{
+	public static double[] MaxAveScore(Seiseki6[] array) {
+		double[] aveList = new double[3];
+		double[] returnList = new double[2];
+		for(int i=0; i<array.length; i++) {
+			aveList[i] = (array[i].Eng + array[i].Math + array[i].Lite) / 3;
+		}
+		
+		returnList[0] = 0;
+		for(int i=0; i<aveList; i++) {
+			if(returnList[0] <= aveList[i]) {
+				returnList[0] = aveList[i];
+				returnList[1] = i + 1;
+			}
+		}
+		return returnList;
+	}
+}

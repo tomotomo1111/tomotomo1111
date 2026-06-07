@@ -1,0 +1,62 @@
+class UniversityFestival extends Payment{
+	private int age;
+	private String[] TourOrder = new String[5];
+	private String[] LiveGroup = {"JAVA-Band","PHP-DanceTeam","Ruby-Dance","Songer-Haskell","Momane-Python"};
+	private String[] GestList = {"Mr.A","B-Man","C-DanceTeam","Generation-D","Super-E"};
+	final int EntryFee1 = 3000;
+	final int EntryFee2 = 1500;
+	
+	public UniversityFestival(String n, int m, int a) {
+		super(n, m);
+		age = a;
+	}
+	
+	public int FesPayment() {
+		if(CheckGest()){
+			return AmountOfMoney(EntryFee1, 3000, Gest());
+		} else if(age <= 23 && age >= 20 && getNum() >= 10) {
+			return AmountOfMoney(EntryFee1, 1000, getName());
+		} else if(age < 20 && getNum() >= 10) {
+			return AmountOfMoney(EntryFee2, 1000, getName());
+		} else if(age < 20) {
+			return AmountOfMoney(EntryFee2, 1000, "normal");
+		} else {
+			return AmountOfMoney(EntryFee1, 1000, "normal");
+		}
+	}
+	
+	public boolean CheckGest() {
+		for(int i=0; i<GestList.length; i++) {
+			if(Name().equals(GestList[i])) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public String Gest(){
+		if(CheckGest()) {
+			return "ゲスト";
+		} esle {
+			return "スーパーゲスト";
+		}
+	}
+	
+	public String[] OrderReturn(int y){
+		OrderDicision(y);
+		return TourOrder;
+	}
+	
+	public void OrderDicision(int y) {
+		int x = 0;
+		int j = (LiveGroup.length-1)-(y-1);
+		for(int i=j; i>=0; i--) {
+			TourOrder[x++] = LiveGroup[i];
+		}
+		if(j!=4){
+			for(int i=j+1; i<LiveGroup.length; i++) {
+				TourOrder[x++] = LiveGroup[i];
+			}
+		}
+	}
+}

@@ -1,0 +1,22 @@
+public class Enshu4Monda3{
+	public static void main(String[] args) {
+		ScoreConfirmation3 id1 = new ScoreConfirmation3(72,81);
+		System.out.println("英語特論の成績点数は"+id1.Eng);
+		System.out.println("統計解析学の成績点数は"+id1.Math);
+		System.out.println("最高成績点数は"+id1.ScoreMax());
+	}
+}
+
+class ScoreConfirmation3{
+	double Eng, Math;
+	private static final double rate = 0.9;
+	public ScoreConfirmation3(double score1, double score2) {
+		Eng = score1 * rate;
+		Math = score2 * rate;
+	}
+	
+	public int ScoreMax() {
+		int max = (Eng - Math) > 0 ? Eng : Math;
+		return max;
+	}
+}

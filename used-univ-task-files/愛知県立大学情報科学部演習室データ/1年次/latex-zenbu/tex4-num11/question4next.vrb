@@ -1,0 +1,15 @@
+\frametitle{スキル系の例２：VBoxのCentOS７上でGnuplotの最新化}
+公式サイトhttps://www.gnuplot.info/によると最新版は5.4.2．
+CentOS７にyumでインストールできるバージョンは4.6.2（古い！）
+  \begin{block}{ソースパッケージからインストールするときの基本作業}
+    \begin{enumerate}
+      \item \verb2$2 \quad tar\quad xvzf\quad gnuplot-5.4.2.tar.gz\quad $kk$\quad cd\quad gnuplot-5.4.2
+      \item \verb2$2 \quad ./configure\quad $kk$\quad make
+      \item \verb2$2 \quad sudo\quad make\quad install
+    \end{enumerate}
+  \end{block}
+実はエラー出て途中で止まる$\cdots$ ，たとえば，【「CentOS７」「gnuplot５」でggr！】
+するといいらしい．
+\vskip1\baselineskip
+仮に，自分のWindows\, OS（あるいは\, macOS）に，Ubuntu\,
+とのデュアルブート環境を構築してみる，とか．

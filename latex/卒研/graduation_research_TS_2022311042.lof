@@ -1,0 +1,4 @@
+\contentsline {figure}{\numberline {1}{\ignorespaces 単語ラベル生成モデルの構成図\relax }}{10}{}%
+\contentsline {figure}{\numberline {2}{\ignorespaces 音楽から生成された単語ラベルに基づき生成された画像例. (a) プロンプトAから生成された画像, (b) プロンプトBから生成された画像\relax }}{12}{}%
+\contentsline {figure}{\numberline {3}{\ignorespaces アンケートで提示した生成画像. (a) 一曲目 Q1 から生成された画像, (b) 二曲目 Q2 から生成された画像, (c) 三曲目 Q3 から生成された画像, (d) 四曲目 Q4 から生成された画像, (e) 五曲目 Q5 から生成された画像\relax }}{15}{}%
+\contentsline {figure}{\numberline {4}{\ignorespaces アンケート結果の集計グラフ\relax }}{16}{}%

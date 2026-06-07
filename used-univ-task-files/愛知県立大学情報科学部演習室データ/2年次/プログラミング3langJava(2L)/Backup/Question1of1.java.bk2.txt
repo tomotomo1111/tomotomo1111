@@ -1,0 +1,16 @@
+public class Question1of1 {
+	int[] array = {{5.3, 3.4}, {2.2, 4.3}, {6.3, 2.5}};
+	
+	public static void main(String[] args) {
+		double min = array[0][0];;
+		
+		for(int i=0; i<array.length; i++) {
+			
+			for(int j=0; j<array[0].length; j++) {
+				if(min > array[i][j]) min = array[i][j]; 
+			}
+		}
+		
+		System.out.println(min);
+	}
+}

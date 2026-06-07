@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 10</title>
+
+<script type="text/javascript">
+<!--
+let nHeap;	// 山の数
+let heap;	// 各山の石の数を表す配列
+let heap0;	// 人間が取り始める前の山の石の数(取り消し用)
+let buttons, okBtn, resetBtn;	// 石を取るボタン、OKボタン、やり直しボタン
+
+// 新規ゲーム
+function newGame()
+{
+	let i;
+	// 山の数を乱数で3から5個とする。
+	nHeap = 3 + Math.floor( Math.random() * 3 );
+	heap = new Array( nHeap );
+	heap0 = new Array( nHeap );
+	buttons = new Array( nHeap );
+	// 各山の石の数を3から9個とする。
+	for( i=0; i<nHeap; i++ ){
+		heap[i] = 3 + Math.floor( Math.random() * 7 );
+	}
+	// ボタンと山を表示する。
+	let s = "";
+	for( i=0; i<nHeap; i++ ){
+		s = s + "<button name='take' onClick='takeClicked("+i+");'>取る</button> <span name='heap'></span><br>";
+	}
+	s = s + "<button id='OK' onClick='okClicked()' disabled>OK</button> ";
+	s = s + "<button id='reset' onClick='resetClicked()' disabled>やり直し</button>";
+	document.getElementById( "game" ).innerHTML = s;
+
+	// ボタンオブジェクトを取得
+	buttons = document.getElementsByName( "take" );
+	okBtn = document.getElementById( "OK" );
+	resetBtn = document.getElementById( "reset" );
+	// 各山の石を表示
+	for( i=0; i<nHeap; i++ ) showheap( i, 0 );
+	// 人間の手番とする。
+	human();
+}
+
+// choice番目の山を表示する。現在の石の数と取った石のcountを表示。
+function showheap( choice, count )
+{
+	let i, s = "";
+	for( i = 0; i<heap[choice]; i++ ) s = s + "●";
+	for( i = 0; i<count; i++ ) s = s + "○";
+	document.getElementsByName( "heap" )[choice].innerHTML = s;
+}
+
+// 人間の番
+function human()
+{
+	let i;
+	for( i=0; i<nHeap; i++ ){
+		// 取り消し用に、各山の最初の石の数をheap0にコピーしておく。
+		heap0[i] = heap[i];
+		// 石がある山からしか取れないようにする。
+		buttons[i].disabled = ( heap[i] > 0 ) ? "" : "disabled";
+	}
+	// 何もしていなければ、OKもやり直しもクリックできない。
+	okBtn.disabled = "disabled";
+	resetBtn.disabled = "disabled";
+}
+
+// やり直しがクリックされたときの処理
+function resetClicked()
+{
+	let i;
+	for( i=0; i<nHeap; i++ ){
+		// 最初の石の数と違っている山について、
+		if( heap[i] != heap0[i] ){
+			// 石の数を元に戻して
+			heap[i] = heap0[i];
+			// 表示する
+			showheap( i, 0 );
+		}
+	}
+	human();
+}
+
+// k番目の山から石を1つ取るボタンがクリックされたときの処理
+function takeClicked( choice )
+{
+	let i;
+	// 石の数が0ならば取れないので何もしない。
+	if( heap[choice] == 0 ) return;
+	// ほかの山から石を取れないようにする。
+	for( i=0; i<nHeap; i++ ){
+		if( i != choice ) buttons[i].disabled = "disabled";
+	}
+	// 石を1つ取って結果を表示する。
+	heap[choice]--;
+	showheap( choice, heap0[choice] - heap[choice] );
+
+	// 石を一つでも取ればOKもやり直しもできる。
+	okBtn.disabled = "";
+	resetBtn.disabled = "";
+}
+
+// OKがクリックされたときの処理
+function okClicked()
+{
+	let i;
+	// ボタンを押せなくする。
+	okBtn.disabled = "disabled";
+	resetBtn.disabled = "disabled";
+	// 山を表示しながら石の合計を数える
+	let sum = 0;
+	for( i=0; i<nHeap; i++ ){
+		buttons[i].disabled = "disabled";
+		showheap( i, 0 );
+		sum = sum + heap[i];
+	}
+	// 石がなくなれば人間の勝ち
+	if( sum === 0 ){
+		alert( "You Win" );
+		newGame();
+	} else {
+		// ちょっと(0.5秒)だけ待ってから、コンピュータの手番に移行
+		setTimeout( "computer()", 500 );
+	}
+}
+
+
+// コンピュータの手番
+function computer()
+{
+	let i, choice, count, nimSum, sum;
+
+	// コンピュータの手を決める。choice=山の番号、count=取る石の数とする。
+	// すべての山の石の数の合計を計算して、sumに入れる
+	sum = 0;
+	for( i=0; i<nHeap; i++ ){
+		sum = sum + heap[i];
+	}
+	// ニム和(すべての山の石の数の排他的論理和)を計算して、nimSumに入れる
+	nimSum = 0;
+	for( i=0; i<nHeap; i++ ){
+		nimSum = nimSum ^ heap[i];
+	}
+
+	// 石を取る山の番号をchoiceに、取る石の数をcountに入れる。
+
+	// 【戦略1】でたらめに山を選んで石を取る
+	// 乱数で取る場所を決める。
+	choice = Math.floor( Math.random() * nHeap );
+	// ただし、石が0のところからは取れないので、次の山に移動する。
+	while( heap[choice] === 0 ){
+		choice = (choice+1) % nHeap;
+	}
+	// 石の数の合計と選んだ山の石の数が等しいければ、他の山に石がないので、全部を取って勝つ。
+	if( sum === heap[choice] ) count = sum;
+	// そうでなければ、乱数で取る数を決める。
+	else count = Math.floor( Math.random() * heap[choice] + 1 );
+
+	// 【戦略2】ニム和nimSumが0でなければ必勝法があるので、それを使う。
+	// 現状では何も書かれていないので、【戦略1】で決められた(乱数による)取り方をする。
+	if( nimSum > 0 ) {
+
+
+
+
+	}
+	// 山choiceからcount個の石を取る。
+	heap[choice] -= count;
+	// 取った石の個数を表示して、
+	showheap( choice, count );
+	// ちょっと(0.75秒)だけ待ってcomputer2を実行
+	setTimeout( "computer2("+choice+")", 750 );
+}
+
+// ちょっと待ったあとの続き
+function computer2( choice )
+{
+	let i;
+	// 山を表示して、
+	showheap( choice, 0 );
+
+	// 石の合計を数える。
+	let sum = 0;
+	for( i=0; i<nHeap; i++ ){
+		sum = sum + heap[i];
+	}
+	if( sum === 0 ){
+		// 石の合計が0だったらコンピュータの勝ち
+		alert( "I Win" );
+		newGame();
+	} else {
+		// 人の手番
+		human();
+	}
+}
+
+//-->
+</script>
+
+</head>
+<body onLoad="newGame()">
+<h1>山崩し(あるいはニム)</h1>
+<p>交互に石を取っていき、最後の1つを取ったほうが勝ちです。石は1つの山からいくつでも取れますが、一度に2つ以上の山から取ることはできません。また、必ず1つは石を取らなければなりません。
+<div id = "game"></div>
+</body>
+</html>

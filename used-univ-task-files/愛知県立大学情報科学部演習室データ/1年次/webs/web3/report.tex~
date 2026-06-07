@@ -1,0 +1,394 @@
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage[width=180mm,height=257mm]{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage{url}
+\usepackage{ascmac}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 注意！　次の行の学籍番号と名前を自分のものに書き換えること %
+\author{2022311042 神野友哉}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{コンピュータリテラシMATLAB課題}
+\begin{document}
+\maketitle
+\section*{課題1}
+\begin{enumerate}[(1)]
+\item 行列
+\[
+A=\left(\begin{array}{cccc}
+1 & 1 &  1 &  1 \\
+1 & i & -1 & -i \\
+1 & -1 & 1 & -1 \\
+1 & -i & -1 & i
+\end{array}\right)
+\]
+について、$A^2$, $A^3$, $A^4$ を計算せよ。また $A$ の階数、行列式、逆行列を求めよ。
+MATLABのコマンド入力($A$の定義からすべて)とその結果を示すこと。
+% 下の\begin{verbatim}と\end{verbatim}との間にMATLABのコマンドとその出力を貼り付けよ。
+\begin{verbatim}
+>> A=[1,1,1,1;1,i,-1,-i;1,-1,1,-1;1,-i,-1,i]
+ 
+A =
+
+   1.0000 + 0.0000i   1.0000 + 0.0000i   1.0000 + 0.0000i   1.0000 + 0.0000i
+   1.0000 + 0.0000i   0.0000 + 1.0000i  -1.0000 + 0.0000i   0.0000 - 1.0000i
+   1.0000 + 0.0000i  -1.0000 + 0.0000i   1.0000 + 0.0000i  -1.0000 + 0.0000i
+   1.0000 + 0.0000i   0.0000 - 1.0000i  -1.0000 + 0.0000i   0.0000 + 1.0000i
+
+>> A^2    
+
+ans =
+
+     4     0     0     0
+     0     0     0     4
+     0     0     4     0
+     0     4     0     0
+
+>> A^3
+
+ans =
+
+   4.0000 + 0.0000i   4.0000 + 0.0000i   4.0000 + 0.0000i   4.0000 + 0.0000i
+   4.0000 + 0.0000i   0.0000 - 4.0000i  -4.0000 + 0.0000i   0.0000 + 4.0000i
+   4.0000 + 0.0000i  -4.0000 + 0.0000i   4.0000 + 0.0000i  -4.0000 + 0.0000i
+   4.0000 + 0.0000i   0.0000 + 4.0000i  -4.0000 + 0.0000i   0.0000 - 4.0000i
+
+>> A^4
+
+ans =
+
+    16     0     0     0
+     0    16     0     0
+     0     0    16     0
+     0     0     0    16
+
+>> rank(A)
+
+ans =
+
+     4
+
+>> det(A)
+
+ans =
+
+   0.0000 -16.0000i
+
+>> inv(A)
+
+ans =
+
+   0.2500 + 0.0000i   0.2500 + 0.0000i   0.2500 + 0.0000i   0.2500 + 0.0000i
+   0.2500 + 0.0000i   0.0000 - 0.2500i  -0.2500 + 0.0000i   0.0000 + 0.2500i
+   0.2500 + 0.0000i  -0.2500 + 0.0000i   0.2500 + 0.0000i  -0.2500 + 0.0000i
+   0.2500 + 0.0000i   0.0000 + 0.2500i  -0.2500 + 0.0000i   0.0000 - 0.2500i
+
+
+\end{verbatim}
+%--------------
+\item
+次の連立1次方程式を解け。数値的に解けばよい。
+\[
+\left(\begin{array}{cccc}
+ 1 & -1 &  2 &  1 \\
+ 2 &  1 & -1 &  3 \\
+ 1 &  3 &  2 & -2 \\
+-3 &  0 &  1 &  4
+\end{array}\right)
+\left(\begin{array}{c}
+w \\
+x \\
+y \\
+z
+\end{array}\right)
+=
+\left(\begin{array}{c}
+9 \\
+6 \\
+2 \\
+-3
+\end{array}\right)
+\]
+% 下の\begin{verbatim}と\end{verbatim}との間にMATLABのコマンドとその出力を貼り付けよ。
+\begin{verbatim}
+>> B=[1,-1,2,1;2,1,-1,3;1,3,2,-2;-3,0,1,4]
+>> C=[9;6;2;-3]
+>> B\C                                    
+
+ans =
+
+    3.0000
+   -1.0000
+    2.0000
+    1.0000
+
+
+\end{verbatim}
+%--------------
+\end{enumerate}
+\section*{課題2}
+\verb"OECD_Health.dat"は、国別の国民一人当たりの年間保健支出(以下、保健支出という)、人口1000人当たりの医師数(医師数)、人口1000人当たりの看護師数(看護師数)のデータである\cite{OECD}。
+ただし、元のデータの1行目には項目名、1列目には国名が書かれているので、
+\begin{verbatim}
+  tail -n +2 OECD_Health.dat | awk '{print $2 " " $3 " " $4}' > health.dat
+\end{verbatim}
+などの方法でこれらを取り除いたファイル\texttt{health.dat}を作る。これを\texttt{load}コマンドで変数\texttt{d}として読み込むこと。
+\begin{enumerate}[(1)]
+\item \texttt{m=mean(d)}で変数\texttt{m}に\texttt{d}の各列の平均が求められることを\texttt{mean}を各列に対して実行した結果と比較することによって確認せよ。
+% 下の\begin{verbatim}と\end{verbatim}との間にMATLABのコマンドとその出力を貼り付けよ。
+\begin{verbatim}
+[is221042@if090 web3]$ tail -n +2 OECD_Health.dat | awk '{print $2 " " $3 " " $4}' > health.dat
+
+[is221042@if090 web3]$ cat health.dat
+4349 3.9 14.5
+4915 3.1 12.2
+2780 3.1 5.1
+3428 4 5.8
+4070 2.8 7.8
+2231 3.5 6.2
+5005 3.7 11.7
+5395 5.2 6.9
+5288 3.6 10.9
+4974 2.7 10
+3192 2.3 6.9
+2238 6.1 3.3
+7317 4.3 17.2
+5447 4.1 10.9
+3323 3.9 5.7
+2290 3.4 5.7
+2859 3.1 9.9
+3058 3.7 8.1
+2182 2.5 2.7
+5299 4 10
+5986 4.3 12.9
+1227 1.9 2.1
+4766 2.4 11.3
+3923 3.3 10.2
+6187 4.7 17.7
+2047 3.3 6.5
+4228 3.2 14.3
+4965 3.2 10.5
+10586 2.6 11.7
+4944 3.1 11
+2056 2.4 5.1
+2861 5 6.7
+1138 2.4 2.9
+1749 3.2 4.6
+2416 4.6 7.7
+5070 3 11.7
+
+>> d = load ('health.dat')
+
+d =
+
+   1.0e+04 *
+
+    0.4349    0.0004    0.0014
+    0.4915    0.0003    0.0012
+    0.2780    0.0003    0.0005
+    0.3428    0.0004    0.0006
+    0.4070    0.0003    0.0008
+    0.2231    0.0003    0.0006
+    0.5005    0.0004    0.0012
+    0.5395    0.0005    0.0007
+    0.5288    0.0004    0.0011
+    0.4974    0.0003    0.0010
+    0.3192    0.0002    0.0007
+    0.2238    0.0006    0.0003
+    0.7317    0.0004    0.0017
+    0.5447    0.0004    0.0011
+    0.3323    0.0004    0.0006
+    0.2290    0.0003    0.0006
+    0.2859    0.0003    0.0010
+    0.3058    0.0004    0.0008
+    0.2182    0.0003    0.0003
+    0.5299    0.0004    0.0010
+    0.5986    0.0004    0.0013
+    0.1227    0.0002    0.0002
+    0.4766    0.0002    0.0011
+    0.3923    0.0003    0.0010
+    0.6187    0.0005    0.0018
+    0.2047    0.0003    0.0006
+    0.4228    0.0003    0.0014
+    0.4965    0.0003    0.0010
+    1.0586    0.0003    0.0012
+    0.4944    0.0003    0.0011
+    0.2056    0.0002    0.0005
+    0.2861    0.0005    0.0007
+    0.1138    0.0002    0.0003
+    0.1749    0.0003    0.0005
+    0.2416    0.0005    0.0008
+    0.5070    0.0003    0.0012
+
+
+>> m = mean(d)
+
+m =
+
+   1.0e+03 *
+
+    3.9941    0.0035    0.0088
+
+>> mean(d(:,1))
+
+ans =
+
+   3.9941e+03
+
+>> mean(d(:,2))
+
+ans =
+
+    3.4889
+
+>> mean(d(:,3))
+
+ans =
+
+    8.8444
+
+\end{verbatim}
+%--------------
+
+\item 保健支出、医師数、看護師数の間の相関係数を求めよ。
+% 求められた数値を書き込め。MATLABコマンドは不要。
+\begin{table}[H]
+\centering
+\caption{相関係数}
+\begin{tabular}{l|l}
+\hline
+保健支出と医師数の相関係数 & 0.1307               \\
+\hline
+保健支出と看護師数の相関係数 & 0.7585               \\
+\hline
+医師数と看護師数の相関係数 & 0.1745               \\
+\hline
+\end{tabular}
+\end{table}
+\item
+保健支出(1列目)を$x$軸、医師数(2列目)を$y$軸に取った散布図(マーカーは青色の$\bigcirc$)、
+保健支出(1列目)を$x$軸、看護師数(3列目)を$y$軸に取った散布図(マーカーは赤色の$\triangle$)をそれぞれグラフとしてプロットせよ。
+それぞれ、次の作業を行うこと。
+\begin{itemize}
+\item \texttt{xlim([x0 xf])}, \texttt{ylim([y0 yf])}を用いて、グラフの軸の範囲を
+保健支出は0から12000、医師数は0から8、看護師数は0から20に設定する。
+\item \texttt{grid on}コマンドでグリッドを表示する。
+\item それぞれの軸に項目名を表示する。保健支出は``Health spending [USD]''、医師数は``Doctors''、看護師数は``Nurses''とすること。
+\item 次の方法で平均値を示せ。
+\begin{itemize}
+\item 医師数のグラフについては、(保健支出の平均値, 医師数の平均値)として求められる点に、大きさ10の赤い☆印のマーカーを描け。なお、\texttt{x}, \texttt{y}で示された点を\texttt{s}で示された色と線/マーカー種で表示するとき、マーカーの大きさを10にするには、\texttt{plot(x,y,'s','MarkerSize',10)}のように記す。
+\item 看護師数のグラフについては、(保健支出の平均値, 看護師数の平均値)として求められる点を通り、$x$軸、$y$軸にそれぞれ平行な線を水色の太線(太さ2)で示せ。なお、\texttt{x}, \texttt{y}で与えられたグラフを\texttt{s}で示された色と線/マーカー種で表示するとき、線の太さを設定するには、\texttt{plot(x,y,'s','LineWidth',2)}のように記す。
+\end{itemize}
+\end{itemize}
+%--------------
+\begin{enumerate}
+\item 保健支出と医師数のグラフ
+% 下の\begin{verbatim}と\end{verbatim}との間にグラフを描くためのMATLABのコマンドを貼り付けよ。PDF/EPSを得るためのコマンドは不要。
+\begin{verbatim}
+>> plot(d(:,1),d(:,2),'bo')                            
+>> xlim([0 12000])                                     
+>> ylim([0 8])                                         
+>> grid on                                             
+>> ylabel 'Doctors'                                    
+>> xlabel 'Health spending [USD]'                      
+>> hold on                                             
+>> plot(mean(d(:,1)),mean(d(:,2)),'rp','MarkerSize',10)
+>> hold off
+\end{verbatim}
+% \centeringの下の行に、\includegraphicsコマンドを用いて、グラフを貼り付けよ。
+\begin{figure}[H]
+\centering
+\includegraphics{web3-spend-ishi.pdf}
+\caption{保健支出と医師数}
+\end{figure}
+
+\item 保健支出と看護師数のグラフ
+% 下の\begin{verbatim}と\end{verbatim}との間にグラフを描くためのMATLABのコマンドを貼り付けよ。PDF/EPSを得るためのコマンドは不要。
+\begin{verbatim}
+>> plot(d(:,1),d(:,3),'r^')
+>> xlabel 'Health spending [USD]'
+>> ylabel 'Nurses'
+>> xlim([0 12000])
+>> ylim([0 20])
+>> grid on
+>> hold on
+>> x1 = xline(mean(d(:,1)))
+>> y1 = yline(mean(d(:,3)))
+>> x1.Color = 'c'
+>> y1.Color = 'c'
+>> x1.LineWidth = 2
+>> y1.LineWidth = 2
+\end{verbatim}
+% \centeringの下の行に、\includegraphicsコマンドを用いて、グラフを貼り付けよ。
+\begin{figure}[H]
+\centering
+\includegraphics{web3-spend-nurse.pdf}
+\caption{保健支出と看護師数}
+\end{figure}
+\end{enumerate}
+\end{enumerate}
+\section*{課題3}
+\begin{enumerate}
+\item 
+\texttt{expr.dat}はある実験の結果を表す。1列目($x$)が電流, 2列目($y$)が電圧を表すものとする。もとのデータをo印でプロットしたものと近似直線とを1つのグラフに描け。
+各軸のラベルの文字の大きさを10ポイントとして、
+$x$軸のラベルを``Current [mA]'', $y$軸のラベルを``Voltage [mV]''とすること。
+\texttt{xlabel('Current [mA]','FontSize',10)}のように、ラベルの文字列の後にフォントの大きさを指定する。
+% 下の\begin{verbatim}と\end{verbatim}との間にデータを取り込み、グラフを描くためのMATLABのコマンドを貼り付けよ。EPS, PDFまたはJPEGファイルを得るためのコマンドは不要。
+\begin{verbatim}
+>> v = load ('expr.dat')
+>> x = v(:,1)
+>> y = v(:,2)
+>> plot(x,y,'o')
+>> p=polyfit(x,y,1)
+>> y1=polyval(p,x)
+>> hold on
+>> plot(x,y1,'-')
+>> xlabel('Current [mA]','FontSize',10)
+>> ylabel('Voltage [mV]','FontSize',10)
+>> hold off
+
+\end{verbatim}
+% \centeringの下の行に、\includegraphicsコマンドを用いて、グラフを貼り付けよ。
+\begin{figure}[H]
+\centering
+\includegraphics{web3-vol.pdf}
+\caption{実験の結果}
+\end{figure}
+\item
+\texttt{popu.dat}はある架空の県の市町村の人口を多い順に並べたもので、1列目($x$)が順位, 2列目($y$)が人口を表すものとする。$y=bx^a$なる関係を仮定して$a$, $b$を求めたものを近似曲線としてグラフを描け。ただし、データはoで表せ。
+各軸のラベルの文字の大きさを10ポイントとして、
+$x$軸のラベルを``City'', $y$軸のラベルを``Population''とすること。
+(ヒント: $y=bx^a$の両辺の対数を取れ。また、MATLABでは行列$x$の各要素の対数を要素とする行列は、\verb"log(x)"で計算できる。)
+% 下の\begin{verbatim}と\end{verbatim}との間にデータを取り込み、グラフを描くためのMATLABのコマンドを貼り付けよ。EPS, PDFまたはJPEGファイルを得るためのコマンドは不要。
+\begin{verbatim}
+>> a = load('popu.dat')
+>> x=a(:,1)
+>> y=a(:,2)
+>> p=polyfit(x,y,10)
+>> y1=polyval(p,x)
+>> semilogy(x,y,'o',x,y1,'-')
+
+\end{verbatim}
+% \centeringの下の行に、\includegraphicsコマンドを用いて、グラフを貼り付けよ。
+\begin{figure}[H]
+\centering
+\includegraphics{web3-popu.pdf}
+\caption{ある県の市町村の人口}
+\end{figure}
+\end{enumerate}
+\section*{課題4}
+\url{https://matlab.mathworks.com/} から MATLAB OnlineにMathWorksアカウントを用いてサインインし，「自己学習形式のコース」の「MATLAB入門」または「MATLAB基礎」を受講すること。少なくとも1つのモジュールを受講し、修了証を以下に貼ること。
+% 以下の例では、修了証のファイル名をcertificate.pdfとしている。この行の先頭の%を取り去り、さらに必要であればファイル名を適宜書き換えよ。
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\linewidth]{certificate.pdf}
+\caption{MATLAB Onlineのコース修了証}
+\end{figure}
+
+\begin{thebibliography}{9}
+\bibitem{OECD}OECD (2019), Health at a Glance 2019: OECD Indicators, OECD Publishing, Paris,
+\url{https://doi.org/10.1787/4dd50c09-en}.
+\end{thebibliography}
+\end{document}

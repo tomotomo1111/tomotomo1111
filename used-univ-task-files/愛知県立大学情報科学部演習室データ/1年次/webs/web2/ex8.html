@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Drawing</title>
+<style type="text/css">
+#mycanvas {
+	border: 1px solid black;
+	position: absolute;
+}
+#currentColor {
+	background: black;
+	border: 1px solid black;
+	width: 3em;
+}
+div {
+	margin: 2px 0px;
+	padding: 2px;
+}
+table {
+    margin: 1px 0px;
+    border: 1px solid black;
+    border-spacing: 1px;
+}
+td {
+    width: 1em;
+    border: 1px solid white;
+}
+</style>
+<script type="text/javascript">
+<!--
+let penDown=false;
+let canvasObj, context;
+window.addEventListener( "load", (event)=> {
+	// canvasが使えなければ何もしない。
+	if( !window.HTMLCanvasElement ) return;
+	// HTMLで作ったキャンバスを得る。
+	canvasObj = document.getElementById("mycanvas" );
+	// 2次元グラフィックスのコンテキスト≒「道具」を得る。
+	context = canvasObj.getContext( "2d" );
+	clearIt();
+} );
+
+// 色を変える。
+function setColor( color ){
+	// canvasが使えなければ何もしない。
+	if( !context ) return;
+	// 線と塗りつぶしの色をcolorに変更。
+	context.strokeStyle=color;
+	context.fillStyle=color;
+	// 現在の描画色を表示。
+	document.getElementById( "currentColor" ).style.background=color;
+}
+
+// キャンバスを消去
+function clearIt()
+{
+	// canvasが使えなければ何もしない。
+	if( !context ) return;
+	// canvasを白で塗りつぶす。
+	context.save();
+	context.fillStyle = "white";
+	context.fillRect( 0, 0, canvasObj.width, canvasObj.height );
+	context.restore();
+}
+
+// マウスボタンを押していれば円を描く。
+function drawIt( e ){
+	if( !context ) return;
+// ボタンが押されていなければ、何もしない。
+	if( !penDown ) return;
+// x, yにポインタの位置をセット。この2行は決まり文句。
+	const x = e.offsetX || (e.pageX - e.target.offsetLeft);
+	const y = e.offsetY || (e.pageY - e.target.offsetTop);
+// マウスポインタの場所(x,y)を中心とする円を描く。色は別の場所で指定しているので、ここでは変更しないこと。
+
+
+
+}
+
+//-->
+</script>
+
+</head>
+<body>
+  <h1>愛知太郎のページ</h1>
+  <!-- お絵描きキャンバス -->
+  <div style="height:410px">
+    <canvas id="mycanvas" width="400" height="400" 
+            onMouseDown="penDown=true; drawIt( event );" 
+            onMouseUp="penDown=false;" onMouseOut ="penDown=false;"
+            onMouseMove="drawIt( event )">
+      No canvas available
+    </canvas>
+  </div>
+  <!-- キャンバスをクリアするボタン(押されたときの動作は未設定) -->
+  <div>
+    <button>Clear</button>
+  </div>
+  <!-- 現在の描画色 -->
+  <div id="currentColor">&nbsp;</div>
+  <!-- 色選択の表 -->
+  <table>
+  <script>
+     const c="0369cf";
+     for( let g=0; g<6; g++ ){
+        document.write( "<tr>" );
+     	for( let r=0; r<6; r++ ){
+     	    for( let b=0; b<6; b++ ){
+        	    let cl = "#"+c.charAt(r)+c.charAt(g)+c.charAt(b);
+        	    document.write( '<td onClick="setColor( \''+cl+'\' );" style="background: '+cl+';">&nbsp;</td>' );
+            }
+        }
+        document.writeln( "</tr>" );
+     }
+  </script>
+  </table>
+  <hr>
+  <p>2022/7/13 愛知太郎</p>
+</body>
+</html>

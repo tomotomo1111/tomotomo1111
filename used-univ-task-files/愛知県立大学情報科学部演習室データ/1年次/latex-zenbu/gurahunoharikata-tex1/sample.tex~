@@ -1,0 +1,12 @@
+\documentclass[a4j]{jsarticle}
+\usepackage[top=20truemm,botom=20truemm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+
+\begin{document}
+\title{\LaTeX{}その２}
+\author{20yy31000  愛知　太郎}
+\maketitle
+
+\includegraphics[width=4truecm]{./figs/leftーhand.eps}
+
+\end{document}

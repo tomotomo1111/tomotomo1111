@@ -1,0 +1,136 @@
+%%
+%% 情報科学実験Ⅰ表紙
+%% 愛知県立大学情報科学部
+
+\documentclass[12pt,a4j]{jarticle}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{ascmac}
+
+
+\setlength{\topmargin}{-5mm}
+\setlength{\footskip}{-30mm}
+\setlength{\oddsidemargin}{0mm}
+\setlength{\evensidemargin}{0mm}
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{30cm}
+
+% 行間を調整する
+\renewcommand{\baselinestretch}{1.2}\selectfont
+\begin{document}
+%--------------------------------------------------
+\thispagestyle{empty}
+\renewcommand{\baselinestretch}{1.0}\selectfont
+%横線の罫線を太線にしたい場合
+\newcommand{\bhline}[1]{\noalign{\hrule height #1}}
+%縦線の罫線を太線にしたい場合
+\newcommand{\bvline}[1]{\vrule width #1}
+
+%---------------------------------------------------
+\begin{table}[htbp]
+%-----　評定　--------------------------------------
+\begingroup
+\renewcommand{\arraystretch}{1.3}
+\begin{flushright}
+\setlength{\arrayrulewidth}{0.5pt} %　太い罫線を設定
+\begin{tabular}{!{\bvline{1pt}}c|c|c!{\bvline{1pt}}}
+\bhline{1pt}
+ 担当教員 & 受\hspace{0.3cm}付& \hspace{0.6cm}年\hspace{0.4cm}月\hspace{0.4cm}日\\ \hline
+　　　　&  & \\ 
+　　　　& 評\hspace{0.3cm}定& \\ 
+　　　　&  & \\ \bhline{1pt}
+\end{tabular}
+\end{flushright}
+\endgroup
+%---------------------------------------------------
+
+\vspace{-0.5cm}
+
+%------- 実験のタイトル ----------------------------
+\begin{center}
+{\bf\Huge 情報科学実験I\hspace{0.2cm}報告書}
+\end{center}
+%---------------------------------------------------
+
+\vspace{-0.5cm}
+
+%------ 実験題目 -----------------------------------
+\begingroup
+\renewcommand{\baselinestretch}{1.5}\selectfont
+\begin{center}
+\setlength{\arrayrulewidth}{0.5pt} %　太い罫線を設定
+\begin{tabular}{!{\bvline{2pt}}c|p{31.5zw}!{\bvline{2pt}}}
+\bhline{2pt}
+　&　\\ 
+{\large 実験題目}&　CG\\ 
+　&　\\ \bhline{2pt}
+\end{tabular}
+\end{center}
+\endgroup
+%----------------------------------------------------
+
+\vspace{-0.7cm}
+
+%------　実施年月日　担当教員 -----------------------
+\begingroup
+\renewcommand{\arraystretch}{1.5}
+\begin{center}
+\setlength{\arrayrulewidth}{0.5pt} %　太い罫線を設定
+\begin{tabular}{!{\bvline{2pt}}p{7zw}|p{22zw}!{\bvline{2pt}}}
+\bhline{2pt}
+{\large 実施年月日}&{\large 2023年11月14日}\\  \hline
+{\large 担当教員}& 河中治樹\\ \bhline{2pt}
+\end{tabular}
+\end{center}
+\endgroup
+%-----------------------------------------------------
+
+\vspace{-0.7cm}
+
+%------- 氏名　グループ　学籍番号　------------------- 
+\begingroup
+\renewcommand{\arraystretch}{1.6}
+\begin{center}
+\setlength{\arrayrulewidth}{0.5pt} %　太い罫線を設定
+\begin{tabular}{!{\bvline{2pt}}p{2zw}|p{6zw}|p{6zw}|p{9zw}|p{9zw}!{\bvline{2pt}}}
+\bhline{2pt}
+ &\multicolumn{1}{c|}{{\large 期}}&\multicolumn{1}{c|}{{\large グループ}}&\multicolumn{1}{c|}{{\large 学籍番号}}&\multicolumn{1}{c!{\bvline{2pt}}}{{\large 氏名}} \\ \bhline{2pt}
+\multicolumn{1}{!{\bvline{2pt}}c|}{{\large 報告者}}& 前期 & B & 2022311042 & 神野友哉 \\ \bhline{2pt}
+%                            &  &          &     \\ \cline{2-4}
+%                           &  &          &     \\ \cline{2-4}
+%                            &  &          &     \\ \cline{2-4}
+%\multicolumn{1}{!{\bvline{2pt}}c|}{{\large 共同実験者}}&  &          &     \\ \cline{2-4}
+%                            &  &          &     \\ \cline{2-4}
+%                            &  &          &     \\ \cline{2-4}
+%                            &  &          &     \\ \bhline{2pt}                            
+\end{tabular}
+\end{center}
+\endgroup
+%-----------------------------------------------------
+
+\vspace{-0.7cm}
+
+%-------- 指導項目 -----------------------------------
+\begingroup
+\renewcommand{\arraystretch}{1.6}
+\begin{center}
+\setlength{\arrayrulewidth}{0.5pt} %　太い罫線を設定
+\begin{tabular}{!{\bvline{1pt}}p{5.5zw}|p{31zw}!{\bvline{1pt}}}
+\bhline{1pt}
+\multicolumn{1}{!{\bvline{1pt}}c|}{{\large 日付}}& \multicolumn{1}{c!{\bvline{1pt}}}{{\large 指導事項}} \\ \hline
+ &　　\\ \hline
+ &　　\\ \hline
+ &　　\\ \hline
+ &　　\\ \hline
+ &　　\\ \hline
+ &　　\\ \hline
+ &　　\\ \bhline{1pt}                           
+\end{tabular}
+\end{center}
+\endgroup
+%----------------------------------------------------------
+\end{table}
+
+
+\end{document}

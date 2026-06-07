@@ -1,0 +1,239 @@
+コンピュータリテラシ受講者のみなさん
+
+本日の課題は，
+
+フ┃ァ┃イ┃ル┃操┃作┃の┃基┃礎┃
+━┛━┛━┛━┛━┛━┛━┛━┛━┛
+
+です．
+
+以下に示すファイル操作を行い，
+
+Ａ コマンド操作：その時にワークステーションで入力したコマンド操作，
+
+   および，
+
+Ｂ 出力結果： コマンド操作の結果 
+
+を記述すること．コマンド入力の結果が3行以上にわたる場合は，最初の3行の
+みを記し後は省略してよい．なお，解答にあたっては，コマンド入力行の先頭
+にプロンプト（例えば，is2210xxの場合は[is2210xx@ie0xx ~]$ ）を
+明示すること．直接的な出力結果のないものについては，コマンド操作が正しく
+動作したことを示す，別のコマンド操作結果などを記せ．
+
+本日の内容は特に大切です．ファイルやディレクトリについてわからない事は
+遠慮なく，担当教員あるいはTA(Teaching Assistant)の先輩に尋ねて，
+必ず理解するようにしてください！
+
+■解答方法 と提出方法■
+1 まず，/cis/public/Literacy2022/ にあるファイル(file-operations.txt)をホームディレクトリにコピーする．
+2 ファイル file-operations.txtを emacs で編集し，解答を記述する．
+3 解答は，プリンタで印刷の上，
+　次回の授業の際，持参すること．
+  ただし，印刷の書式は紙の節約のため，次のようにすること．
+
+  ・A4用紙1枚に2ページ (a2psのデフォルト設定)
+  ・両面印刷，短辺綴じ（P.45参照）
+　・印刷前に必ずプレビューすること　($gv your-filename.ps)
+　・プリンタは mono5t（モノクロ両面 短辺綴じ）を指定すること ($lpr -P mono5t your-filename.ps)　
+  ・その他，印刷については，手引き第9章を参照すること
+
+　○具体的な操作例○
+  $ a2ps file-operations.txt > file-operations.ps
+  　a2psを使って，テキストファイルをPostscriptファイルに変換
+  $ gv file-operations.ps
+　　Postscriptファイルのプレビュー
+  $ lpr -P mono5t file-operations.ps　
+　　プリンタ mono5t を指定して印刷実行　
+ 
+■注意事項■
+
+  ・解答用紙の一行目に学籍番号と氏名を記載すること．
+  ・解答と直接関係ない解答例などの文章は削除すること．
+    問題文は削除しないこと．
+  ・指示通りに記述されていない場合，評価対象から除外することがある．
+
+■解答例■
+(0) ログイン中のユーザ情報に関する情報を表示せよ．
+
+コマンド操作： 以下のように who コマンドを実行する
+
+[is2210xx@ie007 ~]$ who
+
+出力結果： whoコマンドの表示内容
+
+is2210xx    tty7         2022-04-17 11:45 (:0)
+is2210xx    pts/0        2022-04-17 11:50 (:0.0)
+
+
+--- ここより上の行は削除し，次の行から解答用に用いること．
+学籍番号 2022311042:氏    名 神野友哉
+
+■問題■
+
+(1) ワークステーションにログインした時のカレントワーキングディレクトリ
+    を表示せよ．
+    
+    コマンド操作：[is221042@if097 ~]$ pwd
+
+    出力結果:　/cis/home/is221042　と表示される
+
+
+(2) (1)の状態でカレントワーキングディレクトリにはどんなファイルが存在
+    しているかを調べよ．
+
+    コマンド操作：[is221042@if097 ~]$ ls
+
+    出力結果：ファイル一覧は以下のとおりに出力されました
+
+#file-operations.txt#  Searches      dirBB                テンプレート
+AppData                SendTo        dirC                 デスクトップ
+Contacts               Start Menu    dirCC                ドキュメント
+Documents              TERATERM.INI  directory            ビデオ
+Downloads              Thunderbird   file-operations.txt  音楽
+Favorites              Videos        file02               画像
+FireFox                calendar.new  home                 公開
+Links                  cyghome       question
+Music                  dirAA         workspace
+Pictures               dirB          ダウンロード     
+
+
+(3) カレントワーキングディレクトリを /cis/public/Literacy2022 に変更し，カ
+    レントワーキングディレクトリを表示せよ．
+
+    コマンド操作：[is221042@if097 ~]$ cd /cis/public/Literacy2022
+
+    出力結果: [is221042@if097 Literacy2022]$ 
+            [is221042@if097 Literacy2022]$ pwd で確認しても下記の通り
+            /cis/public/Literacy2022
+
+
+(4) (3)の状態でカレントワーキングディレクトリにはどんなファイルが存在
+    しているかを調べよ．
+
+    コマンド操作:[is221042@if097 Literacy2022]$ ls
+
+    出力結果:以下のように出力されました
+
+2022_2_Literacy        file-operations.txt  meibo.txt  uniq.txt
+file-operations-2.txt  literacy-shell.txt   sed.txt
+
+
+(5) カレントワーキングディレクトリをルートディレクトリに変更せよ．
+
+    コマンド操作: [is221042@if097 ~]$ cd /
+
+    出力結果: [is221042@if097 /]$ pwd で確認すると
+             /　　　　　　　　　　　　　
+
+
+(6) (5)の状態からホームディレクトリに戻れ．
+
+    コマンド操作: [is221042@if097 /]$ cd
+
+    出力結果: [is221042@if097 ~]$ pwd で確認すると
+             /cis/home/is221042　
+
+
+(7) ホームディレクトリの下に，kadai_file というディレクトリを作成せよ．
+
+    コマンド操作: [is221042@if097 ~]$ mkdir kadai_file
+
+    出力結果: [is221042@if097 ~]$ ls で確認すると
+#file-operations.txt#  Searches      dirBB                ダウンロード
+AppData                SendTo        dirC                 テンプレート
+Contacts               Start Menu    dirCC                デスクトップ
+Documents              TERATERM.INI  directory            ドキュメント
+Downloads              Thunderbird   file-operations.txt  ビデオ
+Favorites              Videos        file02               音楽
+FireFox                calendar.new  home                 画像
+Links                  cyghome       kadai_file           公開
+Music                  dirAA         question
+Pictures               dirB          workspace                      
+
+             左から3、上から8の位置にkadai_fileの存在を確認できる
+
+
+(8) カレントワーキングディレクトリを kadai_file に変更せよ．
+
+    コマンド操作：[is221042@if097 ~]$ cd /cis/home/is221042/kadai_file
+　
+    出力結果: [is221042@if097 kadai_file]$ pwd で確認すると
+             /cis/home/is221042/kadai_file
+
+
+(9) /cis/public/Literacy2022/2022_2_Literacy ディレクトリの下にあるファイルの
+    全てをホームディレクトリにあるディレクトリ kadai_file にコピーせよ．
+
+    コマンド操作: [is221042@if097 kadai_file]$ cp -r /cis/public/Literacy2022/2022_2_Literacy/* ~/kadai_file
+    
+    出力結果: [is221042@if097 kadai_file]$ ls で確認すると
+a.out  accomplishment  automatic  hello.c       memo  old  variable.c
+abc    application     chap1      introduction  new   tmp
+
+
+(10) kadai_file にあるファイル名を表示せよ．
+
+     コマンド操作：(9)と同様にlsコマンドで確認
+
+　　　出力結果：(9)と同様の結果  　
+
+
+(11) memo というファイルの内容を表示せよ．
+
+     コマンド操作：[is221042@if097 kadai_file]$ cat memo
+
+     出力結果：Linux is a Unix-like and POSIX-compliant computer operating system assembled under the model of free and open source software development and distribution. 
+
+
+(12) chap1 というファイル名を chapter1 に変更せよ．
+
+     コマンド操作：[is221042@if097 kadai_file]$ mv chap1 chapter1
+
+　　　出力結果：[is221042@if097 kadai_file]$ ls で確認する
+a.out  abc  accomplishment  application  automatic  chapter1  hello.c  introduction  memo  new  old  tmp  variable.c
+　　　　　　　　chap1 が chapter1　と変わっている　　　　　　　　　　　　　　　
+
+
+(13) text_for_typing というディレクトリを作成せよ．
+
+     コマンド操作：[is221042@if097 kadai_file]$ mkdir test_for_typing
+
+　　　出力結果：[is221042@if097 kadai_file]$ ls で確認すると
+a.out  abc  accomplishment  application  automatic  chapter1  hello.c  introduction  memo  new  old  test_for_typing  tmp  variable.c
+　　　　　　　　新規で test_for_typing が生成されている
+
+
+(14) text_for_typing というディレクトリに移動せよ．
+
+     コマンド操作：[is221042@if097 kadai_file]$ cd test_for_typing
+
+　　　出力結果：[is221042@if097 test_for_typing]$ 
+
+
+(15) 親ディレクトリの chapter1 というファイルをカレントワーキングディレ
+     クトリにコピーせよ．
+
+　　　コマンド操作：
+
+　　　出力結果：
+(16) 親ディレクトリに移動せよ．
+
+(17) a ではじまるファイル名を表示せよ．
+
+(18) a ではじまるファイルを削除せよ．
+
+(19) introduction というファイルがあるかどうかを調べよ．
+
+(20) introduction というファイルを text_for_typing ディレクトリに移動せよ．
+
+(21) C 言語のソースプログラム ( .c で終わるファイル) があるかどうかを調べよ．
+
+(22) chapter1 というファイルの内容を more コマンドで調べよ．
+
+(23) old と new のファイルの内容を見た後，old というファイルを new と
+    いう名前に変更せよ．さらに，new の内容を表示せよ．	
+
+(24) ホームディレクトリに戻れ．
+
+(25) kadai_file というディレクトリの名前を 02-file-2022 に変更せよ．

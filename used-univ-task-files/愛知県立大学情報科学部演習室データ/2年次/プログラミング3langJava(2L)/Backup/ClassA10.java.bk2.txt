@@ -1,0 +1,43 @@
+public class ClassA10 {
+	public static void main(String[] args) {
+		int x = 75;
+		int y = 63;
+		int z = 54;
+		
+		Grades10 id1 = new Grades10(x, y, z);
+		System.out.println("合計点="+id1.SumScore());
+		System.out.println("平均点="+id1.AveScore());
+		System.out.println("最低点="+id1.MinScore());
+		System.out.println("最高点="+id1.MaxScore());
+	}
+}
+
+class Grades10 {
+	int Eng, Math, Lite;
+	
+	public Grades10(int score1, int score2, int score3) {
+		Eng = score1;
+		Math = score2;
+		Lite = score3;
+	}
+	
+	public int SumScore() {
+		return Eng + Math + Lite;
+	}
+	
+	public double AveScore() {
+		return (Eng + Math + Lite) / (double) 3;
+	}
+	
+	public int MinScore() {
+		int miner = Math.min(Eng, Math);
+		miner = Math.min(miner, Lite);
+		return miner;
+	}
+	
+	public int MaxScore() {
+		int maxer = Math.max(Eng, Math);
+		maxer = Math.max(maxer, Lite);
+		return maxer;
+	}
+}

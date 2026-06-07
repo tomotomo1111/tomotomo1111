@@ -1,0 +1,60 @@
+public class Enshu6Mondai2{
+	
+	public static void main(String[] args) {
+		int[] id1 = {25, 56, 70};
+		int[] id2 = {70, 34, 50};
+		int[] id3 = {64, 65, 69};
+		int[][] student = {id1, id2, id3};
+		
+		SeisekiData2[] studentArray = new SeisekiData2[3];
+		
+		for(int i=0; i<studentArray.length; i++) {
+			int Eng = 0;
+			int Math = 0;
+			int Lite = 0;
+			
+			for(int j=0; j<student[0].length; j++) {
+				if(j == 0) {
+					Eng = student[i][j];
+				} else if(j == 1) {
+					Math = student[i][j];
+				} else {
+					Lite = student[i][j];
+				}
+			}
+			studentArray[i] = new SeisekiData2(Eng, Math, Lite);
+		}
+		double[] answer = new double[2];
+		answer = SeisekiCalculate2.MaxAveScore(studentArray);
+		System.out.println("Å‚•½‹Ï“_”‚ÍID" + answer[1] + "‚³‚ñ‚Ì" + answer[0] + "“_‚Å‚·.");
+	}
+}
+
+class SeisekiData2{
+	int Eng, Math, Lite;
+	
+	public SeisekiData2(int score1, int score2, int score3) {
+		Eng = score1;
+		Math = score2;
+		Lite = score3;
+	}
+	
+	public double AveScore() {
+		return (Eng + Math + Lite) / 3;
+	}
+}
+
+class SeisekiCalculate2{
+	
+	public static double[] MaxAveScore(SeisekiData2[] array) {
+		double[] answer = new double[2];
+		answer[0] = array[0].AveScore();
+		for(int i=0; i<array.length; i++) {
+			if(answer[0] <= array[i].AveScore()){
+				answer[0] = array[i].AveScore();
+				answer[1] = i + 1;
+			}
+		}
+		return answer;
+	}
+}

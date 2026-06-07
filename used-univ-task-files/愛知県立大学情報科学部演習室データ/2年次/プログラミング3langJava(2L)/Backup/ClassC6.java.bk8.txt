@@ -1,0 +1,59 @@
+import java.util.Random;
+public class ClassC6 {
+	public static void main(String[] args) {
+		Seiseki6[] studentArray = new Seiseki6[3];
+		for(int i=0; i<studentArray.length; i++) {
+			studentArray[i] = new Seiseki6(RandomScore(), RandomScore(), RandomScore());
+		}
+		int[] EngMaxData = ClassCalculate3.SelctScoreMax("英語特論", studentArray);
+		System.out.println("英語特論の最高数はID"+EngMaxData[1]+"さんの"+EngMaxData[0]+"です.");
+		int[] MathMaxData = ClassCalculate3.SelctScoreMax("統計解析学", studentArray);
+		System.out.println("統計解析学の最高数はID"+MathMaxData[1]+"さんの"+MathMaxData[0]+"です.");
+		int[] LiteMaxData = ClassCalculate3.SelctScoreMax("古典文学", studentArray);
+		System.out.println("古典文学の最高数はID"+LiteMaxData[1]+"さんの"+LiteMaxData[0]+"です.");
+	}
+	public static int RandomScore() {
+		Random rand = new Random();
+		return 30 + rand.nextInt(70);
+	}
+}
+
+class Seiseki6{
+	int Eng, Math, Lite;
+	public Seiseki6(int score1, int score2, int score3) {
+		Eng = score1;
+		Math = score2;
+		Lite = score3;
+	}
+}
+class ClassCalculate3{
+	public static int[] SelctScoreMax(String select, Seiseki6[] array){
+		int[] data = new int[3];
+		if(select.equals("英語特論")){
+			data[0] = array.Eng;
+			for(int i=0; i<array.length; i++) {
+				if(data[0] <= array[i].Eng) {
+					data[0] = array[i].Eng;
+					data[1] = 1 + i;
+				}
+			}
+		}else if(select.equals("統計解析学")){
+			data[0] = array.Math;
+			for(int i=0; i<array.length; i++) {
+				if(data[0] <= array[i].Math) {
+					data[0] = array[i].Math;
+					data[1] = 1 + i;
+				}
+			}
+		}else {
+			data[0] = array.Lite;
+			for(int i=0; i<array.length; i++) {
+				if(data[0] <= array[i].Lite) {
+					data[0] = array[i].LIte;
+					data[1] = 1 + i;
+				}
+			}
+		}
+		return data;
+	}
+}

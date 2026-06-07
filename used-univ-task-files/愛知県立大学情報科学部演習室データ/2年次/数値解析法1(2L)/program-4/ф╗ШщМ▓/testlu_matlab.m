@@ -1,0 +1,11 @@
+n = 100;
+A = gallery('minij',n);
+exactx = 1.1*ones(n,1);
+b = A*exactx;
+[L,U,P]=lu(A);
+errLU = norm(P*A-L*U);
+fprintf("誤差 (LU分解) = %e\n", errLU);
+y = L\(P*b);
+x = U\y;
+err = norm(exactx - x) / norm(exactx);
+fprintf("相対誤差 = %e\n", err);

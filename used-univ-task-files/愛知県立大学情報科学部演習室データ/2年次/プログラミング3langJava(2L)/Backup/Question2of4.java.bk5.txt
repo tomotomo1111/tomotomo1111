@@ -1,0 +1,18 @@
+public class Question2of4 {
+	public static void main(String[] args) {
+		int[] a = {1,2,3,4,5};
+		
+		System.out.println(average(a));
+	}
+	
+	public static int average(int[] x) {
+		int sum = 0;
+		
+		for(int i = 0;i<x.length;i++){
+			
+			sum +=x[i];
+			
+		}
+		return sum;
+	}
+}

@@ -1,0 +1,8 @@
+PWD /cis/home/is221042/Literacy-exam2022
+INPUT /usr/local/texlive/2019/texmf.cnf
+INPUT /usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2019/texmf.cnf
+INPUT /usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2019/texmf-var/web2c/eptex/platex.fmt
+INPUT exam-2022.pdf
+OUTPUT exam-2022.log

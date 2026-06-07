@@ -1,0 +1,62 @@
+body {
+	margin: 0px;
+	border: 0px;
+	padding: 10px;
+	background-color: white;
+	color: black;
+}
+
+header {
+	margin: 0px;
+	border: 0px;
+	padding: 10px;
+	background-color: #eeeeff;
+	color: navy;
+	text-align: center;
+}
+aside {
+	float: left;
+	margin: 0px;
+	border: 0px;
+	padding: 10px;
+	width: 140px;
+	font-size: 0.8em;
+	background: url('bg1.gif') #ffffee repeat-y;
+}
+aside h1, h2 {
+	font-size: 1em;
+}
+aside ul {
+	margin:0px;
+	padding:0px;
+	list-style-type:none;
+}
+#main {
+	margin: 0px;
+	margin-left: 160px;
+	border: 0px;
+	padding: 10px;
+}
+nav {
+	height: 30px;
+	background-color: #ddddee;
+}
+nav ul {
+	margin:0px;
+	padding:5px 10px;
+	list-style-type:none;
+}
+nav li {
+	float:left;
+	height:20px;
+	width: 10em;
+}
+footer {
+	clear: both;
+	background-color: #eeeeff;
+	height: 50px;
+	padding: 5px;
+}
+footer p {
+	text-align: center;
+}

@@ -1,0 +1,18 @@
+public class Comparison{
+	public static void main(String[] args) {
+		boolean result;
+		int x = 5;
+		result = (x+5);
+		System.out.println("Ž®1‚ÌŒ‹‰Ê:"+result);
+		result = (x<=5);
+		System.out.println("Ž®2‚ÌŒ‹‰Ê:"+result);
+		result = (x>5);
+		System.out.println("Ž®3‚ÌŒ‹‰Ê:"+result);
+		result = (x>=5);
+		System.out.println("Ž®4‚ÌŒ‹‰Ê:"+result);]
+		result = (x==%);
+		System.out.println("Ž®5‚ÌŒ‹‰Ê:"+result);
+		result = (x!=5)
+		System.out.println("Ž®6‚ÌŒ‹‰Ê:"+result);
+	}
+}

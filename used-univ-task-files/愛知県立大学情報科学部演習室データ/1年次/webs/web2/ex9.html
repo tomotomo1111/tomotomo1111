@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>「○○くじ」もどき</title>
+
+
+<style type="text/css">
+#kekka {
+	font-size: 3em;
+	color: #663;
+}
+#kekka strong {
+	font-size:1.2em;
+	color: #f33;
+}
+</style>
+<script type="text/javascript">
+<!--
+// 残り繰り返し回数
+let rep = 0, tick = 0;
+let timerId;
+
+// くじの中身は、配列として用意する
+const kuji = [
+"<strong>大吉</strong> 試験のヤマがあたるでしょう。",
+"<strong>大吉</strong> 今回の演習があっという間に完成！",
+"<strong>大吉</strong> リテラシのTAと仲良くなれます。",
+"<strong>吉</strong> ずっと分からなかったバグの原因が見つかります。",
+"<strong>吉</strong> ラッキーカラーは代赭色です。",
+"<strong>吉</strong> Ｉ先生に名前を憶えてもらえます。",
+"<strong>吉</strong> 待ち人来たりて笛を吹く。",
+"<strong>凶</strong> USBメモリの忘れ物に注意しましょう。",
+"<strong>凶</strong> 信じる者は掬われる。",
+"<strong>凶</strong> メールでの変換ミスに注意。"
+];
+
+// おみくじを引き、結果を返す関数
+// 配列kujiから1つをランダムに選んで return で返す
+function omikuji()
+{
+	return kuji[0];
+}
+
+// くじ引き始め
+function hajime()
+{
+	// 表示中は何もしない
+	if( rep>0 ) return;
+	// 繰り返し回数を200回にセット
+	rep = 200;
+	tick = 0;
+	// 音を再生
+	document.getElementById("audio").play();
+	// くじの表示を開始する
+	timerId = setInterval( timer, 80 );
+}
+
+// くじを表示する
+function timer()
+{
+	// 十分な回数だけ繰り返したら終わり
+	if( rep <= 0 ){
+		clearInterval( timerId );
+		// 音を止める
+		document.getElementById("audio").currentTime = 0;
+		document.getElementById("audio").pause();
+		document.getElementById( "kekka" ).innerHTML = "クリックして";
+	} else {
+		// 残り繰り返し回数を1だけ減らして
+		rep = rep - 1;
+		// おみくじを引き直す
+		document.getElementById( "kekka" ).innerHTML = omikuji();
+	}
+}
+
+//-->
+</script>
+</head>
+<body>
+<h1>○○くじ</h1>
+  <div>
+  やり方
+  <ol>
+  <li>スマホか携帯のカメラを用意します。
+  <li>ブラウザの大きさを調整して写真に収まるようにします。
+  <li>「クリックして」をクリックします。
+  <li>好きなときにシャッターを押してください。
+  <li>お守りにする必要はありません。
+  </ol>
+  </div>
+  <div id="kekka" onClick="hajime()">クリックして</div>
+  <audio id="audio" loop>
+  <source src="kuji.wav">
+  <source src="kuji.mp3">
+  </audio> 
+</body>
+</html>

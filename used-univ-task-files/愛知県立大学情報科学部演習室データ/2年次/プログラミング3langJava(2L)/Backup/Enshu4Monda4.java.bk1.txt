@@ -1,0 +1,33 @@
+public class Enshu4Monda4{
+	public static void main(String[] args) {
+		ScoreConfirmation4 id1 = new ScoreConfirmation4(70,90);
+		ScoreConfirmation4 id2 = new ScoreConfirmation4(60,80);
+		System.out.println("ID1さんの成績データは下記である.");
+		System.out.println("英語特論の成績点数は"+id1.Eng);
+		System.out.println("統計解析学の成績点数は"+id1.Math);
+		System.out.println("合計点数は"+id1.Total);
+		System.out.println("ID2さんの成績データは下記である.");
+		System.out.println("英語特論の成績点数は"+id2.Eng);
+		System.out.println("統計解析学の成績点数は"+id2.Math);
+		System.out.println("合計点数は"+id2.Total);
+		System.out.println("2人の合計点数の差は"+Calculate3.ScoreDifference(id1.Total,id2.Total));
+	}
+}
+
+class ScoreConfirmation4{
+	double Eng, Math, Total;
+	private static final double rate = 0.9;
+	
+	public ScoreConfirmation4(double score1, double score2) {
+		Eng = score1 * rate;
+		Math = score2 * rate;
+		Total = Eng + Math;
+	}
+}
+
+class Calculate3{
+	public static double ScoreDifference(double score1, double score2) {
+		//double max = (score1 - score2) ? score1 : sco
+		return Math.abs(score1 - score2);
+	}
+}

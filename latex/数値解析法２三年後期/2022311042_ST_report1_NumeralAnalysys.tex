@@ -1,0 +1,169 @@
+\documentclass[10pt]{jarticle}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{comment}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\renewcommand{\lstlistingname}{source}
+\lstset{language=sh,%
+        basicstyle=\footnotesize,%
+	commentstyle=\textit,%
+	classoffset=1,%
+	keywordstyle=\bfseries,%
+	frame=shadowbox,framesep=4pt,%
+	showstringspaces=false%,
+	numbers=left,stepnumber=1,numberstyle=\footnotesize,%
+	numbersep=1zw,%
+	lineskip=-0.5ex,%
+	xleftmargin=2zw%
+	}%
+
+\newdimen\paperwidth \newdimen\paperheight
+\def\A4size{\paperwidth=210mm \paperheight=297mm}
+\def\centered{%
+  \oddsidemargin=\paperwidth
+  \advance\oddsidemargin-\textwidth
+  \oddsidemargin=0.5\oddsidemargin
+  \advance\oddsidemargin-1in
+  \evensidemargin-\oddsidemargin}
+%
+\textwidth 160mm
+\textheight 230mm
+\topmargin 0mm
+\headheight 0mm
+\footskip 0mm
+\A4size\centered
+
+\title{\framebox{\hspace{4zw}数値解析法2 レポート1%
+                 \hspace{4zw}}}
+\author{神野 友哉 \\
+        2022311042  \\
+        愛知県立大学 情報科学部 情報科学科 \\}
+\date{2024年10月27日}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+
+\newpage
+\section{課題 1.1}
+%
+\begin{itemize}
+	\setlength{\leftskip}{1.5cm}
+	\item[・] P\ 23\ の減衰振動系の臨界減衰と過減衰の解を求めよ
+	\item[・] 臨界減衰と過減衰について、例題と同様にode\ 45\ を用いた
+		数値実験を実施し、その結果について考察せよ。
+\end{itemize}
+%
+
+\subsection{目的}
+%
+減衰振動系における減衰振動、臨界減衰、過減衰のシミュレーションを行うことで、
+視覚的に挙動を理解する。
+%
+
+\subsection{考察}
+%
+図\ref{fig:kadai111}は減衰振動($ \gamma = 0.3 $)である。
+図\ref{fig:kadai112}、図\ref{fig:kadai113}はそれぞれ臨界減衰、過減衰のグラフであり、
+それぞれ$ \gamma = 1.0, 1.7 $である。表\ref{table:kkadai114}は各々のode45での
+真の解との誤差を表す。
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{figures/damped_oscillation_ode45result.png}
+	\end{center}
+	\caption{減衰振動のシミュレーション結果}
+	\label{fig:kadai111}
+\end{figure}
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{figures/critical_damping_ode45result.png}
+	\end{center}
+	\caption{臨界減衰のシミュレーション結果}
+	\label{fig:kadai112}
+\end{figure}
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{figures/over_damping_ode45result.png}
+	\end{center}
+	\caption{過減衰のシミュレーション結果}
+	\label{fig:kadai113}
+\end{figure}
+\begin{table}[htbp]
+	\centering
+	\caption{減衰振動系とode45でシミュレーションした際の誤差との対応表}
+	\label{table:kkadai114}
+	\begin{tabular}{|r|c|c|c|}
+		 & 減衰振動($ \gamma = 0.3 $) & 臨界減衰($ \gamma = 1.0 $)  & 過減衰($ \gamma = 1.7 $) \\
+		Max error (disp) & 2.409873113348726e-04 & NaN & 1.282437751831678e-05\\
+		Max error (velo) & 1.787005887130544e-04 & NaN & 4.109923709248731e-05
+	\end{tabular}
+\end{table}
+%
+
+\subsection{結論}
+%
+図\ref{fig:kadai111}から、減衰振動は収束する値との
+差を縮めるよう振動する。高度と速度の複数ある極大極小が互いに異なっていることと、
+速度の値も\ 0\ に収束しようとするため、発生していると考えられる。
+また、図\ref{fig:kadai111}～図\ref{fig:kadai113}のシミュレーション精度は、
+表\ref{table:kkadai114}より、誤差$ O(10^{-5}) $程度と
+、室内で行える規模の減衰振動としては十分であると考えられるが、
+天文学的に巨大な数値を扱う場合には不十分であると考えられるのではないか。
+%
+
+\newpage
+\section{課題 1.5}
+%
+次の初期値問題について、硬度および定常状態になるまでの時間を求めよ。
+また、ode23、ode45、ode78、ode89により近似解を求め、
+得られた結果と方法による違いについて考察せよ。
+\begin{eqnarray*}
+	\frac{du}{dt} &=& \left{}u (0 < t \leq t_{max}), u(0) = (1, 2)^\top\\
+\end{eqnarray*}
+%
+
+\subsection{目的}
+%
+
+%
+
+\subsection{考察}
+%
+
+%
+
+\subsection{結論}
+%
+
+%
+
+\newpage
+\section{課題 1.7}
+%
+
+%
+
+\subsection{目的}
+%
+
+%
+
+\subsection{考察}
+%
+
+%
+
+\subsection{結論}
+%
+
+%
+
+\end{document}

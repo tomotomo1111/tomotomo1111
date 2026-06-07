@@ -1,0 +1,76 @@
+読解問題8-8
+
+問題１
+AchievementRecord record = new AchievementRecord("Account.txt");
+
+問題２
+ReadAccountFile(String file);
+と
+CreateScoreBox();
+
+問題３
+public void CreateScoreBox() {
+　　for(int i=0; i<kokugo.length; i++) {
+　　　　kokugo[i] = MakeRandomInt(30);
+　　　　sugaku[i] = MakeRandomInt(30);
+　　　　eigo[i] = MakeRandomInt(30);
+　　}
+}
+
+public int MakeRandomInt(int offset) {
+　　Random rand = new Random();
+　　return rand.nextInt(70) + offset;
+}
+
+問題４
+try-catch-finallyのtry-catch間に、
+IOExceptionが発生する可能性のあるプログラムを記述する必要がある。
+
+問題５
+引数として入ってきた名前だけが縦に記載されているファイルに対し、
+予め名前がある横に各々の成績を記入しておく必要がある
+
+public void WriteFile(String file) throws IOException{
+　　String fileName = file;
+　　WriteAllResultInText();
+　　PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
+　　writer.println("それぞれの成績は下記になります．");
+　　for(int i=0; i<member.length; i++) {
+　　　　writer.println(member[i]);
+　　}
+　　writer.close();
+}
+
+public void WriteAllResultInText() {
+　　for(int i=0; i<member.length; i++) {
+　　　　double ave = (double)(kokugo[i] + sugaku[i] + eigo[i]) / 3;
+　　　　ave = (int)(100 * ave) / 100;
+　　　　member[i] = member[i] + "国語:" + kokugo[i] + " 数学:" + sugaku[i] + " 英語:" + eigo[i] + " 平均点:" + ave;
+　　}
+}
+
+応用問題１
+配列memberを参照する際に利用するインデックス番号を保存したい配列であるarrayに、配列の長さが最大の自然数列をかく乱した数列を代入する。
+そうすることで、ランダムに5名ずつの氏名と成績データのセットを分配する。
+public int[] RandomIntOrder(int max) {
+　　Random rand_1 = new Random();
+　　Random rand_2 = new Random();
+　　int index_1, index_2;
+　　int trace = 100;
+　　int[] arr = new int[max];
+　　for(int i=0; i<max; i++) {
+　　　　arr[i] = i;
+　　}
+　　do{
+　　　　do{
+　　　　　　index_1 = rand_1.nextInt(max);
+　　　　　　index_2 = rand_1.nextInt(max);
+　　　　} while(index_1 == index_2);
+
+　　　　int buffer = arr[index_1];
+　　　　arr[index_1] = arr[index_2];
+　　　　arr[index_2] = buffer;
+　　}while(trace-- > 0);
+
+　　return arr;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 2</title>
+  <link rel="stylesheet" href="ex1.css" type="text/css">
+</head>
+<body>
+  <header>
+  <h1>愛知太郎のページ</h1>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="ex1.html">1番目</a>
+      <li><a href="ex2.html">2番目</a>
+    </ul>
+  </nav>
+  <aside>
+    <h2>愛知県立大学</h2>
+    <ul>
+      <li><a href="http://www.for.aichi-pu.ac.jp/">外国語学部</a>
+      <li><a href="http://www.jps.aichi-pu.ac.jp/index0.html">日本文化学部</a>
+      <li><a href="http://www.ews.aichi-pu.ac.jp/">教育福祉学部</a>
+      <li><a href="http://www.nrs.aichi-pu.ac.jp/">看護学部</a>
+      <li><a href="http://www.ist.aichi-pu.ac.jp/">情報科学部</a>
+    </ul>
+  </aside>
+  <article id="main">
+    <p><em>2番目の</em>ページです。</p>
+    <h1>動画ファイルの種類</h1>
+    <table border>
+      <tr><th>名称</th><th>MIME type</th><th>拡張子</th></tr>
+      <tr><td>MPEG4</td><td>video/mp4</td><td>.mp4</td></tr>
+      <tr><td>QuickTime</td><td>video/quicktime</td><td>.mov</td></tr>
+      <tr><td>Ogg</td><td>video/ogg</td><td>.ogv</td></tr>
+      <tr><td>WebM</td><td>video/webm</td><td>.webm</td></tr>
+      <tr><td>Windows Media Video</td><td>video/x-ms-wmv</td><td>.wmv</td></tr>
+      <tr><td>Flash Video</td><td>video/x-flv</td><td>.flv</td></tr>
+    </table>
+    <h1>サンプル動画</h1>
+    <p>
+    <video id="myVideo" preload controls>
+      <source src="http://www.cis.aichi-pu.ac.jp/~ohta/literacy/media/cat.webm">
+      <source src="http://www.cis.aichi-pu.ac.jp/~ohta/literacy/media/cat.mp4">
+      <source src="http://www.cis.aichi-pu.ac.jp/~ohta/literacy/media/cat.mov">
+      <source src="http://www.cis.aichi-pu.ac.jp/~ohta/literacy/media/cat.ogv">
+      HTML5のvideoに未対応です。
+    </video>
+  </article>
+  <footer>
+   <p>2019/7/10 &copy; 愛知太郎</p>
+  </footer>
+</body>
+</html>

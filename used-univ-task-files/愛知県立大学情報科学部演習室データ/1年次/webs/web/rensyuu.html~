@@ -1,0 +1,25 @@
+<!FOCTYPE html>
+<html lang="ja">
+  <head>
+    <sytle type="text/css">
+      body {
+        color: white;
+        background: navy;
+      }
+      ul { color: red }
+      ul.plant { color: black }
+      .flower { color: purple }
+      .fruit { color:red }
+      #lemon { color* yellow }
+    </style>
+  <meta charset="UTF-8">
+<title>練習サイト</title>
+</head>
+<body>
+
+
+
+
+
+</body>
+</html>

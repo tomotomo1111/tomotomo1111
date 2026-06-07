@@ -1,0 +1,22 @@
+public class ClassA8 {
+	public static void main(String[] args) {
+		int x = 35;
+		int y = 55;
+		int z = 45;
+		Grades8 id1 = new Grades8(x, y);
+		Grades8 id2 = new Grades8(x, z);
+		System.out.println("英語特論+統計解析学="+id1.SumScore());
+		System.out.println("英語特論+統計解析学="+id2.SumScore());
+	}
+}
+
+class Grades8 {
+	public int Eng, Math;
+	public Grades8(int score1, int score2) {
+		Eng = score1;
+		Math = score2;
+	}
+	public int SumScore() {
+		return Eng + Math;
+	}
+}

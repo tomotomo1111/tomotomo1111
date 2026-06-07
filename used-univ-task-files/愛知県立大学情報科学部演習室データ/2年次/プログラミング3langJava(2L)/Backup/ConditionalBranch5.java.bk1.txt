@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class ConditionalBranch5{
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		System.out.println("1~5‚Ì”š‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢.");
+		int n = stdIn.nextInt();
+		switch(n){
+			case 3: System.out.println("3‚ğ“ü—Í‚µ‚½‚ ‚È‚½‚Í,¬‹g‚Å‚·.");
+			break;
+			case 4: System.out.println("4‚ğ“ü—Í‚µ‚½‚ ‚È‚½‚Í,‘å‹g‚Å‚·.");
+			break;
+			case 5: SYstem.out.println("5‚ğ“ü—Í‚µ‚½‚ ‚È‚½‚Í,’†‹g‚Å‚·.");
+			break;
+			default:System.out.println("3~5‚ğ“ü—Í‚µ‚½‚ ‚È‚½‚Í,‹g‚Å‚·.");
+			break;
+		}
+	}
+}

@@ -1,0 +1,82 @@
+\documentclass[a4j,12pt]{jsarticle}
+\setlength{\topmargin}{-10truemm}
+\setlength{\textheight}{225truemm}
+\begin{document}
+
+\title{\LaTeX\quad(1) 宿題レポート}
+\author{2022311042 神野 友哉}
+\date{令和4年6月14日(火)作成}
+\maketitle
+
+
+暗号分野などでは，数百桁ほどの大きな自然数$\chi$，\textit{w}，\textit{k}に対して，$\mathit{\chi^k}\bmod{\mathit{w}}$の値を計算することがある．$\chi$を\textit{k}回乗じて$\mathit{\chi^k}$を計算してから\textit{w}で剰余をとることは，事実上不可能である．例えば，$\chi$,\textit{k}が128ビットとして，$2^{128}$回の乗算を行うには，“1秒間に1京回の乗算ができるコンピュータ”を使っても約$1.1×10^{15}$年かかる.
+
+実際の計算は以下のように行う．$\chi\geq 1，\mathit{w}\geq 2，\mathit{k}\geq 0$をみたす整数$\chi$，\textit{w，k}に対して，関数${\textit{f}(\chi，\mathit{w}，\mathit{k})}$を
+\[
+\mathit{f}(\chi，\mathit{w}，\mathit{k}) = \mathit{\chi^{k}}\bmod{\mathit{w}}
+\]
+と定義する．$\chi^0=1$であり，任意の実数，とくに自然数\textit{k}に対して，
+\begin{eqnarray*}
+  \chi^{2\mathit{k}}  &=& (\chi^2)^\mathit{k}\\
+  \chi^{2\mathit{k}+1} &=& \chi*\chi^{2\mathit{k}}
+\end{eqnarray*}
+が成り立つこと，べき乗と剰余の順序は入れ替えられることから，次式が成り立つ．
+\[
+\mathit{f}(\chi，\mathit{w}，\mathit{k})=
+\left\{
+\begin{array}{ll}
+     1 & (\mathit{k}=0のとき)\\
+     \mathit{f}(\chi^2\bmod{\mathit{w}}，\mathit{w}，\frac{\mathit{w}}{2}) & (\mathit{k}が2以上の偶数のとき)\\
+     \mathit{\chi f}(\chi^2\bmod{\mathit{w}}，\mathit{w}，\lfloor \frac{\mathit{k}}{2} \rfloor)\bmod\mathit{w} & (\mathit{k}が奇数のとき)
+  \end{array}
+\right.
+\]
+この方法を用いれば\textit{k}のビット数程度の乗除算ですむので，実用的な時間で計算できる．
+
+上記の方法はHaskellなら次のようにコーディングできる．なお，`mod`は剰余をとる演算．`div`は商の小数点以下を切り捨てる整数除算である．
+
+\begin{displaymath}
+  \begin{tabular}{rll}
+   \multicolumn{3}{l}{f::{Int-\textgreater Int-\textgreater Int-\textgreater Int}}\\
+   f\quad x\quad w\quad k & ｜ \quad {k}\quad==\quad{0}                      & =\quad{1}\\
+                          & ｜ \quad {k}\quad{`mod`}\quad{2}\quad==\quad{0}\quad & =\quad{f}'\\
+                          & ｜ \quad {otherwise}　& =\quad{x}\quad *\quad{f}'\quad`{mod}`\quad{w}\\
+                          & \multicolumn{2}{l}{where\quad f'\quad=\quad f\quad(x\quad *\quad x\quad`mod`\quad w)\quad w\quad(k\quad`div`\quad 2)}
+  \end{tabular}
+\end{displaymath}
+計算の結果，2022の2022311042乗を220608で割った余りは52992である．
+
+\newpage
+\title{課題２及び課題３}
+\maketitle
+
+[課題２]\\
+\begin{itemize}
+  \item 環境\\
+\begin{enumerate}
+  \item \verb2\begin{verbative}2\\
+    \qquad この環境は\verb2\end{verbative}2とセットで用い，内部の行の特殊文字\footnote{\verb2#$%& など2}をそのまま出力する．\\
+  \item \verb2\begin{gather}2
+    \qquad この環境は複数の数式を並べるための環境．位置を揃えられない．
+  \item \verb2\begin{align}2
+    \qquad この環境は複数行の数式を並べたうえで，\&のあとの文字の位置で揃えられる．eqnarray環境の代用である．比べると\&が一つだけで済む．
+\end{enumerate}
+\item コマンド\\
+\begin{enumerate}
+  \item \verb2\textsl{任意}2\\
+    \qquad このコマンドは\verb2\textit{}2の代用として用いることが可能．\\
+  \item \verb2\hspace{長さ}2\\
+    \qquad このコマンドは因数の長さの値だけ空白を出力する．\\
+  \item \verb2\marginper{内容}2\\
+    \qquad このコマンドは内容を基本的に右の欄外に書き込む．\verb2\marginper[内容１]{内容２}2 ならば左欄外のとき，内容１が出力され，右欄外のときは，内容２が出力される．
+
+\end{enumerate}
+\end{itemize}
+[課題３]\\
+私は``理系の文章術''\footnote{1100円ほど，著者は更科功(さらしなこう)}を愛知県立大学図書館から一ヶ月借りることで，大学理工系のレポートについて学んでいる．内容はレポート-論文-報告書など多岐にわたる．                                 .
+
+
+
+\end{document}
+
+

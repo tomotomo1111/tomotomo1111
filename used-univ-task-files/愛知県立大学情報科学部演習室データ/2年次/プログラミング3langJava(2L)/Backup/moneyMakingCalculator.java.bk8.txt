@@ -1,0 +1,17 @@
+import javax.swing.*;
+import javax.swing.JFrame;
+
+class moneyMakingCalculator{
+	
+	JFrame myFrame = new JFrame();
+	
+	public static void main(String[] args) {
+		
+		myFrame.setSize(100,100);
+		myFrame.setLayout(null);
+		myFrame.setResizable(true);
+		myFrame.setLocationRelativeTo(null);
+		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		myFrame.setVisible(true);
+	}
+}

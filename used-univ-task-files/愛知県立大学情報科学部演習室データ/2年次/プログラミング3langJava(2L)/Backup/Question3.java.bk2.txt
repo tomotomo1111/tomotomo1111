@@ -1,0 +1,110 @@
+import java.io.*;
+
+public class Question3 {
+	static AccountPlus[] companyArray;
+	static String[] companyNameArray = {"Science Co,", "Live House", "Math System Co.", "Super Co.", "Open Java Co."};;
+	static int[] riekiArray = {100, 300, 400, 400, 900};
+	
+	static PrintWriter writer;
+	
+	public static void main(String[] args) throws IOException {
+		String filename = "2022311042.txt";
+		writer = new PrintWriter(new BufferedWriter(new FileWriter(filename)));
+		
+		companyArray = new AccountPlus[companyNameArray.length];
+		
+		for(int i=0; i<companyNameArray.length; i++) {
+			companyArray[i] = new AccountPlus(companyNameArray[i], riekiArray[i], 0, 0);
+			updateProfit(companyNameArray[i], riekiArray[i]);
+		}
+		
+		AccountPlus ac;
+		String s;
+		for(int i=0; i<companyNameArray.length; i++) {
+			ac = companyArray[i];
+			s = "‰ïŽÐ–¼F" + ac.name + " ”„ãŒûÀF" + ac.uriage + "–œ‰~ —˜‰vŒûÀF" + ac.rieki + "–œ‰~ •ÛŠÇŒûÀF" + ac.getHokan() + "–œ‰~ —ZŽ‘•]‰¿F" + calculateRank(ac.name);
+			writer.println(s);
+			System.out.println(s);
+			
+		}
+		writer.close();
+	}
+	
+	public static void updateProfit(String name, int uriage) {
+		AccountPlus account = getCompany(name);
+		if(uriage >= 0 && uriage <= 500) {
+			account.uriage = uriage;
+		}else if(uriage > 500 && uriage <= 1100) {
+			account.uriage = 500;
+			account.rieki = uriage - 500;
+		}else if(uriage > 1100) {
+			account.uriage = 500;
+			account.rieki = 600;
+			account.setHokan(uriage - 1100);
+		}
+		System.out.println(account.uriage);
+		System.out.println(account.rieki);
+		System.out.println(account.getHokan());
+	}
+	
+	public static AccountPlus getCompany(String name) {
+		return companyArray[getCompanyIndexFromName(name)];
+	}
+	
+	public static int getCompanyIndexFromName(String name) {
+		int i = 0;
+		while(!name.equals(companyArray[i].name)) {
+			i++;
+		}
+		return i;
+	}
+	
+	public static String calculateRank(String name) {
+		int sum=0;
+		for(int i=0; i<companyArray.length;i++) {
+			sum += companyArray[i].getHokan();
+		}
+		double ave = sum / (double)companyArray.length;
+		int hokan = companyArray[getCompanyIndexFromName(name)].getHokan();
+		String answer = null;
+		if(hokan >= ave + 100) {
+			answer = "A";
+		} else if(hokan > ave && hokan < ave + 100) {
+			answer = "B";
+		} else if(hokan >= ave -100 && hokan <= ave) {
+			answer = "C";
+		} else {
+			answer = "D";
+		}
+		return answer;
+	}
+}
+
+class Account {
+	String name;
+	int uriage;
+	int rieki;
+	
+	public Account(String name, int uriage, int rieki) {
+		this.name = name;
+		this.uriage = uriage;
+		this.rieki = rieki;
+	}
+}
+
+class AccountPlus extends Account{
+	private int hokan;
+	
+	public AccountPlus(String name, int uriage, int rieki, int hokan) {
+		super(name, uriage, rieki);
+		this.hokan = hokan;
+	}
+	
+	public void setHokan(int hokan) {
+		this.hokan = hokan;
+	}
+	
+	public int getHokan() {
+		return hokan;
+	}
+}

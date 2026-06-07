@@ -1,0 +1,71 @@
+\documentclass[twocolumn,a4j,dvipdfmx]{jsarticle}
+\usepackage[top=20mm,bottom=30mm,left=20mm,right=20mm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{listings,jlisting}
+\setlength{\columnsep}{2zw}
+\begin{document}
+
+\title{\LaTeX 課題---回路の過渡応答}
+\author{2022311042 \quad 神野友哉}
+\date{2022年6月18日}
+\maketitle
+
+\section{\Large LCR直列回路の方程式}
+図\ref{fig:circuit}のように電源$\mathit{V_i}$，抵抗\textit{R}，コイル\textit{L}，コンデン\quad サ\textit{C}を直列に接続した回路を考える．
+\vskip\baselineskip
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1\linewidth]{circuit.eps}
+  \caption{回路}
+  \label{fig:circuit}
+\end{figure}
+
+コンデンサの電荷を\textit{Q}とすれば，\textit{Q}に関する次の微分方程式が得られる\cite{bibitteru}．
+\begin{equation}
+  L\frac{d^2Q}{dt^2}+R\frac{dQ}{dt}+\frac{1}{C}Q=V\label{eq:1}
+\end{equation}
+\quad\textit{V}が直流電源(または交流電源)である場合には，十分に時間が立つと\textit{Q}は一定値(または交流電源と同じ周波数の正弦関数)になる．そのような状態を定常状態といい，定常状態に至るまでの状態を過渡状態という．
+\section{\Large 回路の微分方程式の解}
+図\ref{fig:circuit}の回路で電源は直流であるものとする．微分方程式(\ref{eq:1}) の解を求めるために，$\lambda$に関する2次方程式
+  \begin{equation}
+      L\lambda^2+R\lambda+\frac{1}{C}=0\label{eq:2}
+  \end{equation}
+を考える．(\ref{eq:2}) の解の種類によって微分方程式(\ref{eq:1}) の解は次のようになる．ただし，\textit{A}，\textit{B}は初期条件によって決まる定数である．
+\vskip\baselineskip
+\begin{itemize}
+\setlength{\leftskip}{1zw}  
+\item (\ref{eq:2})が２つの実数解$\lambda=-\gamma_1,-\gamma_2$を持つとき
+  \begin{equation}
+    Q(t)=CV+Ae^{-\gamma_1t}+Be^{-\gamma_2t}\label{eq:3}
+  \end{equation}
+\item (\ref{eq:2})が二重解$\lambda=-\gamma$を持つとき
+  \begin{equation}
+    Q(t)=CV+Ae^{-\gamma t}+Bte^{-\gamma t}\label{eq:4}
+  \end{equation}
+\item(\ref{eq:2})が２つの複素数解$\lambda=-\gamma \pm j\omega$を持つとき\footnote{工学分野ではしばしば虚数単位を\textit{i}の代わりに\textit{j}で表す．}
+  \begin{equation}
+    Q(t)=CV+e^{-\gamma t}(A\mathrm{sin}{(\omega t)}+B\mathrm{cos}{(\omega t)})\label{eq:5}
+  \end{equation}
+\end{itemize}
+\section{\Large 例題}
+図\ref{fig:circuit}の回路において，$R=35.4\mathrm{\,\Omega}，L=230\mathrm{\,mH}，C=14.0\,\mu \mathrm{F}，V=1.5\mathrm{\,V}$とする．このとき，２次方程式(\ref{eq:2})の解は，$\lambda=-77.0\pm 551.9j$である．式(\ref{eq:5})において，時刻$t=0$における初期条件を$Q=0，\frac{dQ}{dt}=0$とすれば，コンデンサの両端の電圧$V_C=\frac{Q}{C}$は
+\[
+  V_C=1.5(1+e^{-77.0t}(-0.139\mathrm{sin}({551.9t})-\mathrm{cos}({551.9t})))
+\]
+となる．これを図\ref{fig:Vol}に示す．十分な時間が立つと$V_C$は一定値1.5Vに近づくことが分かる．
+\vskip1\baselineskip
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=0.8\linewidth]{Voltage.eps}
+  \caption{コンデンサ両端の電圧}
+  \label{fig:Vol}
+\end{figure}
+\begin{thebibliography}{1}
+  \bibitem{bibitteru} V.D.バージャー，M.G.オルソン著，戸田，田上訳，力学，培風館，東京，1975.
+\end{thebibliography}
+\newpage
+\title
+\onecolumn
+  \lstinputlisting[language={Tex}]{latex2hw-back.tex}
+\end{document}
+

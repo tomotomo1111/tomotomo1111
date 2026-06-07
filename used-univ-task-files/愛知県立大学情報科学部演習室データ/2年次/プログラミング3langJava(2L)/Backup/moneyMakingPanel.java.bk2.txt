@@ -1,0 +1,10 @@
+package ST;
+
+
+class moneyMakingPanel implements JPanel{
+	
+	moneyMakingPanel(){
+		
+		JTextField myText_1 = new JTextField(); 
+	}
+}

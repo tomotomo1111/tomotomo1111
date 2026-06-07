@@ -1,0 +1,49 @@
+public class ClassB5{
+	public static void main(String[] args) {
+		ScoreData5 id1 = new ScoreData5(30,90);
+		System.out.println("英語特論の点数は"+id1.ReturnEngScore());
+		System.out.println("統計解析学の点数は"+id1.ReturnMathScore());
+		System.out.println("英語特論の成績点数は"+Calculate2.ScoreCorrection(id1.ReturnEngScore()));
+		System.out.println("統計解析学の成績点数は"+Calculate2.ScoreCorrection(id1.ReturnMathScore()));
+		System.out.println("ID1さんは追試験を受け,英語特論70点,統計解析学100点でした1.");
+		System.out.println("ID1さんのデータを保存してください.");
+		id1.ChangeEngScore(70);
+		id1.ChangeMathScore(100);
+		System.out.println("英語特論の点数は"+id1.ReturnEngScore());
+		System.out.println("統計解析学の点数は"+id1.ReturnMathScore());
+		System.out.println("英語特論の成績点数は"+Calculate2.ScoreCorrection(id1.ReturnEngScore()));
+		System.out.println("統計解析学の成績点数は"+Calculate2.ScoreCorrection(id1.ReturnMathScore()));
+	}
+}
+
+class ScoreData5{
+	private double Eng, Math;
+	
+	public ScoreData5(double score1, double score2) {
+		Eng = score1;
+		Math = score2;
+	}
+	
+	public double ReturnEngScore() {
+		return Eng;
+	}
+	
+	public double ReturnMathScore() {
+		return Math;
+	}
+	
+	public void ChangeEngScore(int score) {
+		Eng = score;
+	}
+	
+	public void ChangeMathScore(int score) {
+		Math = score;
+	}
+}
+
+class Calculate2{
+	static final double rate = 0.8;
+	public static double ScoreCalculation(double score) {
+		return score * rate;
+	}
+}

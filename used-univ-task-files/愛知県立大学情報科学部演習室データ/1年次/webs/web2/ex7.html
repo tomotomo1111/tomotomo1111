@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 7</title>
+  <script type="text/javascript">
+  <!--
+    function calculateBMI()
+    {
+        let height, weight, bmi, diag;
+        height = Number(f1.h1.value); // height←身長のボックスに入力された値
+        weight = Number(f1.w1.value); // weight←体重のボックスに入力された値
+        if( isNaN( height + weight ) ){
+            alert( "数値で入力してください" );
+            return;
+        }
+        // 上記の結果、heightに身長、weightに体重が入っている。
+        // 22の部分を書き換えてBMIを計算する式を書くこと。
+        bmi = weight/(height**2);
+        // 以下の部分を書き換えて、diagに適切なコメントを代入するようなプログラムを書く。
+        diag = if ((18.5 <= bmi) && (bmi < 25)){"標準です。";} else {"標準ではありません。"};
+
+        // BMIとコメントを書き込む
+        document.getElementById( "result" ).innerHTML = bmi;
+        document.getElementById( "comment" ).innerHTML = diag;
+    }
+  //-->
+  </script>
+</head>
+<body>
+  <h1>BMI計算</h1>
+  <p>
+  <form action="#" name="f1">
+    身長[m] <input type="text" name="h1" id="ht"><br>
+    体重[kg] <input type="text" name="w1" id="wt"><br>
+  <input type="button" value="計算" onClick="calculateBMI();">
+  </form>
+  <div> BMI <span id="result">　　</span><br>
+  コメント <span id="comment">　　</span></div>
+  <hr>
+  <p>2022/7/13 愛知太郎</p>
+</body>
+</html>

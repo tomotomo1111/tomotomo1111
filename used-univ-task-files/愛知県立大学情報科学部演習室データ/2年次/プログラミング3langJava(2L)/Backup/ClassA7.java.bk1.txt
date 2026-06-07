@@ -1,0 +1,21 @@
+public class ClassA7 {
+	public static void main(String[] args) {
+		int x = 30;
+		int y = 40;
+		Grades7 id1 = new Grades7();
+		id1.init(x,y);
+		id1.AllScore();
+	}
+}
+
+class Grades7 {
+	public int Eng, Math;
+	public void init(int score1, int score2 {
+		Eng = score1;
+		Math = score2;
+	}
+	public void AllScore() {
+		System.out.println("‰pŒê“Á˜_="+Eng);
+		System.out.println("“Œv‰ğÍŠw="+Math);
+	}
+}

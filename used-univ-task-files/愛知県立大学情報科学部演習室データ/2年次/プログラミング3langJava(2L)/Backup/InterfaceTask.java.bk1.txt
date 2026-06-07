@@ -1,0 +1,52 @@
+import java.util.Random;
+
+public class InterfaceTask{
+	
+	public static void main(String[] args) {
+		SeisekiSet classA = new SeisekiList();
+		SeisekiSet classB = new SeisekiArray();
+		
+		String[] nameA = {"安藤A", "安藤B", "安藤C", "安藤D", "安藤E"};
+		String[] nameB = {"鈴木A", "鈴木B", "鈴木C", "鈴木D", "鈴木E"};
+		
+		int[] engA = new int[nameA.length];
+		int[] mathA = new int[nameA.length];
+		int[] liteA = new int[nameA.length];
+		int[] engB = new int[nameB.length];
+		int[] mathB = new int[nameB.length];
+		int[] liteB = new int[nameB.length];
+		
+		Random rand;
+		int eng = 0;
+		int math = 0;
+		int lite = 0;
+		
+		for(int i=0; i<nameA.length; i++) {
+			do{
+				eng = rand.nextInt(100);
+				math = rand.nextInt(100);
+				lite = rand.nextInt(100);
+			} while(eng < 30 || math < 30 || lite < 30);
+			classA.addScore(eng, math, lite, nameA[i]);
+		}
+		
+		for(int i=0; i<nameB.length; i++) {
+			do{
+				eng = rand.nextInt(100);
+				math = rand.nextInt(100);
+				lite = rand.nextInt(100);
+			} while(eng < 30 || math < 30 || lite < 30);
+			classB.addScore(eng, math, lite, nameA[i]);
+		}
+		
+		System.out.println("クラスAの成績は下記になります.");
+		classA.AllDataShow();
+		System.out.println("クラスAの各教科の平均点は下記になります.");
+		System.out.println("国語：" + classA.requestAve("Literature") + "数学：" + classA.requestAve("Math") +"英語：" + classA.requestAve("English"));
+		
+		System.out.println("クラスBの成績は下記になります.");
+		classB.AllDataShow();
+		System.out.println("クラスBの各教科の平均点は下記になります.");
+		System.out.println("国語：" + classB.requestAve("Literature") + "数学：" + classB.requestAve("Math") +"英語：" + classB.requestAve("English"));
+	}
+}

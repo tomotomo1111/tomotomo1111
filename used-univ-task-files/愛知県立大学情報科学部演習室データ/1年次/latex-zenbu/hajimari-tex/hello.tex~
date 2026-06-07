@@ -1,0 +1,22 @@
+\documentclass[a4j]{jsarticle}
+
+\begin{document}
+
+\title{はじめての\LaTeX}
+\author{2022311042 神野友哉}
+\date{2022年6月1日}
+\maketitle
+
+こんにちは, \LaTeX .
+\\今回が人生初の \LaTeX によるレポート作成です.
+
+
+私は情報科学部の神野友哉です.
+\\今後ともよろしくお願いします.
+
+
+Hello. I`m Tomoya Shinno.
+\\Nice meeting you.
+
+
+\end{document}

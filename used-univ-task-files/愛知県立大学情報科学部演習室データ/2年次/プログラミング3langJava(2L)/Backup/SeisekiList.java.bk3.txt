@@ -1,0 +1,81 @@
+public class SeisekiList implements SeisekiNode{
+	public SeisekiNode head;
+	
+	public SeisekiList() {
+		head = null;
+	}
+	
+	public void addScore(int Eng, int Math, int Lite, String name) {
+		SeisekiNode node = new SeisekiNode(Eng, Math, Lite, name);
+		node.next = head;
+		head = node;
+	}
+	
+	public int size() {
+		int s = 0;
+		SeisekiNode node = head;
+		while(node != null) {
+			s++;
+			node = node.next;
+		}
+		return s;
+	}
+	
+	public double requestAve(String sub) {
+		int sum = 0;
+		int size = 0;
+		double ave = 0;
+		SeisekiNode node = head;
+		
+		if(sub.equals("English")) {
+			while(node != null) {
+				sum += node.Eng;
+				size++;
+				node = node.next;
+			}
+			ave = (double)sum / size;
+			return ave
+		}
+		if(sub.equals("Math")) {
+			while(node != null) {
+				sum += node.Math;
+				size++;
+				node = node.next;
+			}
+			ave = (double)sum / size;
+			return ave
+		}
+		if(sub.equals("Literature")) {
+			while(node != null) {
+				sum += node.Lite;
+				size++;
+				node = node.next;
+			}
+			ave = (double)sum / size;
+			return ave
+		}
+	}
+	
+	public void AllDataShow() {
+		SeisekiNode node = head;
+		while(node != null) {
+			System.out.println(name + "の成績  国語：" + node.Lite + " 数学：" + node.Math + " 英語：" + node.Eng);
+			node = node.next;
+		}
+	}
+ }
+class SeisekiNode{
+	public int Eng;
+	public int Math;
+	public int Lite;
+	public String name;
+	public SeisekiNode next;
+	
+	public SeisekiNode(int Eng, int Math, int Lite, String name) {
+		this.Eng = Eng;
+		this.Math = Math;
+		this.Lite = Lite;
+		this.name = name;
+		next = null;
+	}
+}

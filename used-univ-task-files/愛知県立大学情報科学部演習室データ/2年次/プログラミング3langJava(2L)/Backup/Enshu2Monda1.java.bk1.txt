@@ -1,0 +1,22 @@
+public class Enshu2Monda1{
+	public static void main(String[] args) {
+		int x = 180;
+		int y = 70;
+		BodyData data1 = new BodyData();
+		data1.init(x,y);
+		System.out.println("g’·="+data1.height);
+	}
+}
+
+class BodyData {
+	public int height, weight;
+	public void init(int data1, int data2) {
+		height = data1;
+		weight = data2;
+	}
+	
+	public void AllScore() {
+		
+		System.out.println("‘Ìd="+weight);
+	}
+}

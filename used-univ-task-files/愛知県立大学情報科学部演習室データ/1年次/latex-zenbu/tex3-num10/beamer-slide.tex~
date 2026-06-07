@@ -1,0 +1,39 @@
+\documentclass[aspectratio=1610,dvipdfmx,12pt]{beamer}
+\usepackage{bxdpx-beamer}
+\usepackage{pxjahyper}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+
+\title{はじめての Beamer}
+\author[情報]{情報 元気}
+\institute[愛知県立大]{愛知県立大学　情報科学部}
+\date{2022年7月15日}
+
+\begin{document}
+
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section*{目次}
+\begin{frame}\frametitle{発表の流れ}
+  \tableofcontents
+\end{fram}
+
+\section{はじめに}
+\subsection{数式の例}
+\begin{frame}\frametitle{\insertsubsection}
+   \[ \left(%
+       \int_0^\infty \frac{\sin x}{\sqrt {x}} dx
+     \right)^2 = \frac{\pi}{2} \]
+\end{frame}
+
+\subsection{ページアニメーションの例}
+\begin{frame}\frametitle{\insertsubsection}
+  \begin{itemize}
+    \item<1-> Win，Mac，Linux，どのOSでもOK
+    \item<2-> すべてフリーのツール
+    \item<3-> 複雑な数式でもOK
+  \end{itemize}
+\end{frame}
+\end{document}

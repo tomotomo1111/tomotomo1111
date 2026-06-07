@@ -1,0 +1,6 @@
+
+***** ode23
+経過時間は 0.019759 秒です。
+Num. of division = 4585
+Max error (disp) = 8.230052010649302e-05
+Max error (velo) = 9.831032917295701e-05

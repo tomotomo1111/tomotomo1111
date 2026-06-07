@@ -1,0 +1,7 @@
+      body {
+        color: black;
+        background: fuchsia;
+        background-image: url("grid.gif");
+        background-repeat: repeat;
+      }
+      em { color: red; }

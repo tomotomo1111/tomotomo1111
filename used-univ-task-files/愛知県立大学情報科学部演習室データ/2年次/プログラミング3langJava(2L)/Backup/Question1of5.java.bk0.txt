@@ -1,0 +1,14 @@
+public class Question1of5{
+	public static void main(String[] args) {
+		int z = 0;
+		int[] c = {3,2,1};
+		do{
+			if(c.length == 0) {
+				System.out.println("”z—ñ‚Ì’†g‚Í‚ ‚è‚Ü‚¹‚ñD");
+			}else{
+				System.out.println("c["+(c.length-1-z)+"]="+c[z]+"."+c[z]);
+			}
+			z++;
+		}while(z < c.length);
+	}
+}

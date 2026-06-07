@@ -1,0 +1,30 @@
+\documentclass[aspectratio=169,dvipdfmx,12pt]{beamer}
+\usepackage{bxdpx-beamer}
+\usepackage{pxjahyper}
+\usetheme{AnnArbor}
+\renewcommand{\kanjifamilydefault}{\gtdefault}
+
+\title{Beamer課題}
+\author[神野]{神野 友哉 2022311042}
+\institute[愛知県立大]{愛知県立大学　情報科学部}
+\date{\today}
+
+\begin{document}
+\section{自己紹介}
+\begin{frame}\frametitle{自己紹介}
+  私はこの春、愛知県立大学に入学いたしました、神野友哉（シンノトモヤ）と申します。
+このLaTeXのbeamerによって、様々なプレゼンを発表いたします。
+\end{frame}
+
+\subsection{過去最高のエピソード}
+
+
+
+
+
+
+
+
+
+
+\end{document}

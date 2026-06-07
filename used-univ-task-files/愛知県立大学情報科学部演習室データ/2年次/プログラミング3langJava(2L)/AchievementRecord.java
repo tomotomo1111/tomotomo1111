@@ -1,0 +1,66 @@
+import java.io.*;
+import java.util.Random;
+
+class AchievementRecord{
+	private String[] member = new String[15];
+	private int[] kokugo = new int[15];
+	private int[] sugaku = new int[15];
+	private int[] eigo = new int[15];
+	
+	public AchievementRecord(String file) throws IOException{
+		ReadAccountFile(file);
+		CreateScoreBox();
+	}
+	
+	public void ReadAccountFile(String file) throws IOException {
+		BufferedReader reader = new BufferedReader(new FileReader(file));
+		String[] line;
+		int i=0;
+		while((line = reader.readLine()) != null) {
+			member[i++] = line;
+		}
+		reader.close();
+	}
+	
+	public void CreateScoreBox() {
+		for(int i=0; i<kokugo.length; i++) {
+			kokugo[i] = ;
+			sugaku[i] = ;
+			eigo[i] = ;
+		}
+	}
+	
+	public void WriteFile(String file) throws IOException{
+		String fileName = file;
+		;
+		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
+		writer.println("‚»‚ê‚¼‚ê‚Ì¬Ñ‚Í‰º‹L‚É‚È‚è‚Ü‚·D");
+		for(int i=0; i<member.length; i++) {
+			writer.println(member[i]);
+		}
+		writer.close();
+	}
+	
+	public void CreateClass() throws IOException{
+		int[] array = ;
+		String fileName1 = "classA.txt";
+		PrintWriter writer1 = new PrintWriter(new BufferedWriter(new FileWriter(fileName1)));
+		String fileName2 = "classB.txt";
+		PrintWriter writer2 = new PrintWriter(new BufferedWriter(new FileWriter(fileName2)));
+		String fileName3 = "classC.txt";
+		PrintWriter writer3 = new PrintWriter(new BufferedWriter(new FileWriter(fileName3)));
+		
+		for(int i=0; i<array.length; i++) {
+			if(i<5 && i>=0) {
+				writer1.println(member[array[i]]);
+			} else if(i<10 && i>=5) {
+				writer2.println(member[array[i]]);
+			} else {
+				writer3.println(member[array[i]]);
+			}
+		}
+		writer1.close();
+		writer2.close();
+		writer3.close();
+	}
+}

@@ -1,0 +1,16 @@
+public class Question1of3 {
+	
+	public static void main(String[] args) {
+		SeisekiNeo data = new SeisekiNeo(10, 20, 30, 40, 50);
+	}
+}
+
+class SeisekiNeo extends Seiseki {
+	int rika, int tiri;
+	
+	public SeisekiNeo(int score1, int score2, int score3, int score4, int score5) {
+		super(score1, score2, score3);
+		rika = score4;
+		tiri = score5;
+	}
+}

@@ -1,0 +1,45 @@
+public interface IntSet2{
+	void add(int value, String name);
+	boolean findName(String name);
+	int size();
+	String getName(int index);
+}
+
+public class InterfacePractice5{
+	public static void main(String[] args) {
+		IntSet2 set1 = new IntList2();
+		IntSet2 set2 = new IntArray2();
+		
+		int[] numA = {20201, 20202, 20203, 20204, 20205};
+		String[] nameA = {"ˆÉ“¡1", "ˆÉ“¡2", "ˆÉ“¡3", "ˆÉ“¡4", "ˆÉ“¡5"};
+		
+		int[] numB = {20211, 20212, 20213, 20214, 20215};
+		String[] nameB = {"‰Y“‡1", "‰Y“‡2", "‰Y“‡3", "‰Y“‡4", "‰Y“‡5"};
+		for(int i=0; i<numA.length; i++) {
+			set1.add(numA[i], nameA[i]);
+		}
+		System.out.println("A‘g‚ÉˆÉ“¡7‚³‚ñ‚Í‚¢‚Ü‚·‚©?");
+		if(set1.findName("ˆÉ“¡7") == true) {
+			System.out.println("A‘g‚É‚¢‚Ü‚·.");
+		} else {
+			System.out.println("A‘g‚É‚¢‚Ü‚¹‚ñ.");
+			System.out.println("A‘g‚É‚ ‚éŠw¶Ž–¼");
+			for(int i=0; i<set1.size(); i++) {
+				System.out.println(set1.getName(i));
+			}
+		}
+		for(int i=0; i<numB.length; i++) {
+				set2.add(numB[i], nameB[i]);
+		}
+		System.out.println("B‘g‚É‰Y“‡3‚³‚ñ‚Í‚¢‚Ü‚·‚©?";
+		if(set2.findName("‰Y“‡3") == true) {
+			System.out.println("B‘g‚É‚¢‚Ü‚·.");
+		} else {
+			System.out.println("B‘g‚É‚¢‚Ü‚¹‚ñ.");
+			System.out.println("B‘g‚É‚ ‚éŠw¶Ž–¼");
+			for(int i=0; i<set2.size(); i++) {
+				System.out.println(set2.getName(i));
+			}
+		}
+	}
+}

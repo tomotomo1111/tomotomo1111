@@ -1,0 +1,70 @@
+\documentclass[a4j]{jsarticle}
+
+\begin{document}
+
+\title{はじめての\LaTeX}
+\author{2022311042 神野友哉}
+\date{\today}%2022年6月1日}
+\maketitle
+
+\section{はじめに}
+…
+\subsection{研究目的}
+…
+\section{準備}
+…
+\subsection{数学的定義}
+…
+
+\subsection{問題の記述}
+…
+\begin{itemize}
+  \item ファイルシステム
+  \item Webページ
+  \item 文書整形
+\end{itemize}
+\begin{enumerate}
+  \item C言語
+  \item Javascript
+\end{enumerate}
+こんにちは, \verb5\LaTeX5 .
+\\今回が人生初の \LaTeX によるレポート作成です.
+
+
+私は情報科学部の神野友哉です.
+\\今後ともよろしくお願いします.
+
+
+Hello. I`m Tomoya Shinno.
+\\Nice meeting you.
+\section{表の例題}
+  \begin{tabular}{l|c|r}
+\hline
+\hline
+品名　&　個数 & 価格 \\
+\hline
+燕の子安貝　& 2 & 11000 \\
+龍の首の珠　& 1 & 5000 \\
+蓬莱の玉の枝 & 3 & 8500 \\
+\hline
+\end{tabular}
+
+\section{数式の例}
+\begin{equation} 
+ \left|
+  \begin{array}{ccc}
+      a & b & c \\
+      d & e & f \\
+      g & h & j \\
+    \end{array}
+  \right| = aei + bfg + cdh - ( afh + bdi + ceg )
+\end{equation}
+\section{導関数}
+ 関数 $f(x)$　の導関数 $f'(x)$は、
+  \begin{equation}
+    f'(x)=\lim_{h\rightarrow 0}\frac{f(x+h)-f(x)}{h}
+  \end{equation}
+ で定義される。例えば、関数 $f(x)=3x^2+2x$ の導関数は、
+ \[ f'(x)=6x+2 \]
+である。
+\end{document}

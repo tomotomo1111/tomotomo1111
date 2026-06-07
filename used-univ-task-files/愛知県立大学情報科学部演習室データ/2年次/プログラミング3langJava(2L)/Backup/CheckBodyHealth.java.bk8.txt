@@ -1,0 +1,31 @@
+package ST;
+import ST.BMI;
+import java.util.Scanner;
+
+public class CheckBodyHealth{
+	
+	public static void main(String[] args) {
+		System.out.println("あなたの身体データを基に肥満度を計測します．");
+		System.out.println("あなたの身体データを入力してください．");
+		Scanner scan = new Scanner(System.in);
+		System.out.println("名前は??");
+		String name = scan.next();
+		System.out.println("身長は何cmですか?");
+		try {
+		double height = Double.parseDouble(scan.next());
+		System.out.println("体重は何kgですか?");
+		double weight = Double.parseDouble(scan.next());
+		System.out.println("性別は??");
+		String male = scan.next();
+		System.out.println("何歳ですか?");
+		double age = Double.parseDouble(scan.next());
+		
+		BmiCalculation bmi = new BmiCalculation(name, height, weight, male, age);
+		bmi.DataDisplay2();
+		bmi.BodyFatness();
+		
+		} catch(Exception e) {
+			System.exit(-1);
+		}
+	}
+}

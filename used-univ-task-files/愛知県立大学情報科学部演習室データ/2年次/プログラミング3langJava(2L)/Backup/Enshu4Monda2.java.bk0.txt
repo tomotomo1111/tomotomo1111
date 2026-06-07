@@ -1,0 +1,24 @@
+public class Enshu4Monda2{
+	public static void main(String[] args){
+		System.out.println("ID1さんは試験を受け，英語特論70点，統計解析学50点でした．");
+		System.out.println("ID1さんのデータを保存してください．");
+		ScoreConfirmation2 id1  = new ScoreConfirmation2(70,50);
+		System.out.println("英語特論の成績点数は"+Calculat2.ScoreCorrection(id1.Eng));
+		System.out.println("統計解析学の成績点数は"+Calculate2.ScoreCorrection(id1.Math));
+	}
+}
+
+class ScoreConfirmation2{
+	double Eng, Math;
+	public ScoreConfirmation2(double score1, double score2) {
+		Eng = score1;
+		Math = score2;
+	}
+}
+
+class Calculate2{
+	static final double rate = 0.7;
+	public static double ScoreCorrection(double score) {
+		return score*rate;
+	}
+}

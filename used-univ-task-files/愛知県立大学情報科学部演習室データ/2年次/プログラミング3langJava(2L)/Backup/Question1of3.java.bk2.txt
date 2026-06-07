@@ -1,0 +1,8 @@
+public class Question1of3 {
+	public static void main(String[] args) {
+		intx = 3;
+		double y = x - 2;
+		boolean b = (x==y);
+		System.out.println("b="+b);
+	}
+}

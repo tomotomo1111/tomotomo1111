@@ -1,0 +1,47 @@
+読解問題7-7
+問題１
+group_1 = new UniversityFestival("A", 15, 29);
+
+問題２
+public String getName() {
+    return groupName;
+}
+
+問題３
+public int getNum() {
+    return groupNum;
+}
+
+問題４
+登録者 Aの支払金額は 45000 です.
+登録者 Bの支払金額は 40000 です.
+登録者 B-Manの支払金額は 0 です.
+登録者 Cの支払金額は 22000 です.
+登録者 Dの支払金額は 6000 です.
+
+問題５
+A
+Momane-Python
+Songer-Haskell
+Ruby-Dance
+PHP-DanceTeam
+JAVA-Band
+
+C
+PHP-DanceTeam
+JAVA-Band
+Ruby-Dance
+Songer-Haskell
+Momane-Python
+
+問題6
+OrderReturn(int y)やOrderDicision(int y)のｙの値が、
+1~LiveGroup.lengthの間の値でないと、
+java.lang.ArrayIndexOutOfBoundsException
+が発生する。配列の範囲外を参照したためである。
+
+またクラス宣言の際に、UniversityFestival(String n, int m, int a)
+のｎがnullである場合、コンパイルは可能であるが、
+java.lang.NullPointerException
+が発生する。これは、a.equals(b)において、bがnullである場合はfalseを返す一方、
+aがnullの場合は上記エラーを発生させるからである。

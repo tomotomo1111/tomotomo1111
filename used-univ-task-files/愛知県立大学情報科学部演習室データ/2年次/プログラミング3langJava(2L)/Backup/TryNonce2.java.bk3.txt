@@ -1,0 +1,100 @@
+import java.nio.ByteBuffer;
+import java.security.MessageDigest;
+import java.util.Random;
+
+public class TryNonce2 {
+
+	// Byte型の配列xの先頭から連続する0のビット数を数える
+	// この部分はブラックボックスと考えてよい
+	private static int countZeros( byte[] x ){
+		for( int i=0; i<x.length; i++ ){
+			if( x[i] != 0 ){
+				for( int j=7; j>=0; j-- ){
+					if( x[i] >> j != 0 ) return i * 8 + 7 - j;
+				}
+			}
+		}
+		return x.length * 8;
+	}
+
+	// バイト型の配列bufの内容を16進で表示する文字列に変換する
+	// このメソッドはブラックボックスと考えてよい
+	private static String bytesToHex( byte[] buf ){
+		String s = "";
+		for( int i=0; i<buf.length; i++ ){
+			s = s + String.format( "%02x", buf[i] );
+		}
+		return s;
+	}
+
+	// メイン．なお、throws Exceptionについては、例外処理のところで学習するはず．
+	public static void main( String[] args ) throws Exception {
+		// SHA256ハッシュ関数を計算するツールを準備する．
+		MessageDigest sha256 = MessageDigest.getInstance( "SHA-256" );
+
+		// 疑似乱数の準備．決まり文句と考えてよい．
+		Random rand = new Random();
+
+		// SHA256を計算するための入力のByte型配列bufferを用意する。
+		// byteBufはbufferにデータを書き込むためのもの
+		byte [] buffer = new byte[12];
+		ByteBuffer byteBuf = ByteBuffer.wrap( buffer );
+
+		int today, nonce , zeros;
+		int target = 8;
+		int count;
+		
+		int[] nonceArray = new int[50];
+		double[] averageNonceArray = new double[15];
+		
+		byte [] result;
+		
+		while(target < 23) {
+			
+		count = 50;
+		
+		while(count > 0) {
+		// 本日の日付を、bufferの0バイト目から3バイト目までに書き込む
+		today = 20230424;
+		byteBuf.putInt( 0, today );
+		
+		// 疑似乱数をbufferの4バイト目から7バイト目までに書き込む．
+		byteBuf.putInt( 4, rand.nextInt() );
+		
+		nonce = 0;
+		
+		do{
+			
+		// nonceの値を、bufferの8バイト目から11バイト目までに書き込む．
+		byteBuf.putInt( 8, nonce );
+
+		// bufferのSHA256ハッシュ値を計算して、resultとして得る．
+		result = sha256.digest( buffer );
+
+		// resultの先頭の0のビット数を数える．
+		zeros = countZeros( result );
+		
+		nonce++;
+		
+		}while(zeros < target);
+		
+		nonceArray[50 - count] = nonce;
+		count--;
+		}
+		
+		int sumNonce = 0;
+		for(int i = 0; i < 50; i++) {
+			sumNonce += nonceArray[i];
+		}
+		
+		double averageNonce = 0;
+		averageNonce = (double)sumNonce / 50;
+		averageNonceArray[target-8] = averageNonce;
+		
+		// 結果の表示
+		System.out.println( "target: " + target + " averageNonce" + averageNonceArray[target - 8]);
+		
+		target++;
+		}
+	}
+}

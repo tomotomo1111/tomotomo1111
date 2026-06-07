@@ -1,0 +1,26 @@
+import javax.swing.*;
+
+class moneyMakingCalculator{
+	
+	public static void main(String[] args) {
+		
+		JFrame myFrame = new JFrame();
+		MyPanel myPanel = new MyPanel();
+		
+		myFrame.setSize(500,200);
+		myFrame.setLayout(null);
+		myFrame.setResizable(false);
+		myFrame.setLocationRelativeTo(null);
+		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		myFrame.setVisible(true);
+		
+	}
+}
+
+class MyPanel implements JPanel{
+	
+	MyPanel(){
+		
+		JTextField myText_1 = new JTextField(); 
+	}
+}

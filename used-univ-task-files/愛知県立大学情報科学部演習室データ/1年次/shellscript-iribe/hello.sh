@@ -1,0 +1,3 @@
+#!/bin/sh
+# echoコマンドを使ってHelloと表示する
+echo Hello

@@ -1,0 +1,161 @@
+import java.util.Random;
+import java.util.Scanner;
+public class ClassC7 {
+	
+	static Seiseki7[] studentArray = new Seiseki7[3];
+	
+	public static void main(String[] args) {
+		
+		for(int i=0; i<studentArray.length; i++) {
+			studentArray[i] = new Seiseki7(MyRandom(), MyRandom(), MyRandom());
+		}
+		
+		System.out.println("どのデータを表示されるか指示してください.");
+		System.out.println("操作コマンド一覧");
+		System.out.println("全体成績, 最高平均成績点, 英語特論の最高成績点");
+		System.out.println("統計解析学の最高成績点, 古典文学の最高成績点, 操作終了");
+		checkInput();
+		
+	}
+	
+	public static int MyRandom() {
+		Random rand = new Random();
+		return 30 + rand.nextInt(70);
+	}
+	
+	public static void checkInput() {
+		System.out.print("操作コマンド : ");
+		Scanner scanner = new Scanner(System.in);
+		String input = scanner.nextLine();
+		
+		
+		switch(input) {
+			case "全体成績":
+			allScore();
+			break;
+			case "最高平均成績点":
+			maxAveScore();
+			break;
+			case "英語特論の最高成績点":
+			maxEngScore();
+			break;
+			case "統計解析学の最高成績点":
+			maxMathScore();
+			break;
+			case "古典文学の最高成績点":
+			maxLiteScore();
+			break;
+			case "操作終了":
+			System.exit();
+			break;
+			default: 
+			System.out.println("コマンドが誤っています.");
+			
+		}
+		checkInput();
+	}
+	
+	public static void allScore() {
+		System.out.println("ID1さんの成績は下記になります.");
+		System.out.println("英語特論の成績点数は"+studentArray[0].getEng());
+		System.out.println("統計解析学の成績点数は"+studentArray[0].getMath());
+		System.out.println("古典文学の成績点数は"+studentArray[0].getLite());
+		System.out.println("成績点の合計点数は"+studentArray[0].getTotal());
+		System.out.println("成績点の平均点数は"+studentArray[0].getAve());
+		System.out.println("*************************");
+		System.out.println("ID2さんの成績は下記になります.");
+		System.out.println("英語特論の成績点数は"+studentArray[1].getEng());
+		System.out.println("統計解析学の成績点数は"+studentArray[1].getMath());
+		System.out.println("古典文学の成績点数は"+studentArray[1].getLite());
+		System.out.println("成績点の合計点数は"+studentArray[1].getTotal());
+		System.out.println("成績点の平均点数は"+studentArray[1].getAve());
+		System.out.println("*************************");
+		System.out.println("ID3さんの成績は下記になります.");
+		System.out.println("英語特論の成績点数は"+studentArray[2].getEng());
+		System.out.println("統計解析学の成績点数は"+studentArray[2].getMath());
+		System.out.println("古典文学の成績点数は"+studentArray[2].getLite());
+		System.out.println("成績点の合計点数は"+studentArray[2].getTotal());
+		System.out.println("成績点の平均点数は"+studentArray[2].getAve());
+		System.out.println("*************************");
+	}
+	
+	public static void maxAveScore() {
+		double maxAve = studentArray[0].getAve();
+		int n = 0;
+		for(int i=0; i<studentArray.length; i++) {
+			if(maxAve <= studentArray[i].getAve()) {
+				maxAve = studentArray[i].getAve();
+				n = i + 1;
+			}
+		}
+		System.out.println("最高平均点数はID" + n + "さんの" + maxAve + "点です.");
+	}
+	
+	public static void maxEngScore() {
+		double maxEng = studentArray[0].getEng();
+		int n = 0;
+		for(int i=0; i<studentArray.length; i++) {
+			if(maxEng <= studentArray[i].getEng()) {
+				maxEng = studentArray[i].getEng();
+				n = i + 1;
+			}
+		}
+		System.out.println("英語特論の最高成績点はID" + n + "さんの" + maxEng + "点です.");
+	}
+	
+	public static void maxMathScore() {
+		double maxMath = studentArray[0].getMath();
+		int n = 0;
+		for(int i=0; i<studentArray.length; i++) {
+			if(maxMath <= studentArray[i].getMath()){
+				maxMath = studentArray[i].getMath();
+				n = i + 1;
+			}
+		}
+		System.out.println("統計解析学の最高成績点数はID" + n + "さんの" + maxMath + "点です.");
+	}
+	
+	public static void maxLiteScore() {
+		double maxLite = studentArray[0].getLite();
+		int n = 0;
+		for(int i=0; i<studentArray.length; i++) {
+			if(maxLite <= studentArray[i].getLite()){
+				maxLite = studentArray[i].getLite();
+				n = i + 1;
+			}
+		}
+		System.out.println("古典文学の最高成績点数はID" + n + "さんの" + maxLite + "点です.");
+	}
+}
+
+class Seiseki7 {
+	
+	private double Eng, Math, Lite;
+	public static final double rate = 0.8;
+	
+	public Seiseki7(int score1, int score2, int score3) {
+		Eng = score1 * rate;
+		Math = score2 * rate;
+		Lite = score3 * rate;
+	}
+	
+	public double getEng() {
+		return Eng;
+	}
+	
+	public double getMath() {
+		return Math;
+	}
+	
+	public double getLite() {
+		return Lite;
+	}
+	
+	public double getTotal() {
+		return (Eng + Math + Lite);
+	}
+	
+	public double getAve() {
+		return (Eng + Math + Lite) / 3;
+	}
+}

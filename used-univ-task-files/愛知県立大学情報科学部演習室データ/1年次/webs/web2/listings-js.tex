@@ -1,0 +1,30 @@
+\usepackage{color}
+% タイプライタ体で太字を表示させるためのフォントの設定。
+\usepackage[lighttt]{lmodern}
+% 標準のlistings環境ではJavascriptが用意されていないので、ここで定義する。
+\lstdefinelanguage{JavaScript}{
+keywords = {abstract, arguments, await, boolean, break, byte, case, catch,
+    char, class, const, continue, debugger, default, delete, do,
+    double, else, enum, eval, export, extends, false, final,
+    finally, float, for, function, goto, if, implements, import,
+    in, instanceof, int, interface, let, long, native, new,
+    null, package, private, protected, public, return, short, static,
+    super, switch, synchronized, this, throw, throws, transient, true,
+    try, typeof, var, void, volatile, while, with, yield},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  sensitive=true
+}
+\lstset{language=JavaScript,% Javascriptを想定
+    basicstyle=\footnotesize\ttfamily,% 文字の大きさと書体
+			% 書体： なし, \ttfamily, \itshape, …
+	breaklines=true,%
+    keywordstyle=\bfseries,% キーワードをボールドで表示
+    commentstyle=\color[gray]{0.7},% コメントを斜体で表示しない
+    frame=single,% 外枠を表示
+    showstringspaces=false,%
+    tabsize=4,%
+    numbers=left,stepnumber=1,numberstyle=\footnotesize%
+}%

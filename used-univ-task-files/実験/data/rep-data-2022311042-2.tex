@@ -1,0 +1,462 @@
+\documentclass[10pt]{jarticle}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\renewcommand{\lstlistingname}{source}
+\lstset{language=sh,%
+        basicstyle=\footnotesize,%
+	commentstyle=\textit,%
+	classoffset=1,%
+	keywordstyle=\bfseries,%
+	frame=shadowbox,framesep=4pt,%
+	showstringspaces=false%,
+	numbers=left,stepnumber=1,numberstyle=\footnotesize,%
+	numbersep=1zw,%
+	lineskip=-0.5ex,%
+	xleftmargin=2zw%
+	}%
+
+\newdimen\paperwidth \newdimen\paperheight
+\def\A4size{\paperwidth=210mm \paperheight=297mm}
+\def\centered{%
+  \oddsidemargin=\paperwidth
+  \advance\oddsidemargin-\textwidth
+  \oddsidemargin=0.5\oddsidemargin
+  \advance\oddsidemargin-1in
+  \evensidemargin-\oddsidemargin}
+%
+\textwidth 160mm
+\textheight 230mm
+\topmargin 0mm
+\headheight 0mm
+\footskip 0mm
+\A4size\centered
+
+\title{\framebox{\hspace{4zw}データ科学 レポート2%
+                 \hspace{4zw}}}
+\author{神野 友哉 \\
+        2022311042  \\
+        愛知県立大学 情報科学部 情報科学科 \\}
+\date{2023年12月11日}
+
+
+\begin{document}
+\maketitle
+\section{はじめに}
+%
+この実験は、\ ShellScript\ のプログラム\ref{sh} を用いて、メモリ使用量を確認する。
+また、演習室\ 3\ の\ PC\ にて実施した。メモリは\ 32\ GB\verb|(32768MB)|\ であった。
+
+\lstinputlisting[caption=メモリ使用量確認用ソースコード, label=sh]{./mem.sh};
+
+%
+
+\section{課題 1}
+%
+
+\ Matlab\ プログラム\ref{k1m}を用いて\ parfor\ のメモリ使用量を確かめる実験を行う。
+\begin{itemize}[left=30pt]
+	\item[$M$]: 並列計算実行時のマシンの総メモリ使用量
+	\item[$m_c$]: Matlab クライアントのメモリ使用量
+	\item[$m$]: Matlab 起動前のメモリ使用量
+	\item[$m'$]: Matlab 起動後のメモリ使用量
+	\item[$a$]: 処理対象のデータ(配列)のサイズ
+	\item[$n$]: ワーカー数
+	\item[$p$]: 並列プールにおける一つのワーカーのメモリ使用量
+	\item[$a'$]: parfor 実行時余分に確保される一つのワーカー当たりのメモリ使用量
+\end{itemize}
+\begin{gather}
+	M = m + m_{c} + a + n (p + a + a') \label{ga:1}\\
+	m_[c] = m' - m \label{ga:2}
+\end{gather}
+
+\lstinputlisting[caption=課題１で使用するソースコード, label=k1m]{./program1.m};
+%
+
+\subsection{課題 1-1}\label{kadai:1-1}
+$m、 m_{c}、 p、 m_{max}、 a'、 k $の観測結果を表などにまとめよ
+\subsubsection{目的}
+%
+\ Matlab\ における\ parfor\ によるデータの並列分散処理について、各種パラメータを調査することで、影響を考察する。
+%
+
+\subsubsection{考察}
+%
+実験の方法として、手順\ 1\ ～\ 5\ でメモリ使用量を確認する。
+\begin{itemize}[left=30pt]
+	\item[[手順1]] Matlab 起動前 (計測値: $m$)
+	\item[[手順2]] Matlab 起動後 (計測値: $m'$)
+	\item[[手順3]] ワーカー数$n=16$で並列プール起動後 (計測値: $m' + np$)
+	\item[[手順4]] 配列 A を定義した後 (計測値: $m' + a + np$)
+	\item[[手順5]] parfor 実行中におけるメモリ使用量の最大値 $m_{max}$ (計測値:$m' + a + n(p + a + a')$) ただし、徐々
+	にメモリ使用量が大きくなることから、 free の出力結果をよく見ながら、 最大値を記録する。
+\end{itemize}
+結果は表\ref{table:11t}となった。
+\begin{table}[htbp]
+	\centering
+	\caption{手順\ 1\ ～\ 5\ }
+	\label{table:11t}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		$m(MB)$ &$ m'(MB) $& $m' + np(MB)$ & $m' + a + np(MB)$ & $m_{max}=m'+a+n(p+a+a')(MB)$ \\
+		\hline
+		2155 & 4237 & 19163 & 19711 & 31311 \\
+		\hline
+	\end{tabular}
+\end{table}
+この表\ref{table:11t}を基に作業\ 1\ ～\ 5\ を行う。
+\begin{itemize}[left=30pt]
+\item[[作業1]] 手順\ 1\ と手順\ 2\ の結果と式 \ref{ga:2} から $m_{c}$ を求める。
+\item[[作業2]] 手順\ 2\ と手順\ 3\ の結果から$ p $を求める\verb|(|$\frac{手順 3 - 手順 2}{n}$\verb|)|。
+\item[[作業3]] 手順\ 3\ と手順\ 4\ の結果から$ a $を求める\verb|(|$手順 4 - 手順 3$\verb|)|。
+\item[[作業4]] 手順\ 4\ と手順\ 5\ の結果から$ a' $を求める\verb|(|$\frac{手順 5 - 手順 4 - a}{n}$\verb|)|。
+\item[[作業5]] $ a $に対する$ a' $の比$ k $を求める\verb|(|$k=\frac{a'}{a}$\verb|)|。
+\end{itemize}
+結果は表\ref{table:11s}となった。
+\begin{table}[htbp]
+	\centering
+	\caption{作業\ 1\ ～\ 5\ }
+	\label{table:11s}
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		$m_{c}(MB)$ & $p(MB)$ & $a(MB)$ & $a'(MB)$ & $k$ \\
+		\hline
+		2082 &  932.875 & 548 & 177 & 0.323 \\
+		\hline
+	\end{tabular}
+\end{table}
+表\ref{table:11t}と表\ref{table:11s}をまとめて、$m、 m_{c}、p、m_{max}、a'、k$ の観測結果は表\ref{table:11}となる。
+\begin{table}[htbp]
+	\centering
+	\caption{観測結果}
+	\label{table:11}
+	\begin{tabular}{|c|c|c|c|c|c|}
+		\hline
+		$m(MB)$ & $m_c(MB)$ & $p(MB)$ & $m_{max}(MB)$ & $a'(MB)$ & $k$\\
+		\hline
+		2155 & 2082 & 932.875 & 31311 & 177 & 0.323 \\
+		\hline
+	\end{tabular}
+\end{table}
+表\ref{table:11}の\ $m_{max} = 31311$\verb|(MB)|\ は計測用\ ShellScript\ によって表示された最大値である。
+表\ref{table:11t}と表\ref{table:11s}から、$ n、m'、a、a'、p $をそれぞれ、$16、4237、548、177、932.875 $として、式\ref{eqmax}に代入し$M$を計算する。
+\begin{equation}
+M = m' + a + n(p + a + a') \label{eqmax}
+\end{equation}
+その$M$の計算結果は\ 30940\ MB\ となり、メモリ\ 32\ GB\verb|(|32768 MB\verb|)|\ の\ 94.4\ \verb|%|であった。
+また、$m_{max}=31311$よりも約\ 1.2\verb|%|\ 少なかったため、
+検定を行うべきであるが、計算による$m_{max}$算出も、概ね実測値と近い値が出ると考えられるのではないか。
+
+\subsubsection{結論}
+%
+今回の実験における\ Matlab\ の\ Parfor\ での並列処理は、\ PC\ のメモリの大部分を利用してしまい、動作が目に見えて遅延してしまった。
+そのため、\ PC\ 環境に対して適切な値を設定する必要があるのである。
+%
+
+\subsection{課題 1-2}
+演習室\ 3\ のデスクトップマシンにおいて\ 4\ 並列、\ 8\ 並列、\ 16\ 並列で今回の処理を行う際、\ parfor\ で
+は本課題の前提でどの程度のサイズのデータまで仮想メモリを利用せず処理が可能か。$a' = ka$として
+式\ref{ga:1}から$ a $を導出した後、 本課題で求めた$ m、m_{c}、p、k $を用いて各並列数での$ a $を計算して答えよ。
+ただし、M に相当する演習室\ 3\ のデスクトップマシンのメモリ容量は\ 32\ GB である \verb|(|1GB=1024MB\verb|)|。
+\subsubsection{目的}
+%
+演習室\ 3\ のデスクトップ\ PC\ で、$ n $を$ 4、8、16 $として課題\ \ref{kadai:1-1}\ 
+を実施すると、仮想メモリを使用せずにどの程度のサイズのデータを利用できるか確認する。また、得られた結果から、
+並列処理と各ワーカーへのメモリ割り当ての関係を調査する。
+%
+
+\subsubsection{考察}
+%
+下の式\ref{ga:3}に、$ M、m、m_{c}、p、k $をそれぞれ、$ 32768、2155、2082、932.875、0.323 $として、
+$ n $のみ$ 4、8、16 $と変動させ計算する。
+\begin{equation}
+	a = \frac{M - m - m_{c} - np}{1 + (1 + k) n}\label{ga:3}
+\end{equation}
+その結果は下の表\ref{table:12}となった。
+\begin{table}[htbp]
+	\centering
+	\caption{ n に対する a の計算結果}
+	\label{table:12}
+	\begin{tabular}{|c|c|}
+		\hline
+		コア数\verb|(n)| & 仮想メモリを使用しない最大のサイズ\verb|(a)|\\
+		\hline
+		4  & 3941.4\\
+		8  & 1818.7\\
+		16 &  613.7\\
+		\hline
+	\end{tabular}
+\end{table}
+表\ref{table:12}のコア数$ n $の変位に対する、 
+仮想メモリを使用しない最大のサイズ$ a $の変位
+を計算したものが表\ref{table:12h}である。
+\begin{table}[htbp]
+	\centering
+	\caption{ n の変位に対する a の変位の計算結果}
+	\label{table:12h}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$ n $の変位 \verb|(|前 - 後\verb|)| & $ a $の変位 & $ n $の単位当たりの$ a $の変位\verb|(|直線的とする\verb|)| & 前後のサイズの比率\\
+		\hline
+		4 - 8  & -2122.7 & -530.675 & 0.4614\\
+		8 - 16 & -1205.0 & -150.625 & 0.3374\\
+		\hline
+	\end{tabular}
+\end{table}
+表\ref{table:12h}の\ 3\ 列目、$ n $の単位当たりの$ a $の変位に注目すると、$ n $が増加するにつれて、
+$ a $の値の減少幅が小さくなる傾向があるのではないかと推察される。
+$ n $の値の極限を取って、$ a $が特定の値に収束すると仮定すると、メモリが無限に必要であることは、式\ref{ga:1}から
+明らかである。実際には、コア数$ a $が無限であることは起こり得ない上、メモリのリソースも有限である。
+%
+
+\subsubsection{結論}
+%
+並列処理の各ワーカーに割り当てられるメモリの量は、並列処理に用いるコア数に対して負の相関があると言える。そのため、
+身近な例として、パフォーマンス向上を目的とし\ PC\ のコア数を増加させた場合、メモリも十分な量、増加させる必要があるのではないか。
+%
+
+\section{課題 2}
+%
+
+\ Matlab\ プログラム\ref{k2m}を用いて\ spmd\ のメモリ使用量を確かめる実験を行う。
+
+\begin{itemize}[left=30pt]
+\item[$M$]: 並列計算実行時のマシンの総メモリ使用量
+\item[$m_{c}$]: Matlab クライアントのメモリ使用量
+\item[$m$]: Matlab 起動前のメモリ使用量
+\item[$m'$]: Matlab 起動後のメモリ使用量
+\item[$a$]: 処理対象のデータ (配列) のサイズ
+\item[$n$]: ワーカー数
+\item[$p$]: 並列プールにおける一つのワーカーのメモリ使用量
+\item[$a'_{sp}$]: 分散配列の定義後に分散配列のサイズ以外に確保されるメモリ領域の総量
+\item[$c$]: \ spmd\ 実施後分散配列のサイズ以外に確保されるメモリ領域の総量
+\item[$b$]: \ spmd\ 実施前後のメモリ使用総量の変化量
+\item[$g$]: ワーカーからクライアントへ転送されるデータ量 (サンプリング間隔に依存)
+\end{itemize}
+\begin{gather}
+	M = m + m_{c}+ a + n(p + \frac{a}{n}) + c + g \label{ga:21} \\
+	m_{c}= m' - m \label{ga:22}
+\end{gather}
+
+\lstinputlisting[caption=課題 2 で使用するソースコード, label=k2m]{./program2.m};
+%
+
+\subsection{課題 2-1} \label{kadai:2-1}
+$m、m_c、p、a'_{sp}、c、k_{c}、m_{max,sp}、g$の観測結果を表などにまとめよ
+\subsubsection{目的}
+%
+\ Matlab\ における\ spmd\ によるデータの並列分散処理について、各種パラメータを調査することで、影響を考察する。
+%
+
+\subsubsection{考察}
+%
+実験の方法として、手順\ 1\ ～\ 7\ でメモリ使用量を確認する。
+\begin{itemize}[left=30pt]
+	\item[[手順1]] Matlab 起動前 (計測値: $m$)
+	\item[[手順2]] Matlab 起動後 (計測値: $m'$)
+	\item[[手順3]] ワーカー数$n=16$で並列プール起動後 (計測値: $m' + np$)
+	\item[[手順4]] 配列 A を定義した後 (計測値: $m' + a + np$)
+	\item[[手順5]] distributed 配列の定義後 (計測値:$m' + a + n(p + \frac{a}{n}) + a'_{sp}$)
+	\item[[手順6]] spmd の実施直後(計測値:$m' + a + n(p + \frac{a}{n}) + c$)
+	\item[[手順7]] 最後の行でのデータ転送時におけるメモリ使用量の最大値$ m_{max,sp} $(計測値:$m' + a + n(p + \frac{a}{n}) + c$)). 
+	ただし、実行時間が比較的短いことがあるため、計測値にはばらつきがあるものと考えてよい
+\end{itemize}
+結果は表\ref{table:21t}となった。
+\begin{table}[htbp]
+	\centering
+	\caption{手順\ 1\ ～\ 7\ }
+	\label{table:21t}
+	\begin{tabular}{|c|c|}
+		\hline
+		$m(MB)$ & 2754 \\
+		\hline
+		$m'(MB)$ & 4732 \\
+		\hline
+		$m' + np(MB)$ & 19794 \\
+		\hline
+		$m' + a + np(MB)$ & 20676 \\
+		\hline
+		$m' + a + n(p + \frac{a}{n}) + a'_{sp}$ & 22649 \\
+		\hline
+		$m' + a + n(p + \frac{a}{n}) + c$ & 23214 \\
+		\hline
+		$m_{max,sp} = m' + a + n(p + \frac{a}{n}) + c + g$ & 24820 \\
+		\hline
+	\end{tabular}
+\end{table}
+この表\ref{table:21t}を基に作業\ 1\ ～\ 8\ を行う。
+\begin{itemize}[left=30pt]
+\item[[作業1]] 手順\ 1\ と手順\ 2\ の結果と式 \ref{ga:22} から $m_{c}$ を求める。
+\item[[作業2]] 手順\ 2\ と手順\ 3\ の結果から$ p $を求める\verb|(|$\frac{手順 3 - 手順 2}{n}$\verb|)|。
+\item[[作業3]] 手順\ 3\ と手順\ 4\ の結果から$ a $を求める\verb|(|$手順 4 - 手順 3$\verb|)|。
+\item[[作業4]] 手順\ 4\ と手順\ 5\ の結果から$ a'_{sp} $を求める\verb|(|$\frac{手順 5 - 手順 4 - a}{n}$\verb|)|。
+\item[[作業5]] 手順\ 4\ と手順\ 6\ の結果から$ c $を求める\verb|(|$手順 6 - 手順 4 - a$\verb|)|。
+\item[[作業6]] $ a $に対する$ c $の比$ k_{c} $を求める\verb|(|$k_{c}=\frac{c}{a}$\verb|)|。
+\item[[作業7]] 手順\ 6\ と手順\ 7\ の結果から$ g $を求める\verb|(|$手順 7 - 手順 6$\verb|)|。
+\item[[作業8]] $ a $に対する$ g $の比$ k_{sp} $を求める\verb|(|$k_{sp}=\frac{g}{a}$\verb|)|。
+\end{itemize}
+結果は表\ref{table:21s}となった。
+\begin{table}[htbp]
+	\centering
+	\caption{作業\ 1\ ～\ 8\ }
+	\label{table:21s}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline
+		$m_{c}(MB)$ & $p(MB)$ & $a(MB)$ & $a'_{sp}(MB)$ & $c$ & $k_{c}$ & $g$ & $k_{sp}$ \\
+		\hline
+		1978 & 941.375 & 882 & 1091 & 1656 & 1.877 & 1606 & 1.821 \\
+		\hline
+	\end{tabular}
+\end{table}
+表\ref{table:21t}と表\ref{table:21s}をまとめて、$m、 m_{c}、p、m_{max}、a'、k$ の観測結果は表\ref{table:21}となる。
+\begin{table}[htbp]
+	\centering
+	\caption{観測結果}
+	\label{table:21}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|}
+		\hline
+		$m(MB)$ & $m_c(MB)$ & $p(MB)$ & $a'_{sp}(MB)$ & $c(MB)$ & $k_{c}$ & $m_{max,sp}$ & $g$\\
+		\hline
+		2754 & 1978 & 941.375 & 1091 & 1656 & 1.877 & 23214 & 1606 \\
+		\hline
+	\end{tabular}
+\end{table}
+並列処理に用いるコア数は同じであるのにもかかわらず、
+$m_{max,sp}=24820$の値は課題\ 1-1\ の$m_{max}=31311$に対し、約20\verb|%|減少していることから、
+\ parfor\ よりも\ spmd\ の方がメモリ使用量の観点から効率的であると考えられるのではないか。 また、課題1-1と同様に、
+$M$を式から求めようと試みる。表\ref{table:21t}と表\ref{table:21s}から、$n、m、m_{c}、a、p、c、g $をそれぞれ、
+$16、2754、1978、882、941.375、1656、1606 $として、式\ref{eqmax2}を計算する。
+\begin{equation}
+M = m + m_{c}+ a + n(p + \frac{a}{n}) + c + g \label{eqmax2}
+\end{equation}
+この計算式を用いて算出した$M$の値は\ 24820\ MB\ となり$m_{max,sp}$の実測値と一致した。
+断っておくが、これは決して同じ値を間違えて書いてしまった等の不手際ではないのである。
+その後、複数回実行し、$m_{max,sp}$の実測値を確認したが、全て差が5\verb|%|
+未満であった。そのため、課題1-1と同様に$m_{max,sp}$の式による算出も可能だと考えられる。
+%
+
+\subsubsection{結論}
+%
+この実験では、\ spmd\ の方がメモリ使用量で優位であったが、MathWorks(2023)によると、ループ反復が低速\ or\ 回数が多い\ for\ ループがある場合、
+処理当たりの計算時間が一定でない\ or\ 事前に予測できない場合は\ parfor\ が適していることもあるという\cite{mathlab1}。
+そのため、\ Matlab\ で並列処理を行う際、目的に合致する並列処理の方法を選択することで、メモリ使用量の効率化が図れるのである。
+%
+
+\subsection{課題 2-2}
+\ program2.m\ の\ 8\ 行目の「a=distributed(A);」から\ 15\ 行目の「e=d{1};」までの部分で
+具体的にどのような処理が行われているか説明せよ。
+\subsubsection{目的}
+%
+Matlab\ の\ distributed\ 配列と\ spmd\ ステートメントを活用することで、効率的にメモリを活用できることを、
+仕組みを学ぶことで理解する。
+%
+
+\subsubsection{考察}
+%
+MathWorks(2023)によると、\ distributed\ は配列を分割し各ワーカーが担当部分のみを処理するという\cite{mathlab2}。
+さらに同サイトによると、\ labindex\ は自身のワーカーの番号を返し\cite{mathlab3}、\ spmd\ はそのステートメントが囲った内部を複数の\ MATLAB\ 
+ワーカーで同時に実行して\cite{mathlab4}、\ gather\ は各ワーカーの\ Composite\ 配列すべての要素を一つのコンポジットに収集するという\cite{mathlab5}。
+これらを踏まえて、\ 8\ 行目の「a=distributed(A);」から\ 15\ 行目の「e=d{1};」までの部分で行われている処理を考察すると、
+始めに、行列\ A\ はすべて\ 1\ で埋まっている。それを、\ 8\ 行目の「a=distributed(A);」によって
+更に小さい行列に\ 16\ 等分し各ワーカーに割り当てる。\ 10\ 行目の\ spmd\ によって各々ワーカーに\ 11\ ～\ 13\ 行目の処理を委ねる。
+\ 11\ ～\ 12\ 行目では、各ワーカーは、そのワーカー番号を渡された行列のすべての成分に掛ける。
+\ 13\ 行目の\ gather\ によって、等分された行列すべてを\ 1\ 番目のワーカーの変数\ d\ に合体して、
+並列ループ終了後\ 15\ 行目でワーカー\ 1\ の\ d\ を表示していると考えられる。
+%
+
+\subsubsection{結論}
+%
+課題2-1において、\ parfor\ よりも、\ spmd\ のメモリ使用量が優れていた理由が判明した。前者は、
+並列処理の際、クライアントの配列とおおよそ同等のサイズのメモリを確保させるが、
+後者は、その配列を分割し各ワーカーに分配することで、確保させるメモリのサイズを抑えられたことが理由である。
+%
+
+\subsection{課題 2-3}
+演習室\ 3\ のデスクトップマシンにおいて\ 4\ 並列、\ 8\ 並列、\ 16\ 並列で今回の処理を行う際、\ spmd\ で
+は本課題の前提でどの程度のサイズのデータまで仮想メモリを利用せず処理が可能か。\ distributed\ 配列定義後にクライアントにある
+配列\ A \ (式\ref{ga:21}の右辺第三項$ a $)を消去できると考えて、$g = k_{sp}a$および$c = k_{c}a$として
+式\ref{ga:21}から$ a $を導出した後、 本課題で求めた$ m、m_{c}、p、k_{c}、k_{sp} $を用いて各並列数での$ a $を計算して答えよ。
+\subsubsection{目的}
+%
+演習室\ 3\ のデスクトップ\ PC\ で、$ n $を$ 4、8、16 $として課題\ \ref{kadai:2-1}\ 
+を実施すると、仮想メモリを使用せずにどの程度のサイズのデータを利用できるか確認する。
+%
+
+\subsubsection{考察}
+%
+式\ref{ga:21}から第三項の $ a $ 抜き $ a $ について解いた式\ref{ga:23}に、
+$ m、m_{c}、p、k_{c}、k_{sp} $をそれぞれ、$ 2754、1978、941.375、1.877、1.821 $として代入し、
+$ n $のみ$ 4、8、16 $と変動させ計算する。$ M $ は\ 32768\ MB\ とする。
+\begin{equation}
+	a = \frac{M - m - m_{c} - np}{1 + k_{c} + k_{sp}}\label{ga:23}
+\end{equation}
+その結果は下の表\ref{table:23}となった。
+\begin{table}[htbp]
+	\centering
+	\caption{ n に対する a の計算結果}
+	\label{table:23}
+	\begin{tabular}{|c|c|}
+		\hline
+		コア数\verb|(n)| & 仮想メモリを使用しない最大のサイズ\verb|(a)|\\
+		\hline
+		4  & 5166.13 \\
+		8  & 4364.62 \\
+		16 & 2761.60 \\
+		\hline
+	\end{tabular}
+\end{table}
+表\ref{table:23}のコア数$ n $の変位に対する、 
+仮想メモリを使用しない最大のサイズ$ a $の変位
+を計算したものが表\ref{table:23h}である。
+\begin{table}[htbp]
+	\centering
+	\caption{ n の変位に対する a の変位の計算結果}
+	\label{table:23h}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		$ n $の変位 \verb|(|前 - 後\verb|)| & $ a $の変位 & $ n $の単位当たりの$ a $の変位\verb|(|直線的とする\verb|)| & 前後のサイズの比率\\
+		\hline
+		4 - 8  & -801.51 & -200.38 & 0.8448\\
+		8 - 16 & -1603.02 & -200.38 & 0.6327\\
+		\hline
+	\end{tabular}
+\end{table}
+表\ref{table:23h}の\ 3\ 列目、$ n $の単位当たりの$ a $の変位に注目すると、$ n $の区間\ 4 - 8\ 
+でも\ 8 - 16\ でも\ -200.38 \ の値で一致した。このことから、$ n $ と$ a $の関係は、式\ref{siki23}の一次関数となるのではないかと考えられる。
+\begin{equation}
+	a = 5967.64 - 200.38n \label{siki23}
+\end{equation}
+$ n $ に\ 4、\ 8、\ 16\ 代入すると、\ 5166.12 、\ 4364.6、\ 2761.56\ と整数部分四桁は完全に一致した。
+小数点を第三位以下を切り捨てる計算を行ってきたため、小数点数未満で誤差が出たのではないか。また、詳しく式\ref{ga:23}を考察すると、
+$ n $の変化に関連する部分は$-\frac{np}{1 + k_{c} + k_{sp}}$であると解かり、$ n $の単位当たりは$-\frac{p}{1 + k_{c} + k_{sp}}$となる。
+計算してみると、\ -200.3778$\cdots$\ となったため、式\ref{siki23}の考察は概ね正しかったと考えられるのではないか。
+%
+
+\subsubsection{結論}
+%
+\ spmd\ では本課題の前提で、$ n $ と$ a $が傾き負の一次関数の関係を満たすことが判明した。
+%
+\begin{thebibliography}{3}
+  \bibitem{mathlab1}
+    MathWorks: "spmd、parfor、および parfeval からの選択", MathWorks. 2023, \\
+    \url{https://jp.mathworks.com/help/parallel-computing/choose-spmd-parfor-parfeval.html}, (参照 2023-12-11).
+		\bibitem{mathlab2}
+    MathWorks: "distributed", MathWorks. 2023, \\
+    \url{https://jp.mathworks.com/help/parallel-computing/distributed.html}, (参照 2023-12-11).
+		\bibitem{mathlab3}
+    MathWorks: "labindex", MathWorks. 2023, \\
+    \url{https://jp.mathworks.com/help/parallel-computing/labindex.html}, (参照 2023-12-11).
+		\bibitem{mathlab4}
+    MathWorks: "spmd", MathWorks. 2023, \\
+    \url{https://jp.mathworks.com/help/parallel-computing/spmd.html}, (参照 2023-12-11).
+		\bibitem{mathlab5}
+    MathWorks: "gather", MathWorks. 2023, \\
+    \url{https://jp.mathworks.com/help/parallel-computing/gpuarray.gather.html}, (参照 2023-12-11).
+\end{thebibliography}
+\end{document}

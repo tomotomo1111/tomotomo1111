@@ -1,0 +1,64 @@
+import java.util.Random;
+public class ClassInheritance6{
+	public static void main(String[] args) {
+		InformationScience[] student = new InformationScience[5];
+		for(int i=0; i<student.length; i++) {
+			student[i] = new InformationScience(RanSc(), RanSc(), RanSc(), RanSc(), RanSc());
+			System.out.print("学生ID" + (i+1) + "は、");
+			if(Student[i].JudgementUndergraduate()) {
+				System.out.println("全教科を60点以上であるため，卒業可能である．");
+			}else{
+				System.out.println("60点よりも低い教科があるため，卒業不可能である．");
+			}
+		}
+	}
+	public static int RanSc() {
+		Random rand = new Random();
+		return 55 + rand.nextInt(45);
+	}
+}
+
+class InformationScience extends RobotCourse {
+	public int Literacy;
+	public int Programming;
+	public int Informatics;
+	public InformationScience(int score1, int score2, int score3, int score4, int score5, int score6) {
+		super(score1, score2, score3);
+		Literacy = score4;
+		Programming = score5;
+		Informatics = score6;
+	}
+	public boolean JudgementSubject() {
+		if(Literacy < 60 || Programming < 60 || Informatics < 60) {
+			return false;
+		}else {
+			return true;
+		}
+	}
+	
+	public boolean JudgementUndergraduate() {
+		if(JudgementCourse() == false || JudgementSubject() == false) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+}
+
+class RobotCourse{
+	public int control;
+	public int mechanics;
+	public int AI;
+	public RobotCourse(int score1, int score2, int score3) {
+		control = score1;
+		mechanics = score2;
+		AI = score3;
+	}
+	public boolean JudgementCource() {
+		if(control < 60 || mechanics < 60 || AI < 60) {
+			return false;
+		}else{
+			return true;
+		}
+	}
+}

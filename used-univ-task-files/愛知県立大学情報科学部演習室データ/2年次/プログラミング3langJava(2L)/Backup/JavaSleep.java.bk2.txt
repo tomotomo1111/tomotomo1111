@@ -1,0 +1,10 @@
+public class JavaSleep {  
+     public static void main(String[] args) {
+        try {
+Timer timer = new Timer(1000, this);
+timer.setInitialDelay(3000);
+        } catch(InterruptedException e){
+            e.printStackTrace();
+        }      
+    }    
+}

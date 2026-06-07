@@ -1,0 +1,26 @@
+public class ClassA9 {
+	public static void main(String[] args) {
+		int x = 83;
+		int y = 94;
+		Grades9 id1 = new Grades9(x, y);
+		System.out.println("‡Œv“_=" + id1.SumScore());
+		System.out.println("•½‹Ï“_=" + id1.AveScore());
+	}
+}
+
+class Grades9 {
+	int Eng, Math;
+	
+	public Grades9(int score1, int score2) {
+		Eng = score1;
+		Math = score2;
+	}
+	
+	public int SumScore() {
+		return Eng + Math;
+	}
+	
+	public double AveScore() {
+		return (Eng + Math) / 2;
+	}
+}

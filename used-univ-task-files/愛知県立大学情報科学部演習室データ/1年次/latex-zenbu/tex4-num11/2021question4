@@ -1,0 +1,106 @@
+\documentclass[a4j,aspectratio=169,dvipdfmx,10pt,handout]{beamer}
+\usepackage{bxdpx-beamer}
+\usepackage{pgfpages}
+\usepackage{pxjahyper}
+\usepackage{graphicx}
+\usepackage{color}
+\setbeamertemplate{caption}[numbered]
+\pgfpagesuselayout{8 on 1}[a4paper,landscape,border shrink=5mm]
+\pgfpageslogicalpageoptions{1}{border code=\pgfusepath{stroke}}
+\pgfpageslogicalpageoptions{2}{border code=\pgfusepath{stroke}}
+\pgfpageslogicalpageoptions{3}{border code=\pgfusepath{stroke}}
+\pgfpageslogicalpageoptions{4}{border code=\pgfusepath{stroke}}
+\pgfpageslogicalpageoptions{5}{border code=\pgfusepath{stroke}}
+\pgfpageslogicalpageoptions{6}{border code=\pgfusepath{stroke}}
+\pgfpageslogicalpageoptions{7}{border code=\pgfusepath{stroke}}
+\pgfpageslogicalpageoptions{8}{border code=\pgfusepath{stroke}}
+\usetheme{Berlin}
+
+\title{夏の２ヶ月，自分に投資しませんか？}
+\subtitle{---大学生の4年間に夏休みは2回しか来ない?!---}
+\author[神野]{2022311042 神野　友哉}
+\institute[愛知県立大学]{愛知県立大学　情報科学部}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{4年間で夏休み2回だけってどういうこと??}
+\begin{frame}\frametitle{4年間で夏休み2回だけってどういうこと??}
+卒業から遡ってみよう$\cdots$
+\end{frame}
+
+\section{4年間で夏休み2回だけってどういうこと??}
+\begin{frame}\frametitle{4年間で夏休み2回だけってどういうこと??}
+卒業から遡ってみよう$\cdots$
+\begin{enumerate}
+  \item<1-> B4の夏 $\Rightarrow $ 卒業研究しなくちゃ (研究，研究，中間発表の準備!)
+\end{enumerate}
+\end{frame}
+
+\section{4年間で夏休み2回だけってどういうこと??}
+\begin{frame}\frametitle{4年間で夏休み2回だけってどういうこと??}
+卒業から遡ってみよう$\cdots$
+\begin{enumerate}
+  \item<1-> B4の夏 $\Rightarrow $ 卒業研究しなくちゃ (研究，研究，中間発表の準備!)
+  \item<2-> B3の夏 $\Rightarrow $ インターンシップに行かなきゃ (企業から青田刈り攻撃!)
+\end{enumerate}
+\end{frame}
+
+\section{4年間で夏休み2回だけってどういうこと??}
+\begin{frame}\frametitle{4年間で夏休み2回だけってどういうこと??}
+卒業から遡ってみよう$\cdots$
+\begin{enumerate}
+  \item<1-> B4の夏 $\Rightarrow $ 卒業研究しなくちゃ (研究，研究，中間発表の準備!)
+  \item<2-> B3の夏 $\Rightarrow $ インターンシップに行かなきゃ (企業から青田刈り攻撃!)
+  \item<3-> $\dots $
+\end{enumerate}
+\end{frame}
+
+\section{4年間で夏休み2回だけってどういうこと??}
+\begin{frame}\frametitle{4年間で夏休み2回だけってどういうこと??}
+卒業から遡ってみよう$\cdots$
+\begin{enumerate}
+  \item<1-> B4の夏 $\Rightarrow $ 卒業研究しなくちゃ (研究，研究，中間発表の準備!)
+  \item<2-> B3の夏 $\Rightarrow $ インターンシップに行かなきゃ (企業から青田刈り攻撃!)
+  \item<3-> $\dots $ \color{blue} たしかに$B_1$と$B_2$の2回の夏休みしかない!!\color{black}
+\end{enumerate}
+\end{frame}
+
+\section{4年間で夏休み2回だけってどういうこと??}
+\begin{frame}\frametitle{4年間で夏休み2回だけってどういうこと??}
+卒業から遡ってみよう$\cdots$
+\begin{enumerate}
+  \item<1-> B4の夏 $\Rightarrow $ 卒業研究しなくちゃ (研究，研究，中間発表の準備!)
+  \item<2-> B3の夏 $\Rightarrow $ インターンシップに行かなきゃ (企業から青田刈り攻撃!)
+  \item<3-> $\dots $ \color{blue} たしかに$B_1$と$B_2$の2回の夏休みしかない!!\color{black}
+  \item<4-> B1の夏に何する？ $\Rightarrow $ [あなたの予定(例:免許取得，バイト，サークル，席)]
+\end{enumerate}
+\end{frame}
+
+\section{4年間で夏休み2回だけってどういうこと??}
+\begin{frame}\frametitle{4年間で夏休み2回だけってどういうこと??}
+卒業から遡ってみよう$\cdots$
+\begin{enumerate}
+  \item<1-> B4の夏 $\Rightarrow $ 卒業研究しなくちゃ (研究，研究，中間発表の準備!)
+  \item<2-> B3の夏 $\Rightarrow $ インターンシップに行かなきゃ (企業から青田刈り攻撃!)
+  \item<3-> $\dots $\pause \color{blue} たしかに$B_1$と$B_2$の2回の夏休みしかない!!\color{black}
+  \item<4-> B1の夏に何する？ $\Rightarrow $ [あなたの予定(例:免許取得，バイト，サークル，席)]
+  \item<5-> $\dots $それもいいけど，せっかくなら\color{red} 自己投資\color{black} \footnote{自分を成長させるために時間とお金かけること}しませんか?
+    \begin{enumerate}
+      \item 知識系:講義で気になった，興味をもったアレを追求する(本や動画で)
+      \item スキル系:演習で物足りなかった，不甲斐なかったスキルを補う
+      \item 語学系:海外(リモート?)留学でサバイバルする
+    \end{enumerate}
+\end{enumerate}
+
+\begin{flushright}
+など
+\end{flushright}
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercise 3</title>
+  <style type="text/css">
+    em { font-weight: bold; }
+    li em { color: red }
+    #two > em { color: maroon }
+    #three + * > em { color: aqua }
+    ul { color: gray } 
+    ul.plant { color: silver }  
+    #grape { color: fuchsia }
+    .flower { color: purple }
+    .fruit { color: lime }
+    h2 { background: yellow; color: navy }
+  </style>
+</head>
+<body>
+  <h1><em>色</em>とりどり</h1>
+  <h2>四字熟語</h2>
+    <ol class="yoji">
+      <li id="one"><em>一</em>諾千金
+      <li id="two">阿吽<em>二</em>字
+      <li id="three">韋編<em>三</em>絶
+      <li><em>四</em>海兄弟
+    </ol>
+  <h2>植物</h2>
+    <ul class="plant">
+      <li style="color: navy">辣韭(らっきょう)</li>
+      <li class="flower" style="color: olive">梔子(くちなし)</li>
+      <li class="flower">薔薇(ばら)</li>
+      <li class="fruit" id="grape">葡萄(ぶどう)</li>
+      <li>公孫樹(いちょう)</li>
+      <li class="fruit">枇杷(びわ)</li>
+      <li class="fruit" id="apple">林檎(りんご)</li>
+    </ul>
+</body>
+</html>

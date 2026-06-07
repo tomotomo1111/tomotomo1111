@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Hit and blow</title>
+<style>
+table {
+	border: 1px solid;
+	border-collapse: collapse;
+	text-align:center;
+}
+td, th {
+	border: 1px solid;
+}
+tr.q th {
+	background: #eee;
+	font-size: 2em;
+}
+td.a {
+	width: 2em;
+	font-size: 2em;
+}
+td#hb1 {
+	width: 5em;
+}
+</style>
+
+
+<script>
+// 試行回数
+let reps=0;
+// 正解
+let secret=[0,0,0,0];
+// 使う数字の最小値、最大値
+let minNum, maxNum;
+
+// ゲーム開始
+function init( level ){
+let i, j;
+let nums=[];
+
+	// 試行回数を0回にする
+	reps=0;
+	document.getElementById( "level" ).innerHTML=level;
+	document.getElementById( "result" ).innerHTML= "";
+	// 表の中身をすべて消去する
+	for( let elem of document.getElementById( "board" ).getElementsByTagName( "td" ) ){
+		elem.innerHTML="&nbsp;";
+	}
+	for( i=0; i<4; i++ ){
+		document.getElementById( "q"+i ).innerHTML ="?";
+	}
+
+	// 正解を作成する
+	// level1, 2では1から6まで、level3, 4では0から9までを使える
+	if( level<=2 ){
+		minNum=1; maxNum = 6;
+	} else {
+		minNum=0; maxNum = 9;
+	}
+
+	if( level % 2 == 1 ){ // 重複なし
+		for( i=minNum; i<=maxNum; i++ ){
+			nums.push( i );
+		}
+		for( i=0; i<4; i++ ){
+			j = Math.floor(i+Math.random()*(nums.length-i));
+			secret[i] = nums[j];
+			nums[j] = nums[i];
+		}
+	} else { // 重複あり
+		for( i=0; i<4; i++ ){
+			secret[i] = Math.floor(minNum+Math.random()*(maxNum-minNum+1));
+		}
+	}
+}
+
+// 試行 - 入力した数字と正解を比べて、HitとBlowを表示する
+function attempt(){
+	let guess=[];
+	let i, j;
+
+	// 10回までしか試行できない
+	if( reps>=10 ){
+		return;
+	}
+	// 入力された数を配列guess[]に入れる。範囲外ならば何もせずに帰る
+	for( i=0; i<4; i++ ){
+		guess[i] = Number( document.getElementById( "a"+i ).value );
+		if( isNaN(guess[i]) || guess[i]<minNum || guess[i]>maxNum ) return;
+	}
+	// 入力された数を表に表示する
+	for( i=0; i<4; i++ ){
+		document.getElementById( "t"+(reps*10+i) ).innerHTML = guess[i];
+	}
+
+	// secret[]に入っている正解と入力されたguess[]を比較して、HitとBlowの数を求める。
+
+	// まず、hit, blowを0にしておく
+	let hit = 0, blow = 0;
+	// secret[]に入っている正解が、HitまたはBlowで当てられていないことを示す配列matched[]を用意する。
+	// 始めはまだ調べていないので、どれも当てられていない
+	let matched = [false, false, false, false];
+
+	// Hitの数を数える
+	for( i=0; i<4; i++ ){
+		if( guess[i] === secret[i] ){
+			matched[i] = true;
+			hit ++;
+		}
+	}
+
+	// Blowの数を数える
+	for( i=0; i<4; i++ ){
+		// もしi番目の入力がHitでなければ、
+		if( guess[i] !== secret[i] ){
+			// Blowかどうかを調べる。
+			for( j=0; j<4; j++ ){
+				if( false ){
+					matched[j] = true;
+					blow++;
+					break;
+				}
+			}
+		}
+	}
+
+	// Hitの数とBlowの数を表示
+	document.getElementById( "hb"+reps ).innerHTML = "H"+hit+" B"+blow;
+
+	// 試行回数を1つ増やす
+	reps = reps + 1;
+	// Hitが4つ(すべて正解)であるか、試行回数が10回(ゲームオーバー)であれば
+	if( hit==4 || reps>=10 ){
+		// 正解を表示
+		for( i=0; i<4; i++ ){
+			document.getElementById( "q"+i ).innerHTML = secret[i];
+		}
+		// すべて正解かどうかによって、それなりのメッセージを表示
+		if( hit == 4 ){
+			document.getElementById( "result" ).innerHTML= "Congratulations!";
+			// 試行回数を10にして、もう試行できないようにしておく
+			reps = 10;
+		} else {
+			document.getElementById( "result" ).innerHTML= "Sorry";
+		}
+	}
+
+	// 入力欄を消去しておく
+	for( i=0; i<4; i++ ){
+		document.getElementById( "a"+i ).value = "";
+	}
+	document.getElementById( "a0" ).focus();
+}
+</script>
+
+
+</head>
+<body onLoad="init(2)">
+<h1 id="title">Hit and blow - Level <span id="level">?</span></h1>
+<table id="board">
+<tr class="q"><td>&nbsp;</td><th id="q0">?</th><th id="q1">?</th><th id="q2">?</th><th id="q3">?</th><td>&nbsp;</td></tr>
+<script>
+for( let i=0; i<10; i++ ){
+	document.write( "<tr>" );
+	document.write( '<th>'+(i+1)+'</th>' );
+	for( let j=0; j<4; j++ ){
+		let k=i*10+j;
+		document.write( '<td class="a" id="t'+k+'">&nbsp;</td>' );
+	}
+	document.write( "<td id='hb"+i+"'>&nbsp;</td></tr>\n" );
+}
+</script>
+</table>
+<hr>
+<form action="#" method="get">
+<div id="main">
+<input type="text"id="a0" size="2" minlength="1" maxlength="1"> 
+<input type="text"id="a1" size="2" minlength="1" maxlength="1"> 
+<input type="text"id="a2" size="2" minlength="1" maxlength="1"> 
+<input type="text"id="a3" size="2" minlength="1" maxlength="1"> 
+<input type="submit" value="OK" onClick="attempt(); return false;">
+<input type="reset" value="Clear">　
+<span id="result"></span>
+</div>
+<hr>
+<div id="select">
+New game<br>
+<button onClick="init(1); return false;">Level 1</button>　1～6 重複なし<br>
+<button onClick="init(2); return false;">Level 2</button>　1～6 重複あり<br>
+<button onClick="init(3); return false;">Level 3</button>　0～9 重複なし<br>
+<button onClick="init(4); return false;">Level 4</button>　0～9 重複あり
+</div>
+</form>
+
+
+</body>
+</html>

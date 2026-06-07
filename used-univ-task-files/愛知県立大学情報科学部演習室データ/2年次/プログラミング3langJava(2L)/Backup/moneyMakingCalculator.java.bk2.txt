@@ -1,0 +1,20 @@
+package ST;
+
+import javax.swing.*;
+
+class moneyMakingCalculator{
+	
+	public static void main(String[] args) {
+		
+		JFrame myFrame = new JFrame();
+		moneyMakingPanel myPanel = new moneyMakingPanel();
+		
+		myFrame.setSize(500,200);
+		myFrame.setLayout(null);
+		myFrame.setResizable(false);
+		myFrame.setLocationRelativeTo(null);
+		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		myFrame.setVisible(true);
+		
+	}
+}

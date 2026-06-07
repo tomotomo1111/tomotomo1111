@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "あなたの名前を教えてください"
+read name 
+echo "あなたの名前は＄nameさんですね"

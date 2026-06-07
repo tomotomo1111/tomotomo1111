@@ -1,0 +1,8 @@
+public class Question1of1{
+	public static void main(String[] args) {
+		int int1 = 213;
+		String str2 = "179";
+		String str3 = String.valueOf(int1 * 2) + str2;
+		System.out.println(str3);
+	}
+}

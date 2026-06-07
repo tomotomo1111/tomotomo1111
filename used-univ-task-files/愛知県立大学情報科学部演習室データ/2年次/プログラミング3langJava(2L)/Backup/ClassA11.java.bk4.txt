@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+public class ClassA11 {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("A君(ID番号01)の各教科の点数を入力してください.");
+		System.out.print("英語特論:");
+		
+		String input1 = scan.next();
+	}
+}

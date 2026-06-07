@@ -1,0 +1,22 @@
+public class Question1of4 {
+	public static void main(String[] args) {
+		int x = 50;
+		int y = 40;
+		
+		if(x > y) {
+			euc(x, y);
+		} else {
+			euc(y, x);
+		}
+	}
+	
+	private static int euc(int a, int b) {
+		int r ;
+		do{
+			r = a % b;
+			a = b;
+			b = r;
+		} while(r != 0);
+		return b;
+	}
+}

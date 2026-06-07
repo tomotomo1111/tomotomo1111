@@ -1,0 +1,6 @@
+問1
+int A[4][3] = {{1, 2, -2}, {-1, 7, 6}, {4, 5, 3}, {-3, -9, 8}};
+問2
+char s1[] = "NAGOYA_Grampus_Eight";
+char s2[] = "FC_GIFU";
+char s3[] = "Veertien_MIE";

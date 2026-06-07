@@ -1,0 +1,173 @@
+\documentclass[twocolumn,a4j,dvipdfmx]{jsarticle}
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL latex2hw-back.tex   Tue Jul  5 16:47:26 2022
+%DIF ADD latex2hw.tex        Tue Jul  5 16:29:45 2022
+\usepackage[top=20mm,bottom=30mm,left=20mm,right=20mm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{listings,jlisting}
+\setlength{\columnsep}{2zw}
+\lstset{breaklines=true} %DIF > 
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+\providecommand{\DIFmodbegin}{} %DIF PREAMBLE
+\providecommand{\DIFmodend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+\newcommand{\DIFscaledelfig}{0.5}
+%DIF HIGHLIGHTGRAPHICS PREAMBLE %DIF PREAMBLE
+\RequirePackage{settobox} %DIF PREAMBLE
+\RequirePackage{letltxmacro} %DIF PREAMBLE
+\newsavebox{\DIFdelgraphicsbox} %DIF PREAMBLE
+\newlength{\DIFdelgraphicswidth} %DIF PREAMBLE
+\newlength{\DIFdelgraphicsheight} %DIF PREAMBLE
+% store original definition of \includegraphics %DIF PREAMBLE
+\LetLtxMacro{\DIFOincludegraphics}{\includegraphics} %DIF PREAMBLE
+\newcommand{\DIFaddincludegraphics}[2][]{{\color{blue}\fbox{\DIFOincludegraphics[#1]{#2}}}} %DIF PREAMBLE
+\newcommand{\DIFdelincludegraphics}[2][]{% %DIF PREAMBLE
+\sbox{\DIFdelgraphicsbox}{\DIFOincludegraphics[#1]{#2}}% %DIF PREAMBLE
+\settoboxwidth{\DIFdelgraphicswidth}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\settoboxtotalheight{\DIFdelgraphicsheight}{\DIFdelgraphicsbox} %DIF PREAMBLE
+\scalebox{\DIFscaledelfig}{% %DIF PREAMBLE
+\parbox[b]{\DIFdelgraphicswidth}{\usebox{\DIFdelgraphicsbox}\\[-\baselineskip] \rule{\DIFdelgraphicswidth}{0em}}\llap{\resizebox{\DIFdelgraphicswidth}{\DIFdelgraphicsheight}{% %DIF PREAMBLE
+\setlength{\unitlength}{\DIFdelgraphicswidth}% %DIF PREAMBLE
+\begin{picture}(1,1)% %DIF PREAMBLE
+\thicklines\linethickness{2pt} %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\framebox(1,1){}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,0){\line( 1,1){1}}}% %DIF PREAMBLE
+{\color[rgb]{1,0,0}\put(0,1){\line(1,-1){1}}}% %DIF PREAMBLE
+\end{picture}% %DIF PREAMBLE
+}\hspace*{3pt}}} %DIF PREAMBLE
+} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbegin}{\DIFaddbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddend}{\DIFaddend} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbegin}{\DIFdelbegin} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelend}{\DIFdelend} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbegin}{\DIFOaddbegin \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbegin}{\DIFOdelbegin \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelend}{\DIFOaddend \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddbeginFL}{\DIFaddbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOaddendFL}{\DIFaddendFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelbeginFL}{\DIFdelbeginFL} %DIF PREAMBLE
+\LetLtxMacro{\DIFOdelendFL}{\DIFdelendFL} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddbeginFL}{\DIFOaddbeginFL \let\includegraphics\DIFaddincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFaddendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelbeginFL}{\DIFOdelbeginFL \let\includegraphics\DIFdelincludegraphics} %DIF PREAMBLE
+\DeclareRobustCommand{\DIFdelendFL}{\DIFOaddendFL \let\includegraphics\DIFOincludegraphics} %DIF PREAMBLE
+%DIF LISTINGS PREAMBLE %DIF PREAMBLE
+\RequirePackage{listings} %DIF PREAMBLE
+\RequirePackage{color} %DIF PREAMBLE
+\lstdefinelanguage{DIFcode}{ %DIF PREAMBLE
+%DIF DIFCODE_UNDERLINE %DIF PREAMBLE
+  moredelim=[il][\color{red}\sout]{\%DIF\ <\ }, %DIF PREAMBLE
+  moredelim=[il][\color{blue}\uwave]{\%DIF\ >\ } %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstdefinestyle{DIFverbatimstyle}{ %DIF PREAMBLE
+	language=DIFcode, %DIF PREAMBLE
+	basicstyle=\ttfamily, %DIF PREAMBLE
+	columns=fullflexible, %DIF PREAMBLE
+	keepspaces=true %DIF PREAMBLE
+} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim}{\lstset{style=DIFverbatimstyle}}{} %DIF PREAMBLE
+\lstnewenvironment{DIFverbatim*}{\lstset{style=DIFverbatimstyle,showspaces=true}}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+
+\title{\LaTeX 課題---回路の過渡応答}
+\author{2022311042 \quad 神野友哉}
+\date{2022年6月18日}
+\maketitle
+
+\section{\Large LCR直列回路の方程式}
+図\ref{fig:circuit}のように電源\DIFdelbegin \DIFdel{$\mathit{V_i}$}\DIFdelend \DIFaddbegin \DIFadd{$V_i$}\DIFaddend ，抵抗\textit{R}，コイル\textit{L}，コンデン\quad サ\textit{C}を直列に接続した回路を考える．
+\vskip\baselineskip
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width=1\linewidth]{circuit.eps}
+  \caption{回路}
+  \label{fig:circuit}
+\end{figure}
+
+コンデンサの電荷を\textit{Q}とすれば，\textit{Q}に関する次の微分方程式が得られる\DIFdelbegin \DIFdel{\mbox{%DIFAUXCMD
+\cite{bibitteru}}\hspace{0pt}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{V.D.バージャー}}\hspace{0pt}%DIFAUXCMD
+}\DIFaddend ．
+\begin{equation}
+  L\frac{d^2Q}{dt^2}+R\frac{dQ}{dt}+\frac{1}{C}Q=V\DIFdelbegin %DIFDELCMD < \label{eq:1}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \label{eq:equalVoltage}
+\DIFaddend \end{equation}
+\quad\textit{V}が直流電源(または交流電源)である場合には，十分に時間が立つと\textit{Q}は一定値(または交流電源と同じ周波数の正弦関数)になる．そのような状態を定常状態といい，定常状態に至るまでの状態を過渡状態という．
+\section{\Large 回路の微分方程式の解}
+図\ref{fig:circuit}の回路で電源は直流であるものとする．微分方程式(\DIFdelbegin \DIFdel{\ref{eq:1}}\DIFdelend \DIFaddbegin \DIFadd{\ref{eq:equalVoltage}}\DIFaddend ) の解を求めるために，$\lambda$に関する2次方程式
+  \begin{equation}
+      L\lambda^2+R\lambda+\frac{1}{C}=0\DIFdelbegin %DIFDELCMD < \label{eq:2}
+%DIFDELCMD <   %%%
+\DIFdelend \DIFaddbegin \label{eq:eq0}
+  \DIFaddend \end{equation}
+を考える．(\DIFdelbegin \DIFdel{\ref{eq:2}}\DIFdelend \DIFaddbegin \DIFadd{\ref{eq:eq0}}\DIFaddend ) の解の種類によって微分方程式(\DIFdelbegin \DIFdel{\ref{eq:1}}\DIFdelend \DIFaddbegin \DIFadd{\ref{eq:equalVoltage}}\DIFaddend ) の解は次のようになる．ただし，\textit{A}，\textit{B}は初期条件によって決まる定数である．
+\vskip\baselineskip
+\begin{itemize}
+\setlength{\leftskip}{1zw}  
+\item (\DIFdelbegin \DIFdel{\ref{eq:2}}\DIFdelend \DIFaddbegin \DIFadd{\ref{eq:eq0}}\DIFaddend )が２つの実数解$\lambda=-\gamma_1,-\gamma_2$を持つとき
+  \begin{equation}
+    Q(t)=CV+Ae^{-\gamma_1t}+Be^{-\gamma_2t}\DIFdelbegin %DIFDELCMD < \label{eq:3}
+%DIFDELCMD <   %%%
+\DIFdelend \DIFaddbegin \label{eq:kai2ko}
+  \DIFaddend \end{equation}
+\item (\DIFdelbegin \DIFdel{\ref{eq:2}}\DIFdelend \DIFaddbegin \DIFadd{\ref{eq:eq0}}\DIFaddend )が二重解$\lambda=-\gamma$を持つとき
+  \begin{equation}
+    Q(t)=CV+Ae^{-\gamma t}+Bte^{-\gamma t}\DIFdelbegin %DIFDELCMD < \label{eq:4}
+%DIFDELCMD <   %%%
+\DIFdelend \DIFaddbegin \label{eq:kai1ko}
+  \DIFaddend \end{equation}
+\item(\DIFdelbegin \DIFdel{\ref{eq:2}}\DIFdelend \DIFaddbegin \DIFadd{\ref{eq:eq0}}\DIFaddend )が２つの複素数解$\lambda=-\gamma \pm j\omega$を持つとき\footnote{工学分野ではしばしば虚数単位を\textit{i}の代わりに\textit{j}で表す．}
+  \begin{equation}
+    Q(t)=CV+e^{-\gamma t}(A\mathrm{sin}{(\omega t)}+B\mathrm{cos}{(\omega t)})\DIFdelbegin %DIFDELCMD < \label{eq:5}
+%DIFDELCMD <   %%%
+\DIFdelend \DIFaddbegin \label{eq:kai0ko}
+  \DIFaddend \end{equation}
+\end{itemize}
+\section{\Large 例題}
+図\ref{fig:circuit}の回路において，$R=35.4\mathrm{\,\Omega}，L=230\mathrm{\,mH}，C=14.0\,\mu \mathrm{F}，V=1.5\mathrm{\,V}$とする．このとき，２次方程式(\DIFdelbegin \DIFdel{\ref{eq:2}}\DIFdelend \DIFaddbegin \DIFadd{\ref{eq:eq0}}\DIFaddend )の解は，$\lambda=-77.0\pm 551.9j$である．式(\DIFdelbegin \DIFdel{\ref{eq:5}}\DIFdelend \DIFaddbegin \DIFadd{\ref{eq:kai0ko}}\DIFaddend )において，時刻$t=0$における初期条件を$Q=0，\frac{dQ}{dt}=0$とすれば，コンデンサの両端の電圧$V_C=\frac{Q}{C}$は
+\[
+  V_C=1.5(1+e^{-77.0t}(-0.139\mathrm{sin}({551.9t})-\mathrm{cos}({551.9t})))
+\]
+となる．これを図\DIFdelbegin \DIFdel{\ref{fig:Vol}}\DIFdelend \DIFaddbegin \DIFadd{\ref{fig:Volfunction}}\DIFaddend に示す．十分な時間が立つと$V_C$は一定値1.5Vに近づくことが分かる．
+\vskip1\baselineskip
+\begin{figure}[htb]
+  \centering  
+  \DIFdelbeginFL %DIFDELCMD < \includegraphics[width=0.8\linewidth]{Voltage.eps}
+%DIFDELCMD <   %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics[width=0.7\linewidth]{Voltage.eps}
+  \DIFaddendFL \caption{コンデンサ両端の電圧}
+  \DIFdelbeginFL %DIFDELCMD < \label{fig:Vol}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \label{fig:Volfunction}
+\DIFaddendFL \end{figure}
+\begin{thebibliography}{1}
+  \DIFdelbegin %DIFDELCMD < \bibitem{bibitteru} %%%
+\DIFdelend \DIFaddbegin \bibitem{V.D.バージャー} \DIFaddend V.D.バージャー，M.G.オルソン著，戸田，田上訳，力学，培風館，東京，1975.
+\end{thebibliography}
+\newpage
+\title
+\onecolumn
+  \lstinputlisting[language={Tex}]{latex2hw\_diff.tex}
+\end{document}
+

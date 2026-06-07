@@ -1,0 +1,11 @@
+public class JavaSleep {  
+     public static void main(String[] args) {
+        try {
+            System.out.println("5•b’â~‚µ‚Ü‚·");
+            Thread.sleep(5000);
+            System.out.println("ˆê’â~‚ğ‰ğœ‚µ‚Ü‚µ‚½B");
+        } catch(InterruptedException e){
+            e.printStackTrace();
+        }      
+    }    
+}

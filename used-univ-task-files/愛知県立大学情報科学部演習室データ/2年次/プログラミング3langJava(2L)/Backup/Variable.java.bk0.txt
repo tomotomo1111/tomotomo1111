@@ -1,0 +1,7 @@
+public ciass Variable{
+	public static void main(String[] args) {
+		System.out.println("‚±‚ñ‚É‚¿‚Í");
+		String Aisatsu = "‚±‚ñ‚É‚¿‚Í";
+		System.out.println(Aisatsu);
+	}
+}

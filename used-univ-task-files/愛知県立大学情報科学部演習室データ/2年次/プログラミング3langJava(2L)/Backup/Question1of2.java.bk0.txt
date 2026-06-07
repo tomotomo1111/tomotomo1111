@@ -1,0 +1,15 @@
+public class Question1of2 {
+	public static void main(String[] args) {
+		Seiseki data = new Seiseki(50, 50, 40);
+	}
+}
+
+class Seiseki {
+	int kokugo, sugaku, eigo;
+	
+	public Seiseki(int score1, int score2, int score3) {
+		kokugo = score1;
+		sugaku = score2;
+		eigo = score3;
+	}
+}

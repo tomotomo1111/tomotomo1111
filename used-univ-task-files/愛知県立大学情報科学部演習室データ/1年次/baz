@@ -1,0 +1,3817 @@
+.:
+合計 1008
+-rw-r--r--  1 is221042 student  22288  5月 18 09:14 !
+drwxr-xr-x  4 is221042 student   4096  5月  9 17:12 02-file-2022
+drwx------ 32 is221042 student   4096  4月 27 11:08 AppData
+drwx------  3 is221042 student   4096  3月 25  2014 Contacts
+drwx------ 10 is221042 student   4096  5月 13 11:59 Documents
+drwx------  3 is221042 student   4096  5月 20 16:40 Downloads
+drwx------  8 is221042 student   4096  3月 19  2014 Favorites
+drwx------ 13 is221042 student   4096  6月 28  2019 FireFox
+drwx------  3 is221042 student   4096  3月 19  2014 Links
+drwxr-xr-x  3 is221042 student   4096  5月 11 11:22 MP3
+drwx------  4 is221042 student   4096  3月 19  2014 Music
+drw-r--r--  2 is221042 student   4096  5月 11 11:42 Mydir
+drwx------  4 is221042 student   4096  4月 18 12:22 Pictures
+drwx------  3 is221042 student   4096  3月 19  2014 Searches
+drwx------  3 is221042 student   4096  3月 19  2014 SendTo
+drwx------  4 is221042 student   4096  3月 19  2014 Start Menu
+-rwx--x--x  1 is221042 student  20514  2月 27  2014 TERATERM.INI
+drwx------  5 is221042 student   4096  3月 19  2014 Thunderbird
+drwx------  3 is221042 student   4096  3月 19  2014 Videos
+-rw-r--r--  1 is221042 student     43  5月 13 12:46 a11
+-rw-r--r--  1 is221042 student     43  5月 13 12:47 a12
+-rw-r--r--  1 is221042 student 154879  5月 18 09:38 baa.txt
+-rw-r--r--  1 is221042 student      0  5月 20 17:12 baz
+-rw-r--r--  1 is221042 student    144  5月 18 09:12 calendar
+-rw-r--r--  1 is221042 student    156  4月 27 11:18 calendar.new
+drwx------  3 is221042 student   4096  3月 19  2014 cyghome
+drwxr-xr-x  2 is221042 student   4096  4月 27 11:38 dirAA
+drwxr-xr-x  3 is221042 student   4096  4月 27 11:38 dirB
+drwxr-xr-x  3 is221042 student   4096  4月 27 11:39 dirBB
+drwxr-xr-x  2 is221042 student   4096  4月 27 11:47 dirC
+drwxr-xr-x  2 is221042 student   4096  4月 27 11:37 dirCC
+drwxr-xr-x  2 is221042 student   4096  4月 27 11:12 directory
+-rw-r--r--  1 is221042 student  14847  5月 17 17:32 file-operations-2,5.txt
+-rw-r--r--  1 is221042 student  35876  5月 17 17:38 file-operations-2.ps
+-rwxr-xr-x  1 is221042 student   7813  5月 11 11:26 file-operations-2.txt
+-rwxr-xr-x  1 is221042 student   7813  5月 11 11:07 file-operations-2.txt~
+-rw-r--r--  1 is221042 student  29315  5月 10 16:36 file-operations.ps
+-rw-r--r--  1 is221042 student  10145  5月  9 12:24 file-operations.txt2~
+-rw-r--r--  1 is221042 student  10513  5月 10 16:36 file-operations.txt3
+-rw-r--r--  1 is221042 student  10521  5月 10 16:21 file-operations.txt3~
+-rwxr-xr-x  1 is221042 student   8478  5月  9 11:46 file-operations.txt~
+-rw-r--r--  1 is221042 student   2042  4月 27 11:32 file02
+-rw-r--r--  1 is221042 student 155349  5月 20 16:57 foo.txt
+-rw-r--r--  1 is221042 student 155349  5月 20 17:04 fuga.txt
+drwx------  2 is221042 student   4096  3月 19  2014 home
+-rwxr-xr-x  1 is221042 student   4408  5月 18 12:06 literacy-shell.txt　oldest
+-rw-r--r--  1 is221042 student     41  5月 18 11:52 meibo.txt
+drwxr-xr-x  2 is221042 student   4096  5月 11 11:19 mp3
+dr-x------  2 is221042 student   4096  5月 11 11:53 mydir
+-rw-r--r--  1 is221042 student      7  5月 11 11:58 namefile
+-rw-r--r--  1 is221042 student      5  5月 11 12:04 namefile.euc
+-rw-r--r--  1 is221042 student 154879  5月 18 11:06 outfile
+-rw-r--r--  1 is221042 student   2094  5月 18 09:53 output
+-rw-r--r--  1 is221042 student      6  4月 27 09:50 question
+-rw-r--r--  1 is221042 student    144  5月 11 11:51 thismonth
+-rw-r--r--  1 is221042 student     14  5月 18 10:56 uniq.txt
+drwx------  3 is221042 student   4096  3月 19  2014 workspace
+drwx------  3 is221042 student   4096  5月 13 10:32 ダウンロード
+drwx------  2 is221042 student   4096  3月 25  2014 テンプレート
+drwx------  2 is221042 student   4096  5月  9 10:26 デスクトップ
+drwx------  2 is221042 student   4096  3月 27  2014 ドキュメント
+drwx------  2 is221042 student   4096  3月 25  2014 ビデオ
+drwx------  2 is221042 student   4096  3月 25  2014 音楽
+drwx------  2 is221042 student   4096  3月 25  2014 画像
+drwx------  2 is221042 student   4096  3月 25  2014 公開
+
+./02-file-2022:
+合計 24
+-rwxr--r-- 1 is221042 student  181  5月  9 12:04 chapter1
+-rwxr--r-- 1 is221042 student   97  5月  9 12:04 hello.c
+-rwxr--r-- 1 is221042 student  157  5月  9 12:04 memo
+-rwxr--r-- 1 is221042 student   17  5月  9 12:04 new
+drwxr-xr-x 2 is221042 student 4096  5月  9 17:02 test_for_typing
+drwxr-xr-x 2 is221042 student 4096  5月  9 12:04 tmp
+-rwxr--r-- 1 is221042 student   85  5月  9 12:04 variable.c
+
+./02-file-2022/test_for_typing:
+合計 4
+-rwxr--r-- 1 is221042 student 181  5月  9 16:07 chapter1
+-rwxr--r-- 1 is221042 student  26  5月  9 12:04 introduction
+
+./02-file-2022/tmp:
+合計 0
+-rw-r--r-- 1 is221042 student 0  5月  9 12:04 tmp.tmp
+
+./AppData:
+合計 120
+drwx------  2 is221042 student 4096  3月 19  2014 $RECYCLE.BIN
+drwx------  3 is221042 student 4096  3月 19  2014 ATI
+drwx------  7 is221042 student 4096  3月 19  2014 Adobe
+drwx------  6 is221042 student 4096  3月 19  2014 Apple Computer
+drwx------  4 is221042 student 4096  3月 19  2014 Application Data
+drwx------  3 is221042 student 4096  3月 25  2014 Cookies
+drwx------  3 is221042 student 4096  5月 20 12:14 Desktop
+drwx------  3 is221042 student 4096  3月 19  2014 Fuji Xerox
+drwx------  5 is221042 student 4096  3月 19  2014 History
+drwx------  3 is221042 student 4096  3月 19  2014 IECompatCache
+drwx------  2 is221042 student 4096  3月 19  2014 IEDownloadHistory
+drwx------  2 is221042 student 4096  3月 19  2014 IETldCache
+drwx------  2 is221042 student 4096  3月 11  2014 InstallAnywhere
+drwx------  3 is221042 student 4096  3月 19  2014 LibreOffice
+drwx------  3 is221042 student 4096  3月 19  2014 Macromedia
+drwx------  3 is221042 student 4096  3月 19  2014 MathWorks
+drwx------ 10 is221042 student 4096  3月 19  2014 Mathematica
+drwx------ 28 is221042 student 4096  3月 19  2014 Microsoft
+drwx------  4 is221042 student 4096  3月 19  2014 Mozilla
+drwx------  3 is221042 student 4096  3月 19  2014 NVIDIA
+drwx------  2 is221042 student 4096  3月  3  2014 PrivacIE
+drwx------  3 is221042 student 4096  3月 19  2014 Subversion
+drwx------  3 is221042 student 4096  3月 19  2014 Syunkai Product
+drwx------  8 is221042 student 4096  3月 19  2014 Temporary Internet Files
+drwx------  2 is221042 student 4096  3月 10  2014 VMware
+drwxr-xr-x  2 is221042 student 4096  4月 27 11:08 dirA
+drwxr-xr-x  2 is221042 student 4096  4月 27 11:08 directory
+drwx------  2 is221042 student 4096  3月  4  2014 ghc
+drwx------  7 is221042 student 4096  3月 19  2014 inkscape
+-rwx--x--x  1 is221042 student  600  3月 10  2014 winscp.rnd
+
+./AppData/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./AppData/ATI:
+合計 4
+drwx------ 2 is221042 student 4096  3月  4  2014 ACE
+
+./AppData/ATI/ACE:
+合計 0
+
+./AppData/Adobe:
+合計 20
+drwx------ 3 is221042 student 4096  3月 19  2014 Acrobat
+drwx------ 6 is221042 student 4096  3月 19  2014 Flash Player
+drwx------ 2 is221042 student 4096  3月  5  2014 Headlights
+drwx------ 2 is221042 student 4096  3月  5  2014 Linguistics
+drwx------ 2 is221042 student 4096  3月  5  2014 LogTransport2
+
+./AppData/Adobe/Acrobat:
+合計 4
+drwx------ 6 is221042 student 4096  3月 19  2014 11.0
+
+./AppData/Adobe/Acrobat/11.0:
+合計 16
+drwx------ 2 is221042 student 4096  3月  5  2014 Collab
+drwx------ 2 is221042 student 4096  3月  5  2014 Forms
+drwx------ 2 is221042 student 4096  3月 19  2014 JSCache
+drwx------ 3 is221042 student 4096  3月 19  2014 Security
+
+./AppData/Adobe/Acrobat/11.0/Collab:
+合計 0
+
+./AppData/Adobe/Acrobat/11.0/Forms:
+合計 0
+
+./AppData/Adobe/Acrobat/11.0/JSCache:
+合計 0
+-rwx--x--x 1 is221042 student 22  3月  5  2014 GlobData
+-rwx--x--x 1 is221042 student 24  3月 10  2014 GlobSettings
+
+./AppData/Adobe/Acrobat/11.0/Security:
+合計 56
+drwx------ 2 is221042 student  4096  3月 19  2014 CRLCache
+-rwx--x--x 1 is221042 student  7870  3月  5  2014 addressbook.acrodata
+-rwx--x--x 1 is221042 student 10240  3月 10  2014 services_rdr.dat
+-rwx--x--x 1 is221042 student 24152  3月 10  2014 services_rdri.dat
+-rwx--x--x 1 is221042 student   180  3月 10  2014 services_rdrk.dat
+
+./AppData/Adobe/Acrobat/11.0/Security/CRLCache:
+合計 48
+-rwx--x--x 1 is221042 student   898  3月 10  2014 48B76449F3D5FEFA1133AA805E420F0FCA643651.crl
+-rwx--x--x 1 is221042 student 37213  3月 10  2014 A9B8213768ADC68AF64FCC6409E8BE414726687F.crl
+
+./AppData/Adobe/Flash Player:
+合計 16
+drwx------ 2 is221042 student 4096  3月  4  2014 APSPrivateData2
+drwx------ 3 is221042 student 4096  3月 19  2014 AssetCache
+drwx------ 2 is221042 student 4096  3月  4  2014 Icon Cache
+drwx------ 2 is221042 student 4096  3月  4  2014 NativeCache
+
+./AppData/Adobe/Flash Player/APSPrivateData2:
+合計 0
+
+./AppData/Adobe/Flash Player/AssetCache:
+合計 4
+drwx------ 2 is221042 student 4096  3月  3  2014 REBR3UU2
+
+./AppData/Adobe/Flash Player/AssetCache/REBR3UU2:
+合計 0
+
+./AppData/Adobe/Flash Player/Icon Cache:
+合計 0
+
+./AppData/Adobe/Flash Player/NativeCache:
+合計 0
+
+./AppData/Adobe/Headlights:
+合計 0
+
+./AppData/Adobe/Linguistics:
+合計 0
+
+./AppData/Adobe/LogTransport2:
+合計 0
+
+./AppData/Apple Computer:
+合計 16
+drwx------ 2 is221042 student 4096  3月 19  2014 Logs
+drwx------ 3 is221042 student 4096  3月 19  2014 MobileSync
+drwx------ 2 is221042 student 4096  3月 19  2014 Preferences
+drwx------ 4 is221042 student 4096  3月 19  2014 iTunes
+
+./AppData/Apple Computer/Logs:
+合計 40
+-rwx--x--x 1 is221042 student  6557  3月 10  2014 asl.112651_10Mar14.log
+-rwx--x--x 1 is221042 student  6458  3月 10  2014 asl.123127_10Mar14.log
+-rwx--x--x 1 is221042 student 10966  3月 10  2014 asl.144459_10Mar14.log
+-rwx--x--x 1 is221042 student  5639  3月  4  2014 asl.155736_04Mar14.log
+-rwx--x--x 1 is221042 student   315  3月 10  2014 asl.221516_10Mar14.log
+
+./AppData/Apple Computer/MobileSync:
+合計 4
+drwx------ 2 is221042 student 4096  3月 10  2014 Backup
+
+./AppData/Apple Computer/MobileSync/Backup:
+合計 0
+
+./AppData/Apple Computer/Preferences:
+合計 8
+-rwx--x--x 1 is221042 student 145  3月 10  2014 com.apple.iTunes.plist
+-rwx--x--x 1 is221042 student 139  3月 10  2014 com.apple.mediaaccessibility.plist
+
+./AppData/Apple Computer/iTunes:
+合計 200
+drwx------ 2 is221042 student   4096  3月 19  2014 Cookies
+drwx------ 2 is221042 student   4096  3月  4  2014 iTunes Plug-ins
+-rwx--x--x 1 is221042 student 188615  3月 10  2014 iTunesPrefs.xml
+
+./AppData/Apple Computer/iTunes/Cookies:
+合計 4
+-rwx--x--x 1 is221042 student 929  3月 10  2014 Cookies.binarycookies
+
+./AppData/Apple Computer/iTunes/iTunes Plug-ins:
+合計 0
+
+./AppData/Application Data:
+合計 8
+drwx------ 3 is221042 student 4096  3月 19  2014 Maple
+drwx------ 3 is221042 student 4096  3月 19  2014 MapleSim
+
+./AppData/Application Data/Maple:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 17
+
+./AppData/Application Data/Maple/17:
+合計 8
+-rwx--x--x 1 is221042 student 4858  3月 11  2014 Maple.ini
+
+./AppData/Application Data/MapleSim:
+合計 4
+drwx------ 4 is221042 student 4096  3月 19  2014 6
+
+./AppData/Application Data/MapleSim/6:
+合計 12
+-rwx--x--x 1 is221042 student 1211  3月  6  2014 MapleSim.ini
+drwx------ 3 is221042 student 4096  3月 19  2014 html
+drwx------ 3 is221042 student 4096  3月 19  2014 lib
+
+./AppData/Application Data/MapleSim/6/html:
+合計 4
+drwx------ 2 is221042 student 4096  3月  6  2014 Modelica3.1
+
+./AppData/Application Data/MapleSim/6/html/Modelica3.1:
+合計 0
+
+./AppData/Application Data/MapleSim/6/lib:
+合計 4
+drwx------ 2 is221042 student 4096  3月  6  2014 Modelica3.1
+
+./AppData/Application Data/MapleSim/6/lib/Modelica3.1:
+合計 0
+
+./AppData/Cookies:
+合計 84
+-rwx--x--x 1 is221042 student   354  3月 25  2014 0V7DDM7X.txt
+-rwx--x--x 1 is221042 student   142  3月 13  2014 AYZ3XNII.txt
+-rwx--x--x 1 is221042 student    90  3月 25  2014 E001WZ5E.txt
+drwx------ 2 is221042 student  4096  3月 19  2014 Low
+-rwx--x--x 1 is221042 student   100  3月 25  2014 N3AZAFY9.txt
+-rwx--x--x 1 is221042 student   416  3月 25  2014 N9QITMX9.txt
+-rwx--x--x 1 is221042 student   468  3月 25  2014 S9E113MA.txt
+-rwx--x--x 1 is221042 student    67  3月 13  2014 desktop.ini
+-rwx--x--x 1 is221042 student 49152  3月 25  2014 index.dat
+
+./AppData/Cookies/Low:
+合計 20
+-rwx--x--x 1 is221042 student    67  3月 13  2014 desktop.ini
+-rwx--x--x 1 is221042 student 16384  3月 13  2014 index.dat
+
+./AppData/Desktop:
+合計 40
+drwx------ 2 is221042 student  4096  3月 19  2014 $RECYCLE.BIN
+-rwx------ 1 is221042 student 28414  5月 13 12:00 PBL.xls.xlsx
+-rwx--x--x 1 is221042 student   446  3月 10  2014 desktop.ini
+
+./AppData/Desktop/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./AppData/Fuji Xerox:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 DocuScan Manager
+
+./AppData/Fuji Xerox/DocuScan Manager:
+合計 4
+drwx------ 4 is221042 student 4096  3月 19  2014 Plugin
+
+./AppData/Fuji Xerox/DocuScan Manager/Plugin:
+合計 8
+drwx------ 3 is221042 student 4096  3月 19  2014 DSImageEdit
+drwx------ 3 is221042 student 4096  3月 19  2014 DSWindowsFolder
+
+./AppData/Fuji Xerox/DocuScan Manager/Plugin/DSImageEdit:
+合計 12
+drwx------ 3 is221042 student 4096  3月 19  2014 Config
+-rwx--x--x 1 is221042 student 4359 10月 27  2009 NzmTitleViewList.nzini
+
+./AppData/Fuji Xerox/DocuScan Manager/Plugin/DSImageEdit/Config:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 �����Խ�
+
+./AppData/Fuji Xerox/DocuScan Manager/Plugin/DSImageEdit/Config/�����Խ�:
+合計 4
+-rwx--x--x 1 is221042 student 62 10月 27  2009 �������� - ��ư.nzini
+-rwx--x--x 1 is221042 student 65 10月 27  2009 ��ž - ��90�ٲ�ž.nzini
+-rwx--x--x 1 is221042 student 45 10月 27  2009 �Υ������� - ��.nzini
+
+./AppData/Fuji Xerox/DocuScan Manager/Plugin/DSWindowsFolder:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 Tree
+
+./AppData/Fuji Xerox/DocuScan Manager/Plugin/DSWindowsFolder/Tree:
+合計 0
+-rwx--x--x 1 is221042 student 33  3月 10  2014 �ޥ� �ɥ������.nzini
+
+./AppData/History:
+合計 16
+drwx------ 2 is221042 student 4096  3月 19  2014 $RECYCLE.BIN
+drwx------ 4 is221042 student 4096  4月 18 10:37 History.IE5
+drwx------ 3 is221042 student 4096  3月 19  2014 Low
+-rwx--x--x 1 is221042 student  145  2月 27  2014 desktop.ini
+
+./AppData/History/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./AppData/History/History.IE5:
+合計 128
+drwx------ 2 is221042 student   4096  3月 25  2014 MSHist012014031020140317
+drwx------ 2 is221042 student   4096  3月 25  2014 MSHist012014032520140326
+-rwx------ 1 is221042 student      0  4月 18 10:37 container.dat
+-rwx--x--x 1 is221042 student     67  3月 13  2014 desktop.ini
+-rwx--x--x 1 is221042 student 114688  3月 25  2014 index.dat
+
+./AppData/History/History.IE5/MSHist012014031020140317:
+合計 36
+-rwx--x--x 1 is221042 student 32768  3月 25  2014 index.dat
+
+./AppData/History/History.IE5/MSHist012014032520140326:
+合計 36
+-rwx--x--x 1 is221042 student 32768  3月 25  2014 index.dat
+
+./AppData/History/Low:
+合計 8
+drwx------ 2 is221042 student 4096  3月 19  2014 History.IE5
+-rwx--x--x 1 is221042 student  145  3月  5  2014 desktop.ini
+
+./AppData/History/Low/History.IE5:
+合計 20
+-rwx--x--x 1 is221042 student    67  3月 13  2014 desktop.ini
+-rwx--x--x 1 is221042 student 16384  3月 13  2014 index.dat
+
+./AppData/IECompatCache:
+合計 392
+drwx------ 2 is221042 student   4096  3月 19  2014 Low
+-rwx--x--x 1 is221042 student 393216  3月 25  2014 index.dat
+
+./AppData/IECompatCache/Low:
+合計 340
+-rwx--x--x 1 is221042 student 344064  3月 13  2014 index.dat
+
+./AppData/IEDownloadHistory:
+合計 36
+-rwx--x--x 1 is221042 student 32768  3月 25  2014 index.dat
+
+./AppData/IETldCache:
+合計 260
+-rwx--x--x 1 is221042 student 262144  3月 25  2014 index.dat
+
+./AppData/InstallAnywhere:
+合計 0
+
+./AppData/LibreOffice:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 4
+
+./AppData/LibreOffice/4:
+合計 4
+drwx------ 10 is221042 student 4096  3月 19  2014 user
+
+./AppData/LibreOffice/4/user:
+合計 216
+drwx------ 2 is221042 student   4096  3月  5  2014 autocorr
+drwx------ 2 is221042 student   4096  3月 19  2014 autotext
+drwx------ 3 is221042 student   4096  3月 19  2014 basic
+drwx------ 3 is221042 student   4096  3月 19  2014 config
+drwx------ 3 is221042 student   4096  3月 19  2014 database
+drwx------ 5 is221042 student   4096  3月 19  2014 extensions
+drwx------ 2 is221042 student   4096  3月 19  2014 gallery
+-rwx--x--x 1 is221042 student 182054  3月  5  2014 registrymodifications.xcu
+drwx------ 3 is221042 student   4096  3月 19  2014 uno_packages
+
+./AppData/LibreOffice/4/user/autocorr:
+合計 0
+
+./AppData/LibreOffice/4/user/autotext:
+合計 4
+-rwx--x--x 1 is221042 student 567  9月  5  2013 mytexts.bau
+
+./AppData/LibreOffice/4/user/basic:
+合計 12
+drwx------ 2 is221042 student 4096  3月 19  2014 Standard
+-rwx--x--x 1 is221042 student  406  3月  5  2014 dialog.xlc
+-rwx--x--x 1 is221042 student  406  3月  5  2014 script.xlc
+
+./AppData/LibreOffice/4/user/basic/Standard:
+合計 12
+-rwx--x--x 1 is221042 student 1124  9月  5  2013 Module1.xba
+-rwx--x--x 1 is221042 student  288  9月  5  2013 dialog.xlb
+-rwx--x--x 1 is221042 student  349  9月  5  2013 script.xlb
+
+./AppData/LibreOffice/4/user/config:
+合計 420
+-rwx--x--x 1 is221042 student   4308  9月  5  2013 arrowhd.soe
+-rwx--x--x 1 is221042 student  48408  9月  5  2013 autotbl.fmt
+-rwx--x--x 1 is221042 student  30852  9月  5  2013 classic.sog
+-rwx--x--x 1 is221042 student  13132  9月  5  2013 cmyk.soc
+-rwx--x--x 1 is221042 student   4408  9月  5  2013 gallery.soc
+-rwx--x--x 1 is221042 student   5238  9月  5  2013 hatching.soh
+-rwx--x--x 1 is221042 student  10766  9月  5  2013 html.soc
+-rwx--x--x 1 is221042 student   2334  9月  5  2013 libreoffice.soc
+-rwx--x--x 1 is221042 student   6840  9月  5  2013 modern.sog
+-rwx--x--x 1 is221042 student   5271  9月  5  2013 palette.soc
+-rwx--x--x 1 is221042 student  31320  9月  5  2013 scribus.soc
+drwx------ 3 is221042 student   4096  3月 19  2014 soffice.cfg
+-rwx--x--x 1 is221042 student 155895  9月  5  2013 standard.sob
+-rwx--x--x 1 is221042 student  11166  2月  6  2014 standard.soc
+-rwx--x--x 1 is221042 student   2426  9月  5  2013 standard.sod
+-rwx--x--x 1 is221042 student   4984  2月  6  2014 standard.soe
+-rwx--x--x 1 is221042 student   5080  2月  6  2014 standard.sog
+-rwx--x--x 1 is221042 student   2171  9月  5  2013 standard.soh
+-rwx--x--x 1 is221042 student   1708  9月  5  2013 styles.sod
+-rwx--x--x 1 is221042 student   2331  9月  5  2013 tango.soc
+-rwx--x--x 1 is221042 student  14420  9月  5  2013 web.soc
+
+./AppData/LibreOffice/4/user/config/soffice.cfg:
+合計 4
+drwx------ 9 is221042 student 4096  3月 19  2014 modules
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules:
+合計 28
+drwx------ 6 is221042 student 4096  3月 19  2014 StartModule
+drwx------ 6 is221042 student 4096  3月 19  2014 dbapp
+drwx------ 6 is221042 student 4096  3月 19  2014 scalc
+drwx------ 6 is221042 student 4096  3月 19  2014 sdraw
+drwx------ 6 is221042 student 4096  3月 19  2014 simpress
+drwx------ 6 is221042 student 4096  3月 19  2014 smath
+drwx------ 6 is221042 student 4096  3月 19  2014 swriter
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/StartModule:
+合計 16
+drwx------ 3 is221042 student 4096  3月 19  2014 images
+drwx------ 2 is221042 student 4096  3月  5  2014 menubar
+drwx------ 2 is221042 student 4096  3月  5  2014 statusbar
+drwx------ 2 is221042 student 4096  3月  5  2014 toolbar
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/StartModule/images:
+合計 4
+drwx------ 2 is221042 student 4096  3月  5  2014 Bitmaps
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/StartModule/images/Bitmaps:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/StartModule/menubar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/StartModule/statusbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/StartModule/toolbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/dbapp:
+合計 16
+drwx------ 3 is221042 student 4096  3月 19  2014 images
+drwx------ 2 is221042 student 4096  3月  5  2014 menubar
+drwx------ 2 is221042 student 4096  3月  5  2014 statusbar
+drwx------ 2 is221042 student 4096  3月  5  2014 toolbar
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/dbapp/images:
+合計 4
+drwx------ 2 is221042 student 4096  3月  5  2014 Bitmaps
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/dbapp/images/Bitmaps:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/dbapp/menubar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/dbapp/statusbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/dbapp/toolbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/scalc:
+合計 16
+drwx------ 3 is221042 student 4096  3月 19  2014 images
+drwx------ 2 is221042 student 4096  3月  5  2014 menubar
+drwx------ 2 is221042 student 4096  3月  5  2014 statusbar
+drwx------ 2 is221042 student 4096  3月  5  2014 toolbar
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/scalc/images:
+合計 4
+drwx------ 2 is221042 student 4096  3月  5  2014 Bitmaps
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/scalc/images/Bitmaps:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/scalc/menubar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/scalc/statusbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/scalc/toolbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/sdraw:
+合計 16
+drwx------ 3 is221042 student 4096  3月 19  2014 images
+drwx------ 2 is221042 student 4096  3月  5  2014 menubar
+drwx------ 2 is221042 student 4096  3月  5  2014 statusbar
+drwx------ 2 is221042 student 4096  3月  5  2014 toolbar
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/sdraw/images:
+合計 4
+drwx------ 2 is221042 student 4096  3月  5  2014 Bitmaps
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/sdraw/images/Bitmaps:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/sdraw/menubar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/sdraw/statusbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/sdraw/toolbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/simpress:
+合計 16
+drwx------ 3 is221042 student 4096  3月 19  2014 images
+drwx------ 2 is221042 student 4096  3月  5  2014 menubar
+drwx------ 2 is221042 student 4096  3月  5  2014 statusbar
+drwx------ 2 is221042 student 4096  3月  5  2014 toolbar
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/simpress/images:
+合計 4
+drwx------ 2 is221042 student 4096  3月  5  2014 Bitmaps
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/simpress/images/Bitmaps:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/simpress/menubar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/simpress/statusbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/simpress/toolbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/smath:
+合計 16
+drwx------ 3 is221042 student 4096  3月 19  2014 images
+drwx------ 2 is221042 student 4096  3月  5  2014 menubar
+drwx------ 2 is221042 student 4096  3月  5  2014 statusbar
+drwx------ 2 is221042 student 4096  3月  5  2014 toolbar
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/smath/images:
+合計 4
+drwx------ 2 is221042 student 4096  3月  5  2014 Bitmaps
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/smath/images/Bitmaps:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/smath/menubar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/smath/statusbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/smath/toolbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/swriter:
+合計 16
+drwx------ 3 is221042 student 4096  3月 19  2014 images
+drwx------ 2 is221042 student 4096  3月  5  2014 menubar
+drwx------ 2 is221042 student 4096  3月  5  2014 statusbar
+drwx------ 2 is221042 student 4096  3月  5  2014 toolbar
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/swriter/images:
+合計 4
+drwx------ 2 is221042 student 4096  3月  5  2014 Bitmaps
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/swriter/images/Bitmaps:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/swriter/menubar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/swriter/statusbar:
+合計 0
+
+./AppData/LibreOffice/4/user/config/soffice.cfg/modules/swriter/toolbar:
+合計 0
+
+./AppData/LibreOffice/4/user/database:
+合計 12
+drwx------ 2 is221042 student 4096  3月 19  2014 biblio
+-rwx--x--x 1 is221042 student 2687  9月  5  2013 biblio.odb
+-rwx--x--x 1 is221042 student 3759  9月  5  2013 evolocal.odb
+
+./AppData/LibreOffice/4/user/database/biblio:
+合計 1020
+-rwx--x--x 1 is221042 student 418450  9月  5  2013 biblio.dbf
+-rwx--x--x 1 is221042 student 610825  9月  5  2013 biblio.dbt
+
+./AppData/LibreOffice/4/user/extensions:
+合計 12
+-rwx--x--x 1 is221042 student   40  3月  5  2014 buildid
+drwx------ 3 is221042 student 4096  3月 19  2014 bundled
+drwx------ 3 is221042 student 4096  3月 19  2014 shared
+drwx------ 4 is221042 student 4096  3月 19  2014 tmp
+
+./AppData/LibreOffice/4/user/extensions/bundled:
+合計 12
+-rwx--x--x 1 is221042 student 5428  3月  5  2014 extensions.pmap
+-rwx--x--x 1 is221042 student    1  3月  5  2014 lastsynchronized
+drwx------ 9 is221042 student 4096  3月 19  2014 registry
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry:
+合計 32
+drwx------  2 is221042 student 4096  3月 19  2014 com.sun.star.comp.deployment.bundle.PackageRegistryBackend
+drwx------  2 is221042 student 4096  3月 19  2014 com.sun.star.comp.deployment.component.PackageRegistryBackend
+drwx------ 57 is221042 student 8192  3月 19  2014 com.sun.star.comp.deployment.configuration.PackageRegistryBackend
+drwx------  2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.executable.PackageRegistryBackend
+drwx------  4 is221042 student 4096  3月 19  2014 com.sun.star.comp.deployment.help.PackageRegistryBackend
+drwx------  2 is221042 student 4096  3月 19  2014 com.sun.star.comp.deployment.script.PackageRegistryBackend
+drwx------  2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.sfwk.PackageRegistryBackend
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.bundle.PackageRegistryBackend:
+合計 28
+-rwx--x--x 1 is221042 student 20809  3月  5  2014 backenddb.xml
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.component.PackageRegistryBackend:
+合計 4
+-rwx--x--x 1 is221042 student 420  3月  5  2014 unorc
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend:
+合計 260
+-rwx--x--x 1 is221042 student 26704  3月  5  2014 backenddb.xml
+-rwx--x--x 1 is221042 student  7741  3月  5  2014 configmgr.ini
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8sj.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8sk.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8sm.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8sn.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8so.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8sp.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8sq.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8sr.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8ss.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8st.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8su.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8sv.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8sw.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8sx.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8sy.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8sz.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8t0.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8t1.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8t2.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8t3.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8t4.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8t5.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8t6.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8t7.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8t8.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8t9.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8ta.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8tb.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8tg.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8th.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8ti.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8tj.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8to.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8tp.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8tr.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8ts.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8tt.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8tu.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8tv.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8tw.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8tx.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8ty.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8tz.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8u0.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8u1.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8u3.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8u4.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8u5.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8u6.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8u7.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8u8.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8u9.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8ua.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8uc.tmp
+drwx------ 2 is221042 student  4096  3月 19  2014 luwh8ud.tmp
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8sj.tmp:
+合計 12
+-rwx--x--x 1 is221042 student 8961  3月  5  2014 OptionsDialog.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8sk.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 3025  3月  5  2014 Filter.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8sm.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1330  3月  5  2014 Paths.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8sn.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1411  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8so.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1378  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8sp.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 875  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8sq.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1600  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8sr.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1861  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8ss.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1854  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8st.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1366  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8su.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 896  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8sv.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1379  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8sw.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1962  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8sx.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1922  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8sy.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1364  3月  5  2014 Dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8sz.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1364  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8t0.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 874  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8t1.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 872  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8t2.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 2592  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8t3.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 874  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8t4.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 2260  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8t5.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1921  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8t6.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1921  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8t7.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 816  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8t8.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 2447  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8t9.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 874  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8ta.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1859  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8tb.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1368  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8tg.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1917  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8th.tmp:
+合計 8
+-rwx--x--x 1 is221042 student 4566  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8ti.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1367  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8tj.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 3120  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8to.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1923  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8tp.tmp:
+合計 20
+-rwx--x--x 1 is221042 student 18339  3月  5  2014 OptionsDialog.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8tr.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 873  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8ts.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1997  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8tt.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1859  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8tu.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 884  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8tv.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 874  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8tw.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 872  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8tx.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 872  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8ty.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 880  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8tz.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 872  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8u0.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1389  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8u1.tmp:
+合計 20
+-rwx--x--x 1 is221042 student 16938  3月  5  2014 OptionsDialog.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8u3.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1909  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8u4.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 2036  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8u5.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 874  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8u6.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1859  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8u7.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1349  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8u8.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1920  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8u9.tmp:
+合計 4
+-rwx--x--x 1 is221042 student 1925  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8ua.tmp:
+合計 20
+-rwx--x--x 1 is221042 student 18222  3月  5  2014 OptionsDialog.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8uc.tmp:
+合計 8
+-rwx--x--x 1 is221042 student 4809  3月  5  2014 dictionaries.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend/luwh8ud.tmp:
+合計 20
+-rwx--x--x 1 is221042 student 18082  3月  5  2014 OptionsDialog.xcu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.executable.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend:
+合計 12
+-rwx--x--x 1 is221042 student  957  3月  5  2014 backenddb.xml
+drwx------ 4 is221042 student 4096  3月 19  2014 luwh8tc.tmp
+drwx------ 4 is221042 student 4096  3月 19  2014 luwh8tk.tmp
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tc.tmp:
+合計 8
+drwx------ 5 is221042 student 4096  3月 19  2014 da
+drwx------ 3 is221042 student 4096  3月 19  2014 en
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tc.tmp/da:
+合計 32
+drwx------ 2 is221042 student 4096  3月 19  2014 caption
+drwx------ 2 is221042 student 4096  3月 19  2014 content
+-rwx--x--x 1 is221042 student  552  3月  5  2014 help.db_
+-rwx--x--x 1 is221042 student    0  3月  5  2014 help.ht_
+drwx------ 2 is221042 student 4096  3月 19  2014 help.idxl
+-rwx--x--x 1 is221042 student 9155  3月  5  2014 help.jar
+-rwx--x--x 1 is221042 student  660  3月  5  2014 help.key_
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tc.tmp/da/caption:
+合計 0
+-rwx--x--x 1 is221042 student 49  3月  5  2014 org.openoffice.da.hunspell.dictionaries%2Fpage1.xhp
+-rwx--x--x 1 is221042 student 53  3月  5  2014 org.openoffice.da.hunspell.dictionaries%2Fpage2.xhp
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tc.tmp/da/content:
+合計 8
+-rwx--x--x 1 is221042 student 1359  3月  5  2014 org.openoffice.da.hunspell.dictionaries%2Fpage1.xhp
+-rwx--x--x 1 is221042 student 1299  3月  5  2014 org.openoffice.da.hunspell.dictionaries%2Fpage2.xhp
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tc.tmp/da/help.idxl:
+合計 4
+-rwx--x--x 1 is221042 student 2922  3月  5  2014 _0.cfs
+-rwx--x--x 1 is221042 student   20  3月  5  2014 segments.gen
+-rwx--x--x 1 is221042 student   45  3月  5  2014 segments_3
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tc.tmp/en:
+合計 4
+-rwx--x--x 1 is221042 student    0  3月  5  2014 help.db_
+-rwx--x--x 1 is221042 student    0  3月  5  2014 help.ht_
+drwx------ 2 is221042 student 4096  3月 19  2014 help.idxl
+-rwx--x--x 1 is221042 student    0  3月  5  2014 help.key_
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tc.tmp/en/help.idxl:
+合計 0
+-rwx--x--x 1 is221042 student 20  3月  5  2014 segments.gen
+-rwx--x--x 1 is221042 student 20  3月  5  2014 segments_1
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tk.tmp:
+合計 8
+drwx------ 3 is221042 student 4096  3月 19  2014 en
+drwx------ 5 is221042 student 4096  3月 19  2014 hu
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tk.tmp/en:
+合計 4
+-rwx--x--x 1 is221042 student    0  3月  5  2014 help.db_
+-rwx--x--x 1 is221042 student    0  3月  5  2014 help.ht_
+drwx------ 2 is221042 student 4096  3月 19  2014 help.idxl
+-rwx--x--x 1 is221042 student    0  3月  5  2014 help.key_
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tk.tmp/en/help.idxl:
+合計 0
+-rwx--x--x 1 is221042 student 20  3月  5  2014 segments.gen
+-rwx--x--x 1 is221042 student 20  3月  5  2014 segments_1
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tk.tmp/hu:
+合計 32
+drwx------ 2 is221042 student  4096  3月 19  2014 caption
+drwx------ 2 is221042 student  4096  3月 19  2014 content
+-rwx--x--x 1 is221042 student   290  3月  5  2014 help.db_
+-rwx--x--x 1 is221042 student     0  3月  5  2014 help.ht_
+drwx------ 2 is221042 student  4096  3月 19  2014 help.idxl
+-rwx--x--x 1 is221042 student 12232  3月  5  2014 help.jar
+-rwx--x--x 1 is221042 student   329  3月  5  2014 help.key_
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tk.tmp/hu/caption:
+合計 4
+-rwx--x--x 1 is221042 student 97  3月  5  2014 org.openoffice.hu.hunspell.dictionaries%2Fpage1.xhp
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tk.tmp/hu/content:
+合計 4
+-rwx--x--x 1 is221042 student 1692  3月  5  2014 org.openoffice.hu.hunspell.dictionaries%2Fpage1.xhp
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend/luwh8tk.tmp/hu/help.idxl:
+合計 4
+-rwx--x--x 1 is221042 student 2320  3月  5  2014 _0.cfs
+-rwx--x--x 1 is221042 student   20  3月  5  2014 segments.gen
+-rwx--x--x 1 is221042 student   45  3月  5  2014 segments_3
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.script.PackageRegistryBackend:
+合計 4
+-rwx--x--x 1 is221042 student 240  3月  5  2014 backenddb.xml
+
+./AppData/LibreOffice/4/user/extensions/bundled/registry/com.sun.star.comp.deployment.sfwk.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/extensions/shared:
+合計 8
+-rwx--x--x 1 is221042 student    1  3月  5  2014 lastsynchronized
+-rwx--x--x 1 is221042 student  371  3月  5  2014 log.txt
+drwx------ 9 is221042 student 4096  3月 19  2014 registry
+
+./AppData/LibreOffice/4/user/extensions/shared/registry:
+合計 28
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.bundle.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.component.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月 19  2014 com.sun.star.comp.deployment.configuration.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.executable.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月 19  2014 com.sun.star.comp.deployment.help.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.script.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.sfwk.PackageRegistryBackend
+
+./AppData/LibreOffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.bundle.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.component.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend:
+合計 4
+-rwx--x--x 1 is221042 student 135  3月  5  2014 backenddb.xml
+
+./AppData/LibreOffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.executable.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend:
+合計 4
+-rwx--x--x 1 is221042 student 117  3月  5  2014 backenddb.xml
+
+./AppData/LibreOffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.script.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/extensions/shared/registry/com.sun.star.comp.deployment.sfwk.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/extensions/tmp:
+合計 8
+drwx------ 2 is221042 student 4096  3月  5  2014 extensions
+drwx------ 9 is221042 student 4096  3月 19  2014 registry
+
+./AppData/LibreOffice/4/user/extensions/tmp/extensions:
+合計 0
+
+./AppData/LibreOffice/4/user/extensions/tmp/registry:
+合計 28
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.bundle.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.component.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月 19  2014 com.sun.star.comp.deployment.configuration.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.executable.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月 19  2014 com.sun.star.comp.deployment.help.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.script.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.sfwk.PackageRegistryBackend
+
+./AppData/LibreOffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.bundle.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.component.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend:
+合計 4
+-rwx--x--x 1 is221042 student 135  3月  5  2014 backenddb.xml
+
+./AppData/LibreOffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.executable.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend:
+合計 4
+-rwx--x--x 1 is221042 student 117  3月  5  2014 backenddb.xml
+
+./AppData/LibreOffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.script.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/extensions/tmp/registry/com.sun.star.comp.deployment.sfwk.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/gallery:
+合計 8
+-rwx--x--x 1 is221042 student 2048 10月 21  2013 sg30.sdv
+-rwx--x--x 1 is221042 student  565 10月 21  2013 sg30.thm
+
+./AppData/LibreOffice/4/user/uno_packages:
+合計 4
+drwx------ 4 is221042 student 4096  3月 19  2014 cache
+
+./AppData/LibreOffice/4/user/uno_packages/cache:
+合計 12
+-rwx--x--x 1 is221042 student  409  3月  5  2014 log.txt
+drwx------ 9 is221042 student 4096  3月 19  2014 registry
+drwx------ 2 is221042 student 4096  3月  5  2014 uno_packages
+
+./AppData/LibreOffice/4/user/uno_packages/cache/registry:
+合計 28
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.bundle.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.component.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月 19  2014 com.sun.star.comp.deployment.configuration.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.executable.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月 19  2014 com.sun.star.comp.deployment.help.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.script.PackageRegistryBackend
+drwx------ 2 is221042 student 4096  3月  5  2014 com.sun.star.comp.deployment.sfwk.PackageRegistryBackend
+
+./AppData/LibreOffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.bundle.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.component.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.configuration.PackageRegistryBackend:
+合計 4
+-rwx--x--x 1 is221042 student 135  3月  5  2014 backenddb.xml
+
+./AppData/LibreOffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.executable.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.help.PackageRegistryBackend:
+合計 4
+-rwx--x--x 1 is221042 student 117  3月  5  2014 backenddb.xml
+
+./AppData/LibreOffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.script.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/uno_packages/cache/registry/com.sun.star.comp.deployment.sfwk.PackageRegistryBackend:
+合計 0
+
+./AppData/LibreOffice/4/user/uno_packages/cache/uno_packages:
+合計 0
+
+./AppData/Macromedia:
+合計 4
+drwx------ 4 is221042 student 4096  3月 19  2014 Flash Player
+
+./AppData/Macromedia/Flash Player:
+合計 8
+drwx------ 2 is221042 student 4096  3月 13  2014 #SharedObjects
+drwx------ 3 is221042 student 4096  3月 19  2014 macromedia.com
+
+./AppData/Macromedia/Flash Player/#SharedObjects:
+合計 0
+
+./AppData/Macromedia/Flash Player/macromedia.com:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 support
+
+./AppData/Macromedia/Flash Player/macromedia.com/support:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 flashplayer
+
+./AppData/Macromedia/Flash Player/macromedia.com/support/flashplayer:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 sys
+
+./AppData/Macromedia/Flash Player/macromedia.com/support/flashplayer/sys:
+合計 4
+-rwx--x--x 1 is221042 student 506  3月 13  2014 settings.sol
+
+./AppData/MathWorks:
+合計 4
+drwx------ 4 is221042 student 4096  3月 19  2014 MATLAB
+
+./AppData/MathWorks/MATLAB:
+合計 8
+drwx------ 2 is221042 student 4096  3月 19  2014 R2013b
+drwx------ 3 is221042 student 4096  3月 19  2014 local_cluster_jobs
+
+./AppData/MathWorks/MATLAB/R2013b:
+合計 1164
+-rwx--x--x 1 is221042 student    6831  3月  7  2014 MATLABDesktop.xml
+-rwx--x--x 1 is221042 student    6831  3月  6  2014 MATLABDesktop.xml.prev
+-rwx--x--x 1 is221042 student      40  3月  6  2014 MLintDefaultSettings.txt
+-rwx--x--x 1 is221042 student      67  3月  7  2014 cwdhistory.m
+-rwx--x--x 1 is221042 student    1019  3月  7  2014 history.m
+-rwx--x--x 1 is221042 student    1347  3月  6  2014 matlab.prf
+-rwx--x--x 1 is221042 student    8123  3月  6  2014 matlab.settings
+-rwx--x--x 1 is221042 student    3190  3月  6  2014 parallel.settings
+-rwx--x--x 1 is221042 student     223  3月  4  2014 shortcuts_ja_2.xml
+-rwx--x--x 1 is221042 student 1137871  3月  7  2014 toolbox_cache-8.2.0-2433496246-win64.xml
+
+./AppData/MathWorks/MATLAB/local_cluster_jobs:
+合計 4
+drwx------ 2 is221042 student 4096  3月  6  2014 R2013b
+
+./AppData/MathWorks/MATLAB/local_cluster_jobs/R2013b:
+合計 0
+
+./AppData/Mathematica:
+合計 32
+drwx------ 3 is221042 student 4096  3月 19  2014 ApplicationData
+drwx------ 2 is221042 student 4096  3月  4  2014 Applications
+drwx------ 3 is221042 student 4096  3月 19  2014 Autoload
+drwx------ 2 is221042 student 4096  3月 19  2014 FrontEnd
+drwx------ 2 is221042 student 4096  3月 19  2014 Kernel
+drwx------ 2 is221042 student 4096  3月  4  2014 Licensing
+drwx------ 5 is221042 student 4096  3月 19  2014 Paclets
+drwx------ 6 is221042 student 4096  3月 19  2014 SystemFiles
+
+./AppData/Mathematica/ApplicationData:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 Parallel
+
+./AppData/Mathematica/ApplicationData/Parallel:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 Preferences
+
+./AppData/Mathematica/ApplicationData/Parallel/Preferences:
+合計 0
+-rwx--x--x 1 is221042 student 21  3月 10  2014 Preferences.m
+
+./AppData/Mathematica/Applications:
+合計 0
+
+./AppData/Mathematica/Autoload:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 PacletManager
+
+./AppData/Mathematica/Autoload/PacletManager:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 Configuration
+
+./AppData/Mathematica/Autoload/PacletManager/Configuration:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 FrontEnd
+
+./AppData/Mathematica/Autoload/PacletManager/Configuration/FrontEnd:
+合計 4
+-rwx--x--x 1 is221042 student 540  3月 10  2014 init_9.0.1.0.m
+
+./AppData/Mathematica/FrontEnd:
+合計 4
+-rwx--x--x 1 is221042 student 841  3月 10  2014 init.m
+
+./AppData/Mathematica/Kernel:
+合計 0
+-rwx--x--x 1 is221042 student 48  3月  4  2014 init.m
+
+./AppData/Mathematica/Licensing:
+合計 0
+
+./AppData/Mathematica/Paclets:
+合計 12
+drwx------ 2 is221042 student 4096  3月 19  2014 Configuration
+drwx------ 4 is221042 student 4096  3月 19  2014 Repository
+drwx------ 2 is221042 student 4096  3月 10  2014 Temporary
+
+./AppData/Mathematica/Paclets/Configuration:
+合計 468
+-rwx--x--x 1 is221042 student    887  3月  4  2014 managerData_9.0.1.0.pmd2
+-rwx--x--x 1 is221042 student  48631  3月 10  2014 pacletData_9.0.1.0_7732496551395912941.pmd2
+-rwx--x--x 1 is221042 student 415662  3月  4  2014 pacletSiteData_9.pmd2
+
+./AppData/Mathematica/Paclets/Repository:
+合計 8
+drwx------ 2 is221042 student 4096  3月 19  2014 WelcomeScreenNews-8.27
+drwx------ 2 is221042 student 4096  3月 19  2014 WelcomeScreenSlides-9.0.14.2
+
+./AppData/Mathematica/Paclets/Repository/WelcomeScreenNews-8.27:
+合計 16
+-rwx--x--x 1 is221042 student  695  6月 26  2013 PacletInfo.m
+-rwx--x--x 1 is221042 student 1715  6月 26  2013 WelcomeScreenNews-ja.nb
+-rwx--x--x 1 is221042 student 1697  6月 26  2013 WelcomeScreenNews-zh.nb
+-rwx--x--x 1 is221042 student 1549  6月 26  2013 WelcomeScreenNews.nb
+
+./AppData/Mathematica/Paclets/Repository/WelcomeScreenSlides-9.0.14.2:
+合計 260
+-rwx--x--x 1 is221042 student   712  2月 15  2013 PacletInfo.m
+-rwx--x--x 1 is221042 student 81899  2月 15  2013 WelcomeScreenSlides-ja.nb
+-rwx--x--x 1 is221042 student 82031  2月 15  2013 WelcomeScreenSlides-zh.nb
+-rwx--x--x 1 is221042 student 79724  2月 15  2013 WelcomeScreenSlides.nb
+
+./AppData/Mathematica/Paclets/Temporary:
+合計 0
+
+./AppData/Mathematica/SystemFiles:
+合計 16
+drwx------ 2 is221042 student 4096  3月  4  2014 CharacterEncodings
+drwx------ 4 is221042 student 4096  3月 19  2014 FrontEnd
+drwx------ 2 is221042 student 4096  3月  4  2014 Kernel
+drwx------ 2 is221042 student 4096  3月  4  2014 SpellingDictionaries
+
+./AppData/Mathematica/SystemFiles/CharacterEncodings:
+合計 0
+
+./AppData/Mathematica/SystemFiles/FrontEnd:
+合計 8
+drwx------ 2 is221042 student 4096  3月  4  2014 Palettes
+drwx------ 2 is221042 student 4096  3月  4  2014 StyleSheets
+
+./AppData/Mathematica/SystemFiles/FrontEnd/Palettes:
+合計 0
+
+./AppData/Mathematica/SystemFiles/FrontEnd/StyleSheets:
+合計 0
+
+./AppData/Mathematica/SystemFiles/Kernel:
+合計 0
+
+./AppData/Mathematica/SystemFiles/SpellingDictionaries:
+合計 0
+
+./AppData/Microsoft:
+合計 104
+drwx------ 2 is221042 student 4096  2月 28  2014 AddIns
+drwx------ 3 is221042 student 4096  3月 19  2014 Bibliography
+drwx------ 4 is221042 student 4096  3月 19  2014 CLR Security Config
+drwx------ 3 is221042 student 4096  3月 19  2014 Document Building Blocks
+drwx------ 3 is221042 student 4096  3月 25  2014 Excel
+drwx------ 2 is221042 student 4096  3月 19  2014 HTML Help
+drwx------ 2 is221042 student 4096  3月  4  2014 IME12
+drwx------ 2 is221042 student 4096  3月  4  2014 IMJP12
+drwx------ 2 is221042 student 4096  3月  4  2014 IMJP8_1
+drwx------ 2 is221042 student 4096  3月  4  2014 IMJP9_0
+drwx------ 2 is221042 student 4096  2月 28  2014 InfoPath
+drwx------ 3 is221042 student 4096  3月 19  2014 Internet Explorer
+drwx------ 2 is221042 student 4096  3月 19  2014 MMC
+drwx------ 3 is221042 student 4096  3月 19  2014 Network
+drwx------ 4 is221042 student 4096  3月 19  2014 Office
+drwx------ 3 is221042 student 4096  3月 19  2014 OneNote
+drwx------ 2 is221042 student 4096  2月 28  2014 PowerPoint
+drwx------ 2 is221042 student 4096  2月 28  2014 Proof
+drwx------ 2 is221042 student 4096  2月 28  2014 Publisher
+drwx------ 2 is221042 student 4096  3月 19  2014 Publisher Building Blocks
+drwx------ 2 is221042 student 4096  3月  4  2014 Speech
+drwx------ 3 is221042 student 4096  3月 19  2014 Templates
+drwx------ 2 is221042 student 4096  3月 19  2014 UProof
+drwx------ 3 is221042 student 4096  3月 19  2014 VisualStudio
+drwx------ 8 is221042 student 4096  3月 19  2014 Windows
+drwx------ 3 is221042 student 4096  3月 19  2014 Word
+
+./AppData/Microsoft/AddIns:
+合計 0
+
+./AppData/Microsoft/Bibliography:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 Style
+
+./AppData/Microsoft/Bibliography/Style:
+合計 3364
+-rwx--x--x 1 is221042 student 333258  9月 29  2012 APASixthEditionOfficeOnline.xsl
+-rwx--x--x 1 is221042 student 343777  9月 29  2012 CHICAGO.XSL
+-rwx--x--x 1 is221042 student 268317  9月 29  2012 GB.XSL
+-rwx--x--x 1 is221042 student 255948  9月 29  2012 GostName.XSL
+-rwx--x--x 1 is221042 student 251032  9月 29  2012 GostTitle.XSL
+-rwx--x--x 1 is221042 student 284415  9月 29  2012 HarvardAnglia2008OfficeOnline.xsl
+-rwx--x--x 1 is221042 student 294178  9月 29  2012 IEEE2006OfficeOnline.xsl
+-rwx--x--x 1 is221042 student 270198  9月 29  2012 ISO690.XSL
+-rwx--x--x 1 is221042 student 217137  9月 29  2012 ISO690Nmerical.XSL
+-rwx--x--x 1 is221042 student 254875  9月 29  2012 MLASeventhEditionOfficeOnline.xsl
+-rwx--x--x 1 is221042 student 250983  9月 29  2012 SIST02.XSL
+-rwx--x--x 1 is221042 student 344303  9月 29  2012 TURABIAN.XSL
+
+./AppData/Microsoft/CLR Security Config:
+合計 8
+drwx------ 2 is221042 student 4096  3月 19  2014 v2.0.50727.312
+drwx------ 3 is221042 student 4096  3月 19  2014 v4.0.30319
+
+./AppData/Microsoft/CLR Security Config/v2.0.50727.312:
+合計 4
+-rwx--x--x 1 is221042 student 1008  3月 10  2014 security.config.cch
+
+./AppData/Microsoft/CLR Security Config/v4.0.30319:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 64bit
+
+./AppData/Microsoft/CLR Security Config/v4.0.30319/64bit:
+合計 4
+-rwx--x--x 1 is221042 student 4057  3月  4  2014 security.config.cch
+
+./AppData/Microsoft/Document Building Blocks:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 1041
+
+./AppData/Microsoft/Document Building Blocks/1041:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 15
+
+./AppData/Microsoft/Document Building Blocks/1041/15:
+合計 3568
+-rwx--x--x 1 is221042 student 3636899 10月 25  2013 Built-In Building Blocks.dotx
+
+./AppData/Microsoft/Excel:
+合計 16
+-rwx--x--x 1 is221042 student 11429  3月 25  2014 Excel15.xlb
+drwx------ 2 is221042 student  4096  3月 10  2014 XLSTART
+
+./AppData/Microsoft/Excel/XLSTART:
+合計 0
+
+./AppData/Microsoft/HTML Help:
+合計 12
+-rwx--x--x 1 is221042 student 8590  3月 13  2014 hh.dat
+
+./AppData/Microsoft/IME12:
+合計 0
+
+./AppData/Microsoft/IMJP12:
+合計 0
+
+./AppData/Microsoft/IMJP8_1:
+合計 0
+
+./AppData/Microsoft/IMJP9_0:
+合計 0
+
+./AppData/Microsoft/InfoPath:
+合計 0
+
+./AppData/Microsoft/Internet Explorer:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 Quick Launch
+
+./AppData/Microsoft/Internet Explorer/Quick Launch:
+合計 8
+-rwx--x--x 1 is221042 student  905  3月 10  2014 Inkscape.lnk
+drwx------ 3 is221042 student 4096  3月 19  2014 User Pinned
+
+./AppData/Microsoft/Internet Explorer/Quick Launch/User Pinned:
+合計 4
+drwx------ 2 is221042 student 4096  3月  4  2014 ImplicitAppShortcuts
+
+./AppData/Microsoft/Internet Explorer/Quick Launch/User Pinned/ImplicitAppShortcuts:
+合計 0
+
+./AppData/Microsoft/MMC:
+合計 144
+-rwx--x--x 1 is221042 student 141294  3月 11  2014 eventvwr
+
+./AppData/Microsoft/Network:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 Connections
+
+./AppData/Microsoft/Network/Connections:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 Pbk
+
+./AppData/Microsoft/Network/Connections/Pbk:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 _hiddenPbk
+
+./AppData/Microsoft/Network/Connections/Pbk/_hiddenPbk:
+合計 0
+-rwx--x--x 1 is221042 student 0  3月 19  2014 rasphone.pbk
+
+./AppData/Microsoft/Office:
+合計 12
+drwx------ 4 is221042 student 4096  3月 19  2014 15.0
+-rwx--x--x 1 is221042 student   86  2月 28  2014 MSO1033.acl
+drwx------ 2 is221042 student 4096  3月 19  2014 Recent
+
+./AppData/Microsoft/Office/15.0:
+合計 8
+drwx------ 3 is221042 student 4096  3月 19  2014 1e720511
+drwx------ 2 is221042 student 4096  2月 28  2014 Lync
+
+./AppData/Microsoft/Office/15.0/1e720511:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 Proofing
+
+./AppData/Microsoft/Office/15.0/1e720511/Proofing:
+合計 0
+-rwx--x--x 1 is221042 student 18  3月 10  2014 RoamingCustom.dic
+
+./AppData/Microsoft/Office/15.0/Lync:
+合計 0
+
+./AppData/Microsoft/Office/Recent:
+合計 4
+-rwx--x--x 1 is221042 student 811  2月 28  2014 Templates.LNK
+-rwx--x--x 1 is221042 student  28  2月 28  2014 index.dat
+
+./AppData/Microsoft/OneNote:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 15.0
+
+./AppData/Microsoft/OneNote/15.0:
+合計 32
+-rwx--x--x 1 is221042 student 25136  2月 28  2014 Preferences.dat
+
+./AppData/Microsoft/PowerPoint:
+合計 0
+
+./AppData/Microsoft/Proof:
+合計 0
+
+./AppData/Microsoft/Publisher:
+合計 0
+
+./AppData/Microsoft/Publisher Building Blocks:
+合計 4
+-rwx--x--x 1 is221042 student 168  2月 28  2014 ContentStore.xml
+
+./AppData/Microsoft/Speech:
+合計 0
+
+./AppData/Microsoft/Templates:
+合計 104
+-rwx--x--x 1 is221042 student 55563  3月  4  2014 Excel �ؤ褦����.xltx
+drwx------ 3 is221042 student  4096  3月 19  2014 LiveContent
+-rwx--x--x 1 is221042 student 18604  2月 28  2014 Normal.dotm
+-rwx--x--x 1 is221042 student 18605  2月 28  2014 NormalPre.dotm
+
+./AppData/Microsoft/Templates/LiveContent:
+合計 4
+drwx------ 4 is221042 student 4096  3月 19  2014 15
+
+./AppData/Microsoft/Templates/LiveContent/15:
+合計 8
+drwx------ 5 is221042 student 4096  3月 19  2014 Managed
+drwx------ 4 is221042 student 4096  3月 19  2014 User
+
+./AppData/Microsoft/Templates/LiveContent/15/Managed:
+合計 12
+drwx------ 3 is221042 student 4096  3月 19  2014 Access Parts
+drwx------ 3 is221042 student 4096  3月 19  2014 Document Themes
+drwx------ 3 is221042 student 4096  3月 19  2014 SmartArt Graphics
+
+./AppData/Microsoft/Templates/LiveContent/15/Managed/Access Parts:
+合計 4
+drwx------ 2 is221042 student 4096  2月 28  2014 1041
+
+./AppData/Microsoft/Templates/LiveContent/15/Managed/Access Parts/1041:
+合計 0
+
+./AppData/Microsoft/Templates/LiveContent/15/Managed/Document Themes:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 1041
+
+./AppData/Microsoft/Templates/LiveContent/15/Managed/Document Themes/1041:
+合計 8252
+-rwx--x--x 1 is221042 student  562113  3月  4  2014 TC103090430[[fn=������]].thmx
+-rwx--x--x 1 is221042 student 1649585  3月  4  2014 TC103090434[[fn=���ǳ��]].thmx
+-rwx--x--x 1 is221042 student  558035  3月  4  2014 TC103457444[[fn=����]].thmx
+-rwx--x--x 1 is221042 student  570901  3月  4  2014 TC103457464[[fn=����]].thmx
+-rwx--x--x 1 is221042 student  523048  3月  4  2014 TC103457475[[fn=�ե졼��]].thmx
+-rwx--x--x 1 is221042 student  887908  3月  4  2014 TC103457491[[fn=��ȥ��ݥ꥿��]].thmx
+-rwx--x--x 1 is221042 student  924687  3月  4  2014 TC103457496[[fn=�뺹]].thmx
+-rwx--x--x 1 is221042 student  966946  3月  4  2014 TC103457503[[fn=���������֥�]].thmx
+-rwx--x--x 1 is221042 student  729469  3月  4  2014 TC103457515[[fn=�ʿ�]].thmx
+-rwx--x--x 1 is221042 student 1011082  3月  4  2014 TC104033917[[fn=�٥���]].thmx
+
+./AppData/Microsoft/Templates/LiveContent/15/Managed/SmartArt Graphics:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 1041
+
+./AppData/Microsoft/Templates/LiveContent/15/Managed/SmartArt Graphics/1041:
+合計 104
+-rwx--x--x 1 is221042 student  4725  3月  4  2014 TC101793890[[fn=��Ĵ]].glox
+-rwx--x--x 1 is221042 student 11437  3月  4  2014 TC102660260[[fn=��ߤ˴�Ϣ�����֥��å��Υץ�����]].glox
+-rwx--x--x 1 is221042 student  4590  3月  4  2014 TC102660276[[fn=�ޤΥե졼��]].glox
+-rwx--x--x 1 is221042 student 14359  3月  4  2014 TC102660291[[fn=�ƥ����Ȥν���]].glox
+-rwx--x--x 1 is221042 student  6491  3月  4  2014 TC102660297[[fn=���;��οޤΥꥹ��]].glox
+-rwx--x--x 1 is221042 student 16714  3月  4  2014 TC102660299[[fn=���ץ�����]].glox
+-rwx--x--x 1 is221042 student  7647  3月  4  2014 TC102660302[[fn=���;����¤��ϻ�ѷ�]].glox
+-rwx--x--x 1 is221042 student  6489  3月  4  2014 TC102660310[[fn=�ơ��ޤοޤΥ���å�]].glox
+-rwx--x--x 1 is221042 student  7555  3月  4  2014 TC102660315[[fn=�ơ��ޤο� (���������)]].glox
+-rwx--x--x 1 is221042 student  5384  3月  4  2014 TC102660319[[fn=���� �ꥹ��]].glox
+
+./AppData/Microsoft/Templates/LiveContent/15/User:
+合計 8
+drwx------ 3 is221042 student 4096  3月 19  2014 Document Themes
+drwx------ 3 is221042 student 4096  3月 19  2014 SmartArt Graphics
+
+./AppData/Microsoft/Templates/LiveContent/15/User/Document Themes:
+合計 4
+drwx------ 2 is221042 student 4096  2月 28  2014 1041
+
+./AppData/Microsoft/Templates/LiveContent/15/User/Document Themes/1041:
+合計 0
+
+./AppData/Microsoft/Templates/LiveContent/15/User/SmartArt Graphics:
+合計 4
+drwx------ 2 is221042 student 4096  2月 28  2014 1041
+
+./AppData/Microsoft/Templates/LiveContent/15/User/SmartArt Graphics/1041:
+合計 0
+
+./AppData/Microsoft/UProof:
+合計 0
+-rwx--x--x 1 is221042 student 32  3月  4  2014 CUSTOM.DIC
+
+./AppData/Microsoft/VisualStudio:
+合計 4
+drwx------ 7 is221042 student 4096  3月 19  2014 11.0
+
+./AppData/Microsoft/VisualStudio/11.0:
+合計 156
+drwx------ 2 is221042 student  4096  3月 19  2014 1041
+drwx------ 3 is221042 student  4096  3月 19  2014 Aliases
+drwx------ 2 is221042 student  4096  3月  4  2014 AutoRecoverDat
+-rwx--x--x 1 is221042 student 16843  3月 10  2014 Debug.winprf_backup
+-rwx--x--x 1 is221042 student 16843  3月 10  2014 Debug_q41wfv4p.br3.winprf
+-rwx--x--x 1 is221042 student    12  3月 10  2014 Default.vsk
+-rwx--x--x 1 is221042 student 13625  3月 10  2014 Design.winprf_backup
+-rwx--x--x 1 is221042 student 18950  3月 11  2014 Design_nzcwqpcy.lzi.winprf
+-rwx--x--x 1 is221042 student 17049  3月 10  2014 NoToolWin.winprf_backup
+-rwx--x--x 1 is221042 student 17049  3月 10  2014 NoToolWin_sqelp3wi.je3.winprf
+-rwx--x--x 1 is221042 student  2560  3月 10  2014 ObjBrowEx.dat
+drwx------ 2 is221042 student  4096  3月 19  2014 ServerExplorer
+drwx------ 2 is221042 student  4096  3月  4  2014 Team Explorer
+-rwx--x--x 1 is221042 student    12  3月 10  2014 User.vsk
+-rwx--x--x 1 is221042 student 10134  3月 10  2014 VSProjectApplication.ico
+-rwx--x--x 1 is221042 student   105  3月  4  2014 Windows.index
+
+./AppData/Microsoft/VisualStudio/11.0/1041:
+合計 16
+-rwx--x--x 1 is221042 student 15195  3月 10  2014 CmdUI.PRF
+
+./AppData/Microsoft/VisualStudio/11.0/Aliases:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 1041
+
+./AppData/Microsoft/VisualStudio/11.0/Aliases/1041:
+合計 16
+-rwx--x--x 1 is221042 student 5610  3月 10  2014 aliases.ini
+-rwx--x--x 1 is221042 student 5610  3月 10  2014 defaultaliases.ini
+
+./AppData/Microsoft/VisualStudio/11.0/AutoRecoverDat:
+合計 0
+
+./AppData/Microsoft/VisualStudio/11.0/ServerExplorer:
+合計 4
+-rwx--x--x 1 is221042 student 3860  3月 10  2014 DefaultView.SEView
+
+./AppData/Microsoft/VisualStudio/11.0/Team Explorer:
+合計 0
+
+./AppData/Microsoft/Windows:
+合計 24
+drwx------ 2 is221042 student 4096  3月 19  2014 IECompatCache
+drwx------ 2 is221042 student 4096  3月 19  2014 IEDownloadHistory
+drwx------ 2 is221042 student 4096  3月 19  2014 IETldCache
+drwx------ 2 is221042 student 4096  3月 19  2014 Libraries
+drwx------ 2 is221042 student 4096  3月 19  2014 PrivacIE
+drwx------ 2 is221042 student 4096  2月 27  2014 Themes
+
+./AppData/Microsoft/Windows/IECompatCache:
+合計 340
+-rwx--x--x 1 is221042 student 344064  3月 10  2014 index.dat
+
+./AppData/Microsoft/Windows/IEDownloadHistory:
+合計 16
+-rwx--x--x 1 is221042 student 16384  3月  6  2014 index.dat
+
+./AppData/Microsoft/Windows/IETldCache:
+合計 260
+-rwx--x--x 1 is221042 student 262144  3月 10  2014 index.dat
+
+./AppData/Microsoft/Windows/Libraries:
+合計 20
+-rwx--x--x 1 is221042 student 3337  3月 10  2014 Documents.library-ms
+-rwx--x--x 1 is221042 student 3254  3月 10  2014 Music.library-ms
+-rwx--x--x 1 is221042 student 3289  3月 10  2014 Pictures.library-ms
+-rwx--x--x 1 is221042 student 3267  3月 10  2014 Videos.library-ms
+-rwx--x--x 1 is221042 student  274  3月 10  2014 desktop.ini
+
+./AppData/Microsoft/Windows/PrivacIE:
+合計 164
+-rwx--x--x 1 is221042 student 163840  3月 25  2014 index.dat
+
+./AppData/Microsoft/Windows/Themes:
+合計 0
+
+./AppData/Microsoft/Word:
+合計 4
+drwx------ 2 is221042 student 4096  3月 10  2014 STARTUP
+
+./AppData/Microsoft/Word/STARTUP:
+合計 0
+
+./AppData/Mozilla:
+合計 8
+drwx------ 2 is221042 student 4096  2月 27  2014 Extensions
+drwx------ 4 is221042 student 4096  3月 19  2014 Firefox
+
+./AppData/Mozilla/Extensions:
+合計 0
+
+./AppData/Mozilla/Firefox:
+合計 12
+drwx------ 2 is221042 student 4096  3月 19  2014 Crash Reports
+drwx------ 3 is221042 student 4096  3月 19  2014 Profiles
+-rwx--x--x 1 is221042 student  186  3月 10  2014 profiles.ini
+
+./AppData/Mozilla/Firefox/Crash Reports:
+合計 0
+-rwx--x--x 1 is221042 student 10  2月 27  2014 InstallTime20140131092626
+
+./AppData/Mozilla/Firefox/Profiles:
+合計 4
+drwx------ 6 is221042 student 4096  3月 19  2014 hqzfm99j.default
+
+./AppData/Mozilla/Firefox/Profiles/hqzfm99j.default:
+合計 13368
+drwx------ 2 is221042 student     4096  3月 19  2014 bookmarkbackups
+-rwx--x--x 1 is221042 student    65536  2月 27  2014 cert8.db
+-rwx--x--x 1 is221042 student      250  2月 27  2014 compatibility.ini
+-rwx--x--x 1 is221042 student   229376  2月 27  2014 content-prefs.sqlite
+-rwx--x--x 1 is221042 student   524288  2月 27  2014 cookies.sqlite
+-rwx--x--x 1 is221042 student    98304  2月 27  2014 downloads.sqlite
+-rwx--x--x 1 is221042 student      141  2月 27  2014 extensions.ini
+-rwx--x--x 1 is221042 student   458752  2月 27  2014 extensions.sqlite
+drwx------ 2 is221042 student     4096  2月 27  2014 healthreport
+-rwx--x--x 1 is221042 student  1146880  2月 27  2014 healthreport.sqlite
+-rwx--x--x 1 is221042 student    16384  2月 27  2014 key3.db
+-rwx--x--x 1 is221042 student     1168  2月 27  2014 localstore.rdf
+-rwx--x--x 1 is221042 student       57  2月 27  2014 marionette.log
+-rwx--x--x 1 is221042 student     3858  2月 27  2014 mimeTypes.rdf
+drwx------ 2 is221042 student     4096  2月 27  2014 minidumps
+-rwx--x--x 1 is221042 student        0  2月 27  2014 parent.lock
+-rwx--x--x 1 is221042 student    65536  2月 27  2014 permissions.sqlite
+-rwx--x--x 1 is221042 student 10485760  2月 27  2014 places.sqlite
+-rwx--x--x 1 is221042 student     7494  2月 27  2014 pluginreg.dat
+-rwx--x--x 1 is221042 student     3683  2月 27  2014 prefs.js
+-rwx--x--x 1 is221042 student    10205  2月 27  2014 search.json
+-rwx--x--x 1 is221042 student    16384  2月 27  2014 secmod.db
+-rwx--x--x 1 is221042 student      884  2月 27  2014 sessionstore.js
+-rwx--x--x 1 is221042 student   327680  2月 27  2014 signons.sqlite
+-rwx--x--x 1 is221042 student       29  2月 27  2014 times.json
+-rwx--x--x 1 is221042 student      154  2月 27  2014 urlclassifierkey3.txt
+drwx------ 2 is221042 student     4096  3月 19  2014 webapps
+-rwx--x--x 1 is221042 student    98304  2月 27  2014 webappsstore.sqlite
+
+./AppData/Mozilla/Firefox/Profiles/hqzfm99j.default/bookmarkbackups:
+合計 4
+-rwx--x--x 1 is221042 student 3299  2月 27  2014 bookmarks-2014-02-27.json
+
+./AppData/Mozilla/Firefox/Profiles/hqzfm99j.default/healthreport:
+合計 0
+
+./AppData/Mozilla/Firefox/Profiles/hqzfm99j.default/minidumps:
+合計 0
+
+./AppData/Mozilla/Firefox/Profiles/hqzfm99j.default/webapps:
+合計 0
+-rwx--x--x 1 is221042 student 2  2月 27  2014 webapps.json
+
+./AppData/NVIDIA:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 GLCache
+
+./AppData/NVIDIA/GLCache:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 f2e425af477d3c1e52c24dd30fb986b0
+
+./AppData/NVIDIA/GLCache/f2e425af477d3c1e52c24dd30fb986b0:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 c0fea2b23e6ab78c
+
+./AppData/NVIDIA/GLCache/f2e425af477d3c1e52c24dd30fb986b0/c0fea2b23e6ab78c:
+合計 8
+-rwx--x--x 1 is221042 student 1557  3月 10  2014 c8645b56f8aff003.bin
+-rwx--x--x 1 is221042 student  116  3月 10  2014 c8645b56f8aff003.toc
+
+./AppData/PrivacIE:
+合計 0
+
+./AppData/Subversion:
+合計 32
+-rwx--x--x 1 is221042 student 4400  2月 27  2014 README.txt
+drwx------ 6 is221042 student 4096  3月 19  2014 auth
+-rwx--x--x 1 is221042 student 7660  2月 27  2014 config
+-rwx--x--x 1 is221042 student 8487  2月 27  2014 servers
+
+./AppData/Subversion/auth:
+合計 16
+drwx------ 2 is221042 student 4096  2月 27  2014 svn.simple
+drwx------ 2 is221042 student 4096  2月 27  2014 svn.ssl.client-passphrase
+drwx------ 2 is221042 student 4096  2月 27  2014 svn.ssl.server
+drwx------ 2 is221042 student 4096  2月 27  2014 svn.username
+
+./AppData/Subversion/auth/svn.simple:
+合計 0
+
+./AppData/Subversion/auth/svn.ssl.client-passphrase:
+合計 0
+
+./AppData/Subversion/auth/svn.ssl.server:
+合計 0
+
+./AppData/Subversion/auth/svn.username:
+合計 0
+
+./AppData/Syunkai Product:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 Agent
+
+./AppData/Syunkai Product/Agent:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 Trace
+
+./AppData/Syunkai Product/Agent/Trace:
+合計 28
+-rwx--x--x 1 is221042 student  4301  3月 25  2014 BzMKRas.log
+-rwx--x--x 1 is221042 student  6445  3月 25  2014 BzTray.log
+-rwx--x--x 1 is221042 student 10074  3月 25  2014 UiCollector.log
+
+./AppData/Temporary Internet Files:
+合計 28
+drwx------ 2 is221042 student 4096  3月 19  2014 $RECYCLE.BIN
+drwx------ 8 is221042 student 4096  3月 19  2014 Content.IE5
+drwx------ 2 is221042 student 4096  3月 25  2014 Content.MSO
+drwx------ 2 is221042 student 4096  3月 10  2014 Content.Word
+drwx------ 4 is221042 student 4096  3月 19  2014 Low
+-rwx--x--x 1 is221042 student   67  3月 13  2014 desktop.ini
+drwx------ 3 is221042 student 4096  3月 19  2014 gegl-0.2
+
+./AppData/Temporary Internet Files/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  3月 13  2014 desktop.ini
+
+./AppData/Temporary Internet Files/Content.IE5:
+合計 656
+drwx------ 2 is221042 student   8192  3月 25  2014 6U0O6SJH
+drwx------ 2 is221042 student   8192  3月 25  2014 DGNUT5WV
+drwx------ 2 is221042 student   4096  3月 13  2014 KVVB46AU
+drwx------ 2 is221042 student   4096  3月 13  2014 N8EH71A4
+drwx------ 2 is221042 student   8192  3月 25  2014 XCC447H2
+drwx------ 2 is221042 student   8192  3月 25  2014 ZUIBI6DY
+-rwx--x--x 1 is221042 student     67  3月 13  2014 desktop.ini
+-rwx--x--x 1 is221042 student 622592  3月 25  2014 index.dat
+
+./AppData/Temporary Internet Files/Content.IE5/6U0O6SJH:
+合計 1700
+-rwx--x--x 1 is221042 student  49517  3月 13  2014 08239ec0-70fb-4f34-ad3b-6a1d4d9f4238_gm[1].jpg
+-rwx--x--x 1 is221042 student  32398  3月 13  2014 185932e4-163d-4e78-a5f6-df1b2bbc1e07_gm[1].jpg
+-rwx--x--x 1 is221042 student   7281  3月 13  2014 1e370bf9-34b7-4c74-953c-f22bf2290af8_gm[1].png
+-rwx--x--x 1 is221042 student   9693  3月 13  2014 2be1558b-1678-4f68-aa76-5f2903f82d63_gm[1].jpg
+-rwx--x--x 1 is221042 student  12713  3月 13  2014 311d8487-d7aa-4d98-b07e-5c935c54f46c_gm[1].jpg
+-rwx--x--x 1 is221042 student  34083  3月 13  2014 41d04554-58c0-494d-b06f-c8b01a0f5b2c_gm[1].jpg
+-rwx--x--x 1 is221042 student  12968  3月 13  2014 6c13c8fe-89bf-46fe-91a3-2f411fbf32dc_gm[1].jpg
+-rwx--x--x 1 is221042 student  13597  3月 13  2014 8c6fa4d5-dff3-42ea-89a5-f3a61af68e14_gm[1].jpg
+-rwx--x--x 1 is221042 student  10887  3月 13  2014 8e4de788-4bf5-409d-b520-513ffc1b8264_gm[1].jpg
+-rwx--x--x 1 is221042 student    827  3月 25  2014 928029071[1].htm
+-rwx--x--x 1 is221042 student 147151  3月 25  2014 IE9CompatViewList[1].xml
+-rwx--x--x 1 is221042 student   8463  3月 25  2014 SpryTabbedPanels[1].css
+-rwx--x--x 1 is221042 student  11759  3月 25  2014 SpryTabbedPanels[1].js
+-rwx--x--x 1 is221042 student  25530  3月 13  2014 TimeOut[1].htm
+-rwx--x--x 1 is221042 student    250  3月 25  2014 add[1].gif
+-rwx--x--x 1 is221042 student    692  3月 25  2014 apply_g[1].gif
+-rwx--x--x 1 is221042 student 333501  3月 13  2014 az307127_vo_msecnd_net[2].js
+-rwx--x--x 1 is221042 student  54519  3月 13  2014 b794299f-e554-47f0-8699-57c1515160ab_gm[1].jpg
+-rwx--x--x 1 is221042 student  31259  3月 25  2014 banner_auhikari_wcam[1].jpg
+-rwx--x--x 1 is221042 student  44329  3月 25  2014 bg_contactbox[1].png
+-rwx--x--x 1 is221042 student    169  3月 25  2014 bg_headerline[1].png
+-rwx--x--x 1 is221042 student  45614  3月 25  2014 bg_isbox02[1].png
+-rwx--x--x 1 is221042 student  46879  3月 25  2014 bg_isbox[1].png
+-rwx--x--x 1 is221042 student   1269  3月 25  2014 bg_isbox_line2[1].gif
+-rwx--x--x 1 is221042 student  44925  3月 25  2014 bg_servicebox03[1].png
+-rwx--x--x 1 is221042 student   1973  3月 25  2014 bg_servicebox05[1].png
+-rwx--x--x 1 is221042 student  44294  3月 25  2014 bg_supportbox[1].png
+-rwx--x--x 1 is221042 student  49861  3月 25  2014 btn_bizlink[1].png
+-rwx--x--x 1 is221042 student   8929  3月 13  2014 c2b60d82-4a7d-4676-a86d-0eec616755db_gm[1].jpg
+-rwx--x--x 1 is221042 student 135439  3月 25  2014 cb=gapi[1].js
+-rwx--x--x 1 is221042 student    104  3月 13  2014 count[1].js
+-rwx--x--x 1 is221042 student  20761  3月 13  2014 e17d414b-b4b6-4bd7-83b6-8f643b9bbe14_gm[1].jpg
+-rwx--x--x 1 is221042 student   3130  3月 25  2014 extlinkfast[1].htm
+-rwx--x--x 1 is221042 student  44231  3月 13  2014 f21f5fca-173b-43f0-9fe6-b7238921b681_gm[1].jpg
+-rwx--x--x 1 is221042 student   5430  3月 25  2014 favicon[1].ico
+-rwx--x--x 1 is221042 student    209  3月 25  2014 ico_arrow_green[1].png
+-rwx--x--x 1 is221042 student    186  3月 25  2014 ico_arrow_white[1].png
+-rwx--x--x 1 is221042 student   1512  3月 13  2014 icon_msn[1].png
+-rwx--x--x 1 is221042 student   5057  3月 25  2014 image[1].jpg
+-rwx--x--x 1 is221042 student   4453  3月 25  2014 img_servicebox_sbauhikari[1].png
+-rwx--x--x 1 is221042 student   7415  3月 25  2014 img_servicebox_sblte[1].png
+-rwx--x--x 1 is221042 student  20770  3月 25  2014 img_servicebox_sbwimax2plus[1].png
+-rwx--x--x 1 is221042 student  32929  3月 25  2014 img_servicebox_sbwimax_02[1].png
+-rwx--x--x 1 is221042 student   4464  3月 13  2014 logo-ie11Cyan[1].png
+-rwx--x--x 1 is221042 student   3476  3月 13  2014 logo-ie9cyan[1].png
+-rwx--x--x 1 is221042 student   7240  3月 25  2014 mail[1].htm
+-rwx--x--x 1 is221042 student  29887  3月 25  2014 nav_logo170_hr[1].png
+-rwx--x--x 1 is221042 student  25642  3月 13  2014 pinnedsites[1].htm
+-rwx--x--x 1 is221042 student    291  3月 25  2014 script[1].htm
+-rwx--x--x 1 is221042 student    823  3月 25  2014 search[1]
+-rwx--x--x 1 is221042 student    882  3月 25  2014 search[2]
+-rwx--x--x 1 is221042 student    984  3月 25  2014 search[3]
+-rwx--x--x 1 is221042 student    162  3月 13  2014 searchproviders[1]
+-rwx--x--x 1 is221042 student   3438  3月 25  2014 style[1].css
+-rwx--x--x 1 is221042 student  14088  3月 25  2014 tit_contactbox[1].png
+-rwx--x--x 1 is221042 student   5509  3月 25  2014 tit_maineyecatch[1].png
+-rwx--x--x 1 is221042 student   9582  3月 25  2014 top[1].css
+-rwx--x--x 1 is221042 student  16670  3月 13  2014 tpl[1].htm
+-rwx--x--x 1 is221042 student   4354  3月 25  2014 txt_contactbox[1].png
+-rwx--x--x 1 is221042 student   3597  3月 25  2014 txt_hcbanner[1].png
+
+./AppData/Temporary Internet Files/Content.IE5/DGNUT5WV:
+合計 1424
+-rwx--x--x 1 is221042 student  38952  3月 13  2014 0dd927e2-5bcb-445d-b825-e4efac11acd5_gm[1].jpg
+-rwx--x--x 1 is221042 student  41962  3月 13  2014 0fc5445b-b9c1-45b0-8d30-8aae6511d4b5_gm[1].jpg
+-rwx--x--x 1 is221042 student    799  3月 25  2014 1057772892[1].htm
+-rwx--x--x 1 is221042 student 146668  3月 13  2014 14f1837f-cb03-4a19-9f8b-ac66254a6ee0_gm[1].png
+-rwx--x--x 1 is221042 student  67735  3月 25  2014 2fb72421efeff19b[1].js
+-rwx--x--x 1 is221042 student  22664  3月 13  2014 408bd164-26b9-43f4-8356-6856fa0ba1dd_gm[1].jpg
+-rwx--x--x 1 is221042 student  37210  3月 13  2014 56f2a766-8fdd-457d-a643-d23087f6df02_gm[1].jpg
+-rwx--x--x 1 is221042 student   8725  3月 13  2014 625d10ff-9918-4151-8482-88e2402e9f1b_gm[1].jpg
+-rwx--x--x 1 is221042 student  22510  3月 13  2014 62e307a8-ec7c-4228-ab38-df1aee5e1892_gm[1].jpg
+-rwx--x--x 1 is221042 student  22664  3月 13  2014 974f004c-33a8-4efc-8d76-19f65a509342_gm[1].jpg
+-rwx--x--x 1 is221042 student    506  3月 13  2014 DownloadAddOn[1].xml
+-rwx--x--x 1 is221042 student  24058  3月 13  2014 LEdxGgtB9cN[1].htm
+-rwx--x--x 1 is221042 student   7240  3月 25  2014 a17612b8[1].htm
+-rwx--x--x 1 is221042 student   2350  3月 25  2014 aclk[1].htm
+-rwx--x--x 1 is221042 student   1155  3月 13  2014 ao_back_arrow[1].png
+-rwx--x--x 1 is221042 student  68337  3月 13  2014 b0074fc4-04ef-48cb-8e0c-698164b9258f_gm[1].png
+-rwx--x--x 1 is221042 student  22664  3月 13  2014 b445c2b9-5df7-40da-9742-0a9ea4efd379_gm[1].jpg
+-rwx--x--x 1 is221042 student  32022  3月 25  2014 banner_wimax2plus[1].jpg
+-rwx--x--x 1 is221042 student   5970  3月 25  2014 bn_fmbanner03[1].gif
+-rwx--x--x 1 is221042 student  10988  3月 25  2014 bn_fmbanner04[1].gif
+-rwx--x--x 1 is221042 student   3555  3月 25  2014 bn_fmbanner[1].gif
+-rwx--x--x 1 is221042 student   5087  3月 25  2014 bn_footerbanner02[1].gif
+-rwx--x--x 1 is221042 student   3491  3月 25  2014 bn_footerbanner03[1].gif
+-rwx--x--x 1 is221042 student   2782  3月 25  2014 bn_footerbanner04[1].gif
+-rwx--x--x 1 is221042 student   2419  3月 25  2014 bn_footerbanner[1].gif
+-rwx--x--x 1 is221042 student   1226  3月 25  2014 btn_servicebox_more04[1].png
+-rwx--x--x 1 is221042 student  14278  3月 13  2014 c44edb9b-6d19-45ae-a66a-d7d0bc6abbe4_gm[1].jpg
+-rwx--x--x 1 is221042 student    186  3月 25  2014 checkmark2[1].png
+-rwx--x--x 1 is221042 student  32138  3月 25  2014 cis_aichi-pu_ac_jp[1].htm
+-rwx--x--x 1 is221042 student   2269  3月 25  2014 colorbox[1].css
+-rwx--x--x 1 is221042 student  10284  3月 25  2014 common[1].css
+-rwx--x--x 1 is221042 student   3204  3月 25  2014 common[1].js
+-rwx--x--x 1 is221042 student   1405  3月 25  2014 default[1].css
+-rwx--x--x 1 is221042 student  23499  3月 13  2014 f159abe1-6ad5-4d94-a18f-bffd5c11d20e_gm[1].jpg
+-rwx--x--x 1 is221042 student   4286  3月 25  2014 favicon[1].ico
+-rwx--x--x 1 is221042 student    160  3月 13  2014 fwlink[1].htm
+-rwx--x--x 1 is221042 student 143925  3月 25  2014 google_co_jp[1].htm
+-rwx--x--x 1 is221042 student    899  3月 13  2014 howtopin1[1].png
+-rwx--x--x 1 is221042 student   1958  3月 25  2014 ico_isbox_maintenance[1].png
+-rwx--x--x 1 is221042 student   2019  3月 25  2014 ico_isbox_supportdesk[1].png
+-rwx--x--x 1 is221042 student    643  3月 25  2014 ico_lpobnlist_arrow_left[1].png
+-rwx--x--x 1 is221042 student    601  3月 25  2014 ico_lpobnlist_arrow_right[1].png
+-rwx--x--x 1 is221042 student   1583  3月 25  2014 ico_servicebox_home[1].png
+-rwx--x--x 1 is221042 student   1481  3月 13  2014 icon_download_now_exit[1].png
+-rwx--x--x 1 is221042 student    537  3月 13  2014 icon_learn_more_exit[1].png
+-rwx--x--x 1 is221042 student    968  3月 13  2014 icon_learn_more_go[1].png
+-rwx--x--x 1 is221042 student   4305  3月 25  2014 loading[1].gif
+-rwx--x--x 1 is221042 student  14022  3月 25  2014 logo11w[1].png
+-rwx--x--x 1 is221042 student   7570  3月 25  2014 mail2[1].htm
+-rwx--x--x 1 is221042 student   6177  3月 25  2014 mail2ffb658da[1].htm
+-rwx--x--x 1 is221042 student   6157  3月 25  2014 owl.carousel[1].css
+-rwx--x--x 1 is221042 student   2440  3月 25  2014 owl.theme[1].css
+-rwx--x--x 1 is221042 student 295337  3月 25  2014 rs=AItRSTO0KOooRm4ji9t4XC3MMz5fAqSL4g[1].js
+-rwx--x--x 1 is221042 student    269  3月 25  2014 script[1].htm
+-rwx--x--x 1 is221042 student    893  3月 25  2014 search[1]
+-rwx--x--x 1 is221042 student    770  3月 13  2014 searchbutton[1].png
+-rwx--x--x 1 is221042 student   1156  3月 13  2014 star-addons-on[1].png
+-rwx--x--x 1 is221042 student    387  3月 25  2014 tia[1].png
+-rwx--x--x 1 is221042 student   1429  3月 25  2014 top[1].js
+-rwx--x--x 1 is221042 student  53637  3月 25  2014 v1_800b6037[1].png
+
+./AppData/Temporary Internet Files/Content.IE5/KVVB46AU:
+合計 0
+
+./AppData/Temporary Internet Files/Content.IE5/N8EH71A4:
+合計 0
+
+./AppData/Temporary Internet Files/Content.IE5/XCC447H2:
+合計 1372
+-rwx--x--x 1 is221042 student  13277  3月 13  2014 0b449cf4-16f8-46f2-ae25-cbfda123b754_gm[1].jpg
+-rwx--x--x 1 is221042 student   9693  3月 13  2014 243433b4-495c-46d3-b41f-c8b18eb81d93_gm[1].jpg
+-rwx--x--x 1 is221042 student  21602  3月 13  2014 28ac3ed4-fc6b-4fde-ae25-0504cfe86d40_gm[1].jpg
+-rwx--x--x 1 is221042 student   8192  3月 13  2014 372ddd40-b6eb-4328-90c7-cd69a7beb1ce_gm[1].jpg
+-rwx--x--x 1 is221042 student  36868  3月 13  2014 653106b2-5426-4e57-8ac8-92ee84472b84_gm[1].jpg
+-rwx--x--x 1 is221042 student  48301  3月 13  2014 7610f3fb-3eaa-4098-a43d-6e865d714d3c_gm[1].jpg
+-rwx--x--x 1 is221042 student   9915  3月 13  2014 79ab5360-57ec-4935-b23c-e9e6a562a480_gm[1].jpg
+-rwx--x--x 1 is221042 student  16384  3月 13  2014 86c1109a-4ae3-4bcc-a48b-8d937e21e036_gm[1].jpg
+-rwx--x--x 1 is221042 student  29048  3月 13  2014 Accelerators[1].png
+-rwx--x--x 1 is221042 student  40914  3月 13  2014 SegoeL-Lat[1].woff
+-rwx--x--x 1 is221042 student  42222  3月 13  2014 SegoeRg-Lat[1].woff
+-rwx--x--x 1 is221042 student  53191  3月 13  2014 Toolbars[1].png
+-rwx--x--x 1 is221042 student   9877  3月 13  2014 afbb13fe-7980-48c2-9f29-b50991c45048_gm[1].jpg
+-rwx--x--x 1 is221042 student   9063  3月 13  2014 b4aa0e52-9b61-457f-8b3c-979dc96a9455_gm[1].jpg
+-rwx--x--x 1 is221042 student  22054  3月 25  2014 banner_lte[1].jpg
+-rwx--x--x 1 is221042 student  27758  3月 25  2014 banner_wimax01[1].jpg
+-rwx--x--x 1 is221042 student   2066  3月 25  2014 bbb_v5b[1].css
+-rwx--x--x 1 is221042 student  43836  3月 25  2014 bg_servicebox04[1].png
+-rwx--x--x 1 is221042 student     82  3月 25  2014 browser_ie[1].css
+-rwx--x--x 1 is221042 student   2379  3月 25  2014 btn_bbb_end[1].gif
+-rwx--x--x 1 is221042 student   1157  3月 25  2014 btn_servicebox_more02[1].png
+-rwx--x--x 1 is221042 student   1232  3月 25  2014 btn_servicebox_more03[1].png
+-rwx--x--x 1 is221042 student   1834  3月 25  2014 chrome-48[1].png
+-rwx--x--x 1 is221042 student   9054  3月 13  2014 dragit[1].png
+-rwx--x--x 1 is221042 student    255  3月 25  2014 dust[1].gif
+-rwx--x--x 1 is221042 student  34494  3月 13  2014 favicon[1].ico
+-rwx--x--x 1 is221042 student   5430  3月 25  2014 favicon[2].ico
+-rwx--x--x 1 is221042 student  27621  3月 13  2014 fb2e94e2-3183-42d1-a8be-6fdd0d0650ae_gm[1].jpg
+-rwx--x--x 1 is221042 student    170  3月 25  2014 fold[1].gif
+-rwx--x--x 1 is221042 student     43  3月 25  2014 gfl[1].gif
+-rwx--x--x 1 is221042 student 143923  3月 25  2014 google_co_jp[1].htm
+-rwx--x--x 1 is221042 student    219  3月 25  2014 google_com[1].htm
+-rwx--x--x 1 is221042 student   1783  3月 25  2014 header_bbblogo[1].gif
+-rwx--x--x 1 is221042 student   1206  3月 25  2014 header_glbnvb_denshi[1].gif
+-rwx--x--x 1 is221042 student   1361  3月 25  2014 header_glbnvb_tetsuduki[1].gif
+-rwx--x--x 1 is221042 student    965  3月 25  2014 header_glbnvb_webmail[1].gif
+-rwx--x--x 1 is221042 student   1833  3月 25  2014 header_right[1].gif
+-rwx--x--x 1 is221042 student    208  3月 25  2014 ico_arrow_blue[1].png
+-rwx--x--x 1 is221042 student   1117  3月 25  2014 ico_isbox_campaign[1].png
+-rwx--x--x 1 is221042 student   1247  3月 25  2014 ico_isbox_new[1].png
+-rwx--x--x 1 is221042 student   3134  3月 25  2014 ico_logo[1].png
+-rwx--x--x 1 is221042 student   1894  3月 25  2014 ico_servicebox_mobile[1].png
+-rwx--x--x 1 is221042 student    990  3月 25  2014 ico_servicebox_option[1].png
+-rwx--x--x 1 is221042 student    818  3月 13  2014 icon_bing1[1].png
+-rwx--x--x 1 is221042 student  35943  3月 25  2014 img_maineyecatch02[1].png
+-rwx--x--x 1 is221042 student  39482  3月 25  2014 img_maineyecatch[1].png
+-rwx--x--x 1 is221042 student  50606  3月 25  2014 img_servicebox_sbfixedip[1].png
+-rwx--x--x 1 is221042 student    205  3月 25  2014 mail[1].gif
+-rwx--x--x 1 is221042 student    392  3月 25  2014 print[1].css
+-rwx--x--x 1 is221042 student    558  3月 25  2014 proxy[1].pac
+-rwx--x--x 1 is221042 student     43  3月 25  2014 px[1].gif
+-rwx--x--x 1 is221042 student 145356  3月 25  2014 rs=AItRSTOSnupr7Q58CinJHgfAe_cPyk086Q[1].js
+-rwx--x--x 1 is221042 student 106298  3月 25  2014 s[1]
+-rwx--x--x 1 is221042 student   4827  3月 25  2014 s_retargeting[1].js
+-rwx--x--x 1 is221042 student    348  3月 25  2014 script[2].htm
+-rwx--x--x 1 is221042 student    305  3月 25  2014 script[3].htm
+-rwx--x--x 1 is221042 student    285  3月 25  2014 script[4].htm
+-rwx--x--x 1 is221042 student    285  3月 25  2014 script[5].htm
+-rwx--x--x 1 is221042 student    378  3月 25  2014 script[6].htm
+-rwx--x--x 1 is221042 student    885  3月 25  2014 search[1]
+-rwx--x--x 1 is221042 student      0  3月 25  2014 search[1].js
+-rwx--x--x 1 is221042 student    900  3月 25  2014 search[2]
+-rwx--x--x 1 is221042 student     43  3月 25  2014 spacer[1].gif
+-rwx--x--x 1 is221042 student   1144  3月 13  2014 star-addons-off[1].png
+-rwx--x--x 1 is221042 student   1130  3月 13  2014 star-off[1].png
+-rwx--x--x 1 is221042 student   3876  3月 25  2014 tit_supportbox[1].png
+-rwx--x--x 1 is221042 student  85267  3月 13  2014 tweet_button.1393899192[1].htm
+
+./AppData/Temporary Internet Files/Content.IE5/ZUIBI6DY:
+合計 2980
+-rwx--x--x 1 is221042 student  16384  3月 13  2014 3de32074-bc5f-4a09-a9cf-acca206cac7b_gm[1].jpg
+-rwx--x--x 1 is221042 student  16384  3月 13  2014 45632a29-9203-45f0-83dd-6fbc95bcdb22_gm[1].jpg
+-rwx--x--x 1 is221042 student  19504  3月 13  2014 5bd3e5c6-3eaa-4745-9935-4cc6e9475b18_gm[1].jpg
+-rwx--x--x 1 is221042 student  16384  3月 13  2014 66ad46be-336b-46f0-8982-ec7c66347f4a_gm[1].jpg
+-rwx--x--x 1 is221042 student  64347  3月 13  2014 68826749-83d6-48dc-ae2b-a2bd04f78f7c_gm[1].png
+-rwx--x--x 1 is221042 student  16384  3月 13  2014 84105617-cbcc-4ba7-b2fb-10380394c75e_gm[1].jpg
+-rwx--x--x 1 is221042 student  47915  3月 13  2014 8d8adc8e-1459-48e1-b341-22b99f51b403_gm[1].jpg
+-rwx--x--x 1 is221042 student  24058  3月 13  2014 LEdxGgtB9cN[1].htm
+-rwx--x--x 1 is221042 student   1329  3月 13  2014 LVx-xkvaJ0b[1].png
+-rwx--x--x 1 is221042 student  63523  3月 13  2014 SearchProviders[1].png
+-rwx--x--x 1 is221042 student  52316  3月 13  2014 WebSlices[1].png
+-rwx--x--x 1 is221042 student 190963  3月 13  2014 WhatAreAddons[1].png
+-rwx--x--x 1 is221042 student 119420  3月 13  2014 addons[1].htm
+-rwx--x--x 1 is221042 student 106566  3月 13  2014 addons[2].htm
+-rwx--x--x 1 is221042 student  77065  3月 13  2014 addtpls[1].png
+-rwx--x--x 1 is221042 student 163737  3月 13  2014 all[1].js
+-rwx--x--x 1 is221042 student  34260  3月 25  2014 asahi-net_jp[2].htm
+-rwx--x--x 1 is221042 student    161  3月 25  2014 bg_isbox_line[1].png
+-rwx--x--x 1 is221042 student  13227  3月 25  2014 bg_lpobnlist[1].png
+-rwx--x--x 1 is221042 student  47954  3月 25  2014 bg_servicebox[1].png
+-rwx--x--x 1 is221042 student      0  3月 25  2014 blank[1].htm
+-rwx--x--x 1 is221042 student  10049  3月 25  2014 bnr_gakuwari_282[1].gif
+-rwx--x--x 1 is221042 student   3491  3月 25  2014 btn_contactbox[1].png
+-rwx--x--x 1 is221042 student    695  3月 25  2014 btn_search[1].png
+-rwx--x--x 1 is221042 student   1265  3月 25  2014 btn_servicebox_more[1].png
+-rwx--x--x 1 is221042 student  24112  3月 13  2014 cf3c186b-ae58-45a8-bc56-45d40a41da21_gm[1].jpg
+-rwx--x--x 1 is221042 student   9125  3月 25  2014 conversion[1].js
+-rwx--x--x 1 is221042 student   2566  3月 25  2014 copyback[1].gif
+-rwx--x--x 1 is221042 student  22664  3月 13  2014 d2c45907-143b-43d1-b525-74b49a8eaf88_gm[1].jpg
+-rwx--x--x 1 is221042 student  34547  3月 13  2014 db2f9aa6-0a5c-4451-943c-67b049419166_gm[1].jpg
+-rwx--x--x 1 is221042 student  39535  3月 25  2014 dc[1].js
+-rwx--x--x 1 is221042 student   5430  3月 13  2014 favicon[1].ico
+-rwx--x--x 1 is221042 student    154  3月 25  2014 ico_dot[1].png
+-rwx--x--x 1 is221042 student    169  3月 25  2014 ico_greaterthan[1].png
+-rwx--x--x 1 is221042 student    398  3月 25  2014 ico_isbox_more[1].png
+-rwx--x--x 1 is221042 student  43056  3月 25  2014 ico_lpobnlist[1].png
+-rwx--x--x 1 is221042 student   1086  3月 25  2014 ico_pickup[1].png
+-rwx--x--x 1 is221042 student  13014  3月 25  2014 img_servicebox_sbftth[1].png
+-rwx--x--x 1 is221042 student  93107  3月 25  2014 jquery-1.10.2.min[1].js
+-rwx--x--x 1 is221042 student  29855  3月 25  2014 jquery.colorbox[1].js
+-rwx--x--x 1 is221042 student   2918  3月 25  2014 jquery.cookie[1].js
+-rwx--x--x 1 is221042 student   8097  3月 25  2014 jquery.easing.1.3[1].js
+-rwx--x--x 1 is221042 student   3303  3月 25  2014 mail219eeb984[1].htm
+-rwx--x--x 1 is221042 student   7590  3月 25  2014 mail2b6847d38[1].htm
+-rwx--x--x 1 is221042 student 830408  3月 25  2014 mplus-2p-bold[1].woff
+-rwx--x--x 1 is221042 student  16217  3月 25  2014 nav_logo170[1].png
+-rwx--x--x 1 is221042 student  39377  3月 25  2014 owl.carousel[1].js
+-rwx--x--x 1 is221042 student 381039  3月 25  2014 rs=AItRSTO0KOooRm4ji9t4XC3MMz5fAqSL4g[1].js
+-rwx--x--x 1 is221042 student   7112  3月 25  2014 rs=AItRSTO0KOooRm4ji9t4XC3MMz5fAqSL4g[2].js
+-rwx--x--x 1 is221042 student    332  3月 25  2014 script[1].htm
+-rwx--x--x 1 is221042 student    362  3月 25  2014 script[2].htm
+-rwx--x--x 1 is221042 student    898  3月 25  2014 search[1]
+-rwx--x--x 1 is221042 student    986  3月 25  2014 search[2]
+-rwx--x--x 1 is221042 student   1126  3月 13  2014 star-on[1].png
+-rwx--x--x 1 is221042 student   1312  3月 25  2014 titleback2[1].gif
+-rwx--x--x 1 is221042 student   1452  3月 25  2014 titleback[1].gif
+-rwx--x--x 1 is221042 student    397  3月 25  2014 top_bg[1].gif
+-rwx--x--x 1 is221042 student   2466  3月 25  2014 txt_contactbox02[1].png
+-rwx--x--x 1 is221042 student   3400  3月 25  2014 txt_contactbox03[1].png
+-rwx--x--x 1 is221042 student   7366  3月 25  2014 txt_contactbox04[1].png
+-rwx--x--x 1 is221042 student  96656  3月 13  2014 widgets[1].js
+
+./AppData/Temporary Internet Files/Content.MSO:
+合計 0
+
+./AppData/Temporary Internet Files/Content.Word:
+合計 0
+
+./AppData/Temporary Internet Files/Low:
+合計 12
+drwx------ 2 is221042 student 4096  3月 13  2014 AntiPhishing
+drwx------ 6 is221042 student 4096  3月 19  2014 Content.IE5
+-rwx--x--x 1 is221042 student   67  3月 13  2014 desktop.ini
+
+./AppData/Temporary Internet Files/Low/AntiPhishing:
+合計 0
+
+./AppData/Temporary Internet Files/Low/Content.IE5:
+合計 56
+drwx------ 2 is221042 student  4096  3月 13  2014 1XSR65Z9
+drwx------ 2 is221042 student  4096  3月 13  2014 KTIEOIMA
+drwx------ 2 is221042 student  4096  3月 13  2014 NOJ20S35
+drwx------ 2 is221042 student  4096  3月 13  2014 TF6QMA5X
+-rwx--x--x 1 is221042 student    67  3月 13  2014 desktop.ini
+-rwx--x--x 1 is221042 student 32768  3月 13  2014 index.dat
+
+./AppData/Temporary Internet Files/Low/Content.IE5/1XSR65Z9:
+合計 0
+
+./AppData/Temporary Internet Files/Low/Content.IE5/KTIEOIMA:
+合計 0
+
+./AppData/Temporary Internet Files/Low/Content.IE5/NOJ20S35:
+合計 0
+
+./AppData/Temporary Internet Files/Low/Content.IE5/TF6QMA5X:
+合計 0
+
+./AppData/Temporary Internet Files/gegl-0.2:
+合計 4
+drwx------ 2 is221042 student 4096  3月  4  2014 swap
+
+./AppData/Temporary Internet Files/gegl-0.2/swap:
+合計 0
+
+./AppData/VMware:
+合計 0
+
+./AppData/dirA:
+合計 0
+
+./AppData/directory:
+合計 0
+
+./AppData/ghc:
+合計 0
+
+./AppData/inkscape:
+合計 56
+-rwx--x--x 1 is221042 student  4143  3月 10  2014 extension-errors.log
+drwx------ 2 is221042 student  4096  3月  4  2014 extensions
+drwx------ 2 is221042 student  4096  3月  4  2014 icons
+drwx------ 2 is221042 student  4096  3月  4  2014 keys
+drwx------ 2 is221042 student  4096  3月  4  2014 palettes
+-rwx--x--x 1 is221042 student 22791  3月 10  2014 preferences.xml
+drwx------ 2 is221042 student  4096  3月  4  2014 templates
+
+./AppData/inkscape/extensions:
+合計 0
+
+./AppData/inkscape/icons:
+合計 0
+
+./AppData/inkscape/keys:
+合計 0
+
+./AppData/inkscape/palettes:
+合計 0
+
+./AppData/inkscape/templates:
+合計 0
+
+./Contacts:
+合計 224
+drwx------ 2 is221042 student  4096  3月 19  2014 $RECYCLE.BIN
+-rwx--x--x 1 is221042 student 68380  3月 25  2014 FJSE TEST31 (1).contact
+-rwx--x--x 1 is221042 student 68380  3月 19  2014 FJSE TEST31.contact
+-rwx--x--x 1 is221042 student 68382  3月  7  2014 administrator.contact
+-rwx--x--x 1 is221042 student   412  3月 10  2014 desktop.ini
+
+./Contacts/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./Documents:
+合計 40
+drwx------ 2 is221042 student 4096  5月 20 11:08 $RECYCLE.BIN
+-rwx--x--x 1 is221042 student 2234  3月 25  2014 Default.rdp
+drwx------ 3 is221042 student 4096  4月 18 10:36 Java
+drwx------ 3 is221042 student 4096  3月 19  2014 LEGO Creations
+drwx------ 2 is221042 student 4096  3月  6  2014 MATLAB
+drwx------ 2 is221042 student 4096  2月 27  2014 Office �Υ������� �ƥ�ץ졼��
+drwx------ 2 is221042 student 4096  5月 13 11:59 Office のカスタム テンプレート
+drwx------ 3 is221042 student 4096  3月 19  2014 OneNote �Ρ��ȥ֥å�
+drwx------ 9 is221042 student 4096  3月 19  2014 Visual Studio 2012
+-rwx--x--x 1 is221042 student  402  3月 10  2014 desktop.ini
+
+./Documents/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./Documents/Java:
+合計 4
+drwx------ 2 is221042 student 4096  4月 18 10:36 Backup
+
+./Documents/Java/Backup:
+合計 0
+
+./Documents/LEGO Creations:
+合計 4
+drwx------ 4 is221042 student 4096  3月 19  2014 MINDSTORMS Projects
+
+./Documents/LEGO Creations/MINDSTORMS Projects:
+合計 8
+drwx------ 3 is221042 student 4096  3月 19  2014 Profiles
+drwx------ 2 is221042 student 4096  3月 19  2014 System
+
+./Documents/LEGO Creations/MINDSTORMS Projects/Profiles:
+合計 12
+drwx------ 3 is221042 student 4096  3月 19  2014 �������
+-rwx--x--x 1 is221042 student 6146  3月 10  2014 pluginreg.dat
+
+./Documents/LEGO Creations/MINDSTORMS Projects/Profiles/�������:
+合計 8
+drwx------ 3 is221042 student 4096  3月 19  2014 Blocks
+-rwx--x--x 1 is221042 student  445  3月 10  2014 settings.ini
+
+./Documents/LEGO Creations/MINDSTORMS Projects/Profiles/�������/Blocks:
+合計 4
+drwx------ 2 is221042 student 4096  2月 27  2014 �ޥ��֥��å�
+
+./Documents/LEGO Creations/MINDSTORMS Projects/Profiles/�������/Blocks/�ޥ��֥��å�:
+合計 0
+
+./Documents/LEGO Creations/MINDSTORMS Projects/System:
+合計 4
+-rwx--x--x 1 is221042 student  60  3月 10  2014 BrickInfo.txt
+-rwx--x--x 1 is221042 student 302  3月 10  2014 Error Log.txt
+
+./Documents/MATLAB:
+合計 0
+
+./Documents/Office �Υ������� �ƥ�ץ졼��:
+合計 0
+
+./Documents/Office のカスタム テンプレート:
+合計 0
+
+./Documents/OneNote �Ρ��ȥ֥å�:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 �ޥ� �Ρ��ȥ֥å�
+
+./Documents/OneNote �Ρ��ȥ֥å�/�ޥ� �Ρ��ȥ֥å�:
+合計 424
+-rwx--x--x 1 is221042 student   6176  2月 28  2014 �����Ƥ���Ρ��ȥ֥å�.onetoc2
+-rwx--x--x 1 is221042 student 421088  2月 28  2014 �����å� �Ρ���.one
+
+./Documents/Visual Studio 2012:
+合計 28
+drwx------ 2 is221042 student 4096  3月 10  2014 ArchitectureExplorer
+drwx------ 5 is221042 student 4096  3月 19  2014 Backup Files
+drwx------ 9 is221042 student 4096  3月 19  2014 Code Snippets
+drwx------ 3 is221042 student 4096  3月 19  2014 Projects
+drwx------ 2 is221042 student 4096  3月 19  2014 Settings
+drwx------ 2 is221042 student 4096  2月 27  2014 StartPages
+drwx------ 4 is221042 student 4096  3月 19  2014 Templates
+
+./Documents/Visual Studio 2012/ArchitectureExplorer:
+合計 0
+
+./Documents/Visual Studio 2012/Backup Files:
+合計 12
+drwx------ 2 is221042 student 4096  3月 10  2014 ConsoleApplication1
+drwx------ 2 is221042 student 4096  3月 10  2014 ConsoleApplication2
+drwx------ 2 is221042 student 4096  3月 10  2014 ConsoleApplication3
+
+./Documents/Visual Studio 2012/Backup Files/ConsoleApplication1:
+合計 0
+
+./Documents/Visual Studio 2012/Backup Files/ConsoleApplication2:
+合計 0
+
+./Documents/Visual Studio 2012/Backup Files/ConsoleApplication3:
+合計 0
+
+./Documents/Visual Studio 2012/Code Snippets:
+合計 28
+drwx------ 3 is221042 student 4096  3月 19  2014 JavaScript
+drwx------ 3 is221042 student 4096  3月 19  2014 SQL_SSDT
+drwx------ 3 is221042 student 4096  3月 19  2014 Visual Basic
+drwx------ 3 is221042 student 4096  3月 19  2014 Visual C#
+drwx------ 3 is221042 student 4096  3月 19  2014 Visual C++
+drwx------ 4 is221042 student 4096  3月 19  2014 Visual Web Developer
+drwx------ 3 is221042 student 4096  3月 19  2014 XML
+
+./Documents/Visual Studio 2012/Code Snippets/JavaScript:
+合計 4
+drwx------ 2 is221042 student 4096  2月 27  2014 My Code Snippets
+
+./Documents/Visual Studio 2012/Code Snippets/JavaScript/My Code Snippets:
+合計 0
+
+./Documents/Visual Studio 2012/Code Snippets/SQL_SSDT:
+合計 4
+drwx------ 2 is221042 student 4096  2月 27  2014 My Code Snippets
+
+./Documents/Visual Studio 2012/Code Snippets/SQL_SSDT/My Code Snippets:
+合計 0
+
+./Documents/Visual Studio 2012/Code Snippets/Visual Basic:
+合計 4
+drwx------ 2 is221042 student 4096  2月 27  2014 My Code Snippets
+
+./Documents/Visual Studio 2012/Code Snippets/Visual Basic/My Code Snippets:
+合計 0
+
+./Documents/Visual Studio 2012/Code Snippets/Visual C#:
+合計 4
+drwx------ 2 is221042 student 4096  2月 27  2014 My Code Snippets
+
+./Documents/Visual Studio 2012/Code Snippets/Visual C#/My Code Snippets:
+合計 0
+
+./Documents/Visual Studio 2012/Code Snippets/Visual C++:
+合計 4
+drwx------ 2 is221042 student 4096  2月 27  2014 My Code Snippets
+
+./Documents/Visual Studio 2012/Code Snippets/Visual C++/My Code Snippets:
+合計 0
+
+./Documents/Visual Studio 2012/Code Snippets/Visual Web Developer:
+合計 8
+drwx------ 2 is221042 student 4096  2月 27  2014 My CSS Snippets
+drwx------ 2 is221042 student 4096  2月 27  2014 My HTML Snippets
+
+./Documents/Visual Studio 2012/Code Snippets/Visual Web Developer/My CSS Snippets:
+合計 0
+
+./Documents/Visual Studio 2012/Code Snippets/Visual Web Developer/My HTML Snippets:
+合計 0
+
+./Documents/Visual Studio 2012/Code Snippets/XML:
+合計 4
+drwx------ 2 is221042 student 4096  2月 27  2014 My Xml Snippets
+
+./Documents/Visual Studio 2012/Code Snippets/XML/My Xml Snippets:
+合計 0
+
+./Documents/Visual Studio 2012/Projects:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 ConsoleApplication1
+
+./Documents/Visual Studio 2012/Projects/ConsoleApplication1:
+合計 2792
+drwx------ 2 is221042 student    4096  3月 19  2014 ConsoleApplication1
+-rwx--x--x 1 is221042 student 2818048  3月 10  2014 ConsoleApplication1.sdf
+-rwx--x--x 1 is221042 student     924  3月 10  2014 ConsoleApplication1.sln
+-rwx--x--x 1 is221042 student   20480  3月 10  2014 ConsoleApplication1.v11.suo
+
+./Documents/Visual Studio 2012/Projects/ConsoleApplication1/ConsoleApplication1:
+合計 32
+-rwx--x--x 1 is221042 student  180  3月 10  2014 ConsoleApplication1.cpp
+-rwx--x--x 1 is221042 student 4546  3月 10  2014 ConsoleApplication1.vcxproj
+-rwx--x--x 1 is221042 student 1423  3月 10  2014 ConsoleApplication1.vcxproj.filters
+-rwx--x--x 1 is221042 student 2408  3月 10  2014 ReadMe.txt
+-rwx--x--x 1 is221042 student  301  3月 10  2014 stdafx.cpp
+-rwx--x--x 1 is221042 student  347  3月 10  2014 stdafx.h
+-rwx--x--x 1 is221042 student  371  3月 10  2014 targetver.h
+
+./Documents/Visual Studio 2012/Settings:
+合計 388
+-rwx--x--x 1 is221042 student 189351  7月 26  2012 CurrentSettings-2014-02-19.vssettings
+-rwx--x--x 1 is221042 student 195589  3月 10  2014 CurrentSettings.vssettings
+
+./Documents/Visual Studio 2012/StartPages:
+合計 0
+
+./Documents/Visual Studio 2012/Templates:
+合計 8
+drwx------ 8 is221042 student 4096  3月 19  2014 ItemTemplates
+drwx------ 8 is221042 student 4096  3月 19  2014 ProjectTemplates
+
+./Documents/Visual Studio 2012/Templates/ItemTemplates:
+合計 24
+drwx------ 2 is221042 student 4096  2月 27  2014 ��ǽ��ĥ
+drwx------ 2 is221042 student 4096  2月 27  2014 JavaScript
+drwx------ 2 is221042 student 4096  2月 27  2014 Visual Basic
+drwx------ 2 is221042 student 4096  2月 27  2014 Visual C#
+drwx------ 2 is221042 student 4096  2月 27  2014 Visual C++ �ץ���������
+drwx------ 2 is221042 student 4096  2月 27  2014 Visual Web Developer
+
+./Documents/Visual Studio 2012/Templates/ItemTemplates/��ǽ��ĥ:
+合計 0
+
+./Documents/Visual Studio 2012/Templates/ItemTemplates/JavaScript:
+合計 0
+
+./Documents/Visual Studio 2012/Templates/ItemTemplates/Visual Basic:
+合計 0
+
+./Documents/Visual Studio 2012/Templates/ItemTemplates/Visual C#:
+合計 0
+
+./Documents/Visual Studio 2012/Templates/ItemTemplates/Visual C++ �ץ���������:
+合計 0
+
+./Documents/Visual Studio 2012/Templates/ItemTemplates/Visual Web Developer:
+合計 0
+
+./Documents/Visual Studio 2012/Templates/ProjectTemplates:
+合計 24
+drwx------ 2 is221042 student 4096  2月 27  2014 ��ǽ��ĥ
+drwx------ 2 is221042 student 4096  2月 27  2014 JavaScript
+drwx------ 2 is221042 student 4096  2月 27  2014 Visual Basic
+drwx------ 2 is221042 student 4096  2月 27  2014 Visual C#
+drwx------ 2 is221042 student 4096  2月 27  2014 Visual C++ �ץ���������
+drwx------ 2 is221042 student 4096  2月 27  2014 Visual Web Developer
+
+./Documents/Visual Studio 2012/Templates/ProjectTemplates/��ǽ��ĥ:
+合計 0
+
+./Documents/Visual Studio 2012/Templates/ProjectTemplates/JavaScript:
+合計 0
+
+./Documents/Visual Studio 2012/Templates/ProjectTemplates/Visual Basic:
+合計 0
+
+./Documents/Visual Studio 2012/Templates/ProjectTemplates/Visual C#:
+合計 0
+
+./Documents/Visual Studio 2012/Templates/ProjectTemplates/Visual C++ �ץ���������:
+合計 0
+
+./Documents/Visual Studio 2012/Templates/ProjectTemplates/Visual Web Developer:
+合計 0
+
+./Downloads:
+合計 2755168
+drwx------ 2 is221042 student       4096  3月 19  2014 $RECYCLE.BIN
+-rwx------ 1 is221042 student      16250  5月 13 10:39 1_2022配布用.xlsx
+-rwx------ 1 is221042 student    1169854  5月 13 10:39 2022PBL1テーマ3_1.pdf
+-rwx------ 1 is221042 student    2754905  5月 20 11:16 2022PBL1テーマ3_2.pdf
+-rwx------ 1 is221042 student      26983  5月 20 11:17 2_2022配布用.xlsx
+-rwx------ 1 is221042 student      28609  5月 20 16:25 PBL2.xlsx
+-rwx--x--x 1 is221042 student        282  3月 10  2014 desktop.ini
+-rwx------ 1 is221042 student    1380936  4月 18 12:04 rufus-3.18.exe
+-rwx------ 1 is221042 student 2804809728  4月 18 12:07 ubuntu-ja-20.04.1-desktop-amd64.iso
+
+./Downloads/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./Favorites:
+合計 28
+drwx------ 2 is221042 student 4096  3月 19  2014 $RECYCLE.BIN
+drwx------ 2 is221042 student 4096  3月 19  2014 Links
+drwx------ 2 is221042 student 4096  3月 19  2014 Links for ����
+drwx------ 2 is221042 student 4096  3月 19  2014 MSN �� Web ������
+drwx------ 2 is221042 student 4096  3月 19  2014 Microsoft �� Web ������
+drwx------ 2 is221042 student 4096  3月 19  2014 Windows Live
+-rwx--x--x 1 is221042 student  402  3月 10  2014 desktop.ini
+
+./Favorites/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./Favorites/Links:
+合計 12
+-rwx--x--x 1 is221042 student 302  3月  7  2014 �������᥵����.url
+-rwx--x--x 1 is221042 student 226  3月 13  2014 Web ���饤�� �����꡼.url
+-rwx--x--x 1 is221042 student  80  2月 23  2014 desktop.ini
+
+./Favorites/Links for ����:
+合計 8
+-rwx--x--x 1 is221042 student 144  3月  7  2014 �ޥ��������եȤˤ�륻�����ƥ�����.url
+-rwx--x--x 1 is221042 student 188  2月 23  2014 desktop.ini
+
+./Favorites/MSN �� Web ������:
+合計 24
+-rwx--x--x 1 is221042 student 133  3月  7  2014 MSN ���󥿡��ƥ�����.url
+-rwx--x--x 1 is221042 student 133  3月  7  2014 MSN ���ݡ���.url
+-rwx--x--x 1 is221042 student 133  3月  7  2014 MSN ��ư��.url
+-rwx--x--x 1 is221042 student 133  3月  7  2014 MSN �ۡ���.url
+-rwx--x--x 1 is221042 student 133  3月  7  2014 MSN �ޥ͡�.url
+-rwx--x--x 1 is221042 student 133  3月  7  2014 MSN �˥塼��.url
+
+./Favorites/Microsoft �� Web ������:
+合計 24
+-rwx--x--x 1 is221042 student 133  3月  7  2014 �ޥ��������ե� �����ȿ������.url
+-rwx--x--x 1 is221042 student 133  3月  7  2014 �ޥ��������ե� �ۡ���.url
+-rwx--x--x 1 is221042 student 133  3月  7  2014 Internet Explorer �ۡ���.url
+-rwx--x--x 1 is221042 student 134  3月  7  2014 Microsoft Store.url
+-rwx--x--x 1 is221042 student 133  3月  7  2014 Microsoft at Home.url
+-rwx--x--x 1 is221042 student 133  3月  7  2014 Microsoft at Work.url
+
+./Favorites/Windows Live:
+合計 12
+-rwx--x--x 1 is221042 student 133  3月  7  2014 Windows Live ���ڡ���.url
+-rwx--x--x 1 is221042 student 133  3月  7  2014 Windows Live �᡼��.url
+-rwx--x--x 1 is221042 student 133  3月  7  2014 Windows Live Gallery.url
+
+./FireFox:
+合計 14620
+drwx------ 18 is221042 student     4096  3月 19  2014 Cache
+drwx------  2 is221042 student     4096  3月 19  2014 OfflineCache
+-rwx--x--x  1 is221042 student        1  3月 10  2014 _CACHE_CLEAN_
+-rwx--x--x  1 is221042 student   524288  3月  3  2014 addons.sqlite
+-rwx--x--x  1 is221042 student   197168  3月  3  2014 addons.sqlite-journal
+-rwx--x--x  1 is221042 student   114414  3月  3  2014 blocklist.xml
+drwx------  2 is221042 student     4096  3月 19  2014 bookmarkbackups
+-rwx--x--x  1 is221042 student    98304  5月 20 11:08 cert8.db
+-rwx--x--x  1 is221042 student      230  3月 10  2014 compatibility.ini
+-rwx--x--x  1 is221042 student   229376  3月  3  2014 content-prefs.sqlite
+-rwx--x--x  1 is221042 student   524288  3月 10  2014 cookies.sqlite
+-rwx--x--x  1 is221042 student    98304  3月  3  2014 downloads.sqlite
+-rwx--x--x  1 is221042 student      141  3月 10  2014 extensions.ini
+-rwx--x--x  1 is221042 student   458752  3月 10  2014 extensions.sqlite
+-rwx--x--x  1 is221042 student   196608  3月 10  2014 formhistory.sqlite
+drwx------  2 is221042 student     4096  2月 11  2014 healthreport
+-rwx--x--x  1 is221042 student  1146880  3月 10  2014 healthreport.sqlite
+drwx------  3 is221042 student     4096  3月 19  2014 indexedDB
+drwx------  2 is221042 student     4096  3月 19  2014 jumpListCache
+-rwx--x--x  1 is221042 student    16384  5月 20 11:08 key3.db
+-rwx--x--x  1 is221042 student     2619  3月 10  2014 localstore.rdf
+-rwx--x--x  1 is221042 student       57  3月 10  2014 marionette.log
+-rwx--x--x  1 is221042 student     3812  2月 11  2014 mimeTypes.rdf
+drwx------  2 is221042 student     4096  2月 11  2014 minidumps
+-rwx--x--x  1 is221042 student        0  3月 10  2014 parent.lock
+-rwx--x--x  1 is221042 student    65536  3月  3  2014 permissions.sqlite
+-rwx--x--x  1 is221042 student 10485760  3月 10  2014 places.sqlite
+-rwx--x--x  1 is221042 student      361  3月 10  2014 pluginreg.dat
+-rwx--x--x  1 is221042 student     7055  6月 28  2019 prefs.js
+drwx------  2 is221042 student     4096  3月 19  2014 safebrowsing
+-rwx--x--x  1 is221042 student    10205  3月 10  2014 search.json
+-rwx--x--x  1 is221042 student    16384  2月 11  2014 secmod.db
+-rwx--x--x  1 is221042 student    80482  3月 10  2014 sessionstore.bak
+-rwx--x--x  1 is221042 student    78293  3月 10  2014 sessionstore.js
+-rwx--x--x  1 is221042 student   327680  2月 11  2014 signons.sqlite
+drwx------  2 is221042 student     4096  3月 19  2014 startupCache
+drwx------  2 is221042 student     4096  3月 19  2014 thumbnails
+-rwx--x--x  1 is221042 student       29  2月 11  2014 times.json
+-rwx--x--x  1 is221042 student      154  3月 10  2014 urlclassifierkey3.txt
+drwx------  2 is221042 student     4096  3月 19  2014 webapps
+-rwx--x--x  1 is221042 student    98304  3月  4  2014 webappsstore.sqlite
+
+./FireFox/Cache:
+合計 12452
+drwx------ 13 is221042 student    4096  3月 19  2014 0
+drwx------ 19 is221042 student    4096  3月 19  2014 1
+drwx------ 10 is221042 student    4096  3月 19  2014 2
+drwx------  6 is221042 student    4096  3月 19  2014 3
+drwx------ 10 is221042 student    4096  3月 19  2014 4
+drwx------  9 is221042 student    4096  3月 19  2014 5
+drwx------  9 is221042 student    4096  3月 19  2014 6
+drwx------ 10 is221042 student    4096  3月 19  2014 7
+drwx------ 11 is221042 student    4096  3月 19  2014 8
+drwx------ 13 is221042 student    4096  3月 19  2014 9
+drwx------  8 is221042 student    4096  3月 19  2014 A
+drwx------ 10 is221042 student    4096  3月 19  2014 B
+drwx------ 10 is221042 student    4096  3月 19  2014 C
+drwx------ 11 is221042 student    4096  3月 19  2014 D
+drwx------ 12 is221042 student    4096  3月 19  2014 E
+drwx------ 11 is221042 student    4096  3月 19  2014 F
+-rwx--x--x  1 is221042 student 4194304  3月 10  2014 _CACHE_001_
+-rwx--x--x  1 is221042 student 4194304  3月 10  2014 _CACHE_002_
+-rwx--x--x  1 is221042 student 4194304  3月 10  2014 _CACHE_003_
+-rwx--x--x  1 is221042 student   33044  3月 10  2014 _CACHE_MAP_
+
+./FireFox/Cache/0:
+合計 44
+drwx------ 2 is221042 student 4096  3月 19  2014 01
+drwx------ 2 is221042 student 4096  3月 19  2014 2B
+drwx------ 2 is221042 student 4096  3月 19  2014 2E
+drwx------ 2 is221042 student 4096  3月 19  2014 34
+drwx------ 2 is221042 student 4096  3月 19  2014 3F
+drwx------ 2 is221042 student 4096  3月 19  2014 46
+drwx------ 2 is221042 student 4096  3月 19  2014 68
+drwx------ 2 is221042 student 4096  3月 19  2014 7F
+drwx------ 2 is221042 student 4096  3月 19  2014 83
+drwx------ 2 is221042 student 4096  3月 19  2014 B9
+drwx------ 2 is221042 student 4096  3月 19  2014 D3
+
+./FireFox/Cache/0/01:
+合計 44
+-rwx--x--x 1 is221042 student 38399  3月  3  2014 68755d01
+
+./FireFox/Cache/0/2B:
+合計 36
+-rwx--x--x 1 is221042 student 31144  3月  3  2014 8D582d01
+
+./FireFox/Cache/0/2E:
+合計 72
+-rwx--x--x 1 is221042 student 69011  3月  3  2014 80AA7d01
+
+./FireFox/Cache/0/34:
+合計 132
+-rwx--x--x 1 is221042 student 128351  3月  3  2014 0C070d01
+
+./FireFox/Cache/0/3F:
+合計 40
+-rwx--x--x 1 is221042 student 33862  3月  3  2014 22A20d01
+
+./FireFox/Cache/0/46:
+合計 48
+-rwx--x--x 1 is221042 student 42362  3月  3  2014 00F73d01
+
+./FireFox/Cache/0/68:
+合計 20
+-rwx--x--x 1 is221042 student 19670  3月  3  2014 17741d01
+
+./FireFox/Cache/0/7F:
+合計 60
+-rwx--x--x 1 is221042 student 55435  3月  3  2014 4DBC5d01
+
+./FireFox/Cache/0/83:
+合計 396
+-rwx--x--x 1 is221042 student 401201  3月  3  2014 E6CD1d01
+
+./FireFox/Cache/0/B9:
+合計 88
+-rwx--x--x 1 is221042 student 84928  3月  3  2014 F8A2Ed01
+
+./FireFox/Cache/0/D3:
+合計 36
+-rwx--x--x 1 is221042 student 29146  3月  3  2014 46375d01
+
+./FireFox/Cache/1:
+合計 68
+drwx------ 2 is221042 student 4096  3月 19  2014 14
+drwx------ 2 is221042 student 4096  3月 19  2014 37
+drwx------ 2 is221042 student 4096  3月 19  2014 3A
+drwx------ 2 is221042 student 4096  3月 19  2014 4A
+drwx------ 2 is221042 student 4096  3月 19  2014 50
+drwx------ 2 is221042 student 4096  3月 19  2014 60
+drwx------ 2 is221042 student 4096  3月 19  2014 77
+drwx------ 2 is221042 student 4096  3月 19  2014 7A
+drwx------ 2 is221042 student 4096  3月 19  2014 8F
+drwx------ 2 is221042 student 4096  3月 19  2014 9B
+drwx------ 2 is221042 student 4096  3月 19  2014 9C
+drwx------ 2 is221042 student 4096  3月 19  2014 BC
+drwx------ 2 is221042 student 4096  3月 19  2014 C6
+drwx------ 2 is221042 student 4096  3月 19  2014 CE
+drwx------ 2 is221042 student 4096  3月 19  2014 D5
+drwx------ 2 is221042 student 4096  3月 19  2014 EB
+drwx------ 2 is221042 student 4096  3月 19  2014 FB
+
+./FireFox/Cache/1/14:
+合計 20
+-rwx--x--x 1 is221042 student 16729  3月  3  2014 2D235d01
+
+./FireFox/Cache/1/37:
+合計 48
+-rwx--x--x 1 is221042 student 43202  3月 10  2014 A1206d01
+
+./FireFox/Cache/1/3A:
+合計 28
+-rwx--x--x 1 is221042 student 23048  3月  3  2014 EC8E4d01
+
+./FireFox/Cache/1/4A:
+合計 80
+-rwx--x--x 1 is221042 student 77164  3月  3  2014 BC5D6d01
+
+./FireFox/Cache/1/50:
+合計 20
+-rwx--x--x 1 is221042 student 19228  3月  3  2014 8682Ad01
+
+./FireFox/Cache/1/60:
+合計 284
+-rwx--x--x 1 is221042 student 282779  3月  3  2014 35C67d01
+
+./FireFox/Cache/1/77:
+合計 72
+-rwx--x--x 1 is221042 student 66121  3月  3  2014 06D38d01
+
+./FireFox/Cache/1/7A:
+合計 36
+-rwx--x--x 1 is221042 student 31055  3月  3  2014 3BE6Bd01
+
+./FireFox/Cache/1/8F:
+合計 36
+-rwx--x--x 1 is221042 student 29887  3月  3  2014 74CE6d01
+
+./FireFox/Cache/1/9B:
+合計 28
+-rwx--x--x 1 is221042 student 22502  3月  3  2014 8834Ad01
+
+./FireFox/Cache/1/9C:
+合計 60
+-rwx--x--x 1 is221042 student 55532  3月  3  2014 252A6d01
+
+./FireFox/Cache/1/BC:
+合計 36
+-rwx--x--x 1 is221042 student 32333  3月  4  2014 2672Dd01
+
+./FireFox/Cache/1/C6:
+合計 32
+-rwx--x--x 1 is221042 student 26630  3月  3  2014 CD8CEd01
+
+./FireFox/Cache/1/CE:
+合計 60
+-rwx--x--x 1 is221042 student 55531  3月  3  2014 DE0BBd01
+
+./FireFox/Cache/1/D5:
+合計 20
+-rwx--x--x 1 is221042 student 18503  3月  3  2014 A89CDd01
+
+./FireFox/Cache/1/EB:
+合計 72
+-rwx--x--x 1 is221042 student 66361  3月  3  2014 06FA9d01
+
+./FireFox/Cache/1/FB:
+合計 176
+-rwx--x--x 1 is221042 student  57029  3月  3  2014 0D0FEd01
+-rwx--x--x 1 is221042 student 114414  3月  3  2014 368BEd01
+
+./FireFox/Cache/2:
+合計 32
+drwx------ 2 is221042 student 4096  3月 19  2014 16
+drwx------ 2 is221042 student 4096  3月 19  2014 31
+drwx------ 2 is221042 student 4096  3月 19  2014 62
+drwx------ 2 is221042 student 4096  3月  4  2014 80
+drwx------ 2 is221042 student 4096  3月 19  2014 8D
+drwx------ 2 is221042 student 4096  3月 19  2014 8E
+drwx------ 2 is221042 student 4096  3月 19  2014 A7
+drwx------ 2 is221042 student 4096  3月 19  2014 C7
+
+./FireFox/Cache/2/16:
+合計 60
+-rwx--x--x 1 is221042 student 55435  3月  3  2014 B65D4d01
+
+./FireFox/Cache/2/31:
+合計 40
+-rwx--x--x 1 is221042 student 33186  3月  3  2014 4B66Ed01
+
+./FireFox/Cache/2/62:
+合計 28
+-rwx--x--x 1 is221042 student 23129  3月  3  2014 D308Ad01
+
+./FireFox/Cache/2/80:
+合計 0
+
+./FireFox/Cache/2/8D:
+合計 76
+-rwx--x--x 1 is221042 student 70638  3月  4  2014 7CF9Fd01
+
+./FireFox/Cache/2/8E:
+合計 116
+-rwx--x--x 1 is221042 student 111898  3月  3  2014 377E1d01
+
+./FireFox/Cache/2/A7:
+合計 48
+-rwx--x--x 1 is221042 student 41747  3月  3  2014 09452d01
+
+./FireFox/Cache/2/C7:
+合計 60
+-rwx--x--x 1 is221042 student 55923  3月  3  2014 E2CF0d01
+
+./FireFox/Cache/3:
+合計 16
+drwx------ 2 is221042 student 4096  3月 19  2014 2A
+drwx------ 2 is221042 student 4096  3月  4  2014 3F
+drwx------ 2 is221042 student 4096  3月 19  2014 C8
+drwx------ 2 is221042 student 4096  3月 19  2014 CD
+
+./FireFox/Cache/3/2A:
+合計 172
+-rwx--x--x 1 is221042 student 170112  3月  3  2014 24F65d01
+
+./FireFox/Cache/3/3F:
+合計 0
+
+./FireFox/Cache/3/C8:
+合計 272
+-rwx--x--x 1 is221042 student 271183  3月 10  2014 6579Bd01
+
+./FireFox/Cache/3/CD:
+合計 52
+-rwx--x--x 1 is221042 student 45218  3月  3  2014 ABA08d01
+
+./FireFox/Cache/4:
+合計 32
+drwx------ 2 is221042 student 4096  3月 19  2014 1E
+drwx------ 2 is221042 student 4096  3月 19  2014 37
+drwx------ 2 is221042 student 4096  3月 19  2014 50
+drwx------ 2 is221042 student 4096  3月 19  2014 5A
+drwx------ 2 is221042 student 4096  3月 19  2014 61
+drwx------ 2 is221042 student 4096  3月 19  2014 99
+drwx------ 2 is221042 student 4096  3月 19  2014 A6
+drwx------ 2 is221042 student 4096  3月 19  2014 ED
+
+./FireFox/Cache/4/1E:
+合計 164
+-rwx--x--x 1 is221042 student 160641  3月  3  2014 270D5d01
+
+./FireFox/Cache/4/37:
+合計 60
+-rwx--x--x 1 is221042 student 53977  3月  3  2014 E5BFDd01
+
+./FireFox/Cache/4/50:
+合計 56
+-rwx--x--x 1 is221042 student 50318  3月  4  2014 985E3d01
+
+./FireFox/Cache/4/5A:
+合計 60
+-rwx--x--x 1 is221042 student 55435  3月  3  2014 3925Cd01
+
+./FireFox/Cache/4/61:
+合計 64
+-rwx--x--x 1 is221042 student 59632  3月  3  2014 03554d01
+
+./FireFox/Cache/4/99:
+合計 52
+-rwx--x--x 1 is221042 student 47287  3月  3  2014 ECA2Dd01
+
+./FireFox/Cache/4/A6:
+合計 76
+-rwx--x--x 1 is221042 student 72598  3月 10  2014 0DCE1d01
+
+./FireFox/Cache/4/ED:
+合計 120
+-rwx--x--x 1 is221042 student 115462  3月  3  2014 F06B9d01
+
+./FireFox/Cache/5:
+合計 28
+drwx------ 2 is221042 student 4096  3月 19  2014 03
+drwx------ 2 is221042 student 4096  3月 19  2014 12
+drwx------ 2 is221042 student 4096  3月 19  2014 1C
+drwx------ 2 is221042 student 4096  3月 19  2014 3A
+drwx------ 2 is221042 student 4096  3月 19  2014 59
+drwx------ 2 is221042 student 4096  3月 19  2014 82
+drwx------ 2 is221042 student 4096  3月 19  2014 A9
+
+./FireFox/Cache/5/03:
+合計 36
+-rwx--x--x 1 is221042 student 32138  3月  3  2014 B019Dd01
+
+./FireFox/Cache/5/12:
+合計 28
+-rwx--x--x 1 is221042 student 20806  3月  3  2014 76A17d01
+
+./FireFox/Cache/5/1C:
+合計 68
+-rwx--x--x 1 is221042 student 64733  3月  4  2014 1B55Cd01
+
+./FireFox/Cache/5/3A:
+合計 32
+-rwx--x--x 1 is221042 student 25655  3月  3  2014 6F63Ed01
+
+./FireFox/Cache/5/59:
+合計 60
+-rwx--x--x 1 is221042 student 55435  3月  3  2014 8E7FEd01
+
+./FireFox/Cache/5/82:
+合計 112
+-rwx--x--x 1 is221042 student 107978  3月 10  2014 4CB43d01
+
+./FireFox/Cache/5/A9:
+合計 100
+-rwx--x--x 1 is221042 student 95442  3月  3  2014 90621d01
+
+./FireFox/Cache/6:
+合計 28
+drwx------ 2 is221042 student 4096  3月 19  2014 75
+drwx------ 2 is221042 student 4096  3月 19  2014 A2
+drwx------ 2 is221042 student 4096  3月 19  2014 B6
+drwx------ 2 is221042 student 4096  3月 19  2014 BB
+drwx------ 2 is221042 student 4096  3月 19  2014 DD
+drwx------ 2 is221042 student 4096  3月 19  2014 E4
+drwx------ 2 is221042 student 4096  3月 19  2014 F7
+
+./FireFox/Cache/6/75:
+合計 48
+-rwx--x--x 1 is221042 student 43053  3月 10  2014 B977Bd01
+
+./FireFox/Cache/6/A2:
+合計 20
+-rwx--x--x 1 is221042 student 20102  3月  3  2014 A011Ad01
+
+./FireFox/Cache/6/B6:
+合計 152
+-rwx--x--x 1 is221042 student 149331  3月  3  2014 47D72d01
+
+./FireFox/Cache/6/BB:
+合計 36
+-rwx--x--x 1 is221042 student 32138  2月 27  2014 C2FB3d01
+
+./FireFox/Cache/6/DD:
+合計 60
+-rwx--x--x 1 is221042 student 55435  3月  3  2014 BD318d01
+
+./FireFox/Cache/6/E4:
+合計 56
+-rwx--x--x 1 is221042 student 49177  3月  4  2014 FF90Ed01
+
+./FireFox/Cache/6/F7:
+合計 68
+-rwx--x--x 1 is221042 student 64388  3月  3  2014 3F68Fd01
+
+./FireFox/Cache/7:
+合計 32
+drwx------ 2 is221042 student 4096  3月 19  2014 01
+drwx------ 2 is221042 student 4096  3月 19  2014 49
+drwx------ 2 is221042 student 4096  3月 19  2014 68
+drwx------ 2 is221042 student 4096  3月 19  2014 88
+drwx------ 2 is221042 student 4096  3月 19  2014 91
+drwx------ 2 is221042 student 4096  3月 19  2014 B9
+drwx------ 2 is221042 student 4096  3月 19  2014 DC
+drwx------ 2 is221042 student 4096  3月 19  2014 F6
+
+./FireFox/Cache/7/01:
+合計 20
+-rwx--x--x 1 is221042 student 17815  3月 10  2014 FF690d01
+
+./FireFox/Cache/7/49:
+合計 76
+-rwx--x--x 1 is221042 student 70405  3月  4  2014 8C718d01
+
+./FireFox/Cache/7/68:
+合計 40
+-rwx--x--x 1 is221042 student 33430  3月  3  2014 A535Ed01
+
+./FireFox/Cache/7/88:
+合計 56
+-rwx--x--x 1 is221042 student 50370  3月  3  2014 C17DEd01
+
+./FireFox/Cache/7/91:
+合計 116
+-rwx--x--x 1 is221042 student 113930  3月 10  2014 B225Cd01
+
+./FireFox/Cache/7/B9:
+合計 68
+-rwx--x--x 1 is221042 student 63153  3月  3  2014 96094d01
+
+./FireFox/Cache/7/DC:
+合計 36
+-rwx--x--x 1 is221042 student 29064  3月  3  2014 063E4d01
+
+./FireFox/Cache/7/F6:
+合計 116
+-rwx--x--x 1 is221042 student 113600  3月  3  2014 C7445d01
+
+./FireFox/Cache/8:
+合計 36
+drwx------ 2 is221042 student 4096  3月 19  2014 0B
+drwx------ 2 is221042 student 4096  3月 19  2014 31
+drwx------ 2 is221042 student 4096  3月 19  2014 36
+drwx------ 2 is221042 student 4096  3月 19  2014 37
+drwx------ 2 is221042 student 4096  3月 19  2014 4D
+drwx------ 2 is221042 student 4096  3月 19  2014 88
+drwx------ 2 is221042 student 4096  3月 19  2014 CB
+drwx------ 2 is221042 student 4096  3月 19  2014 D4
+drwx------ 2 is221042 student 4096  3月 19  2014 E1
+
+./FireFox/Cache/8/0B:
+合計 116
+-rwx--x--x 1 is221042 student 113419  3月  4  2014 8324Cd01
+
+./FireFox/Cache/8/31:
+合計 68
+-rwx--x--x 1 is221042 student 62844  3月  3  2014 E2B0Cd01
+
+./FireFox/Cache/8/36:
+合計 20
+-rwx--x--x 1 is221042 student 17734  3月  3  2014 7AA13d01
+
+./FireFox/Cache/8/37:
+合計 40
+-rwx--x--x 1 is221042 student 34550  3月  3  2014 1DFC2d01
+
+./FireFox/Cache/8/4D:
+合計 68
+-rwx--x--x 1 is221042 student 63564  3月  3  2014 3ED69d01
+
+./FireFox/Cache/8/88:
+合計 32
+-rwx--x--x 1 is221042 student 24681  3月  3  2014 6C152d01
+
+./FireFox/Cache/8/CB:
+合計 56
+-rwx--x--x 1 is221042 student 50896  3月  3  2014 E38C1d01
+
+./FireFox/Cache/8/D4:
+合計 48
+-rwx--x--x 1 is221042 student 43341  3月 10  2014 9FC61d01
+
+./FireFox/Cache/8/E1:
+合計 80
+-rwx--x--x 1 is221042 student 74348  3月  3  2014 EA705d01
+
+./FireFox/Cache/9:
+合計 44
+drwx------ 2 is221042 student 4096  3月 19  2014 04
+drwx------ 2 is221042 student 4096  3月 19  2014 17
+drwx------ 2 is221042 student 4096  3月 19  2014 4A
+drwx------ 2 is221042 student 4096  3月 19  2014 69
+drwx------ 2 is221042 student 4096  3月 19  2014 82
+drwx------ 2 is221042 student 4096  3月 19  2014 84
+drwx------ 2 is221042 student 4096  3月 19  2014 A8
+drwx------ 2 is221042 student 4096  3月 19  2014 C2
+drwx------ 2 is221042 student 4096  3月 19  2014 D2
+drwx------ 2 is221042 student 4096  3月 19  2014 E5
+drwx------ 2 is221042 student 4096  3月 19  2014 F7
+
+./FireFox/Cache/9/04:
+合計 136
+-rwx--x--x 1 is221042 student 132966  3月  3  2014 1245Ed01
+
+./FireFox/Cache/9/17:
+合計 20
+-rwx--x--x 1 is221042 student 18003  3月  3  2014 2B309d01
+
+./FireFox/Cache/9/4A:
+合計 20
+-rwx--x--x 1 is221042 student 16477  3月  3  2014 AE1B5d01
+
+./FireFox/Cache/9/69:
+合計 44
+-rwx--x--x 1 is221042 student 38691  3月  3  2014 86B90d01
+
+./FireFox/Cache/9/82:
+合計 36
+-rwx--x--x 1 is221042 student 29611  3月  4  2014 FBFBAd01
+
+./FireFox/Cache/9/84:
+合計 40
+-rwx--x--x 1 is221042 student 34257  3月  3  2014 14CACd01
+
+./FireFox/Cache/9/A8:
+合計 36
+-rwx--x--x 1 is221042 student 31652  3月  3  2014 8B4E3d01
+
+./FireFox/Cache/9/C2:
+合計 200
+-rwx--x--x 1 is221042 student 198225  3月  4  2014 D0292d01
+
+./FireFox/Cache/9/D2:
+合計 44
+-rwx--x--x 1 is221042 student 37956  3月  4  2014 EAF8Dd01
+
+./FireFox/Cache/9/E5:
+合計 28
+-rwx--x--x 1 is221042 student 21327  3月  3  2014 875CFd01
+
+./FireFox/Cache/9/F7:
+合計 68
+-rwx--x--x 1 is221042 student 62844  3月  3  2014 DAD0Cd01
+
+./FireFox/Cache/A:
+合計 24
+drwx------ 2 is221042 student 4096  3月 19  2014 07
+drwx------ 2 is221042 student 4096  3月 19  2014 42
+drwx------ 2 is221042 student 4096  3月 19  2014 4D
+drwx------ 2 is221042 student 4096  3月 19  2014 AF
+drwx------ 2 is221042 student 4096  3月 19  2014 C8
+drwx------ 2 is221042 student 4096  3月 19  2014 EB
+
+./FireFox/Cache/A/07:
+合計 44
+-rwx--x--x 1 is221042 student 40902  3月  4  2014 FBCABd01
+
+./FireFox/Cache/A/42:
+合計 52
+-rwx--x--x 1 is221042 student 45564  3月  4  2014 E0273d01
+
+./FireFox/Cache/A/4D:
+合計 28
+-rwx--x--x 1 is221042 student 23129  3月  3  2014 850E9d01
+
+./FireFox/Cache/A/AF:
+合計 68
+-rwx--x--x 1 is221042 student 63639  3月  3  2014 FDFFDd01
+
+./FireFox/Cache/A/C8:
+合計 28
+-rwx--x--x 1 is221042 student 24251  3月 10  2014 7BF95d01
+
+./FireFox/Cache/A/EB:
+合計 20
+-rwx--x--x 1 is221042 student 19808  3月  3  2014 3DEFCd01
+
+./FireFox/Cache/B:
+合計 32
+drwx------ 2 is221042 student 4096  3月 19  2014 01
+drwx------ 2 is221042 student 4096  3月 19  2014 8B
+drwx------ 2 is221042 student 4096  3月 19  2014 8F
+drwx------ 2 is221042 student 4096  3月 19  2014 93
+drwx------ 2 is221042 student 4096  3月 19  2014 97
+drwx------ 2 is221042 student 4096  3月 19  2014 B4
+drwx------ 2 is221042 student 4096  3月 19  2014 EE
+drwx------ 2 is221042 student 4096  3月 19  2014 F2
+
+./FireFox/Cache/B/01:
+合計 60
+-rwx--x--x 1 is221042 student 55421  3月  3  2014 69C81d01
+
+./FireFox/Cache/B/8B:
+合計 140
+-rwx--x--x 1 is221042 student 135972  3月  3  2014 945D5d01
+
+./FireFox/Cache/B/8F:
+合計 116
+-rwx--x--x 1 is221042 student 113308  3月  4  2014 DACCBd01
+
+./FireFox/Cache/B/93:
+合計 120
+-rwx--x--x 1 is221042 student 116657  3月  3  2014 BE2CEd01
+
+./FireFox/Cache/B/97:
+合計 20
+-rwx--x--x 1 is221042 student 19569  3月  4  2014 8975Ad01
+
+./FireFox/Cache/B/B4:
+合計 48
+-rwx--x--x 1 is221042 student 43974  3月  3  2014 4D15Ad01
+
+./FireFox/Cache/B/EE:
+合計 56
+-rwx--x--x 1 is221042 student 51391  3月  3  2014 6C201d01
+
+./FireFox/Cache/B/F2:
+合計 100
+-rwx--x--x 1 is221042 student 95449  3月  3  2014 7F82Ed01
+
+./FireFox/Cache/C:
+合計 32
+drwx------ 2 is221042 student 4096  3月 19  2014 04
+drwx------ 2 is221042 student 4096  3月 19  2014 0E
+drwx------ 2 is221042 student 4096  3月 19  2014 3F
+drwx------ 2 is221042 student 4096  3月 19  2014 75
+drwx------ 2 is221042 student 4096  3月 19  2014 B3
+drwx------ 2 is221042 student 4096  3月 19  2014 C9
+drwx------ 2 is221042 student 4096  3月 19  2014 D9
+drwx------ 2 is221042 student 4096  3月 19  2014 F8
+
+./FireFox/Cache/C/04:
+合計 44
+-rwx--x--x 1 is221042 student 37417  3月  3  2014 BFBA4d01
+
+./FireFox/Cache/C/0E:
+合計 48
+-rwx--x--x 1 is221042 student 43526  3月  3  2014 22036d01
+
+./FireFox/Cache/C/3F:
+合計 172
+-rwx--x--x 1 is221042 student  45836  3月  3  2014 396A8d01
+-rwx--x--x 1 is221042 student 115517  3月 10  2014 F5DB8d01
+
+./FireFox/Cache/C/75:
+合計 32
+-rwx--x--x 1 is221042 student 25609  3月  3  2014 57DDFd01
+
+./FireFox/Cache/C/B3:
+合計 52
+-rwx--x--x 1 is221042 student 45121  3月  4  2014 12DB3d01
+
+./FireFox/Cache/C/C9:
+合計 32
+-rwx--x--x 1 is221042 student 28216  3月  4  2014 1406Ad01
+
+./FireFox/Cache/C/D9:
+合計 140
+-rwx--x--x 1 is221042 student 137223  3月  3  2014 F3CF6d01
+
+./FireFox/Cache/C/F8:
+合計 144
+-rwx--x--x 1 is221042 student 141428  3月 10  2014 8CFCEd01
+
+./FireFox/Cache/D:
+合計 36
+drwx------ 2 is221042 student 4096  3月 19  2014 0F
+drwx------ 2 is221042 student 4096  3月 19  2014 29
+drwx------ 2 is221042 student 4096  3月 19  2014 2F
+drwx------ 2 is221042 student 4096  3月 19  2014 4B
+drwx------ 2 is221042 student 4096  3月 19  2014 7D
+drwx------ 2 is221042 student 4096  3月 19  2014 A7
+drwx------ 2 is221042 student 4096  3月 19  2014 B2
+drwx------ 2 is221042 student 4096  3月 19  2014 C8
+drwx------ 2 is221042 student 4096  3月 19  2014 CC
+
+./FireFox/Cache/D/0F:
+合計 48
+-rwx--x--x 1 is221042 student 41306  3月  3  2014 21DCEd01
+
+./FireFox/Cache/D/29:
+合計 112
+-rwx--x--x 1 is221042 student 107124  3月 10  2014 E2E36d01
+
+./FireFox/Cache/D/2F:
+合計 28
+-rwx--x--x 1 is221042 student 20583  3月  3  2014 823D1d01
+
+./FireFox/Cache/D/4B:
+合計 104
+-rwx--x--x 1 is221042 student 99923  3月  4  2014 83A3Ad01
+
+./FireFox/Cache/D/7D:
+合計 32
+-rwx--x--x 1 is221042 student 25039  3月  3  2014 A402Fd01
+
+./FireFox/Cache/D/A7:
+合計 68
+-rwx--x--x 1 is221042 student 63564  3月  3  2014 A10E5d01
+
+./FireFox/Cache/D/B2:
+合計 60
+-rwx--x--x 1 is221042 student 55435  3月  3  2014 C1935d01
+
+./FireFox/Cache/D/C8:
+合計 96
+-rwx--x--x 1 is221042 student 92675  3月  3  2014 DE27Bd01
+
+./FireFox/Cache/D/CC:
+合計 152
+-rwx--x--x 1 is221042 student 149348  3月  3  2014 32C9Fd01
+
+./FireFox/Cache/E:
+合計 40
+drwx------ 2 is221042 student 4096  3月 19  2014 04
+drwx------ 2 is221042 student 4096  3月 19  2014 19
+drwx------ 2 is221042 student 4096  3月 19  2014 3E
+drwx------ 2 is221042 student 4096  3月 19  2014 5D
+drwx------ 2 is221042 student 4096  3月 19  2014 5F
+drwx------ 2 is221042 student 4096  3月 19  2014 9E
+drwx------ 2 is221042 student 4096  3月 19  2014 A5
+drwx------ 2 is221042 student 4096  3月 19  2014 B2
+drwx------ 2 is221042 student 4096  3月 19  2014 CD
+drwx------ 2 is221042 student 4096  3月 19  2014 F5
+
+./FireFox/Cache/E/04:
+合計 100
+-rwx--x--x 1 is221042 student 96435  3月  3  2014 5B4BDd01
+
+./FireFox/Cache/E/19:
+合計 148
+-rwx--x--x 1 is221042 student 143753  3月  3  2014 88134d01
+
+./FireFox/Cache/E/3E:
+合計 44
+-rwx--x--x 1 is221042 student 40902  3月  3  2014 84AD3d01
+
+./FireFox/Cache/E/5D:
+合計 132
+-rwx--x--x 1 is221042 student 128351  3月  3  2014 FF5DFd01
+
+./FireFox/Cache/E/5F:
+合計 36
+-rwx--x--x 1 is221042 student 29194  3月 10  2014 B10D8d01
+
+./FireFox/Cache/E/9E:
+合計 20
+-rwx--x--x 1 is221042 student 18745  3月  3  2014 8EC45d01
+
+./FireFox/Cache/E/A5:
+合計 64
+-rwx--x--x 1 is221042 student 60771  3月  3  2014 FF34Dd01
+
+./FireFox/Cache/E/B2:
+合計 48
+-rwx--x--x 1 is221042 student 44278  3月  3  2014 586C7d01
+
+./FireFox/Cache/E/CD:
+合計 32
+-rwx--x--x 1 is221042 student 25601  3月 10  2014 41306d01
+
+./FireFox/Cache/E/F5:
+合計 148
+-rwx--x--x 1 is221042 student 144666  3月  3  2014 92271d01
+
+./FireFox/Cache/F:
+合計 36
+drwx------ 2 is221042 student 4096  3月 19  2014 1B
+drwx------ 2 is221042 student 4096  3月 19  2014 48
+drwx------ 2 is221042 student 4096  3月 19  2014 63
+drwx------ 2 is221042 student 4096  3月 19  2014 6A
+drwx------ 2 is221042 student 4096  3月 19  2014 77
+drwx------ 2 is221042 student 4096  3月 19  2014 89
+drwx------ 2 is221042 student 4096  3月 19  2014 97
+drwx------ 2 is221042 student 4096  3月 19  2014 CB
+drwx------ 2 is221042 student 4096  3月 19  2014 E5
+
+./FireFox/Cache/F/1B:
+合計 56
+-rwx--x--x 1 is221042 student 50197  3月 10  2014 3CF11d01
+
+./FireFox/Cache/F/48:
+合計 116
+-rwx--x--x 1 is221042 student 112678  3月  3  2014 8AD30d01
+
+./FireFox/Cache/F/63:
+合計 40
+-rwx--x--x 1 is221042 student 35712  3月  4  2014 14B0Cd01
+
+./FireFox/Cache/F/6A:
+合計 36
+-rwx--x--x 1 is221042 student 32034  3月 10  2014 46227d01
+
+./FireFox/Cache/F/77:
+合計 88
+-rwx--x--x 1 is221042 student 84928  3月  3  2014 21873d01
+
+./FireFox/Cache/F/89:
+合計 52
+-rwx--x--x 1 is221042 student 48212  3月  4  2014 66199d01
+
+./FireFox/Cache/F/97:
+合計 116
+-rwx--x--x 1 is221042 student 113254  3月  3  2014 14044d01
+
+./FireFox/Cache/F/CB:
+合計 20
+-rwx--x--x 1 is221042 student 19120  3月  3  2014 FE797d01
+
+./FireFox/Cache/F/E5:
+合計 32
+-rwx--x--x 1 is221042 student 25881  3月  4  2014 C1660d01
+
+./FireFox/OfflineCache:
+合計 260
+-rwx--x--x 1 is221042 student 262144  2月 23  2014 index.sqlite
+
+./FireFox/bookmarkbackups:
+合計 32
+-rwx--x--x 1 is221042 student 3299  2月 11  2014 bookmarks-2014-02-11.json
+-rwx--x--x 1 is221042 student 3299  2月 13  2014 bookmarks-2014-02-13.json
+-rwx--x--x 1 is221042 student 3299  2月 19  2014 bookmarks-2014-02-19.json
+-rwx--x--x 1 is221042 student 3299  2月 23  2014 bookmarks-2014-02-23.json
+-rwx--x--x 1 is221042 student 3299  2月 27  2014 bookmarks-2014-02-27.json
+-rwx--x--x 1 is221042 student 3299  3月  3  2014 bookmarks-2014-03-03.json
+-rwx--x--x 1 is221042 student 3299  3月  4  2014 bookmarks-2014-03-04.json
+-rwx--x--x 1 is221042 student 3299  3月 10  2014 bookmarks-2014-03-10.json
+
+./FireFox/healthreport:
+合計 0
+
+./FireFox/indexedDB:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 chrome
+
+./FireFox/indexedDB/chrome:
+合計 4
+drwx------ 3 is221042 student 4096  3月 19  2014 idb
+
+./FireFox/indexedDB/chrome/idb:
+合計 520
+drwx------ 2 is221042 student   4096  3月  4  2014 2588645841ssegtnti
+-rwx--x--x 1 is221042 student 524288  3月  4  2014 2588645841ssegtnti.sqlite
+
+./FireFox/indexedDB/chrome/idb/2588645841ssegtnti:
+合計 0
+
+./FireFox/jumpListCache:
+合計 72
+-rwx--x--x 1 is221042 student 424  3月  3  2014 1w8hrjJyqjXMgEDknDtJTA==.ico
+-rwx--x--x 1 is221042 student 332  3月  3  2014 58tEAppAT49LRy+NW7YDuA==.ico
+-rwx--x--x 1 is221042 student 401  3月  3  2014 5YFi1x4hM54XCJelNPG1uA==.ico
+-rwx--x--x 1 is221042 student 424  3月  3  2014 87CWKQvWbRnVorSrZn8wDQ==.ico
+-rwx--x--x 1 is221042 student 950  3月  3  2014 FimVyn6zz_7PQ29SM7cP_A==.ico
+-rwx--x--x 1 is221042 student 401  3月  3  2014 FvoWwCq+lJW4xfoDSH0sCg==.ico
+-rwx--x--x 1 is221042 student 426  3月  3  2014 QdzbJqtdgaBxKzTM2OW5WA==.ico
+-rwx--x--x 1 is221042 student 405  3月  3  2014 QnrGvokT4BZAx5qRwVrQeA==.ico
+-rwx--x--x 1 is221042 student 426  3月  3  2014 VpDrqJ8sDpxxl_WMzFq72A==.ico
+-rwx--x--x 1 is221042 student 426  3月  3  2014 WcYWlXJRku186G2x+aZ+bA==.ico
+-rwx--x--x 1 is221042 student 424  3月  3  2014 cnUR1NDkx4HJ2IEdApa0CA==.ico
+-rwx--x--x 1 is221042 student 817  3月  3  2014 fsOvTxTZtNgTzxjRjtXr3Q==.ico
+-rwx--x--x 1 is221042 student 401  3月  4  2014 mAJetIsZLRFC79X0XSW3Aw==.ico
+-rwx--x--x 1 is221042 student 700  2月 23  2014 mNKCWbYA5ufW627CMwcKWQ==.ico
+-rwx--x--x 1 is221042 student 426  3月  3  2014 rb6d4cRbFXVhTiw0qWfemg==.ico
+-rwx--x--x 1 is221042 student 812  3月  3  2014 uTedcE6DJcUjjyYITeP2Yg==.ico
+-rwx--x--x 1 is221042 student 950  3月  3  2014 wJZo3Vvmm9Zee8w4umz_9w==.ico
+-rwx--x--x 1 is221042 student 426  3月  3  2014 x7CIev11P2GKdHoprmUGNA==.ico
+
+./FireFox/minidumps:
+合計 0
+
+./FireFox/safebrowsing:
+合計 2668
+-rwx--x--x 1 is221042 student     12  3月  3  2014 goog-malware-shavar.cache
+-rwx--x--x 1 is221042 student 462368  3月  3  2014 goog-malware-shavar.pset
+-rwx--x--x 1 is221042 student 466065  3月  3  2014 goog-malware-shavar.sbstore
+-rwx--x--x 1 is221042 student     12  3月  3  2014 goog-phish-shavar.cache
+-rwx--x--x 1 is221042 student 975058  3月  3  2014 goog-phish-shavar.pset
+-rwx--x--x 1 is221042 student 797429  3月  3  2014 goog-phish-shavar.sbstore
+-rwx--x--x 1 is221042 student     44  3月 10  2014 test-malware-simple.cache
+-rwx--x--x 1 is221042 student     16  3月 10  2014 test-malware-simple.pset
+-rwx--x--x 1 is221042 student    232  3月 10  2014 test-malware-simple.sbstore
+-rwx--x--x 1 is221042 student     44  3月 10  2014 test-phish-simple.cache
+-rwx--x--x 1 is221042 student     16  3月 10  2014 test-phish-simple.pset
+-rwx--x--x 1 is221042 student    232  3月 10  2014 test-phish-simple.sbstore
+
+./FireFox/startupCache:
+合計 940
+-rwx--x--x 1 is221042 student 954912  3月 10  2014 startupCache.4.little
+
+./FireFox/thumbnails:
+合計 1528
+-rwx--x--x 1 is221042 student 241311  3月  3  2014 1386de71a9b04df3ffc4af95068008ec.png
+-rwx--x--x 1 is221042 student  93874  3月 10  2014 16fa16c02abe9495b8c5fa03487d2c0a.png
+-rwx--x--x 1 is221042 student  23603  3月  3  2014 1c4ac8d1fe7665716cfef1e450925e5a.png
+-rwx--x--x 1 is221042 student  26055  3月  4  2014 41dcdb26ab5d81a0712b34ccd8e5b958.png
+-rwx--x--x 1 is221042 student  23603  3月  3  2014 5690eba89f2c0e9c7197f58ccc5abbd8.png
+-rwx--x--x 1 is221042 student  20040  3月 10  2014 59c61695725192ed7ce86db1f9a67e6c.png
+-rwx--x--x 1 is221042 student  19815  3月 10  2014 5b8f4b415203a39bc8342816b4ea7cb3.png
+-rwx--x--x 1 is221042 student 101657  3月  3  2014 69b08ad89a98049863bfd62301798e68.png
+-rwx--x--x 1 is221042 student  62446  3月  3  2014 7ec3af4f14d9b4d813cf18d18ed5ebdd.png
+-rwx--x--x 1 is221042 student 128474  3月  3  2014 91408b1ebf0bd4036b353713f92fd2c5.png
+-rwx--x--x 1 is221042 student  59853  3月 10  2014 a4d837e9474221a3e4012cac333e2cbc.png
+-rwx--x--x 1 is221042 student 107997  3月  3  2014 b9379d704e8325c5238f26084de3f662.png
+-rwx--x--x 1 is221042 student  61074  3月  3  2014 bea721fac8f032cb96cb31b727bbd172.png
+-rwx--x--x 1 is221042 student  43504  3月  3  2014 cb62b8aa1feb388a852bf032392158be.png
+-rwx--x--x 1 is221042 student  24053  3月 10  2014 e4ca324c0ac5a01d8969e73bd62bd077.png
+-rwx--x--x 1 is221042 student  31449  3月  3  2014 e58162d71e21339e170897a534f1b5b8.png
+-rwx--x--x 1 is221042 student 137419  3月  3  2014 e7cb44029a404f8f4b472f8d5bb603b8.png
+-rwx--x--x 1 is221042 student  22211  3月 10  2014 f02ae3778508448b3b582bbf2180fe5e.png
+-rwx--x--x 1 is221042 student 239199  3月  3  2014 f3b096290bd66d19d5a2b4ab667f300d.png
+
+./FireFox/webapps:
+合計 0
+-rwx--x--x 1 is221042 student 2  3月 10  2014 webapps.json
+
+./Links:
+合計 20
+drwx------ 2 is221042 student 4096  3月 19  2014 $RECYCLE.BIN
+-rwx--x--x 1 is221042 student  467  3月 10  2014 Desktop.lnk
+-rwx--x--x 1 is221042 student  927  3月 10  2014 Downloads.lnk
+-rwx--x--x 1 is221042 student  351  3月 10  2014 RecentPlaces.lnk
+-rwx--x--x 1 is221042 student  580  3月 10  2014 desktop.ini
+
+./Links/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./MP3:
+合計 4
+drwxr-xr-x 2 is221042 student 4096  5月 11 11:22 MP3.mp3
+
+./MP3/MP3.mp3:
+合計 0
+
+./Music:
+合計 12
+drwx------ 2 is221042 student 4096  3月 19  2014 $RECYCLE.BIN
+-rwx--x--x 1 is221042 student  504  3月 10  2014 desktop.ini
+drwx------ 4 is221042 student 4096  3月 19  2014 iTunes
+
+./Music/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./Music/iTunes:
+合計 80
+drwx------ 4 is221042 student  4096  3月 19  2014 Album Artwork
+-rwx--x--x 1 is221042 student 16384  3月 10  2014 iTunes Library Extras.itdb
+-rwx--x--x 1 is221042 student 32768  2月 23  2014 iTunes Library Genius.itdb
+-rwx--x--x 1 is221042 student  4400  3月 10  2014 iTunes Library.itl
+drwx------ 3 is221042 student  4096  3月 19  2014 iTunes Media
+-rwx--x--x 1 is221042 student 11163  3月 10  2014 iTunes Music Library.xml
+-rwx--x--x 1 is221042 student     8  3月 10  2014 sentinel
+
+./Music/iTunes/Album Artwork:
+合計 8
+drwx------ 2 is221042 student 4096  2月 27  2014 Cache
+drwx------ 2 is221042 student 4096  2月 27  2014 Download
+
+./Music/iTunes/Album Artwork/Cache:
+合計 0
+
+./Music/iTunes/Album Artwork/Download:
+合計 0
+
+./Music/iTunes/iTunes Media:
+合計 4
+drwx------ 2 is221042 student 4096  2月 27  2014 iTunes �˼�ưŪ���ɲ�
+
+./Music/iTunes/iTunes Media/iTunes �˼�ưŪ���ɲ�:
+合計 0
+
+./Mydir:
+ls: ./Mydir/thismonth にアクセスできません: 許可がありません
+合計 0
+-????????? ? ? ? ?             ? thismonth
+
+./Pictures:
+合計 12
+drwx------ 2 is221042 student 4096  3月 19  2014 $RECYCLE.BIN
+drwx------ 2 is221042 student 4096  4月 18 12:22 Camera Roll
+-rwx--x--x 1 is221042 student  504  3月 10  2014 desktop.ini
+
+./Pictures/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./Pictures/Camera Roll:
+合計 4
+-rwx------ 1 is221042 student 190  4月 18 12:22 desktop.ini
+
+./Searches:
+合計 16
+drwx------ 2 is221042 student 4096  3月 19  2014 $RECYCLE.BIN
+-r-x--x--x 1 is221042 student  248  3月  7  2014 Everywhere.search-ms
+-r-x--x--x 1 is221042 student  248  3月  7  2014 Indexed Locations.search-ms
+-rwx--x--x 1 is221042 student  524  3月 10  2014 desktop.ini
+
+./Searches/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./SendTo:
+合計 12
+-rwx--x--x 1 is221042 student    0  3月  4  2014 �ɥ������.mydocs
+drwx------ 2 is221042 student 4096  3月 19  2014 $RECYCLE.BIN
+-rwx--x--x 1 is221042 student 1864  3月 10  2014 EmEditor.lnk
+-rwx--x--x 1 is221042 student  901  3月 10  2014 WinSCP (for upload).lnk
+
+./SendTo/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  3月  4  2014 desktop.ini
+
+./Start Menu:
+合計 12
+drwx------ 2 is221042 student 4096  3月 19  2014 $RECYCLE.BIN
+drwx------ 4 is221042 student 4096  3月 19  2014 Programs
+-rwx--x--x 1 is221042 student  174  3月 10  2014 desktop.ini
+
+./Start Menu/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./Start Menu/Programs:
+合計 12
+drwx------ 2 is221042 student 4096  3月 19  2014 Administrative Tools
+drwx------ 2 is221042 student 4096  3月 19  2014 Startup
+-rwx--x--x 1 is221042 student  174  3月 10  2014 desktop.ini
+
+./Start Menu/Programs/Administrative Tools:
+合計 4
+-rwx--x--x 1 is221042 student 174  3月 10  2014 desktop.ini
+
+./Start Menu/Programs/Startup:
+合計 8
+-rwx--x--x 1 is221042 student 1918  3月 10  2014 EmEditor.lnk
+-rwx--x--x 1 is221042 student  174  3月 10  2014 desktop.ini
+
+./Thunderbird:
+合計 14116
+drwx------ 18 is221042 student     4096  3月 19  2014 Cache
+-rwx--x--x  1 is221042 student        1  2月 11  2014 _CACHE_CLEAN_
+-rwx--x--x  1 is221042 student     1400  2月 11  2014 abook.mab
+-rwx--x--x  1 is221042 student   524288  2月 11  2014 addons.sqlite
+-rwx--x--x  1 is221042 student   524288  2月 11  2014 blist.sqlite
+-rwx--x--x  1 is221042 student    78330  2月 11  2014 blocklist.xml
+-rwx--x--x  1 is221042 student    65536  2月 11  2014 cert8.db
+-rwx--x--x  1 is221042 student      250  2月 11  2014 compatibility.ini
+-rwx--x--x  1 is221042 student   524288  2月 11  2014 cookies.sqlite
+-rwx--x--x  1 is221042 student      137  2月 11  2014 extensions.ini
+-rwx--x--x  1 is221042 student   458752  2月 11  2014 extensions.sqlite
+-rwx--x--x  1 is221042 student        2  2月 11  2014 folderTree.json
+-rwx--x--x  1 is221042 student   196608  2月 11  2014 formhistory.sqlite
+-rwx--x--x  1 is221042 student  1245184  2月 11  2014 global-messages-db.sqlite
+-rwx--x--x  1 is221042 student     1400  2月 11  2014 history.mab
+-rwx--x--x  1 is221042 student    16384  2月 11  2014 key3.db
+-rwx--x--x  1 is221042 student     2741  2月 11  2014 localstore.rdf
+-rwx--x--x  1 is221042 student      504  2月 11  2014 mailViews.dat
+drwx------  2 is221042 student     4096  2月 11  2014 minidumps
+-rwx--x--x  1 is221042 student        0  2月 11  2014 parent.lock
+-rwx--x--x  1 is221042 student    65536  2月 11  2014 permissions.sqlite
+-rwx--x--x  1 is221042 student 10485760  2月 11  2014 places.sqlite
+-rwx--x--x  1 is221042 student     6145  2月 11  2014 pluginreg.dat
+-rwx--x--x  1 is221042 student     5640  2月 11  2014 prefs.js
+-rwx--x--x  1 is221042 student    16384  2月 11  2014 secmod.db
+-rwx--x--x  1 is221042 student       86  2月 11  2014 session.json
+drwx------  2 is221042 student     4096  3月 19  2014 startupCache
+-rwx--x--x  1 is221042 student       29  2月 11  2014 times.json
+-rwx--x--x  1 is221042 student       10  2月 11  2014 virtualFolders.dat
+-rwx--x--x  1 is221042 student    98304  2月 11  2014 webappsstore.sqlite
+
+./Thunderbird/Cache:
+合計 12424
+drwx------ 2 is221042 student    4096  2月 11  2014 0
+drwx------ 2 is221042 student    4096  2月 11  2014 1
+drwx------ 3 is221042 student    4096  3月 19  2014 2
+drwx------ 2 is221042 student    4096  2月 11  2014 3
+drwx------ 2 is221042 student    4096  2月 11  2014 4
+drwx------ 2 is221042 student    4096  2月 11  2014 5
+drwx------ 2 is221042 student    4096  2月 11  2014 6
+drwx------ 2 is221042 student    4096  2月 11  2014 7
+drwx------ 2 is221042 student    4096  2月 11  2014 8
+drwx------ 2 is221042 student    4096  2月 11  2014 9
+drwx------ 2 is221042 student    4096  2月 11  2014 A
+drwx------ 2 is221042 student    4096  2月 11  2014 B
+drwx------ 2 is221042 student    4096  2月 11  2014 C
+drwx------ 2 is221042 student    4096  2月 11  2014 D
+drwx------ 2 is221042 student    4096  2月 11  2014 E
+drwx------ 2 is221042 student    4096  2月 11  2014 F
+-rwx--x--x 1 is221042 student 4194304  2月 11  2014 _CACHE_001_
+-rwx--x--x 1 is221042 student 4194304  2月 11  2014 _CACHE_002_
+-rwx--x--x 1 is221042 student 4194304  2月 11  2014 _CACHE_003_
+-rwx--x--x 1 is221042 student    8468  2月 11  2014 _CACHE_MAP_
+
+./Thunderbird/Cache/0:
+合計 0
+
+./Thunderbird/Cache/1:
+合計 0
+
+./Thunderbird/Cache/2:
+合計 4
+drwx------ 2 is221042 student 4096  3月 19  2014 88
+
+./Thunderbird/Cache/2/88:
+合計 84
+-rwx--x--x 1 is221042 student 78330  2月 11  2014 0BED2d01
+
+./Thunderbird/Cache/3:
+合計 0
+
+./Thunderbird/Cache/4:
+合計 0
+
+./Thunderbird/Cache/5:
+合計 0
+
+./Thunderbird/Cache/6:
+合計 0
+
+./Thunderbird/Cache/7:
+合計 0
+
+./Thunderbird/Cache/8:
+合計 0
+
+./Thunderbird/Cache/9:
+合計 0
+
+./Thunderbird/Cache/A:
+合計 0
+
+./Thunderbird/Cache/B:
+合計 0
+
+./Thunderbird/Cache/C:
+合計 0
+
+./Thunderbird/Cache/D:
+合計 0
+
+./Thunderbird/Cache/E:
+合計 0
+
+./Thunderbird/Cache/F:
+合計 0
+
+./Thunderbird/minidumps:
+合計 0
+
+./Thunderbird/startupCache:
+合計 1244
+-rwx--x--x 1 is221042 student 1262076  2月 11  2014 startupCache.4.little
+
+./Videos:
+合計 8
+drwx------ 2 is221042 student 4096  3月 19  2014 $RECYCLE.BIN
+-rwx--x--x 1 is221042 student  504  3月 10  2014 desktop.ini
+
+./Videos/$RECYCLE.BIN:
+合計 4
+-rwx--x--x 1 is221042 student 129  2月 27  2014 desktop.ini
+
+./cyghome:
+合計 0
+-rwx--x--x 1 is221042 student 0  2月 20  2014 a
+
+./dirAA:
+合計 8
+-rw-r--r-- 1 is221042 student 2042  4月 27 11:38 abc
+-rw-r--r-- 1 is221042 student  156  4月 27 11:38 file01
+
+./dirB:
+合計 8
+drwxr-xr-x 2 is221042 student 4096  4月 27 11:38 dirA
+-rw-r--r-- 1 is221042 student  156  4月 27 11:28 file01
+
+./dirB/dirA:
+合計 0
+
+./dirBB:
+合計 4
+drwxr-xr-x 2 is221042 student 4096  4月 27 11:39 dirA
+
+./dirBB/dirA:
+合計 8
+-rw-r--r-- 1 is221042 student 2042  4月 27 11:39 abc
+-rw-r--r-- 1 is221042 student  156  4月 27 11:39 file01
+
+./dirC:
+合計 8
+-rw-r--r-- 1 is221042 student 2042  4月 27 11:47 abc
+-rw-r--r-- 1 is221042 student  156  4月 27 11:47 file01
+
+./dirCC:
+合計 8
+-rw-r--r-- 1 is221042 student 2042  4月 27 11:32 abc
+-rw-r--r-- 1 is221042 student  156  4月 27 11:29 file01
+
+./directory:
+合計 0
+
+./home:
+合計 0
+-rwx--x--x 1 is221042 student 0  2月 20  2014 a
+
+./mp3:
+合計 0
+
+./mydir:
+合計 4
+-rw-r--r-- 1 is221042 student 144  5月 11 11:53 May
+
+./workspace:
+合計 0
+
+./ダウンロード:
+合計 44320
+drwxr-xr-x 2 is221042 student     4096  4月 29 11:11 2022311042_ST
+-rw-r--r-- 1 is221042 student        0  4月 29 10:57 2022311042＿ST (1).pdf
+-rw-r--r-- 1 is221042 student        0  4月 29 11:03 2022311042＿ST (2).pdf
+-rw-r--r-- 1 is221042 student    87325  4月 29 11:05 2022311042＿ST(1).pdf
+-rw-r--r-- 1 is221042 student    87325  4月 29 11:09 2022311042＿STv2(1).pdf
+-rw-r--r-- 1 is221042 student 45005734  5月 13 10:32 General.zip
+
+./ダウンロード/2022311042_ST:
+合計 92
+-rw-r--r-- 1 is221042 student 87325  4月 29 11:07 2022311042＿STv2.pdf
+
+./テンプレート:
+合計 0
+
+./デスクトップ:
+合計 0
+
+./ドキュメント:
+合計 16
+-rw-r--r-- 1 is221042 student 1258  3月 27  2014 aaaa.png
+-rw-r--r-- 1 is221042 student 3395  3月 27  2014 bbb.jpeg
+-rw-r--r-- 1 is221042 student 1206  3月 27  2014 cc.png
+-rw-r--r-- 1 is221042 student 3395  3月 27  2014 dd.jpeg
+
+./ビデオ:
+合計 0
+
+./音楽:
+合計 0
+
+./画像:
+合計 0
+
+./公開:
+合計 0

@@ -1,0 +1,3 @@
+platex graduation_research_TS_2022311042.tex
+platex graduation_research_TS_2022311042.tex
+dvipdfmx graduation_research_TS_2022311042.dvi

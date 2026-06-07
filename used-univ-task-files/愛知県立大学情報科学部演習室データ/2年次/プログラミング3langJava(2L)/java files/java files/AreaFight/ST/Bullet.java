@@ -1,0 +1,226 @@
+package pack;
+
+import java.awt.*;
+
+public interface Bullet {
+
+    int size = 2;
+
+    void ability();
+    double getPosX();
+    double getPosY();
+    double getSpeed();
+    double getAngle();
+    int getPower();
+    void setPosX(double pos_x);
+    void setPosY(double pos_y);
+    void setAngle(double angle);
+    void setPower(int power);
+    void decSp();
+    void draw(Graphics g, Color color);
+}
+
+class BulletNormal implements Bullet {
+
+    private double pos_x;
+    private double pos_y;
+    private double speed;
+    private double angle;
+    private int power;
+    private int abi_count;
+
+    public BulletNormal(double pos_x, double pos_y, double speed, double angle, int power, int abi_count) {
+        this.pos_x = pos_x;
+        this.pos_y = pos_y;
+        this.speed = speed;
+        this.angle = angle;
+        this.power = power;
+        this.abi_count = abi_count;
+    }
+
+    public void ability() {
+        
+        abi_count--;
+    }
+
+    public double getPosX() {
+        return pos_x;
+    }
+
+    public double getPosY() {
+        return pos_y;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public double getAngle() {
+        return angle;
+    }
+
+    public int getPower() {
+        return power;
+    }
+
+    public void setPosX(double pos_x) {
+        this.pos_x = pos_x;
+    }
+
+    public void setPosY(double pos_y) {
+        this.pos_y = pos_y;
+    }
+
+    public void setAngle(double angle) {
+        this.angle = angle;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
+
+    public void decSp() {
+        if(speed > 0) speed--;
+    }
+
+    public void draw(Graphics g, Color color) {
+        g.setColor(color);
+        g.fillOval((int)pos_x - size, (int)pos_y - size, 2 * size, 2 * size);
+    }
+}
+
+class BulletStrong implements Bullet {
+    private double pos_x;
+    private double pos_y;
+    private double speed;
+    private double angle;
+    private int power;
+    private int abi_count;
+
+    public BulletStrong(double pos_x, double pos_y, double speed, double angle, int power, int abi_count) {
+        this.pos_x = pos_x;
+        this.pos_y = pos_y;
+        this.speed = speed;
+        this.angle = angle;
+        this.power = power;
+        this.abi_count = abi_count;
+    }
+
+    public void ability() {
+        
+        abi_count--;
+    }
+
+    public double getPosX() {
+        return pos_x;
+    }
+
+    public double getPosY() {
+        return pos_y;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public double getAngle() {
+        return angle;
+    }
+
+    public int getPower() {
+        return power;
+    }
+    
+    public void setPosX(double pos_x) {
+        this.pos_x = pos_x;
+    }
+
+    public void setPosY(double pos_y) {
+        this.pos_y = pos_y;
+    }
+
+    public void setAngle(double angle) {
+        this.angle = angle;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
+
+    public void decSp() {
+        if(speed > 0) speed--;
+    }
+
+    public void draw(Graphics g, Color color) {
+        g.setColor(color);
+        g.fillOval((int)pos_x - size, (int)pos_y - size, 2 * size, 2 * size);
+    }
+}
+
+class BulletUniverse implements Bullet {
+    private double pos_x;
+    private double pos_y;
+    private double speed;
+    private double angle;
+    private int power;
+    private int abi_count;
+
+    public BulletUniverse(double pos_x, double pos_y, double speed, double angle, int power, int abi_count) {
+        this.pos_x = pos_x;
+        this.pos_y = pos_y;
+        this.speed = speed;
+        this.angle = angle;
+        this.power = power;
+        this.abi_count = abi_count;
+    }
+
+    public void ability() {
+        
+        abi_count--;
+    }
+
+    public double getPosX() {
+        return pos_x;
+    }
+
+    public double getPosY() {
+        return pos_y;
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public double getAngle() {
+        return angle;
+    }
+
+    public int getPower() {
+        return power;
+    }
+    
+    public void setPosX(double pos_x) {
+        this.pos_x = pos_x;
+    }
+
+    public void setPosY(double pos_y) {
+        this.pos_y = pos_y;
+    }
+
+    public void setAngle(double angle) {
+        this.angle = angle;
+    }
+
+    public void setPower(int power) {
+        this.power = power;
+    }
+
+    public void decSp() {
+        if(speed > 0) speed--;
+    }
+
+    public void draw(Graphics g, Color color) {
+        g.setColor(color);
+        g.fillOval((int)pos_x - size, (int)pos_y - size + 10, 2 * size, 2 * size);
+    }
+}

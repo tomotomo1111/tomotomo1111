@@ -1,0 +1,3 @@
+以下が個人データとなります．
+Age:184
+Name:Java JavaJava

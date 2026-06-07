@@ -1,0 +1,18 @@
+public class ClassB1{
+	public static void main(String[] args) {
+		ScoreData1 id1 = new ScoreData1(50,70);
+		System.out.println("英語特論の点数は"+id1.Eng);
+		System.out.println("統計解析学の点数は"+id1.Math);
+		id1.Eng = 60;
+		System.out.println("英語特論の点数は"+id1.Eng);
+		System.out.println("統計解析学の点数は"+id1.Math);
+	}
+}
+
+class ScoreData1{
+	int Eng, Math;
+	public ScoreData1(int score1, int score2){
+		Eng = score1;
+		Math = score2;
+	}
+}

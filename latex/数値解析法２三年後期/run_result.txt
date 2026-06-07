@@ -1,0 +1,24 @@
+
+***** ode23s without Jacobian
+120 の成功したステップ
+1 の失敗した試行
+604 の関数評価
+120 偏微分
+121 の LU 分解
+363 の線形システムの解
+Calculation time = 1.090000e-02 [s]
+Num. of division = 121
+Max error (disp) = 6.971287309509577e-05
+Max error (velo) = 8.581909846228086e-05
+
+***** ode23s with Jacobian
+120 の成功したステップ
+1 の失敗した試行
+364 の関数評価
+120 偏微分
+121 の LU 分解
+363 の線形システムの解
+Calculation time = 1.056200e-02 [s]
+Num. of division = 121
+Max error (disp) = 6.971287229329270e-05
+Max error (velo) = 8.581909752214401e-05

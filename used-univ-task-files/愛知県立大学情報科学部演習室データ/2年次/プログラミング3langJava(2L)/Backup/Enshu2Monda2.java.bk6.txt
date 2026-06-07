@@ -1,0 +1,21 @@
+pubilc class Enshu2Monda2{
+	public static void main(String[] args) {
+		int x = 180;
+		int y = 70;
+		int z = 23;
+		BodyData2 data1 = new BodyData2();
+		data1.heightData()
+	}
+}
+
+class BodyData2 {
+	public int height, weight, age;
+	public void BodyData2(int inputH, int intpuW, int inputA,){
+	height = inputH;
+	weight = inputW;
+	age = inputA;
+	}
+	publiic void heightData() {
+		System.out.println(height);
+	}
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Lissajous curve</title>
+<script>
+let canvasObj, ctx;
+
+// キャンバスの準備
+window.addEventListener( "load", ()=>{
+	if( !window.HTMLCanvasElement ) return;
+	canvasObj = document.getElementById( "canvas" );
+	ctx = canvasObj.getContext( "2d" );
+
+	// 線の色と太さを設定
+	ctx.strokeStyle = "black";
+	ctx.lineWidth = 1;
+
+} );
+
+// x, yの最大公約数を求める
+function gcd( x, y )
+{
+	if( x<0 ) x = -x;
+	if( y<0 ) y = -y;
+	while( true ){
+		if( y===0 ) return x===0 ? 1 : x;
+		z = x % y;
+		x = y;
+		y = z;
+	}
+}
+
+function initCanvas()
+{
+	// キャンバスを消去して
+	ctx.resetTransform();
+	ctx.clearRect( 0, 0, canvasObj.width, canvasObj.height );
+	// 原点をキャンバス中央に設定
+	ctx.translate( canvasObj.width / 2, canvasObj.height / 2 );
+	// y軸を反転して、上が正の方向になるように設定
+	ctx.scale( 1, -1 );
+}
+
+
+// ωx, ωy, φ=phと色clを与えて、リサージュ図形 x=sin(ωxt), y=sin(ωyt+φ)を描く
+function draw( omegax, omegay, phi, cl )
+{
+let r, t, x, y, delta;
+
+	// キャンバスを消去
+	initCanvas();
+	// 線の色を設定
+	if( cl !== "" )	ctx.strokeStyle = cl;
+
+	// 図の大きさをキャンバスの大きさの0.9倍になるように設定する
+	r = 0.45 * Math.min( canvasObj.width, canvasObj.height );
+
+	// phiは度単位で与えているので、ラジアンに変換する。
+	phi = phi * Math.PI / 180;
+
+	// 媒介変数の刻み幅を設定する
+	delta = 10 / (r * Math.hypot( omegax, omegay ));
+
+	// 初期値
+	x = 0;
+	y = r * Math.sin( phi );
+	// 描画開始
+	ctx.beginPath();
+	ctx.moveTo( x, y );
+	// 媒介変数tをdeltaずつ増加させながら、線を描いていく
+	for( t = delta; t <= Math.PI*2 + delta; t += delta ){
+
+
+	}
+	// 最後に実際に線を描く
+	ctx.stroke();
+}
+
+// リサージュ曲線を描く
+
+// パラメータを変更して再描画する
+function restart(){
+	const ox = Math.round( Number( document.getElementById( "omegaX" ).value ) );
+	const oy = Math.round( Number( document.getElementById( "omegaY" ).value ) );
+	const ph = Number( document.getElementById( "phase" ).value );
+	const cl = document.getElementById( "color" ).value;
+	// ox, oy, phに数値が入力されていて、かつ、ox, oyが正の値であれば
+	if( !isNaN( ox + oy + ph ) && ox > 0 && oy > 0 ){
+		let g = gcd( ox, oy );
+		// パラメータを変更してリサージュ図形を描き直す
+		draw( ox / g, oy / g, ph, cl );
+	}
+}
+
+</script>
+
+</head>
+<body>
+<h1>リサージュ(Lissajous)図形</h1>
+<canvas id="canvas" width="400" height="400"></canvas>
+<div>
+X=sin(&omega;<sub>x</sub>t), Y=sin(&omega;<sub>y</sub>t+&phi;)
+<form action="#" method="GET">
+X, Yの角振動数(整数値) &omega;<sub>x</sub>=<input id="omegaX" type="text" value="1">　　&omega;<sub>y</sub>=<input id="omegaY" type="text" value="1"><br>
+位相 &phi;(度)=<input id="phase" type="text" value="270"><br>
+線の色 : <input id="color" type="text"><br>
+<input type="submit" onClick="restart(); return false;" value="Go">
+<input type="reset" value="Reset">
+</form>
+</div>
+</body>
+</html>

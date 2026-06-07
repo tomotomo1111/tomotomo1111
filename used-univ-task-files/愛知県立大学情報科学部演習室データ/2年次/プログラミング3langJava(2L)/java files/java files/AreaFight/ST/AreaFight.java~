@@ -1,0 +1,366 @@
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Random;
+
+public class AreaFight {
+
+    public static final int WIDTH = 640;
+    public static final int HEIGHT = 640;
+
+    public static void main(String[] args) {
+
+        Map map = new Map();
+        map.initMap();
+
+        MyFrame myFrame = new MyFrame();
+        myFrame.getContentPane().add(map);
+
+        Random rand = new Random();
+
+        int time_count = 0;
+
+        while (true) {
+
+            myFrame.repaint();
+            if (time_count % 20 == 0) {
+                int i = rand.nextInt(12);
+                if (i % 4 == 0)
+                    map.makeBullet_NW(4);
+                    map.makeBullet_NW(i % 6);
+                if (i % 4 == 1)
+                    map.makeBullet_NE(4);
+                    map.makeBullet_NE(i % 6);
+                if (i % 4 == 2)
+                    map.makeBullet_SW(4);
+                    map.makeBullet_SW(i % 6);
+                if (i % 4 == 3)
+                    map.makeBullet_SE(4);
+                    map.makeBullet_SE(i % 6);
+            }
+
+            map.moveAllBullet();
+            map.checkBulletCollisionToWall();
+            map.lotateAllCanon();
+            map.checkBulletCollisionToColor();
+
+            try {
+                Thread.sleep(5);
+            } catch (Exception e) {
+                System.exit(-1);
+            }
+
+            time_count++;
+        }
+    }
+}
+
+class MyFrame extends JFrame {
+
+    public MyFrame() {
+        super();
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setResizable(false);
+        setVisible(true);
+        setSize(AreaFight.WIDTH, AreaFight.HEIGHT);
+        setLocationRelativeTo(null);
+    }
+}
+
+class Map extends JPanel {
+
+    private static final int[][] area = new int[200][200];
+    private static final int DOT_W = 2;
+    private static final int DOT_H = 2;
+    private static final int areaWidth = area[0].length * DOT_W;
+    private static final int areaHeight = area.length * DOT_H;
+    private static final int LEFTMARGIN = 10;
+    private static final int UPMARGIN = 10;
+    private static final int EDGE = 1;
+    private static final int MAP_EDGE = 5;
+    private static final double CANON_LOTATE_AXIS = (double) 4 / 5;
+
+    private static Canon canon_NW = new Canon(10, 10, Math.PI * 7 / 4);
+    private static Canon canon_NE = new Canon(areaWidth - 10, 10, Math.PI * 5 / 4);
+    private static Canon canon_SW = new Canon(10, areaHeight - 10, Math.PI * 1 / 4);
+    private static Canon canon_SE = new Canon(areaWidth - 10, areaHeight - 10, Math.PI * 3 / 4);
+
+    private static int numOf360Scale = 0;
+    private static double theta = 0;
+
+    private static ArrayList<Bullet> Bul_NW = new ArrayList<>();
+    private static ArrayList<Bullet> Bul_NE = new ArrayList<>();
+    private static ArrayList<Bullet> Bul_SW = new ArrayList<>();
+    private static ArrayList<Bullet> Bul_SE = new ArrayList<>();
+
+    public void initMap() {
+
+        int blockSize_X = (int) (area.length / 2);
+        int blockSize_Y = (int) (area[0].length / 2);
+
+        for (int i = 0; i < area.length; i++) {
+
+            for (int j = 0; j < area[0].length; j++) {
+
+                if (i >= blockSize_Y && j >= blockSize_X)
+                    setColor(i, j, 0);
+                if (i >= blockSize_Y && j < blockSize_X)
+                    setColor(i, j, 1);
+                if (i < blockSize_Y && j >= blockSize_X)
+                    setColor(i, j, 2);
+                if (i < blockSize_Y && j < blockSize_X)
+                    setColor(i, j, 3);
+            }
+        }
+    }
+
+    public int getColor(int row, int col) {
+
+        return area[row][col];
+    }
+
+    public void setColor(int row, int col, int color) {
+
+        area[row][col] = color;
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+
+        super.paintComponent(g);
+        mapDraw(g);
+        canon_NE.draw(g);
+        canon_NW.draw(g);
+        canon_SE.draw(g);
+        canon_SW.draw(g);
+
+        bulletDraw(g, Bul_NW, Color.RED);
+        bulletDraw(g, Bul_NE, Color.BLUE);
+        bulletDraw(g, Bul_SW, Color.YELLOW);
+        bulletDraw(g, Bul_SE, Color.GREEN);
+
+    }
+
+    public void mapDraw(Graphics g) {
+
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 0, AreaFight.WIDTH, AreaFight.HEIGHT);
+
+        for (int i = 0; i < area.length; i++) {
+
+            for (int j = 0; j < area[0].length; j++) {
+
+                g.setColor(Color.WHITE);
+
+                if (i > 0 + MAP_EDGE && i < area.length - MAP_EDGE && j > 0 + MAP_EDGE
+                        && j < area[0].length - MAP_EDGE) {
+                    switch (area[i][j]) {
+                        case 0:
+                            if (area[i + EDGE][j] != 0 || area[i - EDGE][j] != 0 || area[i][j + EDGE] != 0
+                                    || area[i][j - EDGE] != 0) {
+                                g.setColor(Color.GREEN);
+                            } else {
+                                g.setColor(new Color(127, 255, 127));
+                            }
+                            break;
+                        case 1:
+                            if (area[i + EDGE][j] != 1 || area[i - EDGE][j] != 1 || area[i][j + EDGE] != 1
+                                    || area[i][j - EDGE] != 1) {
+                                g.setColor(Color.YELLOW);
+                            } else {
+                                g.setColor(new Color(255, 255, 208));
+                            }
+                            break;
+                        case 2:
+                            if (area[i + EDGE][j] != 2 || area[i - EDGE][j] != 2 || area[i][j + EDGE] != 2
+                                    || area[i][j - EDGE] != 2) {
+                                g.setColor(Color.BLUE);
+                            } else {
+                                g.setColor(new Color(127, 127, 255));
+                            }
+                            break;
+                        case 3:
+                            if (area[i + EDGE][j] != 3 || area[i - EDGE][j] != 3 || area[i][j + EDGE] != 3
+                                    || area[i][j - EDGE] != 3) {
+                                g.setColor(Color.RED);
+                            } else {
+                                g.setColor(new Color(255, 127, 127));
+                            }
+                            break;
+                        default:
+                            g.setColor(Color.BLACK);
+                            break;
+                    }
+                } else {
+                    g.setColor(Color.GRAY);
+                }
+
+                g.fillRect(LEFTMARGIN + j * DOT_W, UPMARGIN + i * DOT_H, DOT_W, DOT_H);
+            }
+        }
+        repaint();
+    }
+
+    private void bulletDraw(Graphics g, ArrayList<Bullet> Bul, Color color) {
+
+        Bullet bullet;
+        for (int i = 0; i < Bul.size(); i++) {
+
+            bullet = Bul.get(i);
+            bullet.draw(g, color);
+        }
+    }
+
+    public void makeBullet_NW(int power) {
+        int blue_NW = 20;
+        Random rand = new Random();
+        double blur = (double)(rand.nextInt(blue_NW) - blue_NW / 2) / 100;
+
+        BulletNormal bullet = new BulletNormal(canon_NW.getPosX() + canon_NW.getSize(),
+                canon_NW.getPosY() + canon_NW.getSize(), 0.5, canon_NW.getAngle() + blur, power, 0);
+        Bul_NW.add(bullet);
+    }
+
+    public void makeBullet_NE(int power) {
+        int blue_NE = 10;
+        Random rand = new Random();
+        double blur = (double)(rand.nextInt(blue_NE) - blue_NE / 2) / 100;
+
+        BulletNormal bullet = new BulletNormal(canon_NE.getPosX(),
+                canon_NE.getPosY() + canon_NE.getSize(), 0.5, canon_NE.getAngle() + blur, power, 0);
+        Bul_NE.add(bullet);
+    }
+
+    public void makeBullet_SW(int power) {
+        int blue_SW = 5;
+        Random rand = new Random();
+        double blur = (double)(rand.nextInt(blue_SW) - blue_SW / 2) / 100;
+
+        BulletNormal bullet = new BulletNormal(canon_SW.getPosX() + canon_SW.getSize(),
+                canon_SW.getPosY(), 0.5, canon_SW.getAngle() + blur, power, 0);
+        Bul_SW.add(bullet);
+    }
+
+    public void makeBullet_SE(int power) {
+        int blue_SE = 20;
+        Random rand = new Random();
+        double blur = (double)(rand.nextInt(blue_SE) - blue_SE / 2) / 100;
+
+        BulletNormal bullet = new BulletNormal(canon_SE.getPosX(),
+                canon_SE.getPosY(), 0.5, canon_SE.getAngle() + blur, power, 0);
+        Bul_SE.add(bullet);
+    }
+
+    public void moveAllBullet() {
+
+        moveBullet(Bul_NW);
+        moveBullet(Bul_NE);
+        moveBullet(Bul_SW);
+        moveBullet(Bul_SE);
+    }
+
+    private void moveBullet(ArrayList<Bullet> Bul) {
+        Bullet bullet;
+
+        for (int i = 0; i < Bul.size(); i++) {
+            bullet = Bul.get(i);
+            double newX = bullet.getPosX() + bullet.getSpeed() * Math.cos(bullet.getAngle());
+            double newY = bullet.getPosY() + bullet.getSpeed() * Math.sin(bullet.getAngle() + Math.PI);
+            bullet.setPosX(newX);
+            bullet.setPosY(newY);
+        }
+    }
+
+    public void checkBulletCollisionToWall() {
+
+        checkAllBulletCollisionToWall(Bul_NW);
+        checkAllBulletCollisionToWall(Bul_NE);
+        checkAllBulletCollisionToWall(Bul_SW);
+        checkAllBulletCollisionToWall(Bul_SE);
+    }
+
+    private void checkAllBulletCollisionToWall(ArrayList<Bullet> Bul) {
+
+        Bullet bullet;
+        for (int i = 0; i < Bul.size(); i++) {
+
+            if (Bul.get(i).getPosX() <= LEFTMARGIN + MAP_EDGE * DOT_W || Bul.get(i).getPosX() >= areaWidth - MAP_EDGE * DOT_W + LEFTMARGIN
+                    || Bul.get(i).getPosY() <= UPMARGIN + MAP_EDGE * DOT_H
+                    || Bul.get(i).getPosY() >= areaHeight - MAP_EDGE * DOT_H + UPMARGIN) {
+                Bul.remove(i);
+            }
+        }
+    }
+
+    public void lotateAllCanon() {
+
+        numOf360Scale = (numOf360Scale + 1) % 360;
+
+        theta = Math.PI * numOf360Scale / 180;
+
+        double newAngle = Math.sin(theta) * CANON_LOTATE_AXIS;
+
+        canon_NW.setAngle(newAngle + canon_NW.getFirstAngle());
+        canon_NE.setAngle(newAngle + canon_NE.getFirstAngle());
+        canon_SW.setAngle(newAngle + canon_SW.getFirstAngle());
+        canon_SE.setAngle(newAngle + canon_SE.getFirstAngle());
+    }
+
+    public void checkBulletCollisionToColor() {
+
+        checkAllBulletCollisionToColor(Bul_NW, 3);
+        checkAllBulletCollisionToColor(Bul_NE, 2);
+        checkAllBulletCollisionToColor(Bul_SW, 1);
+        checkAllBulletCollisionToColor(Bul_SE, 0);
+    }
+
+    private void checkAllBulletCollisionToColor(ArrayList<Bullet> Bul, int color) {
+
+        Bullet bullet;
+        double bul_x, bul_y;
+        int bul_p;
+
+        for (int b = 0; b < Bul.size(); b++) {
+            bullet = Bul.get(b);
+            bul_x = bullet.getPosX();
+            bul_y = bullet.getPosY();
+            bul_p = bullet.getPower();
+
+            if (getColor((int) ((bul_y - UPMARGIN) / DOT_H),
+                    (int) ((bul_x - LEFTMARGIN) / DOT_W)) != color) {
+                setColor((int) ((bul_y - UPMARGIN) / DOT_H), (int) ((bul_x - LEFTMARGIN) / DOT_W),
+                        color);
+
+                int X, Y;
+                int X_LE, X_RI, Y_UP, Y_DN;
+
+                X_LE = -bul_p * DOT_W;
+                X_RI = bul_p * DOT_W;
+                Y_UP = -bul_p * DOT_H;
+                Y_DN = bul_p * DOT_H;
+
+
+                if(bul_x - bul_p * DOT_W < 0) X_LE = -(int) ((bul_x - LEFTMARGIN) / DOT_W);
+                if(bul_x - bul_p * DOT_W > areaWidth) X_RI = area[0].length - (int) ((bul_x - LEFTMARGIN) / DOT_W);
+                if(bul_y - bul_p * DOT_H < 0) Y_UP = -(int) ((bul_y - UPMARGIN) / DOT_H);
+                if(bul_y - bul_p * DOT_H > areaHeight) Y_DN = area.length -(int) ((bul_y - UPMARGIN) / DOT_H);
+
+                for (int i = X_LE; i < X_RI + 1; i++) {
+
+                    for (int j = Y_UP; j < Y_DN + 1; j++) {
+                        X = -bullet.getPower() + j;
+                        Y = -bullet.getPower() + i;
+                        // System.out.println(X + ":" + Y + ":" + (X * X + Y * Y));
+
+                        if ((X * X + Y * Y) <= (bullet.getPower() * bullet.getPower())) {
+                            setColor((int) ((bul_y - UPMARGIN) / DOT_H) + Y,
+                                    (int) ((bul_x - LEFTMARGIN) / DOT_W) + X, color);
+                        }
+                    }
+                }
+
+                Bul.remove(b);
+            }
+        }
+    }
+}

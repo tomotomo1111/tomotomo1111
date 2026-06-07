@@ -1,0 +1,210 @@
+\documentclass[10pt]{jarticle}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{enumerate}
+\usepackage{amsmath,amssymb}
+\usepackage{url}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{comment}
+\usepackage[hang,small,bf]{caption}
+\usepackage[subrefformat=parens]{subcaption}
+\renewcommand{\lstlistingname}{source}
+\lstset{language=sh,%
+        basicstyle=\footnotesize,%
+	commentstyle=\textit,%
+	classoffset=1,%
+	keywordstyle=\bfseries,%
+	frame=shadowbox,framesep=4pt,%
+	showstringspaces=false%,
+	numbers=left,stepnumber=1,numberstyle=\footnotesize,%
+	numbersep=1zw,%
+	lineskip=-0.5ex,%
+	xleftmargin=2zw%
+	}%
+
+\newdimen\paperwidth \newdimen\paperheight
+\def\A4size{\paperwidth=210mm \paperheight=297mm}
+\def\centered{%
+  \oddsidemargin=\paperwidth
+  \advance\oddsidemargin-\textwidth
+  \oddsidemargin=0.5\oddsidemargin
+  \advance\oddsidemargin-1in
+  \evensidemargin-\oddsidemargin}
+%
+\textwidth 160mm
+\textheight 230mm
+\topmargin 0mm
+\headheight 0mm
+\footskip 0mm
+\A4size\centered
+
+\title{\framebox{\hspace{4zw}モーター レポート1%
+                 \hspace{4zw}}}
+\author{神野 友哉 \\
+        2022311042  \\
+        愛知県立大学 情報科学部 情報科学科 \\}
+\date{2024年1月7日}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+
+\newpage
+\section{課題 1}
+%
+比例ゲイン$k_{P}$をさまざまに変えると、目標値と出力の差(偏差)はどのように変化するか。複数の実験結果から洞察される
+、$k_{P}$と偏差との関連性を説明せよ
+%
+
+\subsection{目的}
+%
+比例制御(P制御)の仕組みを理解する。
+%
+
+\subsection{考察}
+%
+図\ref{fig:kadai1}は$K_{P}$を\ 2、\ 5、\ 10、\ 100\ とした出力のグラフである。
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{wk2/sozai/kp.png}
+	\end{center}
+	\caption{$K_{P}$を調整した出力}
+	\label{fig:kadai1}
+\end{figure}
+$K_{P}$の値を高めるに連れて、出力が目標値に近づいている、つまり、出力の差(偏差)は小さくなっていることが解かる。
+また、$K_{P} = 100$の場合は、目標値付近で振動している。
+これらから推察すると、比例制御(P制御)は、偏差と制御入力が比例の関数式で表され、その係数が$K_{P}$となっていて、制御入力を増減させると考えられる。
+この説なら、$K_{P} = 100$の振動の原因は、勢いの余り目標値を超過し、その超過分の偏差が押し下げる方向の制御入力となり、同様に目標値を突き抜け...を繰り返すためと
+説明される。
+%
+
+\subsection{結論}
+%
+比例ゲインが小さいと、出力が目標値に対して微弱になり、一方で大きすぎると、出力が振動してしまうため、適切に設定する必要があるといえる。
+%
+
+\newpage
+\section{課題 2}
+%
+比例ゲインを$k_{P}=0$として、積分ゲイン$k_{I}$をさまざまに変化させたとき、$k_{I}$と偏差との関係性を説明せよ。なお、比例制御との違いを強調すること。
+%
+
+\subsection{目的}
+%
+積分制御(I制御)の仕組みを理解する。
+%
+
+\subsection{考察}
+%
+図\ref{fig:kadai2}は$K_{I}$を\ 2、\ 5、\ 10、\ 100\ とした出力のグラフである。
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{wk2/sozai/ki.png}
+	\end{center}
+	\caption{$K_{I}$を調整した出力}
+	\label{fig:kadai2}
+\end{figure}
+目標値付近で振動するが時間が経つに連れて徐々にその振幅を減らしていき目標値に近づいていくことと、
+$k_{I}$が高いほど出力の変化が急だと解かる。また、$K_{I}=100$の場合は、振幅が減らず振動が止まっていない。
+振幅の減少の原因を推察すると、積分制御(I制御)の動作は、目標値と出力で囲まれた面積を計算し、
+面積を\ 0\ にするため、制御入力を決定していると考えられ、
+また、$K_{I}$はどの程度制御入力に影響を与えるかを調整するためのパラメータとな
+っていると考えられる。ここから、積分制御(I制御)は比例制御(P制御)とは異なり、偏差は直ちに制御入力に影響することはなく、
+長時間の偏差の存在が制御入力に大きな影響を与えると考えられる。応用として、\ PI\ 制御とは
+比例制御(P制御)が目標値に向かって大味に調整し、積分制御(I制御)が目標値に一致するように微調整する機能として働くのではないか。
+%
+
+\subsection{結論}
+%
+積分制御(I制御)のみだと、目標値に一致することはできるが、目標値で安定するまで遅い。
+そのため、単体利用は目的に合わず、迅速性確保のために比例制御(P制御)と組み合わせる必要があるのではないか。
+
+%
+
+\newpage
+\section{課題 3}
+%
+PI\ 制御のゲインを二つの方法で調整した。調整の経験や実験結果をもとに両方法の相違点を説明せよ。
+%
+
+\subsection{目的}
+%
+ゲイン調整方法の違いが、モーター制御にどのような影響を与えるか調査する。
+%
+
+\subsection{考察}
+%
+$K_{P}$を調整し出力が目標値付近で振動し始めたところで、$K_{I}$を調整して出力を安定させる。
+このゲイン調整方法を、以降「手作業」と呼称する。
+また、周期\ 0.1818\ 回/s で振動はじめの$K_{P}=25$の限界感度法によるゲイン調整も実施した。 
+図\ref{fig:kadai3}は手作業によるゲイン調整と、限界感度法によるゲイン調整を実施したものである。
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{wk2/sozai/kadai3.png}
+	\end{center}
+	\caption{ゲイン調整方法の違いによる出力の影響}
+	\label{fig:kadai3}
+\end{figure}
+限界感度法の方が目標値で安定するまでにかかる時間が短いことと、
+出力の変化が急であること、振幅が大きいことが解かった。
+限界感度法の最中に感じたこととして、単位時間当たりの振動周期は目測であるため、微妙な誤差が
+ゲイン調整にどの程度影響するのかと心配になった。実際に確かめるために、
+周期を\ 0.5\ 変動させると、Kiゲインは\ 6\ ～\ 7\ 変動した。
+そのため限界感度法は、ある程度のそれらしい結果が得られるものでしかないと考えられる。
+一方、手作業は、満足のいく結果になるまで、突き詰めることができると体感した。
+以上から、限界感度法でも精度を求めるなら、最終的に手動調整が必要になると考えられる。
+%
+
+\subsection{結論}
+%
+精度をあまり求めない場合は限界感度法、精度を求める場合は手作業という使い分けが分かりやすいのではないか。
+%
+
+\newpage
+\section{課題 4}
+%
+[自由]\ 制御入力が\ 0\ ～\ 5\ V\ の間に収まらず、一時的に飽和する場合、出力には
+どのような影響が出ているか、意図的に作り出した、適当な実験結果を複数をもとに考察せよ。
+%
+
+\subsection{目的}
+%
+制御入力が流せる電圧の最大を超過した場合、モーターの実際の出力がどのようになるかを調査する。
+%
+
+\subsection{考察}
+%
+$K_{P}$と$K_{I}$の値を\ 150\ にすることで、制御入力が回路の最大電圧(単三電池三本分\ 5\ V)を超過するようになる。
+特段\ 150\ でなくても、十分高い値なら可能である。
+図\ref{fig:kadai4}は実施した結果である。\ input\ が制御入力、\ output\ が出力である。
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[width=100mm]{wk2/sozai/sim55555.png}
+	\end{center}
+	\caption{制御入力が飽和したときの出力}
+	\label{fig:kadai4}
+\end{figure}
+制御入力が飽和しても、出力は\ 5\ V\ 未満に収まっている。
+これは、\ Arduino\ が\ PWM\ 法によって電圧調整を実施しているため、
+制御入力超過の影響によりデューティー比が最大の\ 1\ となると仮定すると、
+モーターには回路の最大電圧が流されたため、このような出力になったと考えられる。
+
+%
+
+\subsection{結論}
+%
+制御入力が飽和しても、出力は回路の最大電圧を上回らなかった。
+%
+
+\begin{thebibliography}{5}
+  \bibitem{kadai2}
+    今井: "電源回路の比例制御と積分制御", Wave Technology. 2022, \\
+    \url{https://www.wti.jp/contents/blog/blog220628.htm}, (参照 2024-1-7).
+	\bibitem{kadai3}
+		controllabo: "限界感度法の利点・欠点・使い所。実はアテにしちゃダメ！？", controllabo. 2023, \\
+		\url{https://controlabo.com/ultimate-sensitivity-method/}, (参照 2024-1-7).
+\end{thebibliography}
+\end{document}

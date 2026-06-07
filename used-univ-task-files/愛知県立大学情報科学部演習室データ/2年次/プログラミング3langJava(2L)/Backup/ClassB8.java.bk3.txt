@@ -1,0 +1,36 @@
+public class ClassB8 {
+	ScoreData8 id1 = new ScoreData8(70,80,60);
+	ScoreData8 id2 = new ScoreData8(60,90,80);
+	System.out.println("ID1さんの成績データは下記である.");
+	System.out.println("英語特論の成績点数は"+id1.Eng);
+	System.out.println("統計解析学の成績点数は"+id1.Math);
+	System.out.println("古典文学の成績点数は"+id1.Lite);
+	System.out.println("合計点数は"+id1.Total);
+	System.out.println("ID2さんの成績データは下記である.");
+	System.out.println("英語特論の成績点数は"+id2.Eng);	
+	System.out.println("統計解析学の成績点数は"+id2.Math);
+	System.out.println("古典文学の成績点数は"+id2.Lite);
+	System.out.println("合計点数は"+id2.Total);
+	System.out.println("2人の合計点数の差は"+Calculate4.ScoreDifference(id1.Total,id2.Total));
+}
+
+class ScoreData8{
+	double Eng, Math, Lite, Total;
+	private static final double rate = 0.9;
+	public ScoreData8(double score1, double score2, double score3) {
+		Eng = score1 * rate;
+		Math = score2 * rate;
+		Lite = score3 * rate;
+		Total = Eng + Math + Lite;
+	}
+	
+	public double ScoreSum() {
+		return Total;
+	}
+}
+
+class Calculate4{
+	public static double ScoreDifference(double score1, double score2) {
+		return Math.abs(score1 - score2);
+	}
+}

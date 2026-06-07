@@ -1,0 +1,22 @@
+import java.io.*;
+
+public class AddExample3{
+	public static void main(String[] args) throws IOException{
+		String fileName = "JavaFile2.txt";
+		BufferedReader reader = new BufferedReader(new FileReader(fileName));
+		int i=0;
+		String line;
+		String[] array = new String[50];
+		while ((line = reader.readLine()) != null) {
+			array[i] = line;
+			i++;
+		}
+		reader.close();
+		array[i] = "以下が個人データとなります．";
+		PrintWriter writer = new PrintWriter(new BufferedWriter(new FileWriter(fileName)));
+		for(int x=2; i>0; i--) {
+			writer.println(array[x]);
+		}
+		writer.close();
+	}
+}

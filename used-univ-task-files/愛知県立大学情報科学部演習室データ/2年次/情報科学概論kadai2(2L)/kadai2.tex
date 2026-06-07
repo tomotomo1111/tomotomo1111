@@ -1,0 +1,78 @@
+\documentclass[a4paper,dvipdfmx]{jsarticle}
+\usepackage[width=18cm,height=26cm]{geometry}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{listings,jlisting}
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+\begin{document}
+\author{2345678901 名無しの権兵衛}
+\title{情報科学概論第2回課題}
+\maketitle
+\section*{課題1}
+
+\section*{課題2}
+
+\section*{課題3}
+\begin{center}
+\IfFileExists{sha256.png}
+{\includegraphics[width=0.7\linewidth]{sha256.png}}
+{\framebox[0.7\linewidth]{\raisebox{-2.5cm}{\rule{0pt}{5cm}}スクリーンショットsha256.png}}
+\end{center}
+
+\section*{課題4}
+\begin{enumerate}
+\item 
+\begin{center}
+表1 2つの素数の積の素因数分解にかかる時間\\
+\begin{tabular}{r|r}
+\hline
+\hline
+\multicolumn{1}{c|}{各素数のビット数} &
+\multicolumn{1}{c}{計算時間 [ms]} \\
+\hline
+% 以下の & と \\の間に結果を書き込むこと
+50 &       \\
+60 &       \\
+70 &       \\
+80 &       \\
+90 &       \\
+\hline
+\end{tabular}
+\end{center}
+\item
+\begin{description}
+\item[【パスワード】]
+
+\item[【平文】]
+
+\item[【実行に要した時間】]
+
+\end{description}
+\end{enumerate}
+
+\section*{ミニッツペーパー}
+今回の授業の感想、疑問点などを書いてください。
+
+\section*{謝辞}
+
+\section*{参考文献}
+% URLを記すときには、\url{https://www.ist.aichi-pu.ac.jp/}のように\urlコマンドを使うこと。
+
+\end{document}

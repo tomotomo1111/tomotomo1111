@@ -1,0 +1,26 @@
+\documentclass[a4j,dvipdfmx]{jsarticle}
+\begin{document}
+\title{先週までのおさらい}
+\author{情報\quad 元気}
+\date{2022年7月15日}
+\maketitle
+
+\section{はじめに}
+\begin{enumerate}
+\item 位置について,
+\item よーい,
+\item どん!\quad (計測開始)
+\end{enumerate}
+\section{数式}
+微分を式(\ref{eq:1})で定義する:
+\begin{equation}
+\frac{\mathrm{d}f}{\mathrm{d}t}=\lim_{\Delta t\rightarrow\infty}\frac{f(t)-f(t-\Delta t)}{\Delta t}\label{eq:1}\documentclass[a4paper,12pt]{jsarticle}
+\end{equation}
+\section{おわりに}
+やめ!\quad (計測終了)
+\end{document}
+
+
+
+
+

@@ -1,0 +1,76 @@
+\documentclass[a4j]{jarticle}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{listings,jvlisting, jlisting}
+
+\lstset{
+  basicstyle={\ttfamily},
+  identifierstyle={\small},
+  commentstyle={\smallitshape},
+  keywordstyle={\small\bfseries},
+  ndkeywordstyle={\small},
+  stringstyle={\small\ttfamily},
+  frame={tb},
+  breaklines=true,
+  columns=[l]{fullflexible},
+  numbers=left,
+  xrightmargin=0zw,
+  xleftmargin=3zw,
+  numberstyle={\scriptsize},
+  stepnumber=1,
+  numbersep=1zw,
+  lineskip=-0.5ex
+}
+
+\begin{document}
+
+\vfill
+\begin{screen}
+  \begin{center}
+    \huge\bf 実験　第1回レポート\\
+    \vspace{5mm}
+    \large\bf
+    学籍番号　2022311042 \quad 名前 神野友哉\\
+    \today
+  \end{center}
+\end{screen}
+\thispagestyle{empty}
+
+
+\section{実験1-1}
+実験1-1について画像フォーマットと画像データの格納方法の関係について詳しく考察せよ.
+\subsection{考察}
+
+
+\newpage
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[width=70mm]{image01.png}
+  \end{center}
+  \caption{image01.pgm}
+  \label{fig:01}
+\end{figure}
+\begin{figure}[htbp]
+  \begin{minipage}{0.5\hsize}
+    \begin{center}
+      \includegraphics[width=70mm]{image02.png}
+    \end{center}
+    \caption{image02.pbm}
+    \label{fig:02}
+  \end{minipage}
+  \begin{minipage}{0.5\hsize}
+    \begin{center}
+      \includegraphics[width=70mm]{image03.png}
+    \end{center}
+    \caption{image03.jpg}
+    \label{fig:03}
+  \end{minipage}
+\end{figure}
+
+\newpage
+\begin{lstlisting}[caption= 実験1-2,label=c-1-2]
+
+\end{lstlisting}
+\lstinputlisting[]{question4next}
+
+\end{document}

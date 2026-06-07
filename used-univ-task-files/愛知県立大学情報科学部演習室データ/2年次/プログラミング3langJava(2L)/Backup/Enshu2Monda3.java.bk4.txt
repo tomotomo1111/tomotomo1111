@@ -1,0 +1,31 @@
+public class Enshu2Monda3 {
+	public static void main(String[] args) {
+		int former, latter;
+		
+		former = 180;
+		latter = 170;
+		
+		HeightData data = new HeightData(former, latter);
+		data.HeightComparison();
+	}
+}
+
+public class HeightData{
+	int height1, height2;
+	
+	public HeightData(int H1, int H2) {
+		
+		height1 = H1;
+		height2 = H2;
+	}
+	
+	public void HeightComparison() {
+		if(height1 > height2) {
+			System.out.println("1番目の身長が2番目の身長よりも高い");
+		} else if (height1 < height2) {
+			System.out.println("2番目の身長が1番目の身長よりも高い");
+		} else {
+			System.out.println("高さが同じです");
+		}
+	}
+}

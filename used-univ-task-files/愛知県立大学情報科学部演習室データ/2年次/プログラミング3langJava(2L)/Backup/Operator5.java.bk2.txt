@@ -1,0 +1,12 @@
+public class Operator5{
+	public class void main(String[] args) {
+		int x = 5;
+		int y = x--;
+		System.out.println("x="+x+" y="+y);
+		int z = --y;
+		System.out.println("y="+y+" z="+y);
+		int i = 6;
+		i -= z;
+		System.out.println("i="+i");
+	}
+}

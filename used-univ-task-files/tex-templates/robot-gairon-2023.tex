@@ -1,0 +1,184 @@
+\documentclass[a4j]{jarticle}
+\usepackage{ascmac}
+\usepackage[dvipdfmx]{graphicx}
+
+\begin{document}
+
+\vfill
+\begin{screen}
+\begin{center}
+\huge\bf 情報科学概論　第七回レポート課題\\
+\vspace{5mm}
+\large\bf
+学籍番号　2022311042 \quad 名前 神野友哉\\
+\today
+\end{center}
+\end{screen}
+\thispagestyle{empty}
+
+\section{ロボット制御に関するシミュレーション演習　問1}
+$g\neq 0$の場合、設計用モデルの振る舞い(状態の時間変化)が詳細モデルの
+それと同等とみなせるのは$x_{0}$がどのような範囲のときか、たとえば、
+無制御$(u(t)= 0)$のとき、$x_{2}(0) = 0$のまま、$x_{1}(0)$を様々に変え、
+得られる振る舞いを基に検討せよ。
+\subsection{結果}
+様々な弧度で実験した結果、$\frac{d\theta}{dt}$の近似曲線と詳細モデルの曲線が
+十分同等とみなせる$x_{1}$の範囲は、originalとlinearizedの曲線の重なりを考慮し
+$-\frac{3}{10}\pi \leq x_{1}(0) \leq \frac{3}{10}\pi$の範囲だと結論付けた。
+
+\newpage
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robot_1.png}
+  \end{center}
+  \caption[short]{$x_{1}(0) = \frac{1}{2}\pi$}
+\end{figure}
+
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robot_2.png}
+  \end{center}
+  \caption[short]{$x_{1}(0) = \frac{1}{3}\pi$}
+\end{figure}
+
+\newpage
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robot_3.png}
+  \end{center}
+  \caption[short]{$x_{1}(0) = \frac{3}{10}\pi$}
+\end{figure}
+
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robot_4.png}
+  \end{center}
+  \caption[short]{$x_{1}(0) = -\frac{3}{10}\pi$}
+\end{figure}
+
+\newpage
+\section{ロボット制御に関するシミュレーション演習　問2}
+$g=0$の場合、$k_{p}$,$k_{d}$を様々に変えてPD制御すると、
+モデルの振る舞いはどのように変化するか、システムの固有値と関係づけて検討せよ。
+\subsection{結果}
+固有値が0と-0.42であったため、$k_{p}$と$k_{d}$にそれらを関連させて代入し、
+振る舞いを観察した。以下の図のようになり、状態が一定振動する場合が発見された。
+それは、図\ref{fig:d} の$k_{p}=0.42$と$k_{d}=-0.42$のときであった。$k_{p}$に固有値の符号反転した値を、
+$k_{d}$に固有値そのものを入れた場合、状態が振動するのではないかと考察される。しかし、
+今回は、サンプルが極めて少ないと言わざるを得ないため、仮説に過ぎない。また、
+図\ref{fig:b} のように$k_{p}=0$と$k_{d}=-0.42$としたとき、初期値を継続したため、$k_{d}=0$としてもまた、
+同様であると考えられるが、図\ref{fig:c} の$k_{p}=-0.42$と$k_{d}=0$の時は、その限りではなかった。
+このことから、$k_{p}$が固有値に強く関係すると考えられるのではないか。
+
+\newpage
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robot_5.png}
+  \end{center}
+  \caption[short]{$k_{p} = 1, k_{d} = 1$}
+  \label{fig:a}
+\end{figure}
+
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robotG_5.png}
+  \end{center}
+  \caption[short]{$k_{p} = 1, k_{d} = 1$}
+\end{figure}
+
+\newpage
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robot_6.png}
+  \end{center}
+  \caption[short]{$k_{p} = 0, k_{d} = -0.42$}
+  \label{fig:b}
+\end{figure}
+
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robotG_6.png}
+  \end{center}
+  \caption[short]{$k_{p} = 0, k_{d} = -0.42$}
+\end{figure}
+
+\newpage
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robot_7.png}
+  \end{center}
+  \caption[short]{$k_{p} = -0.42, k_{d} = 0$}
+  \label{fig:c}
+\end{figure}
+
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robotG_7.png}
+  \end{center}
+  \caption[short]{$k_{p} = -0.42, k_{d} = 0$}
+\end{figure}
+
+\newpage
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robot_8.png}
+  \end{center}
+  \caption[short]{$k_{p} = 0.42, k_{d} = -0.42$}
+  \label{fig:d}
+\end{figure}
+
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robotG_8.png}
+  \end{center}
+  \caption[short]{$k_{p} = 0.42, k_{d} = -0.42$}
+\end{figure}
+
+\newpage
+\section{ロボット制御に関するシミュレーション演習　問3}
+[任意課題]無制限のとき,あるいはPD制御の時、特定の物理パラメータを
+変化させると、モデルの振る舞いにどのような変化が現れるか、自由に検討、考察せよ。
+\subsection{結果}
+PD制御で、問2の図\ref{fig:a}と物理パラメータを一致させた状態で、
+粘性摩擦係数cのみを増減させてみた。
+cの値が大きい場合、図\ref{fig:e}と図\ref{fig:f}の比較から解かるように、モデルの動きが
+比較的早く減速を始める。一方、cの値が小さい場合、図\ref{fig:e}と図\ref{fig:g}と
+の比較によって、前述の逆の振る舞いであることが解かる。また、図\ref{fig:g}と図\ref{fig:h}
+は、初期値$x_{1}(0)$の符号が異なること、つまり初期の位相がyについて対称である。ここで、
+モデルの減速の具合が全く同じであることから、向きによらず、cの値による減速傾向は変わらないと
+考察される。
+\newpage
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robot_5.png}
+  \end{center}
+  \caption[short]{$c = 0.42$}
+  \label{fig:e}
+\end{figure}
+
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robot_12.png}
+  \end{center}
+  \caption[short]{$c = 2$}
+  \label{fig:f}
+\end{figure}
+
+\newpage
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robot_13.png}
+  \end{center}
+  \caption[short]{$c = 0.005$}
+  \label{fig:g}
+\end{figure}
+
+\begin{figure}[hbt]
+  \begin{center}
+    \includegraphics[width=0.5\textwidth,clip]{robot_14.png}
+  \end{center}
+  \caption[short]{$c = 0.005 $\ref{fig:g}の初期値$x_{1}(0)$を負に}
+  \label{fig:h}
+\end{figure}
+
+\end{document}

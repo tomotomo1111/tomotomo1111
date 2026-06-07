@@ -1,0 +1,11 @@
+public class ConditionalBranch3{
+	public static void main(String[] args) {
+		int x = 7;
+		if(x <=3){
+		System.out.println("x‚Í3ˆÈ‰º‚Å‚·.");
+		}else if(x <=5){
+			System.out.println("x‚Í5ˆÈ‰º‚Å‚·.");
+		}else {
+			System.out.println("x‚Í5ˆÈ‰º‚Å‚Í‚ ‚è‚Ü‚¹‚ñ.");
+		}}
+}

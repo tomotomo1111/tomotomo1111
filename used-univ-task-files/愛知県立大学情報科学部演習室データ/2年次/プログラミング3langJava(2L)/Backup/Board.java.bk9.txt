@@ -1,0 +1,612 @@
+package com.zetcode;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.FontMetrics;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JPanel;
+import javax.swing.Timer;
+
+public class Board extends JPanel implements ActionListener {
+
+    private final int B_WIDTH  = 300;
+    private final int B_HEIGHT = 300;
+    private final int DOT_SIZE = 10;
+    private final int ALL_DOTS = 900;
+    private final int RAND_POS = 29;
+    private final int DELAY = 20;
+
+    private final int x[] = new int[ALL_DOTS];
+    private final int y[] = new int[ALL_DOTS];
+
+    private int dots;
+    private int apple_x;
+    private int apple_y;
+	private int enemy_x = 150; //enemys
+	private int enemy_y = 150; //enemys
+    private int firstDots = 25; //hitotu ringo torumade muteki ninaru hensuu
+	private int totalPoints = 0; //tokuten wo keisansitai
+	private int getAppleCounter = 0; //ringo no kaisuu kazoeru
+	private int points;
+	private int instant_delay = 20; //timer tte int sika toranai noka
+	private int three_Consecutive = 0;
+	private int inv = 10; //muteki kaijo no hosuu wo kazoeru
+	private int enemyMovetime = 0; //enemys
+	private int stopTimesec = 210;
+	private int distance;
+
+    private boolean leftDirection = false;
+    private boolean rightDirection = false;
+    private boolean upDirection = false;
+    private boolean downDirection = false;
+    private boolean inGame = true;
+//	private boolean straight = false;
+	private boolean invincible = false;
+	private boolean breaker = false; //if bun de tukau break syori
+	private boolean timeStop = false;
+	
+    private Timer timer;
+    private Image ball;
+    private Image apple;
+    private Image head;
+	private Image toxicapple; //enemys
+	private Image timestar;
+
+    public Board() {
+        
+        initBoard();
+    }
+    
+    private void initBoard() {
+
+        addKeyListener(new TAdapter());
+        setBackground(Color.black);
+        setFocusable(true);
+
+        setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
+        loadImages();
+        initGame();
+    }
+
+    private void loadImages() {
+
+        ImageIcon iid = new ImageIcon("src/resources/dot.png");
+        ball = iid.getImage();
+
+        ImageIcon iia = new ImageIcon("src/resources/apple.png");
+        apple = iia.getImage();
+
+        ImageIcon iih = new ImageIcon("src/resources/head.png");
+        head = iih.getImage();
+		
+		ImageIcon iio = new ImageIcon("src/resources/toxicapple.png");
+		toxicapple = iio.getImage();
+		
+		ImageIcon iip = new ImageIcon("src/resources/timestar.png");
+		timestar = iip.getImage();
+		
+    }
+
+    private void initGame() {
+
+        dots = firstDots; //166 de firstDots wo motiiru
+
+        for (int z = 0; z < dots; z++) {
+            x[z] = (int) Math.floor(B_WIDTH/2) - z * DOT_SIZE; //korede ookisani kakawarazu hebiga saisyoha mannnakaninaru 
+            y[z] = (int) Math.floor(B_HEIGHT/2);
+        }
+
+        locateApple();
+
+        timer = new Timer(DELAY, this);
+        timer.start();
+    }
+
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+
+        doDrawing(g);
+    }
+    
+    private void doDrawing(Graphics g) {
+        
+        if (inGame) {
+			
+			g.setColor(Color.green);
+            g.drawImage(apple, apple_x, apple_y, this);
+			g.drawImage(toxicapple, enemy_x, enemy_y, this); //enemys
+			g.drawOval(enemy_x-5,enemy_y-5,20,20);
+			
+			String muteki = (invincible || (dots == firstDots)) ? "invincible" : " ";
+			String stopTimes = (timeStop) ? Integer.toString(stopTimesec / 30) + "sec": " ";
+			
+			g.drawString(muteki, x[0] + 20, y[0] + 20);
+			g.drawString(Integer.toString(totalPoints) + "points",210,150);
+			g.drawString(stopTimes,210,170);
+			
+			int randomnumX = (int) (Math.random() * 300);
+			int randomnumY = (int) (Math.random() * 300);
+			
+			if (timeStop) g.drawImage(timestar,randomnumX,randomnumY,this);
+			
+            for (int z = 0; z < dots; z++) {
+                if (z == 0) {
+                    g.drawImage(head, x[z], y[z], this);
+                } else {
+                    g.drawImage(ball, x[z], y[z], this);
+                }
+            }
+
+            Toolkit.getDefaultToolkit().sync();
+
+        } else {
+
+            gameOver(g);
+        }        
+    }
+
+    private void gameOver(Graphics g) {
+
+        String msg = "Game Over result";
+		String msg1 =  totalPoints + " points.";
+		String msg2 = getAppleCounter + " apples";
+        Font small = new Font("Helvetica", Font.BOLD, 14);
+		Font large = new Font("Helvetica", Font.BOLD, 30);
+        FontMetrics metr = getFontMetrics(small);
+
+        g.setColor(Color.white);
+        g.setFont(large);
+        g.drawString(msg, (B_WIDTH - metr.stringWidth(msg) * 2) / 2, B_HEIGHT / 2);
+		g.setFont(small);
+		g.drawString(msg1, (B_WIDTH - metr.stringWidth(msg1)) / 2, B_HEIGHT / 2 + 50);
+		g.setColor(Color.pink);
+		g.drawString(msg2, (B_WIDTH - metr.stringWidth(msg2)) / 2, B_HEIGHT / 2 + 80);
+    }
+
+    private void checkApple() { //apple no atarihantei jissou
+		
+		boolean appleHitbox;
+		
+		appleHitbox = ((apple_x - x[0]) * (apple_x - x[0]) + (apple_y - y[0]) * (apple_y - y[0])) <= 11 * 11; //atarihantei
+		
+        if (appleHitbox) {
+
+            dots += 5;
+			pointsCounter();
+			locateApple();
+			speedBooster();
+			triStreak();
+			statusShower();
+			PlayClip.musicStart();
+        }
+    }
+
+	private void pointsCounter() {
+		
+		getAppleCounter += 1;
+		points = distance;
+		totalPoints += points;
+	}
+	
+	private void triStreak() {
+		
+		three_Consecutive += 1;
+		
+		if(three_Consecutive >= 3) {
+			
+			totalPoints *= 1.1;
+			three_Consecutive = 0;
+			
+			System.out.println("TRYSTREAK! +10% BONUS!");
+		}
+	}
+	
+    private void move() {
+
+        for (int z = dots; z > 0; z--) {
+            x[z] = x[(z - 1)];
+            y[z] = y[(z - 1)];
+        }
+
+        if (leftDirection) { //ugoku sokudo wo 2 
+            x[0] -= DOT_SIZE/5;
+        }
+
+        if (rightDirection) {
+            x[0] += DOT_SIZE/5;
+        }
+
+        if (upDirection) {
+            y[0] -= DOT_SIZE/5;
+        }
+
+        if (downDirection) {
+            y[0] += DOT_SIZE/5;
+        }
+		
+		invincibleCounter();
+		
+    }
+	
+	private void enemyMove() { //enemys
+		
+		int enemyDirection = (int) (Math.random() * 4);
+		int e = (int) (Math.random() * 10);
+		
+		if (enemyMovetime >= 5) {
+			
+			switch (enemyDirection) {
+				case 0://nisi
+				enemy_x -= e;
+				break;
+				
+				case 1://higasi
+				enemy_x += e;
+				break;
+				
+				case 2://kita
+				enemy_y -= e;
+				break;
+				
+				case 3://minami
+				enemy_y += e;
+				break;
+			}
+			
+			enemyMovetime = 0;
+		} else {
+			
+			enemyMovetime++;
+//			String str = Integer.toString(e);
+//			System.out.println(e);
+		}
+		
+		if (x[0] > enemy_x) {
+			
+			enemy_x += 1 * DOT_SIZE/10;
+		} else {
+			
+			enemy_x -= 1 * DOT_SIZE/10;
+		}
+		
+		if (y[0] > enemy_y) {
+			
+			enemy_y += 1 * DOT_SIZE/10;
+		} else {
+			
+			enemy_y -= 1 * DOT_SIZE/10;
+		}
+	} //enemys
+	
+	private void invincibleCounter() {
+		
+		if (invincible) {
+			
+			if ((inv == 0)) {
+				
+				invincible = false;
+				inv = 10;
+				
+				System.out.println("no longer invincible");
+				System.out.println(" ");
+				
+			} else {
+					
+				inv--;
+				/*
+				String ins = Integer.toString(inv);
+				System.out.println(ins);
+				*/
+			}
+		}
+	}
+
+    private void checkCollision() { //doutai nimo atarihantei jissousita
+		
+		boolean myHitbox;
+		boolean enemyHitbox; //enemys
+		
+        for (int z = dots; z > 0; z--) {
+			
+			myHitbox = ((x[z] - x[0]) * (x[z] - x[0]) + (y[z] - y[0]) * (y[z] - y[0])) <= 5 * 5;
+			enemyHitbox = ((enemy_x - x[0]) * (enemy_x - x[0]) + (enemy_y - y[0]) * (enemy_y - y[0])) <= 10 * 10; //enemys
+			
+            if ((!invincible) && (z > firstDots) && (myHitbox || enemyHitbox)) { //enemys
+                inGame = false;
+            }
+        }
+
+        if (y[0] >= B_HEIGHT) {
+            inGame = false;
+        }
+
+        if (y[0] < 0) {
+            inGame = false;
+        }
+
+        if (x[0] >= B_WIDTH) {
+            inGame = false;
+        }
+
+        if (x[0] < 0) {
+            inGame = false;
+        }
+        
+        if (!inGame) {
+            timer.stop();
+        }
+    }
+
+    private void locateApple() {
+
+        int r = (int) (Math.random() * RAND_POS);
+        apple_x = ((r * DOT_SIZE));
+
+        r = (int) (Math.random() * RAND_POS);
+        apple_y = ((r * DOT_SIZE));
+		
+		distance = (int) Math.sqrt((apple_x - x[0]) * (apple_x - x[0]) + (apple_y - y[0]) * (apple_y - y[0]));
+    }
+	
+	private void speedBooster() {
+		
+		if(getAppleCounter % 5 == 0) {
+			
+			if(instant_delay > 15) {
+				
+				instant_delay -= 1;
+			}
+			
+			timer.setDelay(instant_delay);
+		}
+	}
+	
+	public void statusShower() {
+		
+		String str = Integer.toString(totalPoints);
+		str = str + " points";
+		System.out.println(str);
+		
+		str = Integer.toString(getAppleCounter);
+		str = str + " apples";
+		System.out.println(str);
+		
+		str = String.valueOf((double) instant_delay/1000) + " second interval(" + String.valueOf((double) DELAY/instant_delay) + ")";
+		System.out.println(str);
+		
+		str = " ";
+		System.out.println(str);
+	}
+	
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        if (inGame) {
+        	if(!timeStop) {
+                checkApple();
+                checkCollision();
+                move();
+			    enemyMove(); //enemys
+//			straight_Checker();
+        	} else {
+        		if (stopTimesec == 0) {
+        			timeStop = false;
+        			stopTimesec = 210;
+        		} else {
+        			stopTimesec--;
+        		}
+        	}
+        }
+        repaint();
+    }
+/*	
+	public void straight_Checker() {
+		
+		boolean i;
+		i = ((x[dots-1]-x[0]) * (x[dots-1]-x[0]) + (y[dots-1]-y[0]) * (y[dots-1]-y[0])) == ((dots-1) * 2) * ((dots-1) * 2);
+		
+		if(i) {
+			straight = true;
+		} else {
+			straight = false;
+		}
+	}
+*/
+    private class TAdapter extends KeyAdapter {
+        @Override
+        public void keyPressed(KeyEvent e) {
+
+            int key = e.getKeyCode();
+			
+            if (key == KeyEvent.VK_LEFT) {
+				
+                if (!leftDirection && !rightDirection){
+					
+					leftDirection = true;
+					breaker = true;
+                }
+				
+				if ((upDirection || downDirection) && !breaker) {
+					
+					if (leftDirection) {
+						
+						upDirection = false;
+						downDirection = false;
+					}
+					
+					if (rightDirection) {
+						
+						rightDirection = false;
+					}
+				}
+				
+				breaker = false;
+			}
+			
+            if (key == KeyEvent.VK_RIGHT) { 
+                
+				if (!leftDirection && !rightDirection) {
+					
+					rightDirection = true;
+					breaker = true;
+				}
+				
+				if ((upDirection || downDirection) && !breaker) {
+					
+					if (rightDirection) {
+						
+						upDirection = false;
+						downDirection = false;
+					}
+					
+					if (leftDirection) {
+						
+						leftDirection = false;	
+					}
+				}
+				breaker = false;
+				
+			}
+			
+            if (key == KeyEvent.VK_UP) {
+				
+				if (!upDirection && !downDirection) {
+					
+					upDirection = true;
+					breaker = true;
+				}
+				
+				if ((leftDirection || rightDirection) && !breaker) {
+					
+					if (upDirection) {
+						
+						leftDirection = false;
+						rightDirection = false;
+					}
+					
+					if (downDirection) {
+						
+						downDirection = false;
+					}
+				}
+				
+				breaker = false;
+			}
+			
+            if (key == KeyEvent.VK_DOWN) {
+				
+				if (!upDirection && !downDirection) {
+					
+					downDirection = true;
+					breaker = true;
+				}
+				
+				if ((leftDirection || rightDirection) && !breaker) {
+					
+					if (downDirection) {
+						
+						leftDirection = false;
+						rightDirection = false;	
+					}
+					
+					if (upDirection) {
+						
+						upDirection = false;
+					}
+				}
+				
+				breaker = false;
+			}
+			
+			if ((key == KeyEvent.VK_SHIFT) && (timeStop == false)) {
+				
+				invincible = true;
+				inv = 10;
+				
+				if (leftDirection) {
+					x[0] -= 3 * DOT_SIZE;
+					x[1] = x[0] + 1 * DOT_SIZE/5;
+				}
+					
+				if (rightDirection) {
+					x[0] += 3 * DOT_SIZE;
+					x[1] = x[0] - 1 * DOT_SIZE/5;
+				}
+					
+				if (upDirection) {
+					y[0] -= 3 * DOT_SIZE;
+					y[1] = y[0] - 1 * DOT_SIZE/5;
+				}
+					
+				if (downDirection) {
+					y[0] += 3 * DOT_SIZE;
+					y[1] = y[0] + 1 * DOT_SIZE/5;
+				}
+					
+				for (int z = 1; z < dots;z++) {
+					x[z] = x[(z - 1)];
+					y[z] = y[(z - 1)];
+				}
+					
+				totalPoints -= 20; //shift ha genten 20
+				three_Consecutive = 0;
+				
+				System.out.println("///DASH///");
+				statusShower();
+			}
+			
+			if (key == KeyEvent.VK_CONTROL) {
+				
+				timeStop = true;
+				
+				totalPoints -= 300; // ctrl ha genten 300
+				three_Consecutive = 0;
+				
+				System.out.println("///TIMESTOP///");
+				statusShower();			
+			}
+			
+			if (key == KeyEvent.VK_SPACE) {
+				
+				System.out.println("aaa");
+				
+				inGame = true;
+				
+			}
+        }
+		
+		/* //kara 
+		@Override
+		public void keyReleased(KeyEvent e) {
+			
+			int key = e.getKeyCode();
+			
+			if ((key == KeyEvent.VK_LEFT) && ((upDirection || downDirection) && leftDirection)) {
+				leftDirection = false;
+			}
+				
+			if ((key == KeyEvent.VK_RIGHT) && ((upDirection || downDirection) && rightDirection)) {
+				rightDirection = false;
+			}
+			
+			if ((key == KeyEvent.VK_UP) && ((rightDirection || leftDirection) && upDirection)) {
+				upDirection = false;
+			}
+			
+			if ((key == KeyEvent.VK_DOWN) && ((rightDirection || leftDirection) && downDirection)) {
+				downDirection = false;
+			}
+		}
+		*/ //kokomade /**/de kakomuto ge-museiga kawaru
+    }
+}

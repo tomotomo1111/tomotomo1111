@@ -1,0 +1,45 @@
+public class Enshu2Monda4{
+	
+	public static void main(String[] args) {
+		int[] data = new int[5];
+		for(int i = 0; i < data.length; i++) {
+			data[i] = randomGenerate();
+		}
+		
+		HeightData2 mydata = new HeightData2(data);
+		mydata.MaxHeight();
+		mydata.MinHeight();
+	}
+	
+	public static int randomGenerate() {
+		int rand;
+		do {
+			rand = (int)(Math.random() * 190);
+		}while(rand <140);
+		return rand;
+	}
+}
+
+class HeightData2 {
+	int[] height;
+	
+	public HeightData2(int[] input) {
+		height = input;
+	}
+	
+	void MaxHeight() {
+		int maxer = Math.max(height[0],height[1]);;
+		for(int i = 0; i<height.length-2; i++){
+			maxer = Math.max(maxer,height[i+2]);
+		}
+		System.out.println("max="+maxer);
+	}
+	
+	void MinHeight() {
+		int miner = Math.min(height[0],height[1]);;
+		for(int i = 0; i<height.length-2; i++){
+			miner = Math.min(miner,height[i+2]);
+		}
+		System.out.println("min="+miner);
+	}
+}

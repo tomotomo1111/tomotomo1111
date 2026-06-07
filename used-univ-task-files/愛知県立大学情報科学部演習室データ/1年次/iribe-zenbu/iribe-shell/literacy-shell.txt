@@ -1,0 +1,134 @@
+学籍番号 2022311042|氏    名 神野 友哉
+
+//以下 ls -lR > foo.txt は [is221042@if090 ~] ls -lR > foo.txt として書く
+■■課題1■■ 
+「ls -lR」の標準出力，エラー出力はそれぞれどこに出力されるか，端末(画面)またはファイル名で答えよ．
+
+[is221042@if090 ~] ls -lR > foo.txt
+
+通常出力→ foo.txt 
+エラー出力→ 端末(画面)
+
+■■課題2■■ 
+「ls -lR」の標準出力，エラー出力はそれぞれどこに出力されるか，端末(画面)またはファイル名で答えよ．
+
+[is221042@if090 ~] ls -lR  2> foo.txt
+
+通常出力→ 端末(画面)
+エラー出力→ foo.txt
+
+■■課題3■■ 
+「ls -lR」の標準出力，エラー出力はそれぞれどこに出力されるか，端末(画面)またはファイル名で答えよ．
+
+[is221042@if090 ~] ls -lR > baa.txt 2> foo.txt
+
+通常出力→ baa.txt 
+エラー出力→ foo.txt
+
+■■課題4■■ 
+「ls -lR」の標準出力，エラー出力はそれぞれどこに出力されるか，端末(画面)またはファイル名で答えよ．
+
+[is221042@if090 ~] ls -lR 2>&1  > baa.txt
+
+通常出力→ baa.txt 
+エラー出力→ baa.txt
+
+■■課題5■■ 
+「ls -lR」の標準出力，エラー出力はそれぞれどこに出力されるか，端末(画面)またはファイル名で答えよ．
+
+[is221042@if090 ~] ls -lR | tee fuga.txt
+
+通常出力→ fuga.txt と 端末(画面) 
+エラー出力→ 端末(画面)
+
+■■課題6■■
+「ls -lR」の標準出力，エラー出力はそれぞれどこに出力されるか，端末(画面)またはファイル名で答えよ．
+
+[is221042@if090 ~] ls -lR > baz 2>&1
+
+通常出力→ baz 
+エラー出力→ baz
+
+■■課題7■■
+「ls -lR」の標準出力，エラー出力はそれぞれどこに出力されるか，端末(画面)またはファイル名で答えよ．
+
+[is221042@if090 ~] ls -lR > /dev/null
+
+通常出力→ /dev/null 
+エラー出力→ 端末(画面)
+
+■■課題8■■
+下記のリダイレクトとパイプの組み合わせコマンドに関して，どのような処理をするものかを説明しなさい．
+
+[is221042@if090 ~] ls -lR /etc 2>&1 | grep README
+
+標準出力と標準エラー出力が同時に表示され、READMEと書かれているファイル郡が提示された
+
+■■課題9■■
+
+「ls -lR /etc」のエラー出力のみ画面に表示するためのコマンドを答えよ．
+
+[is221042@if090 ~] ls -lR > /deb/null
+
+■■課題10■■
+下記の正規表現について説明せよ．
+1. ^.[ab]
+2. ^$
+
+1は先頭が任意の文字で次がaかbとなる文字列
+2は空白行
+
+
+■■課題11■■
+正の整数を表す正規表現を答えなさい．
+
+^([1-9][0-9]*)$ 
+
+■■課題12■■
+address.txt中のドメイン名を，cis.aichi-pu.ac.jpからaichi-pu.ac.jpに置き換えて上書き保存するためのsedコマンドを記載せよ．
+
+（注意）まず下記を含むaddress.txtをカレントディレクトリ上に作成してから作業を行うこと．
+aichi@cis.aichi-pu.ac.jp
+ito@cis.aichi-pu.ac.jp
+iribe@cis.aichi-pu.ac.jp
+kamiyama@cis.aichi-pu.ac.jp
+ohta@cis.aichi-pu.ac.jp
+
+[is221042@if090 ~]$ sed -ie 's/cis.aichi-pu.ac.jp/aichi-pu.ac.jp/g' address.txt 
+
+■■課題13■■
+address1.txt中のメールアドレスの@マーク以下の部分（ドメイン名）を全てaichi-pu.ac.jpに変換するためのsedコマンドを記載せよ．
+
+（注意）まず下記を含むaddress1.txtを作成してから作業を行ってください．
+aichi@cie.aichi-pu.ac.jp
+ito@ist.aichi-pu.ac.jp
+iribe@yahoo.ac.jp
+kamiyama@fg.aichi-pu.ac.jp
+ohta@fi.aichi-pu.ac.jp
+
+[is221042@if090 ~]$ sed -ie 's/@.\+/aichi-pu.ac.jp/g' address1.txt
+aichiaichi-pu.ac.jp
+itoaichi-pu.ac.jp
+iribeaichi-pu.ac.jp
+kamiyamaaichi-pu.ac.jp
+ohtaaichi-pu.ac.jp
+
+■■課題14■■
+address1.txtで@マークの前のみ（ユーザ名）表示するsedコマンドを記載せよ．
+
+[is221042@ie021 ~]$ sed -n 's/@.\+//p' address1.txt 
+aichi
+ito
+iribe
+kamiyama
+ohta
+
+その後に address1.txt の内容を確認すると
+
+[is221042@ie021 ~]$ cat address1.txt
+aichi@cie.aichi-pu.ac.jp
+ito@ist.aichi-pu.ac.jp
+iribe@yahoo.ac.jp
+kamiyama@fg.aichi-pu.ac.jp
+ohta@fi.aichi-pu.ac.jp
+

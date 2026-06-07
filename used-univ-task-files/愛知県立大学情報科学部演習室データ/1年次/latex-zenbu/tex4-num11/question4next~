@@ -1,0 +1,71 @@
+\documentclass[a4j,aspectratio=169,dvipdfmx,10pt]{beamer}
+\usepackage{bxdpx-beamer}
+\usepackage{pgfpages}
+\usepackage{pxjahyper}
+\usepackage{graphicx}
+\usepackage{color}
+\setbeamertemplate{caption}[numbered]
+\usetheme{Berlin}
+
+\title{夏の２ヶ月，自分に投資しませんか？}
+\subtitle{---大学生の4年間に夏休みは2回しか来ない?!---}
+\author[神野]{2022311042 神野　友哉}
+\institute[愛知県立大学]{愛知県立大学　情報科学部}
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{4年間で夏休み2回だけってどういうこと??}
+\begin{frame}\frametitle{4年間で夏休み2回だけってどういうこと??}
+卒業から遡ってみよう$\cdots$\pause
+\begin{enumerate}
+  \item B4の夏 $\Rightarrow $ 卒業研究しなくちゃ (研究，研究，中間発表の準備!)\pause
+  \item B3の夏 $\Rightarrow $ インターンシップに行かなきゃ (企業から青田刈り攻撃!)\pause
+  \item $\dots $\pause \color{blue} たしかに$B_1$と$B_2$の2回の夏休みしかない!!\color{black} \pause
+  \item B1の夏に何する？ $\Rightarrow $ [あなたの予定(例:免許取得，バイト，サークル，席)]\pause
+  \item $\dots $それもいいけど，せっかくなら\color{red} 自己投資\color{black} \footnote{自分を成長させるために時間とお金かけること}しませんか?
+    \begin{enumerate}
+      \item 知識系:講義で気になった，興味をもったアレを追求する(本や動画で)
+      \item スキル系:演習で物足りなかった，不甲斐なかったスキルを補う
+      \item 語学系:海外(リモート?)留学でサバイバルする
+    \end{enumerate}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}\frametitle{スキル系の例1:\TeX nicianを目指してみる}
+オンライン環境(表 \ref{table:compare} や文献 \cite{masita} 参照)で文書作成に慣れつつ，TeX\, Live導入？
+\begin{table}[htb]
+  \centering
+  \caption{２つのオンライン\,\LaTeX\,環境の比較\footnote{表のキャプションは表の上でしたね!}}
+  \label{table:compare}
+  \begin{tabular}{lcr}
+  \hline
+  主な制限や機能 & Overleaf\, (Free plan) & Cloud LaTeX \\
+  容量 & 500\, MB & 1024\, MB \\
+  プロジェクト数 & 無制限 & 999 \\
+  共同編集 & 可 & 不可 \\
+  履歴 & あり & なし \\
+  GitHub連携 &　可 & 不可 \\
+  \hline
+  \end{tabular}
+\end{table}
+
+\begin{thebibliography}{1}
+\beamertemplatetextbibitems
+  \bibitem{masita} 間下：``オンラインLaTeXエディタ''，私の研究開発ツール---第９５回---，映像情報メディア学会誌，Vol．71，4．pp．499--502(2017) \color{black}
+\end{thebibliography}
+\end{frame}
+
+\section{スキル系の例}
+\begin{frame}\frametitle{スキル系の例}
+  \begin{enumerate}
+\setbeamercovered{transparent=10}
+  \item スキル系の例1：\TeX nicianを目指してみる
+\vskip3\baselineskip
+  \item スキル系の例2：VBoxのCentOS７上でGnuplotの最新化
+  \end{enumerate}
+\end{frame}

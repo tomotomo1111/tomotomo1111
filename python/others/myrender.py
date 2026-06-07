@@ -14,7 +14,7 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 
 try:
-    texture = pygame.image.load("texture.jpg").convert()
+    texture = pygame.image.load("./wall4.jpg").convert()
 except:
     texture = pygame.Surface((256, 256))
     for y in range(256):
@@ -115,13 +115,179 @@ class Sphere:
             self.brightness[i] = min(0.8, (dist * dist) / (250 * 250))
 
 def draw_textured_quad(surface, tex, pts):
-    pygame.draw.polygon(surface, (255, 255, 255), [(p[0], p[1]) for p in pts], 1)
+    
+    tl,tr,br,bl = pts
+
+    steps = int(max(
+        np.hypot(bl[0]-tl[0], bl[1]-tl[1]),
+        np.hypot(br[0]-tr[0], br[1]-tr[1])
+    ))
+
+    tex_h = tex.get_height()
+
+    for i in range(steps):
+
+        t = i / max(1, steps-1)
+
+        tex_y = int(t * (tex_h-1))
+
+        lx = tl[0] + (bl[0]-tl[0]) * t
+        ly = tl[1] + (bl[1]-tl[1]) * t
+
+        rx = tr[0] + (br[0]-tr[0]) * t
+        ry = tr[1] + (br[1]-tr[1]) * t
+
+        width = int(np.hypot(rx-lx, ry-ly))
+
+        if width <= 0:
+            continue
+
+        strip = tex.subsurface(
+            (0, tex_y, tex.get_width(), 1)
+        )
+
+        strip = pygame.transform.scale(
+            strip,
+            (width,1)
+        )
+
+        angle = math.degrees(
+            math.atan2(ry-ly, rx-lx)
+        )
+
+        strip = pygame.transform.rotate(
+            strip,
+            -angle
+        )
+
+        rect = strip.get_rect(
+            center=((lx+rx)/2,(ly+ry)/2)
+        )
+
+        surface.blit(strip, rect)
+
+def draw_triangle_zbuffer(screen, zbuffer, pts, color):
+
+    xs = [p[0] for p in pts]
+    ys = [p[1] for p in pts]
+    zs = [p[2] for p in pts]
+
+    minx = max(0, int(min(xs)))
+    maxx = min(WIDTH - 1, int(max(xs)))
+
+    miny = max(0, int(min(ys)))
+    maxy = min(HEIGHT - 1, int(max(ys)))
+
+    x1, y1 = xs[0], ys[0]
+    x2, y2 = xs[1], ys[1]
+    x3, y3 = xs[2], ys[2]
+
+    area = (
+        (x2 - x1) * (y3 - y1)
+        -
+        (y2 - y1) * (x3 - x1)
+    )
+
+    if abs(area) < 1e-6:
+        return
+
+    for y in range(miny, maxy + 1):
+        for x in range(minx, maxx + 1):
+
+            w0 = (
+                (x2 - x1) * (y - y1)
+                -
+                (y2 - y1) * (x - x1)
+            ) / area
+
+            w1 = (
+                (x3 - x2) * (y - y2)
+                -
+                (y3 - y2) * (x - x2)
+            ) / area
+
+            w2 = (
+                (x1 - x3) * (y - y3)
+                -
+                (y1 - y3) * (x - x3)
+            ) / area
+
+            if w0 >= 0 and w1 >= 0 and w2 >= 0:
+
+                z = (
+                    w0 * zs[2]
+                    +
+                    w1 * zs[0]
+                    +
+                    w2 * zs[1]
+                )
+
+                if z < zbuffer[y, x]:
+
+                    zbuffer[y, x] = z
+                    screen.set_at((x, y), color)
+
+def draw_triangle_zbuffer(screen, zbuffer, pts, color):
+
+    p0, p1, p2 = pts
+
+    x0, y0, z0 = p0
+    x1, y1, z1 = p1
+    x2, y2, z2 = p2
+
+    min_x = max(0, int(min(x0, x1, x2)))
+    max_x = min(WIDTH - 1, int(max(x0, x1, x2)))
+
+    min_y = max(0, int(min(y0, y1, y2)))
+    max_y = min(HEIGHT - 1, int(max(y0, y1, y2)))
+
+    denom = (
+        (y1 - y2) * (x0 - x2)
+        +
+        (x2 - x1) * (y0 - y2)
+    )
+
+    if abs(denom) < 1e-6:
+        return
+
+    for y in range(min_y, max_y + 1):
+        for x in range(min_x, max_x + 1):
+
+            w0 = (
+                (y1 - y2) * (x - x2)
+                +
+                (x2 - x1) * (y - y2)
+            ) / denom
+
+            w1 = (
+                (y2 - y0) * (x - x2)
+                +
+                (x0 - x2) * (y - y2)
+            ) / denom
+
+            w2 = 1.0 - w0 - w1
+
+            if w0 < 0 or w1 < 0 or w2 < 0:
+                continue
+
+            z = (
+                w0 * z0 +
+                w1 * z1 +
+                w2 * z2
+            )
+
+            if z < zbuffer[y, x]:
+
+                zbuffer[y, x] = z
+                screen.set_at((x, y), color)
 
 cubes = [
-    Cube(   0, 100,   0, 250, 100, 400),
-    Cube(   0,   0,  50, 250, 100, 300),
-    Cube(   0,-100, 100, 250, 100, 200),
-    Cube(   0,-200,   0,  50,  50,  50, True)
+    Cube(   0,-200,   0,  50,  50,  50, True),
+    Cube(   0,   0,   0, 100, 400, 100),
+    Cube( 400,   0,   0, 100, 400, 100),
+    Cube(-400,   0, 100, 100, 400, 100),
+    Cube(   0,   0, 400, 100, 400, 100),
+    Cube(   0,   0,-400, 100, 400, 100)
 ]
 
 sphere = Sphere(   0, -300,  50, 100)
@@ -138,10 +304,10 @@ while running:
 
     k = pygame.key.get_pressed()
 
-    if k[pygame.K_w]: camera_rot_x -= 0.02
-    if k[pygame.K_s]: camera_rot_x += 0.02
-    if k[pygame.K_a]: camera_rot_y -= 0.02
-    if k[pygame.K_d]: camera_rot_y += 0.02
+    if k[pygame.K_w]: camera_rot_x -= 0.04
+    if k[pygame.K_s]: camera_rot_x += 0.04
+    if k[pygame.K_a]: camera_rot_y -= 0.04
+    if k[pygame.K_d]: camera_rot_y += 0.04
 
     if k[pygame.K_LEFT]:
         camera_pos[0] -= math.cos(camera_rot_y) * 4
@@ -152,9 +318,14 @@ while running:
         camera_pos[2] -= math.sin(camera_rot_y) * 4
 
     screen.fill((0, 0, 0))
+    zbuffer = np.full(
+        (HEIGHT, WIDTH),
+        np.inf,
+        dtype=np.float32
+    )
 
     t = pygame.time.get_ticks() * 0.002
-    light_cube = cubes[3]
+    light_cube = cubes[0]
     light_cube.x = np.cos(t) * 200
     light_cube.z = np.sin(t) * 200
     light_cube.setup()
@@ -180,6 +351,16 @@ while running:
             if any(p is None for p in pts):
                 continue
 
+            a = pts[0]
+            b = pts[1]
+            c2 = pts[2]
+
+            cross = (
+                (b[0]-a[0])*(c2[1]-a[1])
+                -
+                (b[1]-a[1])*(c2[0]-a[0])
+            )
+
             z = sum(p[2] for p in pts) / 4
             queue.append(("cube", z, pts, c, fi))
 
@@ -197,21 +378,47 @@ while running:
         z = sum(p[2] for p in pts) / 3
         queue.append(("sphere", z, pts, sphere, ti))
 
-    queue.sort(key = lambda q:q[1], reverse = True)
-
     for typ, _, pts, obj, idx in queue:
         if typ == "cube":
             if obj.is_light:
-                pygame.draw.polygon(screen, (255, 255, 0), [(p[0], p[1]) for p in pts])
+                pygame.draw.polygon(
+                    screen,
+                    (255,255,0),
+                    [(p[0],p[1]) for p in pts]
+                )
             else:
-                draw_textured_quad(screen, texture, pts)
-                b = int(255 * obj.face_brightness[idx])
-                shade = pygame.Surface((WIDTH, HEIGHT), pygame.SRCALPHA)
-                pygame.draw.polygon(shade, (0, 0, 0, b), [(p[0], p[1]) for p in pts])
-                screen.blit(shade, (0, 0))
+                tri1 = [pts[0], pts[1], pts[2]]
+                tri2 = [pts[0], pts[2], pts[3]]
+
+                brightness = int(
+                    255 * (1 - obj.face_brightness[idx])
+                )
+                color = (
+                    brightness,
+                    brightness,
+                    brightness
+                )
+
+                draw_triangle_zbuffer(
+                    screen,
+                    zbuffer,
+                    tri1,
+                    color
+                )
+                draw_triangle_zbuffer(
+                    screen,
+                    zbuffer,
+                    tri2,
+                    color
+                )
         else:
             b = max(0, min(255, int(255 * (1 - obj.brightness[idx]))))
-            pygame.draw.polygon(screen, (b, b, b), [(p[0], p[1]) for p in pts])
+            draw_triangle_zbuffer(
+                screen,
+                zbuffer,
+                pts,
+                (b, b, b)
+            )
 
     fps = font.render(str(int(clock.get_fps())), True, (255, 255, 255))
     screen.blit(fps, (20, 20))

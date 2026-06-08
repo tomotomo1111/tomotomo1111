@@ -106,13 +106,27 @@ class Sphere:
                 d = c + 1
                 self.tris.append((a, b, c))
                 self.tris.append((b, d, c))
+        self.tris = np.array(
+            self.tris,
+            dtype=np.int32
+        )
         self.brightness=[1] * len(self.tris)
+        
+    def lighting(self, light):
 
-    def lighting(self,light):
-        for i, t in enumerate(self.tris):
-            c = self.vertices[list(t)].mean(axis = 0)
-            dist = np.linalg.norm(c - light)
-            self.brightness[i] = min(0.8, (dist * dist) / (250 * 250))
+        centers = self.vertices[
+            self.tris
+        ].mean(axis=1)
+
+        dist = np.linalg.norm(
+            centers - light,
+            axis=1
+        )
+
+        self.brightness = np.minimum(
+            0.2,
+            (dist * dist) / (250 * 250)
+        )
 
 def draw_textured_quad(surface, tex, pts):
     
@@ -165,8 +179,8 @@ def draw_textured_quad(surface, tex, pts):
         )
 
         surface.blit(strip, rect)
-
-def draw_triangle_zbuffer(screen, zbuffer, pts, color):
+        
+def draw_triangle_zbuffer(framebuffer, zbuffer, pts, color):
 
     p0, p1, p2 = pts
 
@@ -189,36 +203,55 @@ def draw_triangle_zbuffer(screen, zbuffer, pts, color):
     if abs(denom) < 1e-6:
         return
 
-    for y in range(min_y, max_y + 1):
-        for x in range(min_x, max_x + 1):
+    xs, ys = np.meshgrid(
+        np.arange(min_x, max_x + 1),
+        np.arange(min_y, max_y + 1)
+    )
 
-            w0 = (
-                (y1 - y2) * (x - x2)
-                +
-                (x2 - x1) * (y - y2)
-            ) / denom
+    w0 = (
+        (y1 - y2) * (xs - x2)
+        +
+        (x2 - x1) * (ys - y2)
+    ) / denom
 
-            w1 = (
-                (y2 - y0) * (x - x2)
-                +
-                (x0 - x2) * (y - y2)
-            ) / denom
+    w1 = (
+        (y2 - y0) * (xs - x2)
+        +
+        (x0 - x2) * (ys - y2)
+    ) / denom
 
-            w2 = 1.0 - w0 - w1
+    w2 = 1.0 - w0 - w1
 
-            if w0 < 0 or w1 < 0 or w2 < 0:
-                continue
+    inside = (
+        (w0 >= 0)
+        &
+        (w1 >= 0)
+        &
+        (w2 >= 0)
+    )
 
-            z = (
-                w0 * z0 +
-                w1 * z1 +
-                w2 * z2
-            )
+    if not inside.any():
+        return
 
-            if z < zbuffer[y, x]:
+    z = (
+        w0 * z0 +
+        w1 * z1 +
+        w2 * z2
+    )
 
-                zbuffer[y, x] = z
-                screen.set_at((x, y), color)
+    sub_z = zbuffer[
+        min_y:max_y+1,
+        min_x:max_x+1
+    ]
+
+    update = inside & (z < sub_z)
+
+    sub_z[update] = z[update]
+
+    framebuffer[
+        min_y:max_y+1,
+        min_x:max_x+1
+    ][update] = color
 
 cubes = [
     Cube( -25,-200, -25,  50,  50,  50, True),
@@ -233,6 +266,10 @@ sphere = Sphere( -50, -300, -50, 100)
 
 running = True
 font = pygame.font.SysFont(None,20)
+framebuffer = np.zeros(
+        (HEIGHT, WIDTH, 3),
+        dtype = np.uint8
+)
 
 while running:
     dt = clock.tick(60)
@@ -256,7 +293,7 @@ while running:
         camera_pos[0] += math.cos(camera_rot_y) * 4
         camera_pos[2] -= math.sin(camera_rot_y) * 4
 
-    screen.fill((0, 0, 0))
+    framebuffer.fill(0)
     zbuffer = np.full(
         (HEIGHT, WIDTH),
         np.inf,
@@ -308,10 +345,17 @@ while running:
 
     sphere.lighting(light)
 
-    transformed = []
-    for v in sphere.vertices:
-        vv = (v - camera_pos) @ R.T
-        transformed.append(project(vv))
+    verts = (
+        sphere.vertices
+        - camera_pos
+    ) @ R.T
+    z = CAMERA_Z + verts[:,2]
+    scale = FOV / z
+    transformed = np.column_stack([
+        verts[:,0] * scale + CW2,
+        verts[:,1] * scale + CH2,
+        verts[:,2]
+    ])
 
     for ti, tr in enumerate(sphere.tris):
         pts = [transformed[i] for i in tr]
@@ -322,16 +366,10 @@ while running:
 
     for typ, _, pts, obj, idx in queue:
         if typ == "cube":
+            color = (255,255,0)
             if obj.is_light:
-                pygame.draw.polygon(
-                    screen,
-                    (255,255,0),
-                    [(p[0],p[1]) for p in pts]
-                )
+                color = (255,255,0)
             else:
-                tri1 = [pts[0], pts[1], pts[2]]
-                tri2 = [pts[0], pts[2], pts[3]]
-
                 brightness = int(
                     255 * (1 - obj.face_brightness[idx])
                 )
@@ -340,28 +378,33 @@ while running:
                     brightness,
                     brightness
                 )
-
-                draw_triangle_zbuffer(
-                    screen,
-                    zbuffer,
-                    tri1,
-                    color
-                )
-                draw_triangle_zbuffer(
-                    screen,
-                    zbuffer,
-                    tri2,
-                    color
-                )
+            tri1 = [pts[0], pts[1], pts[2]]
+            tri2 = [pts[0], pts[2], pts[3]]
+            draw_triangle_zbuffer(
+                framebuffer,
+                zbuffer,
+                tri1,
+                color
+            )
+            draw_triangle_zbuffer(
+                framebuffer,
+                zbuffer,
+                tri2,
+                color
+            )
         else:
             b = max(0, min(255, int(255 * (1 - obj.brightness[idx]))))
             draw_triangle_zbuffer(
-                screen,
+                framebuffer,
                 zbuffer,
                 pts,
                 (b, b, b)
             )
-
+    
+    pygame.surfarray.blit_array(
+        screen,
+        framebuffer.swapaxes(0, 1)
+    )
     fps = font.render(str(int(clock.get_fps())), True, (255, 255, 255))
     screen.blit(fps, (20, 20))
     pygame.display.flip()
